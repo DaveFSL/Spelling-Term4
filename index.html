@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Detectives: Term 4 Casebook | Year 6 Spelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f4;
+    --ink:#1b2a4a;
+    --amber:#e8930c;
+    --teal:#0e7c7b;
+    --card:#ffffff;
+    --line:#e6e1d6;
+    --amber-soft:#fdf0d9;
+    --amber-edge:#f2c785;
+    --teal-soft:#e1efee;
+    --ink-soft:#56607a;
+    --good:#1f7a4d;
+    --good-soft:#e3f3ea;
+    --bad:#a8261b;
+    --bad-soft:#fdeceb;
+    --shadow:0 2px 5px rgba(27,42,74,.06), 0 10px 28px rgba(27,42,74,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif;
+    font-size:18px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3,.eyebrow,.pill,.opt,.btn,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  h2{font-size:1.5rem; margin:0 0 .2em; letter-spacing:-.01em}
+  h3{font-size:1.12rem; margin:0 0 .35em}
+  p{margin:.4em 0}
+  a{color:var(--teal)}
+  kbd{font-family:"Space Grotesk"; background:#fff; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; font-size:.85em}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:6px}
+
+  /* ---------- header ---------- */
+  header.band{background:var(--ink); color:#fff; padding:22px 22px 26px}
+  .band-inner{max-width:1000px; margin:0 auto}
+  .home-link{display:inline-flex; align-items:center; gap:6px; color:#c9d2e6; font-size:.85rem; text-decoration:none; min-height:40px; margin-bottom:6px}
+  .home-link:hover{color:#fff}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:600; color:var(--amber); margin:0 0 8px}
+  .band h1{font-weight:700; font-size:2.4rem; line-height:1.05; margin:0 0 10px; letter-spacing:-.02em}
+  @media(max-width:560px){.band h1{font-size:1.9rem}}
+  .hook{color:#c9d2e6; font-size:1.05rem; margin:0; max-width:62ch}
+  .meta-row{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
+  .meta-row span{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:5px 11px; border-radius:999px; font-size:.78rem; color:#dde3f1}
+
+  /* ---------- sticky nav ---------- */
+  nav.pills{position:sticky; top:0; z-index:40; background:rgba(251,249,244,.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:9px 12px}
+  .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
+  .pill:hover{border-color:var(--teal); color:var(--teal)}
+
+  /* ---------- layout ---------- */
+  main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
+  section{scroll-margin-top:64px; padding:30px 0 6px; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px}
+  .sec-no{font-family:"Space Grotesk"; font-weight:700; color:var(--amber); font-size:.95rem; border:2px solid var(--amber-edge); border-radius:8px; padding:2px 9px; flex:0 0 auto}
+  .lead{color:var(--ink-soft); max-width:68ch}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin:14px 0}
+  @media(max-width:560px){.card{padding:16px}}
+
+  /* ---------- buttons ---------- */
+  button{font-family:inherit}
+  .btn{background:var(--ink); color:#fff; border:none; border-radius:10px; padding:11px 18px; font-size:.95rem; font-weight:700; cursor:pointer; min-height:44px}
+  .btn:hover{background:#243a63}
+  .btn.ghost{background:#fff; color:var(--ink); border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--teal); color:var(--teal)}
+  .btn.amber{background:var(--amber); color:#3a2400}
+  .btn.amber:hover{background:#d98509}
+  .btn.teal{background:var(--teal); color:#fff}
+  .btn.teal:hover{background:#0b6968}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+  /* ---------- warm-up quiz ---------- */
+  .q{border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0; background:#fff}
+  .q .stem{font-weight:700; margin:0 0 10px}
+  .opts{display:grid; gap:8px}
+  .opt{text-align:left; background:#fcfbf7; border:1.5px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:10px; cursor:pointer; min-height:44px; font-size:.95rem}
+  .opt:hover{border-color:var(--teal)}
+  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .opt.wrong{background:var(--bad-soft); border-color:#c0392b; color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .fixup{margin-top:10px; background:var(--amber-soft); border-left:5px solid var(--amber); border-radius:0 10px 10px 0; padding:11px 14px; font-size:.92rem; display:none}
+  .fixup.show{display:block}
+  .fixup b:first-child{color:#a8540b}
+  .scorebar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:6px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 16px}
+  .scorebar strong{font-family:"Space Grotesk"; font-size:1.15rem}
+
+  /* ---------- teaching cards ---------- */
+  .teach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:680px){.teach-grid{grid-template-columns:1fr}}
+  .teach-grid .card{margin:0}
+  .teach .svg-wrap{background:#fbfaf6; border:1px solid var(--line); border-radius:12px; padding:12px; margin:.4em 0 .7em}
+  .teach .svg-wrap svg{display:block; width:100%; height:auto}
+  .remember{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:10px; padding:10px 13px; font-size:.92rem; margin-top:8px}
+  .remember b:first-child{color:var(--teal); font-family:"Space Grotesk"}
+  .excerpt{border-left:4px solid var(--amber-edge); padding:4px 0 4px 12px; margin:.6em 0; font-style:italic; color:var(--ink)}
+  .excerpt cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:3px}
+
+  /* ---------- writing / locked / help ---------- */
+  textarea, input.type-in{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:13px; font-family:"Atkinson Hyperlegible"; font-size:1rem; background:#fff; color:var(--ink)}
+  textarea{min-height:120px; resize:vertical}
+  input.type-in{min-height:48px; font-size:1.1rem}
+  input.type-in:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(14,124,123,.18)}
+  .wordbank-chips{display:flex; flex-wrap:wrap; gap:7px; margin:.5em 0}
+  .wb{font-size:.85rem; background:#fff; border:1.5px solid var(--line); border-radius:999px; padding:6px 12px; min-height:40px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .wb:hover{border-color:var(--teal); color:var(--teal)}
+  .locked{border:1.5px dashed var(--amber-edge); background:var(--amber-soft); border-radius:12px; padding:14px; margin-top:12px; text-align:center; color:#7a4a06}
+  .reveal-box{display:none; margin-top:12px}
+  .reveal-box.show{display:block}
+  .help-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:14px}
+  .help-box.show{display:block}
+  .spy{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; align-items:center}
+  .spy-label{font-size:.8rem; color:var(--ink-soft); margin-right:4px}
+  .chip{font-size:.8rem; font-weight:600; border:1.5px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--ink-soft); background:#fff}
+  .chip.on{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+
+  /* ---------- evidence callout ---------- */
+  .evidence{display:flex; gap:12px; align-items:flex-start; background:#fff7e9; border:1.5px solid var(--amber-edge); border-radius:12px; padding:13px 15px; margin:14px 0; font-size:.92rem}
+  .evidence svg{flex:0 0 auto; margin-top:2px}
+  .evidence b{color:#a8540b}
+
+  /* ---------- checklist ---------- */
+  .check-list{list-style:none; padding:0; margin:.4em 0}
+  .check-list li{display:flex; gap:11px; align-items:flex-start; padding:9px 0; border-bottom:1px dashed var(--line)}
+  .check-list input{width:24px; height:24px; margin-top:2px; accent-color:var(--teal); flex:0 0 auto}
+  .confi{display:flex; gap:9px; flex-wrap:wrap; margin-top:10px}
+  .confi button{border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:10px 14px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .confi button[aria-pressed=true]{background:var(--teal); color:#fff; border-color:var(--teal)}
+
+  .counter{font-size:.9rem; color:var(--ink-soft)}
+  .msg{min-height:1.5em; margin-top:10px; font-size:.95rem}
+  .msg.good{color:var(--good)}
+  .msg.warn{color:#a8540b}
+  footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+  .case{margin:26px 0}
+  .case-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+  .case-head h2{margin:0}
+  .case-tag{font-family:"Space Grotesk"; font-weight:700; font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; color:var(--amber)}
+  .case-link{font-size:.85rem; color:var(--ink-soft)}
+  .lessons{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px}
+  .lesson{display:flex; flex-direction:column; gap:6px; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:16px; box-shadow:var(--shadow); text-decoration:none; color:var(--ink); min-height:150px}
+  a.lesson:hover{border-color:var(--teal); transform:translateY(-1px)}
+  .lesson .ln{font-family:"Space Grotesk"; font-size:.78rem; font-weight:600; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.08em}
+  .lesson .lt{font-family:"Space Grotesk"; font-weight:700; font-size:1.2rem}
+  .lesson .ld{font-size:.9rem; color:var(--ink-soft); flex:1}
+  .status{align-self:flex-start; font-family:"Space Grotesk"; font-weight:700; font-size:.78rem; border-radius:999px; padding:4px 11px}
+  .status.live{background:var(--teal); color:#fff}
+  .status.soon{background:var(--amber-soft); color:#a8540b; border:1px solid var(--amber-edge)}
+  .lesson.soon{background:#faf8f2; box-shadow:none; border-style:dashed; color:var(--ink-soft)}
+  .lesson.soon .lt{color:var(--ink-soft)}
+  .note{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 15px; font-size:.92rem}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-inner">
+    <p class="eyebrow">Year 6 Spelling · Term 4 2026</p>
+    <h1>Word Detectives: Term 4 Casebook</h1>
+    <p class="hook">Five case files, fifteen lessons and one final showdown. Each week cracks the tricky words from another subject.</p>
+    <div class="meta-row" aria-label="Unit details">
+      <span>5 weeks + review lesson</span>
+      <span>3 × 20-minute lessons a week</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
+    </div>
+  </div>
+</header>
+
+<nav class="pills" aria-label="Jump to a case file">
+  <div class="pills-inner" id="navPills"></div>
+</nav>
+
+<main>
+  <div class="note" style="margin-top:18px">🔎 <b>How it works:</b> open today’s lesson, work through each section, and screenshot your work to OneNote as you go — lesson pages never save anything.</div>
+  <div id="cases"></div>
+</main>
+
+<footer>
+  <p>Word Detectives: Term 4 Casebook · Year 6 Spelling · FlowState Learning. All content original. Works offline — no data is collected or stored.</p>
+</footer>
+
+<script>
+"use strict";
+/* ------------------------------------------------------------------
+   Unit roster. When a lesson is built, set status to "live".
+   Lessons marked "soon" show a Coming soon card and are not links.
+------------------------------------------------------------------- */
+const CASES = [
+  { id: "case1", tag: "Case File 1 · Week 1", title: "Poetry: Banjo Paterson and Dan Davies", lessons: [
+    { n: "Lesson 1", t: "Poet’s Toolbox", d: "Meet the words for talking about poems and spot the poet’s tools.", f: "Wk1_Lesson1_Poets_Toolbox.html", status: "live" },
+    { n: "Lesson 2", t: "Beat Tapper", d: "Tap the syllables and crack the word origins behind rh, y and ph.", f: "Wk1_Lesson2_Beat_Tapper.html", status: "live" },
+    { n: "Lesson 3", t: "Stanza Repair", d: "Fix a bush ballad, write your own verse and take the dictation.", f: "Wk1_Lesson3_Stanza_Repair.html", status: "live" },
+  ]},
+  { id: "case2", tag: "Case File 2 · Week 2", title: "Catholic Mission: Mission Day", lessons: [
+    { n: "Lesson 1", t: "Mission Match", d: "Match each word to what it looks like on Mission Day.", f: "Wk2_Lesson1_Mission_Match.html", status: "soon" },
+    { n: "Lesson 2", t: "Suffix Machine", d: "Turn qualities into nouns with -ity, -ion and -osity.", f: "Wk2_Lesson2_Suffix_Machine.html", status: "soon" },
+    { n: "Lesson 3", t: "Poster Press", d: "Build a Mission Day poster that only prints when spelt right.", f: "Wk2_Lesson3_Poster_Press.html", status: "soon" },
+  ]},
+  { id: "case3", tag: "Case File 3 · Week 3", title: "Science: Reversible and Irreversible Changes", lessons: [
+    { n: "Lesson 1", t: "Change Sort", d: "Sort everyday changes and learn the science words.", f: "Wk3_Lesson1_Change_Sort.html", status: "soon" },
+    { n: "Lesson 2", t: "Prefix Lab", d: "Build words with ir-, -ible and Greek ch and ph.", f: "Wk3_Lesson2_Prefix_Lab.html", status: "soon" },
+    { n: "Lesson 3", t: "Melt and Rebuild", d: "Watch words melt away, then rebuild them from memory.", f: "Wk3_Lesson3_Melt_and_Rebuild.html", status: "soon" },
+  ]},
+  { id: "case4", tag: "Case File 4 · Week 4", title: "HASS: Consumer and Advertising Choices", lessons: [
+    { n: "Lesson 1", t: "Ad Inspector", d: "Highlight the persuasive tricks in an advertisement.", f: "Wk4_Lesson1_Ad_Inspector.html", status: "soon" },
+    { n: "Lesson 2", t: "Silent Letter Scanner", d: "Scan for the letters you can’t hear in receipt and guarantee.", f: "Wk4_Lesson2_Silent_Letter_Scanner.html", status: "soon" },
+    { n: "Lesson 3", t: "Budget Cart", d: "Spell it right to buy it — and stay within budget.", f: "Wk4_Lesson3_Budget_Cart.html", status: "soon" },
+  ]},
+  { id: "case5", tag: "Case File 5 · Week 5", title: "Transition to High School", lessons: [
+    { n: "Lesson 1", t: "Timetable Builder", d: "Plan a Year 7 day with the words for a big change.", f: "Wk5_Lesson1_Timetable_Builder.html", status: "soon" },
+    { n: "Lesson 2", t: "Word Family Tree", d: "Grow -ent into -ence and -ant into -ance.", f: "Wk5_Lesson2_Word_Family_Tree.html", status: "soon" },
+    { n: "Lesson 3", t: "Letter to Year 7 Me", d: "Write to your future self and take the dictation.", f: "Wk5_Lesson3_Letter_to_Year7_Me.html", status: "soon" },
+  ]},
+  { id: "review", tag: "Final Review · Lesson 16", title: "Case Closed", lessons: [
+    { n: "Lesson 16", t: "Case Closed", d: "Solve all five case files and take the cumulative dictation.", f: "Review_Lesson16_Case_Closed.html", status: "soon" },
+  ]},
+];
+
+const casesEl = document.getElementById("cases"), nav = document.getElementById("navPills");
+CASES.forEach(c => {
+  const a = document.createElement("a");
+  a.className = "pill"; a.href = "#" + c.id; a.textContent = c.tag.split(" · ")[0];
+  nav.appendChild(a);
+  const sec = document.createElement("section");
+  sec.className = "case"; sec.id = c.id;
+  const live = c.lessons.filter(l => l.status === "live").length;
+  sec.innerHTML = '<div class="case-head"><span class="case-tag">' + c.tag + '</span><h2>' + c.title + '</h2>' +
+    '<span class="case-link">' + live + " of " + c.lessons.length + " ready</span></div>";
+  const grid = document.createElement("div");
+  grid.className = "lessons";
+  c.lessons.forEach(l => {
+    const el = document.createElement(l.status === "live" ? "a" : "div");
+    el.className = "lesson" + (l.status === "live" ? "" : " soon");
+    if (l.status === "live") el.href = l.f;
+    else el.setAttribute("aria-label", l.n + ", " + l.t + ": coming soon");
+    el.innerHTML = '<span class="ln">' + l.n + '</span><span class="lt">' + l.t + '</span><span class="ld">' + l.d + '</span>' +
+      '<span class="status ' + (l.status === "live" ? "live" : "soon") + '">' + (l.status === "live" ? "Open lesson →" : "Coming soon") + "</span>";
+    grid.appendChild(el);
+  });
+  sec.appendChild(grid);
+  casesEl.appendChild(sec);
+});
+</script>
+</body>
+</html>

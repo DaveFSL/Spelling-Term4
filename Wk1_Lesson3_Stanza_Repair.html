@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 Lesson 3 — Stanza Repair | Year 6 Spelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f4;
+    --ink:#1b2a4a;
+    --amber:#e8930c;
+    --teal:#0e7c7b;
+    --card:#ffffff;
+    --line:#e6e1d6;
+    --amber-soft:#fdf0d9;
+    --amber-edge:#f2c785;
+    --teal-soft:#e1efee;
+    --ink-soft:#56607a;
+    --good:#1f7a4d;
+    --good-soft:#e3f3ea;
+    --bad:#a8261b;
+    --bad-soft:#fdeceb;
+    --shadow:0 2px 5px rgba(27,42,74,.06), 0 10px 28px rgba(27,42,74,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif;
+    font-size:18px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3,.eyebrow,.pill,.opt,.btn,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  h2{font-size:1.5rem; margin:0 0 .2em; letter-spacing:-.01em}
+  h3{font-size:1.12rem; margin:0 0 .35em}
+  p{margin:.4em 0}
+  a{color:var(--teal)}
+  kbd{font-family:"Space Grotesk"; background:#fff; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; font-size:.85em}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:6px}
+
+  /* ---------- header ---------- */
+  header.band{background:var(--ink); color:#fff; padding:22px 22px 26px}
+  .band-inner{max-width:1000px; margin:0 auto}
+  .home-link{display:inline-flex; align-items:center; gap:6px; color:#c9d2e6; font-size:.85rem; text-decoration:none; min-height:40px; margin-bottom:6px}
+  .home-link:hover{color:#fff}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:600; color:var(--amber); margin:0 0 8px}
+  .band h1{font-weight:700; font-size:2.4rem; line-height:1.05; margin:0 0 10px; letter-spacing:-.02em}
+  @media(max-width:560px){.band h1{font-size:1.9rem}}
+  .hook{color:#c9d2e6; font-size:1.05rem; margin:0; max-width:62ch}
+  .meta-row{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
+  .meta-row span{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:5px 11px; border-radius:999px; font-size:.78rem; color:#dde3f1}
+
+  /* ---------- sticky nav ---------- */
+  nav.pills{position:sticky; top:0; z-index:40; background:rgba(251,249,244,.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:9px 12px}
+  .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
+  .pill:hover{border-color:var(--teal); color:var(--teal)}
+
+  /* ---------- layout ---------- */
+  main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
+  section{scroll-margin-top:64px; padding:30px 0 6px; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px}
+  .sec-no{font-family:"Space Grotesk"; font-weight:700; color:var(--amber); font-size:.95rem; border:2px solid var(--amber-edge); border-radius:8px; padding:2px 9px; flex:0 0 auto}
+  .lead{color:var(--ink-soft); max-width:68ch}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin:14px 0}
+  @media(max-width:560px){.card{padding:16px}}
+
+  /* ---------- buttons ---------- */
+  button{font-family:inherit}
+  .btn{background:var(--ink); color:#fff; border:none; border-radius:10px; padding:11px 18px; font-size:.95rem; font-weight:700; cursor:pointer; min-height:44px}
+  .btn:hover{background:#243a63}
+  .btn.ghost{background:#fff; color:var(--ink); border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--teal); color:var(--teal)}
+  .btn.amber{background:var(--amber); color:#3a2400}
+  .btn.amber:hover{background:#d98509}
+  .btn.teal{background:var(--teal); color:#fff}
+  .btn.teal:hover{background:#0b6968}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+  /* ---------- warm-up quiz ---------- */
+  .q{border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0; background:#fff}
+  .q .stem{font-weight:700; margin:0 0 10px}
+  .opts{display:grid; gap:8px}
+  .opt{text-align:left; background:#fcfbf7; border:1.5px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:10px; cursor:pointer; min-height:44px; font-size:.95rem}
+  .opt:hover{border-color:var(--teal)}
+  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .opt.wrong{background:var(--bad-soft); border-color:#c0392b; color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .fixup{margin-top:10px; background:var(--amber-soft); border-left:5px solid var(--amber); border-radius:0 10px 10px 0; padding:11px 14px; font-size:.92rem; display:none}
+  .fixup.show{display:block}
+  .fixup b:first-child{color:#a8540b}
+  .scorebar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:6px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 16px}
+  .scorebar strong{font-family:"Space Grotesk"; font-size:1.15rem}
+
+  /* ---------- teaching cards ---------- */
+  .teach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:680px){.teach-grid{grid-template-columns:1fr}}
+  .teach-grid .card{margin:0}
+  .teach .svg-wrap{background:#fbfaf6; border:1px solid var(--line); border-radius:12px; padding:12px; margin:.4em 0 .7em}
+  .teach .svg-wrap svg{display:block; width:100%; height:auto}
+  .remember{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:10px; padding:10px 13px; font-size:.92rem; margin-top:8px}
+  .remember b:first-child{color:var(--teal); font-family:"Space Grotesk"}
+  .excerpt{border-left:4px solid var(--amber-edge); padding:4px 0 4px 12px; margin:.6em 0; font-style:italic; color:var(--ink)}
+  .excerpt cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:3px}
+
+  /* ---------- writing / locked / help ---------- */
+  textarea, input.type-in{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:13px; font-family:"Atkinson Hyperlegible"; font-size:1rem; background:#fff; color:var(--ink)}
+  textarea{min-height:120px; resize:vertical}
+  input.type-in{min-height:48px; font-size:1.1rem}
+  input.type-in:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(14,124,123,.18)}
+  .wordbank-chips{display:flex; flex-wrap:wrap; gap:7px; margin:.5em 0}
+  .wb{font-size:.85rem; background:#fff; border:1.5px solid var(--line); border-radius:999px; padding:6px 12px; min-height:40px; min-width:40px; text-align:center; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .wb:hover{border-color:var(--teal); color:var(--teal)}
+  .locked{border:1.5px dashed var(--amber-edge); background:var(--amber-soft); border-radius:12px; padding:14px; margin-top:12px; text-align:center; color:#7a4a06}
+  .reveal-box{display:none; margin-top:12px}
+  .reveal-box.show{display:block}
+  .help-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:14px}
+  .help-box.show{display:block}
+  .spy{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; align-items:center}
+  .spy-label{font-size:.8rem; color:var(--ink-soft); margin-right:4px}
+  .chip{font-size:.8rem; font-weight:600; border:1.5px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--ink-soft); background:#fff}
+  .chip.on{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+
+  /* ---------- evidence callout ---------- */
+  .evidence{display:flex; gap:12px; align-items:flex-start; background:#fff7e9; border:1.5px solid var(--amber-edge); border-radius:12px; padding:13px 15px; margin:14px 0; font-size:.92rem}
+  .evidence svg{flex:0 0 auto; margin-top:2px}
+  .evidence b{color:#a8540b}
+
+  /* ---------- checklist ---------- */
+  .check-list{list-style:none; padding:0; margin:.4em 0}
+  .check-list li{padding:0; margin:0; border-bottom:1px dashed var(--line)}
+  .check-list label{display:flex; align-items:center; gap:11px; min-height:44px; padding:4px 0; cursor:pointer; width:100%}
+  .check-list input{width:24px; height:24px; margin:0; accent-color:var(--teal); flex:0 0 auto}
+  .confi{display:flex; gap:9px; flex-wrap:wrap; margin-top:10px}
+  .confi button{border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:10px 14px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .confi button[aria-pressed=true]{background:var(--teal); color:#fff; border-color:var(--teal)}
+
+  .counter{font-size:.9rem; color:var(--ink-soft)}
+  .msg{min-height:1.5em; margin-top:10px; font-size:.95rem}
+  .msg.good{color:var(--good)}
+  .msg.warn{color:#a8540b}
+  footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+  /* ---------- Stanza Repair (signature) ---------- */
+  .verse{background:#fffdf7; border:1.5px solid var(--line); border-radius:14px; padding:16px 14px}
+  .vline{margin:4px 0; line-height:2.3; font-size:1.05rem; border-radius:8px; padding:0 4px; transition:background .3s}
+  .vline.flash{background:var(--amber-soft)}
+  .tok{display:inline-flex; align-items:center; justify-content:center; text-align:center; vertical-align:middle; font-family:"Atkinson Hyperlegible"; font-size:1.05rem; background:none; border:1.5px solid transparent; border-radius:7px; padding:3px 4px; min-width:40px; min-height:40px; cursor:pointer; color:var(--ink)}
+  .tok:hover{border-color:var(--line); background:#fff}
+  .tok[aria-pressed=true]{border-color:var(--ink); background:#fff}
+  .tok.fixed, .tok.fixed:disabled{background:var(--good-soft); border-color:var(--good); color:var(--good); font-weight:700; cursor:default; opacity:1; pointer-events:none}
+  .miss-cap{text-align:center; font-family:"Space Grotesk"; font-weight:700; font-size:.95rem; margin:.35em 0 0}
+  .miss-cap .no{color:var(--bad); text-decoration:line-through}
+  .miss-cap .yes{color:var(--good)}
+  .tok.okword{animation:shake .35s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+  .repair{margin-top:14px; border:2px dashed var(--amber-edge); border-radius:14px; padding:16px; background:#fffaf0}
+  .repair-row{display:flex; gap:10px; flex-wrap:wrap}
+  .repair-row input{flex:1 1 220px}
+  .found{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+
+  /* ---------- Dictation ---------- */
+  .dict-steps{margin:.3em 0 .6em; padding-left:1.2em}
+  .dict-list{list-style:none; padding:0; margin:12px 0 0}
+  .dict-list li{display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dnum{font-family:"Space Grotesk"; font-weight:700; color:var(--ink); flex:0 0 26px}
+  .dword{font-family:"Space Grotesk"; font-weight:700; color:var(--teal); font-size:1.1rem}
+  .dsent{display:block; font-size:.95rem; color:var(--ink-soft)}
+  .dmark{margin-left:auto; flex:0 0 auto; border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:8px 12px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .dmark[aria-pressed=true]{background:var(--good); border-color:var(--good); color:#fff}
+  .ready{display:flex; gap:11px; align-items:center; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px}
+  .ready input{width:24px; height:24px; accent-color:var(--teal)}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-inner">
+    <a class="home-link" href="index.html">← Term 4 Casebook home</a>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 1 · Lesson 3</p>
+    <h1>Stanza Repair</h1>
+    <p class="hook">A swaggie’s bush ballad has been scribbled down in a hurry — and six words are spelt wrong. Find them, fix them, then write a verse of your own.</p>
+    <div class="meta-row" aria-label="Lesson details">
+      <span>Case File 1: Poetry</span>
+      <span>Focus: spelling in context + dictation</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
+      <span>20 minutes</span>
+    </div>
+  </div>
+</header>
+
+<nav class="pills" aria-label="Jump to a section">
+  <div class="pills-inner">
+    <a class="pill" href="#briefing">The Briefing</a>
+    <a class="pill" href="#casenotes">Case Notes</a>
+    <a class="pill" href="#repair">Stanza Repair</a>
+    <a class="pill" href="#verseWrite">My Verse</a>
+    <a class="pill" href="#dictation">Dictation</a>
+    <a class="pill" href="#closed">Case Closed</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===================== 1. WARM-UP ===================== -->
+  <section id="briefing">
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Which spelling is the real one? Tap your answer. Wrong ones show an orange <b>fix-up</b> with the trap to watch for.</p></div></div>
+    <div id="quiz"></div>
+    <div class="scorebar" role="status" aria-live="polite">
+      <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
+      <button class="btn ghost" id="jumpFix" type="button" disabled>Jump to my first fix-up ↧</button>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
+  </section>
+
+  <!-- ===================== 2. TEACHING CARDS ===================== -->
+  <section id="casenotes">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Two tools for proofreading like a detective.</p></div></div>
+    <div class="teach-grid">
+      <div class="card teach">
+        <h3>1 · Proofread slowly</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="A magnifying glass over the mistake rythm, crossed out in red. The correct spelling is rhythm.">
+            <g stroke="#1b2a4a" stroke-width="3" stroke-linecap="round"><line x1="14" y1="30" x2="60" y2="30"/><line x1="72" y1="30" x2="120" y2="30"/><line x1="200" y1="30" x2="250" y2="30"/><line x1="262" y1="30" x2="306" y2="30"/></g>
+            <text x="136" y="36" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#a8261b" text-decoration="line-through">rythm</text>
+            <circle cx="160" cy="30" r="30" fill="none" stroke="#0e7c7b" stroke-width="4"/>
+            <line x1="182" y1="52" x2="204" y2="76" stroke="#0e7c7b" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+          <p class="miss-cap"><span class="no">✗ rythm</span> → <span class="yes">✓ rhythm</span></p>
+        </div>
+        <p>Your brain reads what it <i>expects</i> to see. Slow down, point at <b>one word at a time</b>, and ask: does this look right?</p>
+        <div class="remember"><b>Remember:</b> Read every word, not the word you expect.</div>
+      </div>
+      <div class="card teach">
+        <h3>2 · Know each word’s trap</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 120" role="img" aria-label="The eight focus words with their tricky parts highlighted: poetry, rhythm, rhyme, stanza, ballad, simile, metaphor, alliteration.">
+            <g font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">
+              <text x="10" y="26">p<tspan fill="#e8930c">oe</tspan>try</text>
+              <text x="10" y="54"><tspan fill="#e8930c">rhy</tspan>thm</text>
+              <text x="10" y="82"><tspan fill="#e8930c">rhy</tspan>me</text>
+              <text x="10" y="110">sta<tspan fill="#e8930c">nz</tspan><tspan fill="#e8930c">a</tspan></text>
+              <text x="170" y="26">ba<tspan fill="#e8930c">ll</tspan>ad</text>
+              <text x="170" y="54">simi<tspan fill="#e8930c">le</tspan></text>
+              <text x="170" y="82">meta<tspan fill="#e8930c">ph</tspan>or</text>
+              <text x="170" y="110">a<tspan fill="#e8930c">ll</tspan>iteration</text>
+            </g>
+          </svg>
+        </div>
+        <p>Each word has one spot where people slip. If you know the <b>trap</b>, you can check it on purpose.</p>
+        <div class="remember"><b>Remember:</b> Check the orange part of each word first.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. STANZA REPAIR (signature) ===================== -->
+  <section id="repair">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Stanza Repair</h2><p class="lead"><b>Tap any word</b> you think is misspelt, then type the correct spelling. There are <b>six</b> mistakes, all words from this week. Tapping a word that’s already right just tells you so — no penalty.</p></div></div>
+    <div class="card">
+      <div class="verse" id="verse" aria-label="The Swaggie’s Song, an original bush ballad verse with six spelling mistakes"></div>
+      <p class="counter" id="repCount" role="status" aria-live="polite" style="margin-top:10px">0 of 6 mistakes fixed</p>
+      <div class="repair" id="repairBox" hidden>
+        <p style="margin:0 0 8px">You tapped <b id="repWord"></b>. Type the correct spelling:</p>
+        <div class="repair-row">
+          <label for="repIn" class="sr-only">Correct spelling</label>
+          <input class="type-in" id="repIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="correct spelling">
+          <button class="btn teal" id="repBtn" type="button">Fix it</button>
+          <button class="btn ghost" id="repCancel" type="button">Cancel</button>
+        </div>
+        <div class="fixup" id="repFix" tabindex="-1"></div>
+      </div>
+      <p class="msg" id="repMsg" role="status" aria-live="polite"></p>
+      <div class="btn-row"><button class="btn ghost" id="repHint" type="button">Hint: show me a line with a mistake</button></div>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your repaired verse</b> once all six fixes are green.</div></div>
+  </section>
+
+  <!-- ===================== 4. MY VERSE (independent) ===================== -->
+  <section id="verseWrite">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>My Verse</h2><p class="lead">Write a <b>two-line</b> verse of your own. Use <b>one poet’s tool</b> (a simile, metaphor or alliteration) and at least <b>two focus words</b>. The Spelling Spy lights up each focus word you spell correctly.</p></div></div>
+    <div class="card">
+      <label for="writebox" class="sr-only">Write your two-line verse</label>
+      <textarea id="writebox" placeholder="Line 1…&#10;Line 2…"></textarea>
+      <div class="spy" id="spy"></div>
+      <div class="btn-row">
+        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
+        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
+      </div>
+      <div class="help-box" id="helpBox">
+        <h3 style="margin-top:0">Line starters</h3>
+        <p>• The creek ran <b>like</b> … (simile)<br>• The night <b>was</b> a … (metaphor)<br>• Six sleepy sheep … (alliteration)</p>
+        <p style="margin-bottom:4px"><b>Try a focus word:</b> “…with the <b>rhythm</b> of the rain”, “…the last <b>stanza</b> of the day”, “…a <b>ballad</b> for the bush”.</p>
+        <div class="wordbank-chips" aria-label="Word bank">
+          <button class="wb" type="button">rhythm</button><button class="wb" type="button">rhyme</button><button class="wb" type="button">ballad</button><button class="wb" type="button">stanza</button><button class="wb" type="button">poetry</button>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:0">Tap a word to drop it into your writing box.</p>
+      </div>
+      <div class="locked" id="lockMsg">🔒 Write at least one line of your own first — then the worked example unlocks.</div>
+      <div class="reveal-box" id="exampleBox">
+        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
+          <b style="color:var(--ink)">Worked example (one way to do it):</b>
+          <span style="display:block;margin-top:6px;font-style:italic">The creek was a ribbon of silver light,<br>its <u>rhythm</u> the heartbeat of our <u>ballad</u> tonight.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Tool: a metaphor (the creek <i>was</i> a ribbon). Focus words: rhythm, ballad. The lines rhyme too (light / tonight).</span>
+        </div>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your verse and the Spelling Spy now, and upload to OneNote.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. DICTATION ===================== -->
+  <section id="dictation">
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Weekly Dictation</h2><p class="lead">Time to prove it — eight words, written in your book.</p></div></div>
+    <div class="card">
+      <ol class="dict-steps">
+        <li>Number <b>1–8</b> down the page in your book.</li>
+        <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
+        <li>When you’ve written all eight, tick the box to unlock the answers. Then mark your own work honestly.</li>
+      </ol>
+      <label class="ready"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
+      <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
+      <div id="dictAnswers" hidden>
+        <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
+        <ol class="dict-list" id="dictList"></ol>
+        <div class="scorebar" role="status" aria-live="polite" style="margin-top:12px"><span>My dictation score: <strong id="dictScore">0</strong> / <strong>8</strong></span></div>
+        <p class="counter" style="margin-top:8px">Missed one? Write it correctly three times next to your attempt, and check its trap in Case Notes.</p>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Photograph your book page</b> and screenshot your score. Upload both to OneNote — this page won’t keep them.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. CASE CLOSED ===================== -->
+  <section id="closed">
+    <div class="sec-head"><span class="sec-no">06</span><div><h2>Case Closed</h2><p class="lead">Case File 1 is nearly closed. Tick off your evidence and rate your confidence.</p></div></div>
+    <div class="card">
+      <h3>Evidence to capture (screenshot or photograph each one)</h3>
+      <ul class="check-list">
+        <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
+        <li><label for="c2"><input type="checkbox" id="c2"><span>My repaired verse (six green fixes)</span></label></li>
+        <li><label for="c3"><input type="checkbox" id="c3"><span>My two-line verse and Spelling Spy</span></label></li>
+        <li><label for="c4"><input type="checkbox" id="c4"><span>A photo of my dictation page and my score</span></label></li>
+      </ul>
+      <h3 style="margin-top:18px">How confident am I with this week’s eight words?</h3>
+      <div class="confi" id="confi" role="group" aria-label="Confidence rating">
+        <button type="button" aria-pressed="false">Still cracking it</button>
+        <button type="button" aria-pressed="false">Getting there</button>
+        <button type="button" aria-pressed="false">Case closed ✓</button>
+      </div>
+      <div class="evidence" style="margin-top:18px;margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Nothing on this page is saved.</b> Take your final screenshots now, then upload everything to OneNote. Closing the tab clears it all.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 1 Lesson 3: Stanza Repair · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
+</footer>
+
+<div class="sr-only" id="liveRegion" aria-live="assertive"></div>
+
+<script>
+"use strict";
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+function announce(msg) {
+  const r = $("#liveRegion");
+  if (!r) return;
+  r.textContent = "";
+  setTimeout(() => { r.textContent = msg; }, 30);
+}
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---------- Warm-up quiz: stem, opts, correct index, fix-up note ---------- */
+function buildQuiz(QUIZ) {
+  let score = 0, firstFix = null;
+  const quizEl = $("#quiz");
+  $("#total").textContent = QUIZ.length;
+  QUIZ.forEach((q, qi) => {
+    const card = document.createElement("div");
+    card.className = "q"; card.id = "q" + qi;
+    const stem = document.createElement("p");
+    stem.className = "stem"; stem.innerHTML = (qi + 1) + ". " + q.stem;
+    const opts = document.createElement("div");
+    opts.className = "opts"; opts.setAttribute("role", "group"); opts.setAttribute("aria-label", "Question " + (qi + 1));
+    q.opts.forEach((text, oi) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.innerHTML = text;
+      b.addEventListener("click", () => answer(oi, b));
+      opts.appendChild(b);
+    });
+    const fix = document.createElement("div");
+    fix.className = "fixup"; fix.id = "fix" + qi; fix.tabIndex = -1;
+    fix.innerHTML = "<b>Fix-up:</b> " + q.fix;
+    card.append(stem, opts, fix);
+    quizEl.appendChild(card);
+    function answer(oi, btn) {
+      if (card.dataset.done) return;
+      card.dataset.done = "1";
+      $$(".opt", opts).forEach(b => { b.disabled = true; });
+      opts.children[q.correct].classList.add("correct");
+      if (oi === q.correct) {
+        score++;
+        $("#score").textContent = score;
+        announce("Correct. Score " + score + " of " + QUIZ.length);
+      } else {
+        btn.classList.add("wrong");
+        fix.classList.add("show");
+        if (firstFix === null) { firstFix = qi; $("#jumpFix").disabled = false; }
+        announce("Not quite. Read the fix-up note.");
+      }
+    }
+  });
+  $("#jumpFix").addEventListener("click", () => {
+    if (firstFix === null) return;
+    const f = $("#fix" + firstFix);
+    f.scrollIntoView({ block: "center" });
+    f.focus();
+  });
+}
+
+/* ---------- Writing task: help toggle, word bank chips, locked example, spelling spy ---------- */
+function setupWriting({ box, helpBtn, helpBox, exampleBtn, lockMsg, exampleBox, minChars = 20, spyEl, words = [] }) {
+  const unlock = () => {
+    const ok = box.value.trim().length >= minChars;
+    exampleBtn.disabled = !ok;
+    exampleBtn.textContent = ok ? "Show a worked example" : "Show a worked example \u{1F512}";
+    if (!exampleBox.classList.contains("show")) lockMsg.style.display = ok ? "none" : "block";
+  };
+  const spy = () => {
+    if (!spyEl) return;
+    const text = box.value.toLowerCase();
+    $$(".chip", spyEl).forEach(chip => {
+      const w = chip.dataset.word;
+      const re = new RegExp("\\b" + w + "s?\\b");
+      chip.classList.toggle("on", re.test(text));
+    });
+  };
+  if (spyEl) {
+    const lab = document.createElement("span");
+    lab.className = "spy-label"; lab.textContent = "Spelling spy – focus words spelt correctly:";
+    spyEl.appendChild(lab);
+    words.forEach(w => {
+      const c = document.createElement("span");
+      c.className = "chip"; c.dataset.word = w; c.textContent = w;
+      spyEl.appendChild(c);
+    });
+  }
+  box.addEventListener("input", () => { unlock(); spy(); });
+  exampleBtn.addEventListener("click", () => {
+    if (exampleBtn.disabled) return;
+    exampleBox.classList.add("show");
+    lockMsg.style.display = "none";
+  });
+  helpBtn.addEventListener("click", () => {
+    const open = helpBox.classList.toggle("show");
+    helpBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    helpBtn.textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  $$(".wb", helpBox).forEach(chip => {
+    chip.addEventListener("click", () => {
+      const needsSpace = box.value.length > 0 && !/\s$/.test(box.value);
+      box.value += (needsSpace ? " " : "") + chip.textContent + " ";
+      box.focus();
+      box.dispatchEvent(new Event("input"));
+    });
+  });
+  unlock();
+}
+
+/* ---------- Confidence buttons ---------- */
+function setupConfidence() {
+  $$("#confi button").forEach(b => {
+    b.addEventListener("click", () => {
+      $$("#confi button").forEach(x => x.setAttribute("aria-pressed", "false"));
+      b.setAttribute("aria-pressed", "true");
+    });
+  });
+}
+
+
+/* =================== 1. WARM-UP =================== */
+buildQuiz([
+  { stem: "Which spelling is correct?", opts: ["rythm", "rhythm", "rhythym"], correct: 1,
+    fix: "<b>rhythm</b> — silent-h <b>rh</b>, then <b>y</b>, then <b>thm</b> with no vowel. Rhythm Helps Your Two Hips Move." },
+  { stem: "Which spelling is correct?", opts: ["aliteration", "alliteraton", "alliteration"], correct: 2,
+    fix: "<b>alliteration</b> — a <b>double l</b> at the start (from <i>ad</i> + <i>littera</i>), and it ends in <b>-ation</b>." },
+  { stem: "Which spelling is correct?", opts: ["simile", "simily", "similie"], correct: 0,
+    fix: "<b>simile</b> — the end sounds like “lee” but is spelt <b>le</b>: sim-i-le." },
+  { stem: "Which spelling is correct?", opts: ["poitry", "poetry", "poetrey"], correct: 1,
+    fix: "<b>poetry</b> — the o and e sit side by side, and it ends in plain <b>y</b>: po-e-try." },
+  { stem: "Which spelling is correct?", opts: ["stanzer", "stanza", "stansa"], correct: 1,
+    fix: "<b>stanza</b> — an Italian word ending in <b>a</b>, with a <b>z</b> in the middle. No “er” at the end." },
+]);
+
+/* =================== 3. STANZA REPAIR =================== */
+const VERSE = [
+  "The swaggie sat beside his fire and sang a bush-made song,",
+  "The rythm rolled like river water, steady, slow and long.",
+  "He hunted for a ryme for ‘fire’ and found it — ‘wire’!",
+  "His poitry was rough and ready, crackling like his fire.",
+  "He wrote a simily: ‘as tough as fencing wire’,",
+  "A metafor: ‘the night’s a blanket on the land’,",
+  "Some aliteration — ‘billy boiling by the bend’ —",
+  "Then sang each stanza of his ballad right through to the end.",
+];
+const ERRORS = {
+  rythm:       { fix: "rhythm",       tip: "It starts with a silent-h <b>rh</b>: rh-y-thm." },
+  ryme:        { fix: "rhyme",        tip: "It starts like rhythm — <b>rhy</b> — then ends like time: rhy-me." },
+  poitry:      { fix: "poetry",       tip: "The o and e sit side by side: <b>po-e</b>-try." },
+  simily:      { fix: "simile",       tip: "The “lee” sound at the end is spelt <b>le</b>." },
+  metafor:     { fix: "metaphor",     tip: "The /f/ sound is spelt <b>ph</b>." },
+  aliteration: { fix: "alliteration", tip: "It needs a <b>double l</b>." },
+};
+const clean = t => t.toLowerCase().replace(/^[‘’'"(—–-]+|[‘’'",.!?:;)—–-]+$/g, "");
+const fixedSet = new Set();
+let active = null, repTries = 0;
+const verseEl = $("#verse");
+VERSE.forEach((line, li) => {
+  const p = document.createElement("p");
+  p.className = "vline"; p.id = "vl" + li;
+  line.split(" ").forEach((tok, ti) => {
+    if (ti) p.appendChild(document.createTextNode(" "));
+    if (!/[a-z]/i.test(tok)) { p.appendChild(document.createTextNode(tok)); return; }
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "tok"; b.textContent = tok;
+    b.dataset.word = clean(tok); b.dataset.line = li;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => tapWord(b));
+    p.appendChild(b);
+  });
+  verseEl.appendChild(p);
+});
+
+function tapWord(b) {
+  if (b.classList.contains("fixed")) return;
+  const w = b.dataset.word;
+  const msg = $("#repMsg");
+  if (!ERRORS[w]) {
+    b.classList.remove("okword"); void b.offsetWidth; b.classList.add("okword");
+    msg.className = "msg warn";
+    msg.textContent = "“" + b.textContent.replace(/[‘’,.!:;]/g, "") + "” is spelt correctly. Keep looking — slow down and check each word’s trap.";
+    announce("That word is spelt correctly. Keep looking.");
+    return;
+  }
+  active = b; repTries = 0;
+  $$(".tok").forEach(t => t.setAttribute("aria-pressed", t === b ? "true" : "false"));
+  $("#repWord").textContent = w;
+  $("#repairBox").hidden = false;
+  $("#repFix").classList.remove("show");
+  $("#repIn").value = "";
+  msg.className = "msg"; msg.textContent = "Good eye — that one’s wrong!";
+  $("#repIn").focus();
+}
+function doRepair() {
+  if (!active) return;
+  const w = active.dataset.word, want = ERRORS[w].fix;
+  const typed = $("#repIn").value.trim().toLowerCase();
+  const fix = $("#repFix");
+  if (!typed) { fix.innerHTML = "<b>Fix-up:</b> Type your correction first."; fix.classList.add("show"); return; }
+  if (typed === want) {
+    fixedSet.add(w);
+    const before = active.textContent;
+    active.textContent = before.replace(new RegExp(w, "i"), want);
+    active.classList.add("fixed");
+    active.disabled = true;
+    active.tabIndex = -1;
+    active.setAttribute("aria-pressed", "false");
+    active.setAttribute("aria-label", "fixed: " + want);
+    $("#repairBox").hidden = true;
+    const n = fixedSet.size;
+    $("#repCount").textContent = n + " of 6 mistakes fixed";
+    const msg = $("#repMsg");
+    msg.className = "msg good";
+    msg.textContent = n === 6 ? "🎉 Verse repaired — all six fixed! Screenshot it." : "Fixed! " + (6 - n) + " to go.";
+    announce(want + " fixed. " + n + " of 6.");
+    const next = $$(".tok").find(t => ERRORS[t.dataset.word] && !t.classList.contains("fixed"));
+    (next || $("#repHint")).focus();
+    active = null;
+  } else {
+    repTries++;
+    let html = "<b>Fix-up:</b> “" + escapeHTML(typed) + "” isn’t it yet. " + ERRORS[w].tip;
+    if (repTries >= 2) html += " It has <b>" + want.length + " letters</b> and starts with <b>" + want.slice(0, 2) + "</b>.";
+    fix.innerHTML = html; fix.classList.add("show");
+    announce("Not yet. Read the tip and try again.");
+  }
+}
+$("#repBtn").addEventListener("click", doRepair);
+$("#repIn").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); doRepair(); } });
+$("#repCancel").addEventListener("click", () => {
+  $("#repairBox").hidden = true;
+  if (active) { active.setAttribute("aria-pressed", "false"); active.focus(); }
+  active = null;
+});
+$("#repHint").addEventListener("click", () => {
+  const left = $$(".tok").filter(t => ERRORS[t.dataset.word] && !t.classList.contains("fixed"));
+  const msg = $("#repMsg");
+  if (!left.length) { msg.className = "msg good"; msg.textContent = "No mistakes left — you’ve fixed them all!"; return; }
+  const li = +left[0].dataset.line;
+  const line = $("#vl" + li);
+  line.classList.add("flash");
+  setTimeout(() => line.classList.remove("flash"), 2500);
+  line.scrollIntoView({ block: "center" });
+  left[0].focus();
+  msg.className = "msg warn";
+  msg.textContent = "Look closely at line " + (li + 1) + " — there’s a mistake in it.";
+  announce("Check line " + (li + 1) + ".");
+});
+
+/* =================== 4. MY VERSE =================== */
+setupWriting({
+  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
+  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
+  spyEl: $("#spy"), words: ["poetry", "rhythm", "rhyme", "stanza", "ballad", "simile", "metaphor", "alliteration"],
+});
+
+/* =================== 5. DICTATION (must match the unit plan exactly) =================== */
+const DICTATION = [
+  ["poetry", "We read Australian poetry about drovers, swagmen and the bush."],
+  ["rhythm", "The rhythm of the ballad sounded like a galloping horse."],
+  ["rhyme", "Each line ended with a word that made a clever rhyme."],
+  ["stanza", "The second stanza tells us what happened to the rider."],
+  ["ballad", "A ballad tells a story in verses that are easy to remember."],
+  ["simile", "The poet used a simile to compare the bicycle to a runaway horse."],
+  ["metaphor", "Calling the river a silver ribbon is a metaphor."],
+  ["alliteration", "Bouncing, bumping and banging is an example of alliteration."],
+];
+$("#dictReady").addEventListener("change", () => {
+  const ok = $("#dictReady").checked;
+  $("#dictReveal").disabled = !ok;
+  $("#dictReveal").textContent = ok ? "Show the answers" : "Show the answers 🔒";
+});
+$("#dictReveal").addEventListener("click", () => {
+  if ($("#dictReveal").disabled) return;
+  $("#dictAnswers").hidden = false;
+  $("#dictReveal").disabled = true;
+  $("#dictReveal").textContent = "Answers shown ✓";
+  $("#dictReady").disabled = true;
+});
+let dictScore = 0;
+DICTATION.forEach(([word, sent], i) => {
+  const li = document.createElement("li");
+  li.innerHTML = '<span class="dnum">' + (i + 1) + '.</span><span><span class="dword">' + word + '</span><span class="dsent">' + escapeHTML(sent) + '</span></span>';
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "dmark"; b.textContent = "I got it ✓";
+  b.setAttribute("aria-pressed", "false");
+  b.setAttribute("aria-label", "I spelt " + word + " correctly");
+  b.addEventListener("click", () => {
+    const on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+    dictScore += on ? 1 : -1;
+    $("#dictScore").textContent = dictScore;
+  });
+  li.appendChild(b);
+  $("#dictList").appendChild(li);
+});
+
+/* =================== 6. CONFIDENCE =================== */
+setupConfidence();
+</script>
+</body>
+</html>

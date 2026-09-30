@@ -1,0 +1,14 @@
+const { load, check, staticChecks, done } = require("./harness");
+const fs = require("fs");
+const FILE = "index.html";
+console.log("== " + FILE);
+staticChecks(FILE);
+const { d, errors } = load(FILE);
+const $$ = s => [...d.querySelectorAll(s)];
+check($$(".lesson").length === 16, "16 lessons listed");
+const live = $$("a.lesson");
+check(live.length === 3, "3 live lessons are links");
+check(live.every(a => fs.existsSync(__dirname + "/../" + a.getAttribute("href"))), "every live link points at a built file");
+check($$(".lesson.soon").length === 13 && $$(".lesson.soon").every(x => x.tagName === "DIV" && /Coming soon/.test(x.textContent)), "13 Coming soon cards, not clickable");
+check($$("nav.pills a").length === 6, "6 case-file nav pills");
+setTimeout(() => { check(errors.length === 0, "zero console/page errors " + (errors.length ? JSON.stringify(errors) : "")); done(); }, 200);

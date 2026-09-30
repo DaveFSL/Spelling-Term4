@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 Lesson 1 — Poet’s Toolbox | Year 6 Spelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f4;
+    --ink:#1b2a4a;
+    --amber:#e8930c;
+    --teal:#0e7c7b;
+    --card:#ffffff;
+    --line:#e6e1d6;
+    --amber-soft:#fdf0d9;
+    --amber-edge:#f2c785;
+    --teal-soft:#e1efee;
+    --ink-soft:#56607a;
+    --good:#1f7a4d;
+    --good-soft:#e3f3ea;
+    --bad:#a8261b;
+    --bad-soft:#fdeceb;
+    --shadow:0 2px 5px rgba(27,42,74,.06), 0 10px 28px rgba(27,42,74,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif;
+    font-size:18px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3,.eyebrow,.pill,.opt,.btn,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  h2{font-size:1.5rem; margin:0 0 .2em; letter-spacing:-.01em}
+  h3{font-size:1.12rem; margin:0 0 .35em}
+  p{margin:.4em 0}
+  a{color:var(--teal)}
+  kbd{font-family:"Space Grotesk"; background:#fff; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; font-size:.85em}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:6px}
+
+  /* ---------- header ---------- */
+  header.band{background:var(--ink); color:#fff; padding:22px 22px 26px}
+  .band-inner{max-width:1000px; margin:0 auto}
+  .home-link{display:inline-flex; align-items:center; gap:6px; color:#c9d2e6; font-size:.85rem; text-decoration:none; min-height:40px; margin-bottom:6px}
+  .home-link:hover{color:#fff}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:600; color:var(--amber); margin:0 0 8px}
+  .band h1{font-weight:700; font-size:2.4rem; line-height:1.05; margin:0 0 10px; letter-spacing:-.02em}
+  @media(max-width:560px){.band h1{font-size:1.9rem}}
+  .hook{color:#c9d2e6; font-size:1.05rem; margin:0; max-width:62ch}
+  .meta-row{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
+  .meta-row span{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:5px 11px; border-radius:999px; font-size:.78rem; color:#dde3f1}
+
+  /* ---------- sticky nav ---------- */
+  nav.pills{position:sticky; top:0; z-index:40; background:rgba(251,249,244,.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:9px 12px}
+  .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
+  .pill:hover{border-color:var(--teal); color:var(--teal)}
+
+  /* ---------- layout ---------- */
+  main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
+  section{scroll-margin-top:64px; padding:30px 0 6px; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px}
+  .sec-no{font-family:"Space Grotesk"; font-weight:700; color:var(--amber); font-size:.95rem; border:2px solid var(--amber-edge); border-radius:8px; padding:2px 9px; flex:0 0 auto}
+  .lead{color:var(--ink-soft); max-width:68ch}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin:14px 0}
+  @media(max-width:560px){.card{padding:16px}}
+
+  /* ---------- buttons ---------- */
+  button{font-family:inherit}
+  .btn{background:var(--ink); color:#fff; border:none; border-radius:10px; padding:11px 18px; font-size:.95rem; font-weight:700; cursor:pointer; min-height:44px}
+  .btn:hover{background:#243a63}
+  .btn.ghost{background:#fff; color:var(--ink); border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--teal); color:var(--teal)}
+  .btn.amber{background:var(--amber); color:#3a2400}
+  .btn.amber:hover{background:#d98509}
+  .btn.teal{background:var(--teal); color:#fff}
+  .btn.teal:hover{background:#0b6968}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+  /* ---------- warm-up quiz ---------- */
+  .q{border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0; background:#fff}
+  .q .stem{font-weight:700; margin:0 0 10px}
+  .opts{display:grid; gap:8px}
+  .opt{text-align:left; background:#fcfbf7; border:1.5px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:10px; cursor:pointer; min-height:44px; font-size:.95rem}
+  .opt:hover{border-color:var(--teal)}
+  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .opt.wrong{background:var(--bad-soft); border-color:#c0392b; color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .fixup{margin-top:10px; background:var(--amber-soft); border-left:5px solid var(--amber); border-radius:0 10px 10px 0; padding:11px 14px; font-size:.92rem; display:none}
+  .fixup.show{display:block}
+  .fixup b:first-child{color:#a8540b}
+  .scorebar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:6px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 16px}
+  .scorebar strong{font-family:"Space Grotesk"; font-size:1.15rem}
+
+  /* ---------- teaching cards ---------- */
+  .teach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:680px){.teach-grid{grid-template-columns:1fr}}
+  .teach-grid .card{margin:0}
+  .teach .svg-wrap{background:#fbfaf6; border:1px solid var(--line); border-radius:12px; padding:12px; margin:.4em 0 .7em}
+  .teach .svg-wrap svg{display:block; width:100%; height:auto}
+  .remember{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:10px; padding:10px 13px; font-size:.92rem; margin-top:8px}
+  .remember b:first-child{color:var(--teal); font-family:"Space Grotesk"}
+  .excerpt{border-left:4px solid var(--amber-edge); padding:4px 0 4px 12px; margin:.6em 0; font-style:italic; color:var(--ink)}
+  .excerpt cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:3px}
+
+  /* ---------- writing / locked / help ---------- */
+  textarea, input.type-in{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:13px; font-family:"Atkinson Hyperlegible"; font-size:1rem; background:#fff; color:var(--ink)}
+  textarea{min-height:120px; resize:vertical}
+  input.type-in{min-height:48px; font-size:1.1rem}
+  input.type-in:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(14,124,123,.18)}
+  .wordbank-chips{display:flex; flex-wrap:wrap; gap:7px; margin:.5em 0}
+  .wb{font-size:.85rem; background:#fff; border:1.5px solid var(--line); border-radius:999px; padding:6px 12px; min-height:40px; min-width:40px; text-align:center; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .wb:hover{border-color:var(--teal); color:var(--teal)}
+  .locked{border:1.5px dashed var(--amber-edge); background:var(--amber-soft); border-radius:12px; padding:14px; margin-top:12px; text-align:center; color:#7a4a06}
+  .reveal-box{display:none; margin-top:12px}
+  .reveal-box.show{display:block}
+  .help-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:14px}
+  .help-box.show{display:block}
+  .spy{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; align-items:center}
+  .spy-label{font-size:.8rem; color:var(--ink-soft); margin-right:4px}
+  .chip{font-size:.8rem; font-weight:600; border:1.5px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--ink-soft); background:#fff}
+  .chip.on{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+
+  /* ---------- evidence callout ---------- */
+  .evidence{display:flex; gap:12px; align-items:flex-start; background:#fff7e9; border:1.5px solid var(--amber-edge); border-radius:12px; padding:13px 15px; margin:14px 0; font-size:.92rem}
+  .evidence svg{flex:0 0 auto; margin-top:2px}
+  .evidence b{color:#a8540b}
+
+  /* ---------- checklist ---------- */
+  .check-list{list-style:none; padding:0; margin:.4em 0}
+  .check-list li{padding:0; margin:0; border-bottom:1px dashed var(--line)}
+  .check-list label{display:flex; align-items:center; gap:11px; min-height:44px; padding:4px 0; cursor:pointer; width:100%}
+  .check-list input{width:24px; height:24px; margin:0; accent-color:var(--teal); flex:0 0 auto}
+  .confi{display:flex; gap:9px; flex-wrap:wrap; margin-top:10px}
+  .confi button{border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:10px 14px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .confi button[aria-pressed=true]{background:var(--teal); color:#fff; border-color:var(--teal)}
+
+  .counter{font-size:.9rem; color:var(--ink-soft)}
+  .msg{min-height:1.5em; margin-top:10px; font-size:.95rem}
+  .msg.good{color:var(--good)}
+  .msg.warn{color:#a8540b}
+  footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+  /* ---------- Poet's Toolbox (signature) ---------- */
+  .poem{background:#fffdf7; border:1.5px solid var(--line); border-radius:14px; padding:16px}
+  .poem-title{font-family:"Space Grotesk"; font-weight:700; margin:0 0 2px}
+  .poem-by{font-size:.8rem; color:var(--ink-soft); margin:0 0 10px}
+  .line-btn{display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:10px 13px; margin:7px 0; min-height:48px; cursor:pointer; font-size:1rem; color:var(--ink); font-style:italic}
+  .line-btn:hover{border-color:var(--teal)}
+  .line-btn[aria-pressed=true]{border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset}
+  .line-btn.solved{background:var(--good-soft); border-color:var(--good); font-style:normal}
+  .line-btn mark{background:#fbe0b0; color:inherit; border-radius:4px; padding:0 2px}
+  .badge{flex:0 0 auto; font-family:"Space Grotesk"; font-style:normal; font-weight:700; font-size:.78rem; border-radius:999px; padding:3px 10px; background:var(--teal-soft); color:var(--teal)}
+  .line-btn.solved .badge{background:var(--good); color:#fff}
+  .inspector{margin-top:14px; border:2px dashed var(--amber-edge); border-radius:14px; padding:16px; background:#fffaf0}
+  .inspector h3{margin-bottom:6px}
+  .inspect-line{font-style:italic; font-size:1.05rem; margin:0 0 10px}
+  .tool-choices{display:flex; flex-wrap:wrap; gap:9px}
+  .tool-btn{font-family:"Space Grotesk"; font-weight:700; background:#fff; border:2px solid var(--teal); color:var(--teal); border-radius:10px; padding:10px 16px; min-height:46px; cursor:pointer}
+  .tool-btn:hover{background:var(--teal-soft)}
+  .step2{display:none; margin-top:14px}
+  .step2.show{display:block}
+  .file-row{display:flex; gap:10px; flex-wrap:wrap}
+  .file-row input{flex:1 1 220px}
+  .peek{font-family:"Space Grotesk"; font-weight:700; font-size:1.4rem; letter-spacing:.04em; color:var(--teal); min-height:1.6em; margin-top:6px}
+  .progress{height:12px; background:#ece7dc; border-radius:999px; overflow:hidden; margin-top:10px}
+  .progress span{display:block; height:100%; width:0; background:var(--teal); transition:width .3s}
+  .treasure dt{font-family:"Space Grotesk"; font-weight:700; margin-top:6px}
+  .treasure dd{margin:0 0 0 0; font-size:.92rem; color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-inner">
+    <a class="home-link" href="index.html">← Term 4 Casebook home</a>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 1 · Lesson 1</p>
+    <h1>Poet’s Toolbox</h1>
+    <p class="hook">Poets build with tools you can name — simile, metaphor, alliteration and more. Learn the words, spot the tools, and spell them like a pro.</p>
+    <div class="meta-row" aria-label="Lesson details">
+      <span>Case File 1: Poetry</span>
+      <span>Focus: words for talking about poems</span>
+      <span>AC9E6LY09</span>
+      <span>20 minutes</span>
+    </div>
+  </div>
+</header>
+
+<nav class="pills" aria-label="Jump to a section">
+  <div class="pills-inner">
+    <a class="pill" href="#briefing">The Briefing</a>
+    <a class="pill" href="#casenotes">Case Notes</a>
+    <a class="pill" href="#toolbox">Poet’s Toolbox</a>
+    <a class="pill" href="#explain">Explain It</a>
+    <a class="pill" href="#closed">Case Closed</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===================== 1. WARM-UP ===================== -->
+  <section id="briefing">
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Five quick clues about poems you already know. Tap an answer for instant feedback. Wrong? Read the orange <b>fix-up</b> — it tells you exactly what to fix.</p></div></div>
+    <div id="quiz"></div>
+    <div class="scorebar" role="status" aria-live="polite">
+      <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
+      <button class="btn ghost" id="jumpFix" type="button" disabled>Jump to my first fix-up ↧</button>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
+  </section>
+
+  <!-- ===================== 2. TEACHING CARDS ===================== -->
+  <section id="casenotes">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Eight notes for your detective notebook. One idea per card. Come back to these any time you get stuck.</p></div></div>
+    <div class="teach-grid">
+
+      <div class="card teach">
+        <h3>1 · Poetry and the stanza</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 110" role="img" aria-label="A poem drawn as two groups of lines with a gap between them. Each group is labelled stanza.">
+            <rect x="20" y="8" width="170" height="94" rx="8" fill="#fff" stroke="#e6e1d6"/>
+            <g stroke="#1b2a4a" stroke-width="3" stroke-linecap="round">
+              <line x1="34" y1="22" x2="170" y2="22"/><line x1="34" y1="34" x2="150" y2="34"/><line x1="34" y1="46" x2="165" y2="46"/>
+              <line x1="34" y1="68" x2="160" y2="68"/><line x1="34" y1="80" x2="140" y2="80"/><line x1="34" y1="92" x2="168" y2="92"/>
+            </g>
+            <path d="M196 18 v32" stroke="#e8930c" stroke-width="2.5" fill="none"/>
+            <path d="M196 64 v32" stroke="#e8930c" stroke-width="2.5" fill="none"/>
+            <text x="206" y="39" font-family="Space Grotesk" font-weight="700" font-size="15" fill="#a8540b">stanza 1</text>
+            <text x="206" y="85" font-family="Space Grotesk" font-weight="700" font-size="15" fill="#a8540b">stanza 2</text>
+          </svg>
+        </div>
+        <p><b>Poetry</b> is writing that plays with sound, beat and image. A <b>stanza</b> is a group of lines in a poem, with a gap before the next group.</p>
+        <div class="remember"><b>Remember:</b> A stanza is to a poem what a paragraph is to a story.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>2 · The ballad</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="A ballad tells a story: beginning, trouble, ending, joined by arrows.">
+            <rect x="6" y="28" width="86" height="36" rx="8" fill="#e1efee" stroke="#0e7c7b"/>
+            <text x="49" y="51" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#0e7c7b">beginning</text>
+            <path d="M96 46 h20" stroke="#1b2a4a" stroke-width="2" marker-end="url(#ar1)"/>
+            <rect x="120" y="28" width="80" height="36" rx="8" fill="#fbe7c8" stroke="#e8930c"/>
+            <text x="160" y="51" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#a8540b">trouble</text>
+            <path d="M204 46 h20" stroke="#1b2a4a" stroke-width="2" marker-end="url(#ar1)"/>
+            <rect x="228" y="28" width="86" height="36" rx="8" fill="#e3f3ea" stroke="#1f7a4d"/>
+            <text x="271" y="51" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1f7a4d">ending</text>
+            <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
+        </div>
+        <p>A <b>ballad</b> is a poem that tells a story, usually with a strong beat so it can be read aloud or sung. Banjo Paterson wrote famous bush ballads.</p>
+        <p class="excerpt">’Twas Mulga Bill, from Eaglehawk, that caught the cycling craze;<cite>Banjo Paterson, <i>Mulga Bill’s Bicycle</i> (1896)</cite></p>
+        <div class="remember"><b>Remember:</b> A ballad is a story poem with a strong beat, often sung.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>3 · Rhythm and rhyme</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 100" role="img" aria-label="Rhythm shown as a row of soft and strong beats. Rhyme shown as the words camp and stamp joined by an arc because their endings sound the same.">
+            <text x="8" y="26" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#0e7c7b">rhythm</text>
+            <g fill="#1b2a4a"><circle cx="90" cy="21" r="4"/><circle cx="112" cy="21" r="8"/><circle cx="134" cy="21" r="4"/><circle cx="156" cy="21" r="8"/><circle cx="178" cy="21" r="4"/><circle cx="200" cy="21" r="8"/><circle cx="222" cy="21" r="4"/><circle cx="244" cy="21" r="8"/></g>
+            <text x="266" y="26" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">the beat</text>
+            <text x="8" y="80" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#a8540b">rhyme</text>
+            <text x="92" y="82" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#1b2a4a">c<tspan fill="#e8930c">amp</tspan></text>
+            <text x="200" y="82" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#1b2a4a">st<tspan fill="#e8930c">amp</tspan></text>
+            <path d="M128 62 q55 -26 108 0" fill="none" stroke="#e8930c" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <p><b>Rhythm</b> is the beat you can clap along to. <b>Rhyme</b> is when word endings sound the same — <b>camp</b> and <b>stamp</b> in the diagram.</p>
+        <p class="excerpt">Once a jolly swagman camped by a billabong,<br>Under the shade of a coolibah tree,<cite>Banjo Paterson, <i>Waltzing Matilda</i> (popular version, 1903). Clap the beat.</cite></p>
+        <div class="remember"><b>Remember:</b> Rhythm = the beat. Rhyme = matching end sounds.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>4 · Simile</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="Simile example: tough as fencing wire, with the word as highlighted as the comparing word.">
+            <text x="10" y="36" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a"><tspan fill="#e8930c">as</tspan> tough <tspan fill="#e8930c">as</tspan> fencing wire</text>
+            <text x="10" y="66" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">compares two things using <tspan font-weight="700" fill="#a8540b">like</tspan> or <tspan font-weight="700" fill="#a8540b">as</tspan></text>
+          </svg>
+        </div>
+        <p>A <b>simile</b> compares two different things using the word <b>like</b> or <b>as</b>. The horse ran <i>like the wind</i>.</p>
+        <div class="remember"><b>Remember:</b> Simile = <b>s</b>imilar, using <b>like</b> or <b>as</b>.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>5 · Metaphor</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="Metaphor example: the classroom equals a beehive. A metaphor says one thing is another.">
+            <text x="8" y="42" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">the classroom</text>
+            <text x="150" y="44" font-family="Space Grotesk" font-weight="700" font-size="28" fill="#e8930c">=</text>
+            <text x="182" y="42" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">a beehive</text>
+            <text x="14" y="68" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">says one thing <tspan font-weight="700" fill="#a8540b">is</tspan> another — no like, no as</text>
+          </svg>
+        </div>
+        <p>A <b>metaphor</b> says one thing <b>is</b> another thing. <i>Our classroom was a beehive.</i> It isn’t really a beehive — but it helps us picture a busy, buzzing room.</p>
+        <div class="remember"><b>Remember:</b> Metaphor says it <b>is</b>. Simile says it’s <b>like</b>.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>6 · Alliteration</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="Alliteration example: seven silly swans swam south, with each starting s highlighted.">
+            <text x="10" y="42" font-family="Space Grotesk" font-weight="700" font-size="21" fill="#1b2a4a"><tspan fill="#e8930c">s</tspan>even <tspan fill="#e8930c">s</tspan>illy <tspan fill="#e8930c">s</tspan>wans <tspan fill="#e8930c">s</tspan>wam <tspan fill="#e8930c">s</tspan>outh</text>
+            <text x="10" y="68" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">the same starting sound, again and again</text>
+          </svg>
+        </div>
+        <p><b>Alliteration</b> repeats the same <b>starting sound</b> in words that are close together. It makes a line fun to say.</p>
+        <div class="remember"><b>Remember:</b> Alliteration = the same first sound, close together.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>7 · A poet’s voice</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="Two speech bubbles. One says a poet may write words the way people say them. The other says in our formal writing we use standard spelling.">
+            <rect x="6" y="10" width="140" height="56" rx="12" fill="#fbe7c8" stroke="#e8930c"/>
+            <path d="M40 66 l-8 16 l22 -16z" fill="#fbe7c8" stroke="#e8930c"/>
+            <text x="76" y="34" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#a8540b">a poem’s voice</text>
+            <text x="76" y="52" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#1b2a4a">spelt how it sounds</text>
+            <rect x="174" y="10" width="140" height="56" rx="12" fill="#e1efee" stroke="#0e7c7b"/>
+            <path d="M280 66 l8 16 l-22 -16z" fill="#e1efee" stroke="#0e7c7b"/>
+            <text x="244" y="34" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#0e7c7b">our formal writing</text>
+            <text x="244" y="52" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#1b2a4a">standard spelling</text>
+          </svg>
+        </div>
+        <p>Poets sometimes spell words the way people <b>say</b> them, to capture a voice. Paterson wrote <i>’twas</i> for “it was”. When we read Dan Davies’ <i>Moonthanguddi and Mookari</i>, listen for how he captures a voice too. Aboriginal English is a real dialect — that’s a choice, not a mistake.</p>
+        <div class="remember"><b>Remember:</b> A poet can choose a voice. In our own formal writing, we use standard Australian spelling.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>8 · Word treasure (just for reading)</h3>
+        <dl class="treasure">
+          <dt>swagman</dt><dd>a traveller who carried everything he owned in a rolled-up bundle (a swag)</dd>
+          <dt>billabong</dt><dd>a waterhole left behind when a river changes course</dd>
+          <dt>jumbuck</dt><dd>a sheep</dd>
+          <dt>coolibah</dt><dd>a kind of eucalypt tree that grows near water</dd>
+          <dt>squatter</dt><dd>a landholder who ran a large sheep or cattle station</dd>
+        </dl>
+        <div class="remember"><b>Remember:</b> You don’t need to spell these — just enjoy them when you read Paterson.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== 3. POET'S TOOLBOX (signature) ===================== -->
+  <section id="toolbox">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Poet’s Toolbox</h2><p class="lead">Each line of this poem uses <b>one</b> poet’s tool. <b>Tap a line</b> to inspect it, choose the tool, then <b>type the tool’s name</b> to file it. Wrong guesses give you a clue — unlimited tries.</p></div></div>
+
+    <div class="card">
+      <div class="poem">
+        <p class="poem-title">Old Rusty of Red Creek</p>
+        <p class="poem-by">An original poem for Word Detectives</p>
+        <div id="poemLines"></div>
+        <div class="progress" aria-hidden="true"><span id="toolBar"></span></div>
+        <p class="counter" id="toolCount" role="status" aria-live="polite">0 of 6 lines filed</p>
+      </div>
+
+      <div class="inspector" id="inspector" hidden>
+        <h3>Inspecting line <span id="insNo"></span></h3>
+        <p class="inspect-line" id="insLine"></p>
+        <p style="margin:0 0 8px"><b>Step 1:</b> Which tool did the poet use?</p>
+        <div class="tool-choices" id="toolChoices" role="group" aria-label="Choose the tool">
+          <button class="tool-btn" type="button" data-tool="simile">simile</button>
+          <button class="tool-btn" type="button" data-tool="metaphor">metaphor</button>
+          <button class="tool-btn" type="button" data-tool="alliteration">alliteration</button>
+        </div>
+        <div class="fixup" id="toolFix" tabindex="-1"></div>
+        <div class="step2" id="step2">
+          <p style="margin:0 0 8px"><b>Step 2:</b> Spot on! Now <b>type</b> the tool’s name to file it. The buttons are hidden — spell it from memory.</p>
+          <div class="file-row">
+            <label for="spellIn" class="sr-only">Type the name of the tool</label>
+            <input class="type-in" id="spellIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the tool’s name">
+            <button class="btn teal" id="fileBtn" type="button">File it</button>
+            <button class="btn ghost" id="peekBtn" type="button" hidden>Peek (2 seconds)</button>
+          </div>
+          <div class="peek" id="peek" aria-live="polite"></div>
+          <div class="fixup" id="spellFix" tabindex="-1"></div>
+        </div>
+      </div>
+      <p class="msg" id="toolMsg" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your filed poem</b> once all six lines are green. The page won’t remember it for you.</div></div>
+  </section>
+
+  <!-- ===================== 4. EXPLAIN IT (independent) ===================== -->
+  <section id="explain">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Explain It</h2><p class="lead">Write <b>two sentences</b> explaining the difference between a <b>simile</b> and a <b>metaphor</b>. Give an example of each. Check your spelling against the Spelling Spy.</p></div></div>
+    <div class="card">
+      <label for="writebox" class="sr-only">Write your two sentences</label>
+      <textarea id="writebox" placeholder="Start writing here… e.g. A simile compares two things using…"></textarea>
+      <div class="spy" id="spy"></div>
+      <div class="btn-row">
+        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
+        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
+      </div>
+      <div class="help-box" id="helpBox">
+        <h3 style="margin-top:0">Sentence starters</h3>
+        <p>• A <b>simile</b> compares two things using …<br>• For example, …<br>• A <b>metaphor</b> is different because it says …<br>• For example, …</p>
+        <p style="margin-bottom:4px"><b>Cloze — fill the gaps:</b></p>
+        <p style="font-style:italic">A ______ compares two things using “like” or “as”, such as “as fast as a ______”. A ______ says one thing ______ another, such as “the ______ was a golden coin”.</p>
+        <div class="wordbank-chips" aria-label="Word bank">
+          <button class="wb" type="button">simile</button><button class="wb" type="button">metaphor</button><button class="wb" type="button">is</button><button class="wb" type="button">rocket</button><button class="wb" type="button">sun</button>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:0">Tap a word to drop it into your writing box.</p>
+      </div>
+      <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
+      <div class="reveal-box" id="exampleBox">
+        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
+          <b style="color:var(--ink)">Worked example (one way to do it):</b>
+          <span style="display:block;margin-top:6px">A <u>simile</u> compares two things using “like” or “as”, such as “the dog ran like a rocket”. A <u>metaphor</u> says one thing is another, such as “the dog was a rocket”.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Compare it with yours. Did you explain the difference, give two examples, and spell simile and metaphor correctly?</span>
+        </div>
+      </div>
+      <div class="card" style="background:#fbfaf6;box-shadow:none;margin-bottom:0">
+        <h3>Detective challenge (extension)</h3>
+        <p>Add one more sentence using an extension word: <b>onomatopoeia</b> (a word that sounds like its noise — <i>sizzle, crash</i>), <b>personification</b> (giving human actions to non-human things — <i>the wind whispered</i>) or <b>colloquial</b> (everyday, chatty language — <i>g’day, arvo</i>).</p>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> When you’re happy with your sentences, <b>screenshot them now</b> and upload to OneNote before you close the page.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. CASE CLOSED ===================== -->
+  <section id="closed">
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Quick exit check. Tick off your evidence, rate your confidence, and make sure everything is captured.</p></div></div>
+    <div class="card">
+      <h3>Evidence to capture (screenshot each one)</h3>
+      <ul class="check-list">
+        <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
+        <li><label for="c2"><input type="checkbox" id="c2"><span>My Poet’s Toolbox with all six lines filed</span></label></li>
+        <li><label for="c3"><input type="checkbox" id="c3"><span>My two Explain It sentences (and the Spelling Spy)</span></label></li>
+      </ul>
+      <h3 style="margin-top:18px">How confident am I with this week’s words?</h3>
+      <p class="counter" style="margin:0">poetry · rhythm · rhyme · stanza · ballad · simile · metaphor · alliteration</p>
+      <div class="confi" id="confi" role="group" aria-label="Confidence rating">
+        <button type="button" aria-pressed="false">Still cracking it</button>
+        <button type="button" aria-pressed="false">Getting there</button>
+        <button type="button" aria-pressed="false">Case closed ✓</button>
+      </div>
+      <div class="evidence" style="margin-top:18px;margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Nothing on this page is saved.</b> Take your final screenshots now, then upload everything to OneNote. Closing the tab clears it all.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 1 Lesson 1: Poet’s Toolbox · ACARA v9 AC9E6LY09. Paterson excerpts are public domain; all other content is original. Works offline — no data is collected or stored.</p>
+</footer>
+
+<div class="sr-only" id="liveRegion" aria-live="assertive"></div>
+
+<script>
+"use strict";
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+function announce(msg) {
+  const r = $("#liveRegion");
+  if (!r) return;
+  r.textContent = "";
+  setTimeout(() => { r.textContent = msg; }, 30);
+}
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---------- Warm-up quiz: stem, opts, correct index, fix-up note ---------- */
+function buildQuiz(QUIZ) {
+  let score = 0, firstFix = null;
+  const quizEl = $("#quiz");
+  $("#total").textContent = QUIZ.length;
+  QUIZ.forEach((q, qi) => {
+    const card = document.createElement("div");
+    card.className = "q"; card.id = "q" + qi;
+    const stem = document.createElement("p");
+    stem.className = "stem"; stem.innerHTML = (qi + 1) + ". " + q.stem;
+    const opts = document.createElement("div");
+    opts.className = "opts"; opts.setAttribute("role", "group"); opts.setAttribute("aria-label", "Question " + (qi + 1));
+    q.opts.forEach((text, oi) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.innerHTML = text;
+      b.addEventListener("click", () => answer(oi, b));
+      opts.appendChild(b);
+    });
+    const fix = document.createElement("div");
+    fix.className = "fixup"; fix.id = "fix" + qi; fix.tabIndex = -1;
+    fix.innerHTML = "<b>Fix-up:</b> " + q.fix;
+    card.append(stem, opts, fix);
+    quizEl.appendChild(card);
+    function answer(oi, btn) {
+      if (card.dataset.done) return;
+      card.dataset.done = "1";
+      $$(".opt", opts).forEach(b => { b.disabled = true; });
+      opts.children[q.correct].classList.add("correct");
+      if (oi === q.correct) {
+        score++;
+        $("#score").textContent = score;
+        announce("Correct. Score " + score + " of " + QUIZ.length);
+      } else {
+        btn.classList.add("wrong");
+        fix.classList.add("show");
+        if (firstFix === null) { firstFix = qi; $("#jumpFix").disabled = false; }
+        announce("Not quite. Read the fix-up note.");
+      }
+    }
+  });
+  $("#jumpFix").addEventListener("click", () => {
+    if (firstFix === null) return;
+    const f = $("#fix" + firstFix);
+    f.scrollIntoView({ block: "center" });
+    f.focus();
+  });
+}
+
+/* ---------- Writing task: help toggle, word bank chips, locked example, spelling spy ---------- */
+function setupWriting({ box, helpBtn, helpBox, exampleBtn, lockMsg, exampleBox, minChars = 20, spyEl, words = [] }) {
+  const unlock = () => {
+    const ok = box.value.trim().length >= minChars;
+    exampleBtn.disabled = !ok;
+    exampleBtn.textContent = ok ? "Show a worked example" : "Show a worked example \u{1F512}";
+    if (!exampleBox.classList.contains("show")) lockMsg.style.display = ok ? "none" : "block";
+  };
+  const spy = () => {
+    if (!spyEl) return;
+    const text = box.value.toLowerCase();
+    $$(".chip", spyEl).forEach(chip => {
+      const w = chip.dataset.word;
+      const re = new RegExp("\\b" + w + "s?\\b");
+      chip.classList.toggle("on", re.test(text));
+    });
+  };
+  if (spyEl) {
+    const lab = document.createElement("span");
+    lab.className = "spy-label"; lab.textContent = "Spelling spy – focus words spelt correctly:";
+    spyEl.appendChild(lab);
+    words.forEach(w => {
+      const c = document.createElement("span");
+      c.className = "chip"; c.dataset.word = w; c.textContent = w;
+      spyEl.appendChild(c);
+    });
+  }
+  box.addEventListener("input", () => { unlock(); spy(); });
+  exampleBtn.addEventListener("click", () => {
+    if (exampleBtn.disabled) return;
+    exampleBox.classList.add("show");
+    lockMsg.style.display = "none";
+  });
+  helpBtn.addEventListener("click", () => {
+    const open = helpBox.classList.toggle("show");
+    helpBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    helpBtn.textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  $$(".wb", helpBox).forEach(chip => {
+    chip.addEventListener("click", () => {
+      const needsSpace = box.value.length > 0 && !/\s$/.test(box.value);
+      box.value += (needsSpace ? " " : "") + chip.textContent + " ";
+      box.focus();
+      box.dispatchEvent(new Event("input"));
+    });
+  });
+  unlock();
+}
+
+/* ---------- Confidence buttons ---------- */
+function setupConfidence() {
+  $$("#confi button").forEach(b => {
+    b.addEventListener("click", () => {
+      $$("#confi button").forEach(x => x.setAttribute("aria-pressed", "false"));
+      b.setAttribute("aria-pressed", "true");
+    });
+  });
+}
+
+
+/* =================== 1. WARM-UP =================== */
+buildQuiz([
+  { stem: "Words whose endings sound the same, like <i>cat</i> and <i>hat</i>, are said to…",
+    opts: ["rhyme", "repeat", "rattle"], correct: 0,
+    fix: "Matching end sounds are a <b>rhyme</b>: c<b>at</b> / h<b>at</b>. Repeating a word isn’t the same thing." },
+  { stem: "A group of lines in a poem, with a gap before the next group, is called a…",
+    opts: ["chapter", "stanza (or verse)", "sentence"], correct: 1,
+    fix: "Poems are built from <b>stanzas</b> (also called verses). A chapter belongs in a novel." },
+  { stem: "Which spelling is correct?",
+    opts: ["pome", "poim", "poem"], correct: 2,
+    fix: "It’s <b>p-o-e-m</b>. Say it slowly — <b>po-em</b> — two syllables, with the o and e side by side." },
+  { stem: "<i>Mulga Bill’s Bicycle</i> tells the story of a man and his bike. A poem that tells a story is a…",
+    opts: ["narrative poem", "shopping list", "label"], correct: 0,
+    fix: "A poem that tells a story is a <b>narrative poem</b>. One special kind of story poem is a <b>ballad</b>." },
+  { stem: "The beat you can clap along to in a poem is its…",
+    opts: ["title", "rhythm", "author"], correct: 1,
+    fix: "The beat is the <b>rhythm</b>. Clap along to <i>Waltzing Matilda</i> and you’ll feel it." },
+]);
+
+/* =================== 3. POET'S TOOLBOX =================== */
+const LINES = [
+  { text: "The dusty dog dashed down the dry creek bed,",
+    marked: "The <mark>d</mark>usty <mark>d</mark>og <mark>d</mark>ashed <mark>d</mark>own the <mark>d</mark>ry creek bed,",
+    tool: "alliteration" },
+  { text: "His coat shone as red as a glowing coal,",
+    marked: "His coat shone <mark>as</mark> red <mark>as</mark> a glowing coal,",
+    tool: "simile" },
+  { text: "The paddock was an ocean of pale grass,",
+    marked: "The paddock <mark>was an ocean</mark> of pale grass,",
+    tool: "metaphor" },
+  { text: "He barked like a kettle left on the stove,",
+    marked: "He barked <mark>like</mark> a kettle left on the stove,",
+    tool: "simile" },
+  { text: "At night the moon was a lantern on the hill,",
+    marked: "At night the moon <mark>was a lantern</mark> on the hill,",
+    tool: "metaphor" },
+  { text: "And big black bullocks bellowed by the gate.",
+    marked: "And <mark>b</mark>ig <mark>b</mark>lack <mark>b</mark>ullocks <mark>b</mark>ellowed <mark>b</mark>y the gate.",
+    tool: "alliteration" },
+];
+const TOOL_CLUES = {
+  // [chosen][actual]
+  simile: {
+    metaphor: "Look again — is there a <b>like</b> or <b>as</b> in this line? A simile needs one. This line says something <i>is</i> something else.",
+    alliteration: "There’s no comparison in this line — no <b>like</b> or <b>as</b>. Say the line aloud and listen to how the words <i>start</i>.",
+  },
+  metaphor: {
+    simile: "Close! This line <i>does</i> compare two things — but it uses <b>like</b> or <b>as</b>. Which tool uses those words?",
+    alliteration: "This line doesn’t compare two things at all. Say it aloud and listen to how the words <i>start</i>.",
+  },
+  alliteration: {
+    simile: "Say it aloud — do lots of words start with the same sound? Not really. Look for a comparing word: <b>like</b> or <b>as</b>.",
+    metaphor: "The starting sounds don’t repeat much here. This line compares two things — but without like or as.",
+  },
+};
+const SPELL_TIPS = {
+  simile: "Tricky part: it ends in <b>-le</b> (the “lee” sound).",
+  metaphor: "Tricky part: the /f/ sound is spelt <b>ph</b>.",
+  alliteration: "Tricky part: a <b>double l</b> near the start, and it ends in <b>-ation</b>.",
+};
+const solved = new Set();
+let current = null, spellTries = 0;
+const poemEl = $("#poemLines"), ins = $("#inspector");
+
+LINES.forEach((ln, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "line-btn"; b.id = "line" + i;
+  b.setAttribute("aria-pressed", "false");
+  b.innerHTML = '<span class="ltxt">' + escapeHTML(ln.text) + '</span><span class="badge">Line ' + (i + 1) + '</span>';
+  b.setAttribute("aria-label", "Line " + (i + 1) + ": " + ln.text);
+  b.addEventListener("click", () => openLine(i));
+  poemEl.appendChild(b);
+});
+
+function openLine(i) {
+  if (solved.has(i)) { $("#toolMsg").textContent = "Line " + (i + 1) + " is already filed as a " + LINES[i].tool + ". Pick a line that isn’t green."; return; }
+  current = i; spellTries = 0;
+  $$(".line-btn").forEach((b, j) => b.setAttribute("aria-pressed", j === i ? "true" : "false"));
+  ins.hidden = false;
+  $("#insNo").textContent = i + 1;
+  $("#insLine").textContent = LINES[i].text;
+  $("#toolFix").classList.remove("show");
+  $("#spellFix").classList.remove("show");
+  $("#step2").classList.remove("show");
+  $("#toolChoices").hidden = false;
+  $("#spellIn").value = "";
+  $("#peek").textContent = "";
+  $("#peekBtn").hidden = true;
+  $("#toolMsg").textContent = "";
+  ins.scrollIntoView({ block: "nearest" });
+  $("#toolChoices .tool-btn").focus();
+}
+
+$$("#toolChoices .tool-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (current === null) return;
+    const chosen = btn.dataset.tool, actual = LINES[current].tool;
+    const fix = $("#toolFix");
+    if (chosen === actual) {
+      fix.classList.remove("show");
+      $("#toolChoices").hidden = true;
+      $("#step2").classList.add("show");
+      $("#spellIn").focus();
+      announce("Correct tool. Now type its name to file it.");
+    } else {
+      fix.innerHTML = "<b>Fix-up:</b> Not a " + chosen + ". " + TOOL_CLUES[chosen][actual];
+      fix.classList.add("show");
+      announce("Not quite. Read the clue and try again.");
+    }
+  });
+});
+
+function fileIt() {
+  if (current === null) return;
+  const typed = $("#spellIn").value.trim().toLowerCase();
+  const target = LINES[current].tool;
+  const fix = $("#spellFix");
+  if (!typed) { fix.innerHTML = "<b>Fix-up:</b> Type the tool’s name first."; fix.classList.add("show"); return; }
+  if (typed === target) {
+    const i = current;
+    solved.add(i);
+    const b = $("#line" + i);
+    b.classList.add("solved");
+    b.setAttribute("aria-pressed", "false");
+    b.querySelector(".ltxt").innerHTML = LINES[i].marked;
+    b.querySelector(".badge").textContent = target + " ✓";
+    b.setAttribute("aria-label", "Line " + (i + 1) + ", filed as " + target + ": " + LINES[i].text);
+    ins.hidden = true; current = null;
+    const n = solved.size;
+    $("#toolCount").textContent = n + " of " + LINES.length + " lines filed";
+    $("#toolBar").style.width = (n / LINES.length * 100) + "%";
+    const msg = $("#toolMsg");
+    if (n === LINES.length) {
+      msg.className = "msg good";
+      msg.textContent = "🎉 Case solved — every tool filed and spelt correctly! Screenshot your poem.";
+    } else {
+      msg.className = "msg good";
+      msg.textContent = "Filed! The highlighted words show the evidence. Tap another line.";
+    }
+    announce(target + " filed. " + n + " of " + LINES.length + " done.");
+    b.focus();
+  } else {
+    spellTries++;
+    let html = "<b>Fix-up:</b> “" + escapeHTML(typed) + "” isn’t quite right. " + SPELL_TIPS[target];
+    if (spellTries >= 2) { html += " Stuck? Use <b>Peek</b> to see it for two seconds."; $("#peekBtn").hidden = false; }
+    fix.innerHTML = html;
+    fix.classList.add("show");
+    announce("Not quite. Check the tip and try again.");
+  }
+}
+$("#fileBtn").addEventListener("click", fileIt);
+$("#spellIn").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); fileIt(); } });
+$("#peekBtn").addEventListener("click", () => {
+  if (current === null) return;
+  const p = $("#peek");
+  p.textContent = LINES[current].tool;
+  setTimeout(() => { p.textContent = ""; }, 2000);
+});
+
+/* =================== 4. EXPLAIN IT =================== */
+setupWriting({
+  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
+  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
+  spyEl: $("#spy"), words: ["poetry", "rhythm", "rhyme", "stanza", "ballad", "simile", "metaphor", "alliteration"],
+});
+
+/* =================== 5. CONFIDENCE =================== */
+setupConfidence();
+</script>
+</body>
+</html>

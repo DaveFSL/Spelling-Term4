@@ -1,0 +1,8 @@
+{
+  "name": "term4-casebook-tests",
+  "private": true,
+  "scripts": {
+    "test": "node test_hub.js && node test_l1.js && node test_l2.js && node test_l3.js"
+  },
+  "devDependencies": { "jsdom": "^24.0.0" }
+}
