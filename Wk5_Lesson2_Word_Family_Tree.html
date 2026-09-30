@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 4 Lesson 3 — Budget Cart | Year 6 Spelling</title>
+<title>Week 5 Lesson 2 — Word Family Tree | Year 6 Spelling</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -181,34 +181,28 @@
   .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
   .ready input{width:24px; height:24px; accent-color:var(--teal)}
 
-  /* ---------- Budget Cart (signature) ---------- */
-  .shop{display:grid; grid-template-columns:1fr; gap:16px}
-  @media (min-width:820px){ .shop{grid-template-columns:3fr 2fr} }
-  .shelf{display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:12px}
-  .item{border:2px solid var(--line); border-radius:14px; background:#fff; padding:12px; display:flex; flex-direction:column; gap:8px}
-  .item.bought{border-color:var(--good); background:#f3faf6}
-  .item-top{display:flex; justify-content:space-between; align-items:center; gap:8px}
-  .item-no{font-family:"Space Grotesk"; font-weight:700; font-size:.8rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em}
-  .price{font-family:"Space Grotesk"; font-weight:700; background:var(--amber); color:#fff; border-radius:999px; padding:2px 10px; font-size:.9rem}
-  .clue{margin:0; font-size:.95rem; line-height:1.4}
-  .len{font-size:.8rem; color:var(--ink-soft); margin:0}
-  .item input{font-family:"Atkinson Hyperlegible"; font-size:1.05rem; min-height:44px; padding:6px 10px; border:2px solid var(--line); border-radius:10px; width:100%; box-sizing:border-box}
-  .item input:focus-visible{outline:3px solid var(--teal); outline-offset:2px}
-  .item .btn{width:100%; justify-content:center}
-  .item-hint{font-size:.85rem; background:#fdf1de; border-left:4px solid var(--amber); border-radius:6px; padding:6px 8px; margin:0}
-  .item-word{font-family:"Space Grotesk"; font-weight:700; font-size:1.2rem; color:var(--good); margin:0}
-  .cart{border:2px solid var(--ink); border-radius:16px; background:#fff; padding:14px; align-self:start; position:sticky; top:84px}
-  .cart h3{margin-top:0}
-  .meter{height:18px; border-radius:999px; background:#eef0f4; overflow:hidden; border:1.5px solid var(--line)}
-  .meter span{display:block; height:100%; width:0; background:var(--teal); transition:width .3s}
-  .cart ul{list-style:none; margin:10px 0; padding:0; font-size:.95rem}
-  .cart li{display:flex; justify-content:space-between; border-bottom:1px dashed var(--line); padding:4px 0}
-  .receipt-slip{font-family:"Courier New", monospace; background:#fffdf7; border:1.5px dashed var(--ink-soft); border-radius:6px; padding:14px; margin-top:14px; font-size:.95rem}
-  .receipt-slip p{margin:2px 0}
-  .receipt-slip .rrow{display:flex; justify-content:space-between}
-  .receipt-slip .rc{text-align:center}
-  @media (max-width:819px){ .cart{position:static} }
-  @media (prefers-reduced-motion: reduce){ .meter span{transition:none} }
+  /* ---------- Word Family Tree (signature) ---------- */
+  .grove{border:2px solid var(--good); border-radius:18px; background:#fff; overflow:hidden}
+  .grove-top{background:var(--good); color:#fff; font-family:"Space Grotesk"; font-weight:600; padding:10px 16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:.92rem}
+  .grove-body{padding:18px 14px 14px}
+  .crown{display:flex; flex-wrap:wrap; justify-content:center; gap:12px; background:radial-gradient(ellipse at center, #e3f3ea 0%, #f3faf6 60%, #fff 100%); border-radius:120px 120px 30px 30px; padding:22px 12px 18px}
+  .branch{background:#fff; border:2px solid #bfe0cc; border-radius:14px; padding:10px 12px; min-width:200px; text-align:center}
+  .branch.grown{border-color:var(--good); background:#e3f3ea}
+  .branch-label{font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin:0 0 4px}
+  .branch-word{font-family:"Space Grotesk"; font-weight:700; font-size:1.35rem; margin:0 0 8px; color:var(--ink)}
+  .branch-word .gap{display:inline-block; min-width:60px; border-bottom:3px dashed var(--amber); color:var(--amber)}
+  .branch.grown .gap{border-bottom:none; color:var(--good)}
+  .ends{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .end{font-family:"Space Grotesk"; font-weight:700; font-size:1rem; min-height:44px; min-width:64px; padding:6px 12px; border-radius:10px; border:2px solid var(--line); background:#fcfbf7; color:var(--ink); cursor:pointer}
+  .end:hover{border-color:var(--good)}
+  .end.tried{border-color:var(--amber); background:#fdf1de; color:#a8540b}
+  .trunk{width:min(260px, 80%); margin:0 auto; background:#8a5a2b; color:#fff; border-radius:0 0 14px 14px; text-align:center; padding:14px 10px 12px; font-family:"Space Grotesk"; font-weight:700; font-size:1.4rem}
+  .trunk small{display:block; font-family:"Atkinson Hyperlegible"; font-weight:400; font-size:.78rem; opacity:.9; margin-bottom:2px}
+  .roots{height:10px; width:min(320px, 90%); margin:0 auto; background:#6b4420; border-radius:0 0 40px 40px}
+  .ftrack{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:14px}
+  .fchip{font-family:"Space Grotesk"; font-weight:700; font-size:.8rem; border-radius:999px; padding:4px 10px; border:1.5px solid var(--line); background:#fcfbf7; color:var(--ink-soft)}
+  .fchip.done{background:#e3f3ea; border-color:var(--good); color:var(--good)}
+  .fchip.now{border-color:var(--good); color:var(--good)}
 </style>
 </head>
 <body>
@@ -216,13 +210,13 @@
 <header class="band">
   <div class="band-inner">
     <a class="home-link" href="index.html">← Term 4 Casebook home</a>
-    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 4 · Lesson 3</p>
-    <h1>Budget Cart</h1>
-    <p class="hook">You have $40 to spend at the Word Mart — but the till only accepts perfect spelling. Fill your cart, then write an ad that tells the truth.</p>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 5 · Lesson 2</p>
+    <h1>Word Family Tree</h1>
+    <p class="hook">Some endings sound exactly the same. The trick? Every word has a family — and families keep their letters.</p>
     <div class="meta-row" aria-label="Lesson details">
-      <span>Case File 4: HASS</span>
-      <span>Focus: apply and assess</span>
-      <span>AC9E6LY09 · HASS AC9HS6K08</span>
+      <span>Case File 5: HPE</span>
+      <span>Focus: -ent/-ence, -ant/-ance, schwa endings</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
       <span>20 minutes</span>
     </div>
   </div>
@@ -232,9 +226,9 @@
   <div class="pills-inner">
     <a class="pill pill-home" href="index.html" aria-label="Back to the Term 4 Casebook home page">← Home</a>
     <a class="pill" href="#briefing">The Briefing</a>
-    <a class="pill" href="#cart">Budget Cart</a>
-    <a class="pill" href="#honestad">Honest Ad</a>
-    <a class="pill" href="#dictation">Dictation</a>
+    <a class="pill" href="#casenotes">Case Notes</a>
+    <a class="pill" href="#tree">Family Tree</a>
+    <a class="pill" href="#lcwc">Look · Cover · Write · Check</a>
     <a class="pill" href="#closed">Case Closed</a>
   </div>
 </nav>
@@ -243,7 +237,7 @@
 
   <!-- ===================== 1. WARM-UP ===================== -->
   <section id="briefing">
-    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Spot the correct spelling. Wrong answers show an orange <b>fix-up</b> with the trap to watch for.</p></div></div>
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Each question is a Year 7 change. Pick the best strategy. Wrong ones show an orange <b>fix-up</b> that points back to Lesson 1’s cards.</p></div></div>
     <div id="quiz"></div>
     <div class="scorebar" role="status" aria-live="polite">
       <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
@@ -252,87 +246,170 @@
     <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
   </section>
 
-  <!-- ===================== 2. BUDGET CART (signature) ===================== -->
-  <section id="cart">
-    <div class="sec-head"><span class="sec-no">02</span><div><h2>Budget Cart</h2><p class="lead">Each item on the shelf is a <b>word</b>. Read the clue, type the word, and press <b>Add to cart</b>. Only a perfect spelling gets through the till. After one try you’ll see how many letters it has; after two, a trap clue; after three, the first letters. Budget: <b>$40</b>.</p></div></div>
-    <div class="shop">
-      <div class="shelf" id="shelf" role="list" aria-label="Word Mart shelf"></div>
-      <aside class="cart" aria-labelledby="cartHead">
-        <h3 id="cartHead">🛒 My cart</h3>
-        <div class="meter" aria-hidden="true"><span id="meterBar"></span></div>
-        <p class="counter" id="cartStatus" role="status" aria-live="polite" style="margin-top:8px">Spent $0 of $40 · 0 of 8 items</p>
-        <ul id="cartList" aria-label="Items in my cart"></ul>
-        <div id="receiptOut" hidden></div>
-      </aside>
-    </div>
-    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your printed receipt</b> when all eight items are in your cart. The page won’t remember it.</div></div>
-  </section>
+  <!-- ===================== 2. TEACHING CARDS ===================== -->
+  <section id="casenotes">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Six clues for this week’s trickiest spellings. Say each word aloud as you read.</p></div></div>
+    <div class="teach-grid">
 
-  <!-- ===================== 3. HONEST AD (independent) ===================== -->
-  <section id="honestad">
-    <div class="sec-head"><span class="sec-no">03</span><div><h2>Honest Ad</h2><p class="lead">Invent a product (make up the brand name!) and write a short <b>honest</b> advertisement for it — facts only, no tricks. Use at least <b>four focus words</b>.</p></div></div>
-    <div class="card">
-      <label for="writebox" class="sr-only">Write your honest advertisement</label>
-      <textarea id="writebox" placeholder="Start writing here…"></textarea>
-      <div class="spy" id="spy"></div>
-      <div class="btn-row">
-        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
-        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
-      </div>
-      <div class="help-box" id="helpBox">
-        <h3 style="margin-top:0">Sentence starters</h3>
-        <p>• Introducing … — a … for every …<br>• Each … comes with a … so you can …<br>• We won’t tell you it’s a … — but it is …<br>• Before you … , compare the price and keep your …</p>
-        <p style="margin-bottom:4px"><b>Product ideas:</b> a drink bottle · a school bag · a bike helmet · a pencil case · a torch</p>
-      </div>
-      <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
-      <div class="reveal-box" id="exampleBox">
-        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
-          <b style="color:var(--ink)">Worked example (one way to do it):</b>
-          <span style="display:block;margin-top:6px">Introducing the TrailTough drink bottle from Brightwater, a small Australian manufacturer. It holds 750 mL and keeps water cold for six hours. Every <u>purchase</u> comes with a two-year <u>guarantee</u>, so keep your <u>receipt</u>. We won’t pretend it’s a <u>necessity</u> — but if you already need a bottle, it’s a smart choice for any <u>consumer</u>.</span>
-          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Facts you can check ✓ · No hurry, no “everyone has one” ✓ · Five focus words ✓</span>
+      <div class="card teach">
+        <h3>1 · -ent goes with -ence</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="independent becomes independence, and confident becomes confidence. The e stays in the ending.">
+            <text x="12" y="30" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">independ<tspan fill="#1f7a4d">ent</tspan></text>
+            <path d="M126 25 h28" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#f5a)"/>
+            <text x="162" y="30" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">independ<tspan fill="#1f7a4d">ence</tspan></text>
+            <text x="12" y="64" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">confid<tspan fill="#1f7a4d">ent</tspan></text>
+            <path d="M126 59 h28" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#f5a)"/>
+            <text x="162" y="64" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">confid<tspan fill="#1f7a4d">ence</tspan></text>
+            <defs><marker id="f5a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
         </div>
+        <p>When a describing word ends in <b>-ent</b>, its noun ends in <b>-ence</b>: independent → <b>independence</b>, confident → <b>confidence</b>, resilient → <b>resilience</b>. The <b>e</b> stays in the family.</p>
+        <div class="remember"><b>Remember:</b> -ent → -ence. The e stays.</div>
       </div>
-      <div class="card" style="background:#fbfaf6;box-shadow:none;margin-bottom:0">
-        <h3>Detective challenge (extension)</h3>
-        <p>Add a line about how your product is <b>sustainable</b>, or who the <b>entrepreneur</b> or <b>manufacturer</b> is behind it.</p>
+
+      <div class="card teach">
+        <h3>2 · -ant goes with -ance</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="important becomes importance, and distant becomes distance. The a stays in the ending.">
+            <text x="12" y="30" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">import<tspan fill="#e8930c">ant</tspan></text>
+            <path d="M118 25 h28" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#f5b)"/>
+            <text x="156" y="30" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">import<tspan fill="#e8930c">ance</tspan></text>
+            <text x="12" y="64" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">dist<tspan fill="#e8930c">ant</tspan></text>
+            <path d="M118 59 h28" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#f5b)"/>
+            <text x="156" y="64" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">dist<tspan fill="#e8930c">ance</tspan></text>
+            <defs><marker id="f5b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
+        </div>
+        <p>It works the other way too. When a word ends in <b>-ant</b>, its noun ends in <b>-ance</b>: important → <b>importance</b>, distant → <b>distance</b>, tolerant → <b>tolerance</b>.</p>
+        <div class="remember"><b>Remember:</b> -ant → -ance. The a stays.</div>
       </div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your honest ad and the Spelling Spy now, and upload to OneNote.</div></div>
+
+      <div class="card teach">
+        <h3>3 · Why you can’t hear it: the schwa</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="Confidence split into beats: CON is loud and stressed, fi and dence are quiet. The quiet ending sounds like uh, the schwa, so the vowel is hard to hear.">
+            <rect x="30" y="14" width="96" height="40" rx="8" fill="#1b2a4a"/>
+            <text x="78" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#fff">CON</text>
+            <rect x="136" y="22" width="60" height="28" rx="8" fill="#e1efee" stroke="#0e7c7b" stroke-width="1.5"/>
+            <text x="166" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="15" fill="#0e7c7b">fi</text>
+            <rect x="206" y="22" width="84" height="28" rx="8" fill="#fdf1de" stroke="#e8930c" stroke-width="1.5"/>
+            <text x="248" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="15" fill="#a8540b">dence</text>
+            <text x="248" y="72" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#a8540b">quiet “uh” — e or a?</text>
+          </svg>
+        </div>
+        <p>Say <b>CON</b>-fi-dence. The first beat is loud; the ending is quiet and squashed into an “uh” sound called the <b>schwa</b>. -ence and -ance sound the same, so your ears can’t tell you. Use the family word instead.</p>
+        <div class="remember"><b>Remember:</b> Can’t hear the vowel? Think of a family member you already know.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>4 · responsible → responsibility</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="responsible: the ble changes to bility, making responsibility. The i from ible stays.">
+            <text x="10" y="32" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a">respons<tspan fill="#0e7c7b">i</tspan>b<tspan fill="#e8930c" text-decoration="line-through">le</tspan></text>
+            <path d="M136 27 h26" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#f5c)"/>
+            <text x="168" y="32" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a">respons<tspan fill="#0e7c7b">i</tspan>b<tspan fill="#e8930c">ility</tspan></text>
+            <text x="160" y="66" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">same pattern: possible → possibility</text>
+            <defs><marker id="f5c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
+        </div>
+        <p>Words ending in <b>-ible</b> make nouns ending in <b>-ibility</b>: the <b>le</b> changes to <b>ility</b> and the <b>i</b> stays: responsible → <b>responsibility</b>, possible → possibility. <b>Opportunity</b> uses plain <b>-ity</b> too, with a double <b>p</b>.</p>
+        <div class="remember"><b>Remember:</b> -ible → -ibility. Keep the i.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>5 · The xi in anxious</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="anxious with the letters x and i highlighted. Together they make the sh sound. Family word: anxiety.">
+            <text x="160" y="38" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#1b2a4a">an<tspan fill="#e8930c">xi</tspan>ous</text>
+            <text x="160" y="68" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">x + i together say “sh” · family: an<tspan font-weight="700">x</tspan>iety</text>
+          </svg>
+        </div>
+        <p>Say <b>ANK</b>-shus. The “sh” sound is spelt <b>xi</b> — a rare spelling! The family word <b>anxiety</b> reminds you there’s an <b>x</b>. And it ends in <b>-ous</b>, like nervous.</p>
+        <div class="remember"><b>Remember:</b> anxious = an + xi + ous. The x is really there.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>6 · The sch in schedule</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="schedule and school both start with s c h. Some people say sked-ule and some say shed-ule, but the spelling is the same.">
+            <text x="80" y="36" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="24" fill="#1b2a4a"><tspan fill="#0e7c7b">sch</tspan>edule</text>
+            <text x="236" y="36" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="24" fill="#1b2a4a"><tspan fill="#0e7c7b">sch</tspan>ool</text>
+            <text x="160" y="68" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">“sked-ule” or “shed-ule”? Either way: sch</text>
+          </svg>
+        </div>
+        <p>Some people say “<b>sked</b>-ule” (ch = /k/, like <i>school</i> and <i>chemist</i>) and some say “<b>shed</b>-ule”. Either way, the spelling starts with <b>sch</b> and ends with <b>-ule</b>, like <i>module</i>.</p>
+        <div class="remember"><b>Remember:</b> A schedule is for school — both start with sch.</div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ===================== 4. DICTATION ===================== -->
-  <section id="dictation">
-    <div class="sec-head"><span class="sec-no">04</span><div><h2>Dictation</h2><p class="lead">Show what you know. Your teacher will read eight sentences.</p></div></div>
-    <div class="card">
-      <ol class="dict-steps">
-        <li>Number <b>1–8</b> down the page in your book.</li>
-        <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
-        <li>When you’ve written all eight, tick the box to unlock the answers. Then mark your own work honestly.</li>
-      </ol>
-      <label class="ready" for="dictReady"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
-      <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
-      <div id="dictAnswers" hidden>
-        <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
-        <ol class="dict-list" id="dictList"></ol>
-        <div class="scorebar" role="status" aria-live="polite" style="margin-top:12px"><span>My dictation score: <strong id="dictScore">0</strong> / <strong>8</strong></span></div>
-        <p class="counter" style="margin-top:8px">Missed one? Write it correctly three times next to your attempt, and check its trap in this week’s Lesson 2 cards.</p>
+  <!-- ===================== 3. WORD FAMILY TREE (signature) ===================== -->
+  <section id="tree">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Word Family Tree</h2><p class="lead">The <b>trunk</b> shows a word you know. Grow each <b>branch</b> by choosing its ending. Your ears won’t help (schwa!), so let the trunk tell you. Wrong picks turn amber with a clue — keep going until the whole tree is green.</p></div></div>
+    <div class="grove">
+      <div class="grove-top"><span>🌳 Family grove</span><span id="fCount"></span></div>
+      <div class="grove-body">
+        <div class="crown" id="crown" role="group" aria-label="Branches to grow"></div>
+        <div class="trunk" id="trunk"></div>
+        <div class="roots" aria-hidden="true"></div>
+        <div class="fixup" id="fFix" tabindex="-1"></div>
+        <p class="msg" id="fMsg" role="status" aria-live="polite" style="text-align:center"></p>
+        <div class="btn-row" style="justify-content:center">
+          <button class="btn" id="fNext" type="button" hidden>Next tree ›</button>
+          <button class="btn ghost" id="fChallenge" type="button" hidden>Grow the challenge trees (extension)</button>
+        </div>
+        <div class="ftrack" id="fTrack" aria-label="Trees grown"></div>
       </div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Photograph your dictation page</b> after marking, and screenshot your score. Upload both to OneNote.</div></div>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your grove</b> when all eight chips are green. The page won’t remember it.</div></div>
+  </section>
+
+  <!-- ===================== 4. LCWC (independent) ===================== -->
+  <section id="lcwc">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Look · Cover · Write · Check</h2><p class="lead">Four tricky words, two rounds each. <b>Look</b> at the orange part, <b>cover</b> it, <b>write</b> it from memory, then <b>check</b>. Checking stays locked until you’ve typed your attempt.</p></div></div>
+    <div class="card">
+      <div class="steps" aria-hidden="true"><span class="stp" data-s="look">1 Look</span><span class="stp" data-s="cover">2 Cover</span><span class="stp" data-s="write">3 Write</span><span class="stp" data-s="check">4 Check</span></div>
+      <p class="counter" id="lcRound"></p>
+      <div class="lc-stage">
+        <span class="lc-word" id="lcWord"></span>
+        <div class="lc-cover" id="lcCover" aria-hidden="true">covered — write it from memory</div>
+      </div>
+      <div class="btn-row"><button class="btn" id="coverBtn" type="button">Cover it</button></div>
+      <div id="writeArea" hidden>
+        <label for="lcIn" class="sr-only">Type the word from memory</label>
+        <input class="type-in" id="lcIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word from memory" style="margin-top:12px">
+        <div class="btn-row">
+          <button class="btn teal" id="lcCheck" type="button" disabled>Check 🔒</button>
+          <button class="btn ghost" id="lcHelpBtn" type="button" aria-expanded="false" aria-controls="lcHelpBox">I need help ▾</button>
+        </div>
+        <div class="help-box" id="lcHelpBox"></div>
+      </div>
+      <div class="compare" id="compare" aria-hidden="true"></div>
+      <p class="msg" id="lcMsg"></p>
+      <p class="sr-only" id="lcSR" aria-live="polite"></p>
+      <div class="btn-row"><button class="btn ghost" id="lcNext" type="button" hidden>Next word ›</button></div>
+      <table class="results" aria-label="Look Cover Write Check results">
+        <thead><tr><th scope="col">Word</th><th scope="col">Round 1</th><th scope="col">Round 2</th></tr></thead>
+        <tbody id="resBody"></tbody>
+      </table>
+      <div class="btn-row"><button class="btn ghost" id="challengeBtn" type="button">Add challenge words (extension)</button></div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This page does not save.</b> Screenshot your results table before you close the page, and upload it to OneNote.</div></div>
     </div>
   </section>
 
   <!-- ===================== 5. CASE CLOSED ===================== -->
   <section id="closed">
-    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Case File 4 is done. Tick off your evidence, rate your confidence, and make sure everything is captured.</p></div></div>
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Quick exit check. Tick off your evidence, rate your confidence, and make sure everything is captured.</p></div></div>
     <div class="card">
       <h3>Evidence to capture (screenshot each one)</h3>
       <ul class="check-list">
         <li><label for="exit1"><input type="checkbox" id="exit1"><span>My Briefing score and any fix-up notes I read</span></label></li>
-        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My printed Budget Cart receipt</span></label></li>
-        <li><label for="exit3"><input type="checkbox" id="exit3"><span>My Honest Ad and Spelling Spy</span></label></li>
-        <li><label for="exit4"><input type="checkbox" id="exit4"><span>A photo of my marked dictation page and my score</span></label></li>
+        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My Word Family Tree chips (all green)</span></label></li>
+        <li><label for="exit3"><input type="checkbox" id="exit3"><span>My Look · Cover · Write · Check results table</span></label></li>
       </ul>
-      <h3 style="margin-top:18px">How confident am I with the Case File 4 words?</h3>
+      <h3 style="margin-top:18px">Can I explain how to choose between -ence and -ance?</h3>
       <div class="confi" id="confi" role="group" aria-label="Confidence rating">
         <button type="button" aria-pressed="false">Still cracking it</button>
         <button type="button" aria-pressed="false">Getting there</button>
@@ -345,7 +422,7 @@
 </main>
 
 <footer>
-  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 4 Lesson 3: Budget Cart · ACARA v9 AC9E6LY09, linked to HASS AC9HS6K08. Word Mart, TrailTough and Brightwater are made up. All content original. Works offline — no data is collected or stored.</p>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 5 Lesson 2: Word Family Tree · ACARA v9 AC9E6LY08 &amp; AC9E6LY09, linked to HPE AC9HP6P02. All content original. Works offline — no data is collected or stored.</p>
 </footer>
 
 <div class="sr-only" id="liveRegion" aria-live="assertive"></div>
@@ -630,119 +707,132 @@ function setupDictation(DICTATION) {
 }
 
 
-/* =================== 1. WARM-UP (spelling choices) =================== */
+/* =================== 1. WARM-UP (Year 7 change → strategy) =================== */
 buildQuiz([
-  { stem: "Which spelling is correct?", opts: ["reciept", "receipt", "receit"], correct: 1,
-    fix: "<b>receipt</b> — <b>ei</b> after c, and a silent <b>p</b> (think <i>reception</i>)." },
-  { stem: "Which spelling is correct?", opts: ["garantee", "guarentee", "guarantee"], correct: 2,
-    fix: "<b>guarantee</b> — a silent <b>u</b> after the g, <b>-antee</b>, and a double e." },
-  { stem: "Which spelling is correct?", opts: ["neccessity", "necessity", "nesessity"], correct: 1,
-    fix: "<b>necessity</b> — one collar, two sleeves: one <b>c</b>, two <b>s</b>." },
-  { stem: "Which spelling is correct?", opts: ["persuasive", "persuadive", "pursuasive"], correct: 0,
-    fix: "<b>persuasive</b> — persuade drops its <b>de</b> and gains an <b>s</b>. It starts with <b>per-</b>." },
-  { stem: "Which spelling is correct?", opts: ["influance", "influence", "influense"], correct: 1,
-    fix: "<b>influence</b> — the ending is spelt <b>-ence</b>." },
+  { stem: "Change: a new timetable with a different room for each class. Best strategy?", opts: ["Follow whoever walks in front of you", "Take a photo of your schedule and check it each break", "Hope you remember"], correct: 1,
+    fix: "Your <b>schedule</b> tells you where to go. Checking it is the strategy. (Lesson 1, card 1)" },
+  { stem: "Change: nobody reminds you to pack your bag. Best strategy?", opts: ["Pack it the night before, by yourself", "Wait for a teacher to remind you"], correct: 0,
+    fix: "Doing it yourself is being <b>independent</b>. (Lesson 1, card 1)" },
+  { stem: "Change: you feel anxious on your first morning. Best strategy?", opts: ["Pretend you’re fine and tell no one", "Name the feeling and talk to someone you trust"], correct: 1,
+    fix: "Feeling <b>anxious</b> is normal. Naming it and talking helps it shrink. (Lesson 1, card 3)" },
+  { stem: "Change: you try out for a team and don’t make it. Best strategy?", opts: ["Use resilience and try again next time", "Never try out for anything again"], correct: 0,
+    fix: "<b>Resilience</b> means bouncing back and having another go. (Lesson 1, card 2)" },
+  { stem: "Change: there are lots of new clubs you’ve never tried. Best strategy?", opts: ["Only do what your friends do", "See it as an opportunity and try one"], correct: 1,
+    fix: "A new club is an <b>opportunity</b> — a chance to try something. (Lesson 1, card 2)" },
 ]);
 
-/* =================== 2. BUDGET CART =================== */
-const BUDGET = 40;
-const ITEMS = [
-  { w: "consumer", p: 4, clue: "A person who buys and uses goods and services.", trap: "Build it from consume: the suffix -er starts with a vowel, so drop the e." },
-  { w: "advertisement", p: 6, clue: "A poster, video or post that tries to sell you something.", trap: "advertise + a consonant suffix — keep the e." },
-  { w: "persuasive", p: 5, clue: "Describes language chosen to convince you.", trap: "Start from the verb meaning ‘to convince’. Its de changes to s before -ive." },
-  { w: "influence", p: 4, clue: "To have an effect on someone’s choices.", trap: "The ending is -ence, not -ance." },
-  { w: "purchase", p: 3, clue: "To buy something.", trap: "It ends in -ase, like case and chase — not -ice or -iss." },
-  { w: "necessity", p: 5, clue: "Something you truly need, like food or shelter.", trap: "One collar, two sleeves." },
-  { w: "receipt", p: 3, clue: "The slip of paper that proves what you paid.", trap: "ei after c, and a silent letter before the t (think reception)." },
-  { w: "guarantee", p: 6, clue: "A promise that a product will work or be fixed.", trap: "A silent letter guards the hard g, and it ends in a double letter." },
+/* =================== 3. WORD FAMILY TREE =================== */
+const ENT = "The trunk ends in <b>-ent</b> (or -ence). Families keep their vowel: -ent, -ence and -ently all use <b>e</b>.";
+const ANT = "The trunk ends in <b>-ant</b> (or -ance). Families keep their vowel: -ant, -ance and -antly all use <b>a</b>.";
+const TREES = [
+  { trunk: "independent", kind: "describing word", fix: ENT, br: [["noun", "independ", "ence", ["ence", "ance"]], ["how you do it", "independ", "ently", ["ently", "antly"]]] },
+  { trunk: "confident", kind: "describing word", fix: ENT, br: [["noun", "confid", "ence", ["ence", "ance"]], ["how you do it", "confid", "ently", ["ently", "antly"]]] },
+  { trunk: "resilience", kind: "noun", fix: ENT, br: [["describing word", "resili", "ent", ["ent", "ant"]]] },
+  { trunk: "important", kind: "describing word", fix: ANT, br: [["noun", "import", "ance", ["ance", "ence"]]] },
+  { trunk: "distance", kind: "noun", fix: ANT, br: [["describing word", "dist", "ant", ["ant", "ent"]]] },
+  { trunk: "patient", kind: "describing word", fix: ENT, br: [["noun", "pati", "ence", ["ence", "ance"]], ["how you do it", "pati", "ently", ["ently", "antly"]]] },
+  { trunk: "tolerant", kind: "describing word", fix: ANT, br: [["noun", "toler", "ance", ["ance", "ence"]]] },
+  { trunk: "responsible", kind: "describing word", fix: "The trunk ends in <b>-ible</b>. The noun changes le to <b>ility</b> and keeps the <b>i</b>: -ibility.", br: [["noun", "responsib", "ility", ["ility", "ality", "lety"]]] },
 ];
-let spent = 0;
-const bought = [];
-ITEMS.forEach((it, i) => {
-  it.tries = 0;
-  const card = document.createElement("div");
-  card.className = "item"; card.id = "bcItem" + i; card.setAttribute("role", "listitem");
-  card.innerHTML =
-    '<div class="item-top"><span class="item-no">Item ' + (i + 1) + '</span><span class="price">$' + it.p + "</span></div>" +
-    '<p class="clue">' + escapeHTML(it.clue) + "</p>" +
-    '<p class="len" id="bcLen' + i + '" hidden>' + it.w.length + " letters</p>" +
-    '<label for="bcIn' + i + '" class="sr-only">Item ' + (i + 1) + ": type the word. Clue: " + escapeHTML(it.clue) + "</label>" +
-    '<input id="bcIn' + i + '" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word">' +
-    '<button class="btn teal" id="bcAdd' + i + '" type="button" disabled>Add to cart 🔒</button>' +
-    '<p class="item-hint" id="bcHint' + i + '" hidden></p>';
-  $("#shelf").appendChild(card);
-  const inp = $("#bcIn" + i), btn = $("#bcAdd" + i);
-  inp.addEventListener("input", () => {
-    const ok = inp.value.trim().length > 0;
-    btn.disabled = !ok; btn.textContent = ok ? "Add to cart" : "Add to cart 🔒";
+const CHALLENGE = [
+  { trunk: "adolescent", kind: "describing word", fix: ENT, br: [["noun", "adolesc", "ence", ["ence", "ance"]]] },
+  { trunk: "persevere", kind: "verb", fix: "No -ent or -ant family member helps here — this one you just have to learn: <b>persever + ance</b>.", br: [["noun", "persever", "ance", ["ance", "ence"]]] },
+];
+const queue = TREES.slice();
+const grown = [];
+let tPos = 0, challengeAdded = false;
+function drawTree() {
+  const t = queue[tPos];
+  $("#trunk").innerHTML = "<small>trunk · " + t.kind + "</small>" + t.trunk;
+  const crown = $("#crown"); crown.innerHTML = "";
+  t.br.forEach(([label, stem, ans, opts], b) => {
+    const card = document.createElement("div");
+    card.className = "branch"; card.id = "br" + b;
+    card.innerHTML = '<p class="branch-label">' + label + '</p><p class="branch-word">' + stem + '<span class="gap" id="gap' + b + '">?</span></p><div class="ends" role="group" aria-label="Choose the ending for ' + label + '"></div>';
+    shuffle(opts.slice()).forEach(o => {
+      const btn = document.createElement("button");
+      btn.type = "button"; btn.className = "end"; btn.textContent = "-" + o; btn.dataset.o = o;
+      btn.setAttribute("aria-label", stem + " plus " + o);
+      btn.addEventListener("click", () => pick(b, o, btn));
+      card.querySelector(".ends").appendChild(btn);
+    });
+    crown.appendChild(card);
   });
-  inp.addEventListener("keydown", e => { if (e.key === "Enter" && !btn.disabled) btn.click(); });
-  btn.addEventListener("click", () => tryBuy(i));
-});
-function tryBuy(i) {
-  const it = ITEMS[i], inp = $("#bcIn" + i), hint = $("#bcHint" + i);
-  const guess = inp.value.trim().toLowerCase();
-  if (!guess) return;
-  if (guess === it.w) {
-    spent += it.p; bought.push(i);
-    const card = $("#bcItem" + i);
-    card.classList.add("bought");
-    inp.remove(); $("#bcAdd" + i).remove(); hint.hidden = true;
-    const done = document.createElement("p"); done.className = "item-word"; done.textContent = "✓ " + it.w;
-    card.appendChild(done);
-    renderCart();
-    announce("Added " + it.w + " for $" + it.p + ". Spent $" + spent + " of $" + BUDGET + ".");
-    const next = $$(".item input")[0]; if (next) next.focus();
+  $("#fFix").classList.remove("show"); $("#fMsg").textContent = ""; $("#fMsg").className = "msg";
+  $("#fNext").hidden = true; $("#fChallenge").hidden = true;
+  $("#fCount").textContent = "Tree " + (tPos + 1) + " of " + queue.length;
+  renderTrack();
+}
+function pick(b, o, btn) {
+  const t = queue[tPos], [label, stem, ans] = t.br[b];
+  const fix = $("#fFix");
+  if (o === ans) {
+    const card = $("#br" + b);
+    card.classList.add("grown");
+    $("#gap" + b).textContent = ans;
+    $$(".end", card).forEach(x => { x.disabled = true; });
+    fix.classList.remove("show");
+    announce("Grown: " + stem + ans + ".");
+    if ($$(".branch.grown").length === t.br.length) {
+      grown[tPos] = true;
+      renderTrack();
+      const coreDone = TREES.every((_, i) => grown[i]);
+      const allDone = grown.filter(Boolean).length === queue.length;
+      const msg = $("#fMsg"); msg.className = "msg good";
+      if (allDone) {
+        msg.textContent = coreDone && challengeAdded ? "🎉 Every tree grown, challenge trees too! Screenshot your grove." : "🎉 All eight trees grown! Screenshot your grove.";
+        if (!challengeAdded) $("#fChallenge").hidden = false;
+      } else {
+        msg.textContent = "✓ The " + t.trunk + " family is complete.";
+        $("#fNext").hidden = false; $("#fNext").focus();
+      }
+      announce(msg.textContent);
+    } else {
+      const nextBtn = $$(".end").find(x => !x.disabled); if (nextBtn) nextBtn.focus();
+    }
   } else {
-    it.tries++;
-    let t = "✗ The till won’t accept that spelling. Check it letter by letter and try again.";
-    $("#bcLen" + i).hidden = false;
-    if (it.tries >= 2) t = "✗ Trap clue: " + it.trap;
-    if (it.tries >= 3) t += " It starts with “" + it.w.slice(0, 3) + "”.";
-    hint.textContent = t; hint.hidden = false;
-    announce(t);
-    inp.focus(); inp.select();
+    btn.classList.add("tried");
+    fix.innerHTML = "<b>Not -" + escapeHTML(o) + ":</b> look at the trunk. " + t.fix;
+    fix.classList.add("show"); fix.focus();
   }
 }
-function renderCart() {
-  $("#meterBar").style.width = Math.min(100, spent / BUDGET * 100) + "%";
-  $("#cartStatus").textContent = "Spent $" + spent + " of $" + BUDGET + " · " + bought.length + " of " + ITEMS.length + " items";
-  $("#cartList").innerHTML = bought.map(i => "<li><span>" + ITEMS[i].w + "</span><span>$" + ITEMS[i].p + "</span></li>").join("");
-  if (bought.length === ITEMS.length) printReceipt();
+function renderTrack() {
+  const tr = $("#fTrack"); tr.innerHTML = "";
+  queue.forEach((t, i) => {
+    const c = document.createElement("span");
+    c.className = "fchip" + (grown[i] ? " done" : "") + (i === tPos && !grown[i] ? " now" : "");
+    c.textContent = grown[i] ? t.trunk + " ✓" : "tree " + (i + 1);
+    tr.appendChild(c);
+  });
 }
-function printReceipt() {
-  const out = $("#receiptOut");
-  out.innerHTML = '<div class="receipt-slip" role="group" aria-label="Your printed receipt">' +
-    '<p class="rc"><b>WORD MART</b></p><p class="rc">Year 6 Detective Branch</p><p class="rc">--------------------</p>' +
-    bought.map(i => '<p class="rrow"><span>' + ITEMS[i].w + "</span><span>$" + ITEMS[i].p + ".00</span></p>").join("") +
-    '<p class="rc">--------------------</p>' +
-    '<p class="rrow"><b>TOTAL</b><b>$' + spent + '.00</b></p>' +
-    '<p class="rrow"><span>Budget</span><span>$' + BUDGET + '.00</span></p>' +
-    '<p class="rrow"><span>Change</span><span>$' + (BUDGET - spent) + '.00</span></p>' +
-    '<p class="rc">--------------------</p><p class="rc">Keep this receipt — it’s your</p><p class="rc">guarantee of perfect spelling!</p></div>';
-  out.hidden = false;
-  const m = $("#cartStatus"); m.textContent = "🎉 Cart complete — under budget with $" + (BUDGET - spent) + " change! Screenshot your receipt.";
-  m.className = "msg good";
-}
-
-/* =================== 3. HONEST AD =================== */
-setupWriting({
-  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
-  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
-  spyEl: $("#spy"), words: ["consumer", "advertisement", "persuasive", "influence", "purchase", "necessity", "receipt", "guarantee"],
+$("#fNext").addEventListener("click", () => {
+  const n = queue.findIndex((_, i) => !grown[i]);
+  if (n < 0) return;
+  tPos = n; drawTree();
+  const first = $(".end"); if (first) first.focus();
 });
+$("#fChallenge").addEventListener("click", () => {
+  if (challengeAdded) return;
+  challengeAdded = true;
+  CHALLENGE.forEach(c => queue.push(c));
+  tPos = TREES.length; drawTree();
+  const first = $(".end"); if (first) first.focus();
+});
+drawTree();
 
-/* =================== 4. DICTATION (must match the unit plan exactly) =================== */
-setupDictation([
-  ["consumer", "A smart consumer compares prices before buying."],
-  ["advertisement", "The advertisement promised that the shoes would make you run faster."],
-  ["persuasive", "Advertisers use persuasive language to make us want things."],
-  ["influence", "Friends can influence the choices we make when we shop."],
-  ["purchase", "Think carefully before you purchase something expensive."],
-  ["necessity", "Food and shelter are a necessity, but a new game is a want."],
-  ["receipt", "Keep the receipt in case you need to return the item."],
-  ["guarantee", "The shop gave a one-year guarantee on the headphones."],
-]);
+/* =================== 4. LOOK COVER WRITE CHECK =================== */
+setupLCWC({
+  core: [
+    { w: "responsibility", tp: [9, 10, 11, 12, 13], tip: "responsible → the <b>le</b> becomes <b>ility</b>, and the i stays." },
+    { w: "resilience", tp: [6, 7, 8, 9], tip: "Think <b>resilient</b>: -ent → <b>-ence</b>." },
+    { w: "independent", tp: [8, 9, 10], tip: "in + depend + <b>ent</b>. Think <i>independence</i> — the family uses e." },
+    { w: "anxious", tp: [2, 3], tip: "The “sh” sound is spelt <b>xi</b>. Think <i>anxiety</i>." },
+  ],
+  challenge: [
+    { w: "adolescence", tp: [5, 6], tip: "The /s/ in the middle is spelt <b>sc</b>, then <b>-ence</b> (adolescent → adolescence)." },
+    { w: "conscientious", tp: [3, 4, 5], tip: "It hides <b>science</b>: con + <b>sci</b>ent + ious." },
+  ],
+});
 
 /* =================== 5. CONFIDENCE =================== */
 setupConfidence();

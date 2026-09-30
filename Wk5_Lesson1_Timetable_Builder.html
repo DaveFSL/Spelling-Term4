@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 4 Lesson 3 — Budget Cart | Year 6 Spelling</title>
+<title>Week 5 Lesson 1 — Timetable Builder | Year 6 Spelling</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -181,34 +181,30 @@
   .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
   .ready input{width:24px; height:24px; accent-color:var(--teal)}
 
-  /* ---------- Budget Cart (signature) ---------- */
-  .shop{display:grid; grid-template-columns:1fr; gap:16px}
-  @media (min-width:820px){ .shop{grid-template-columns:3fr 2fr} }
-  .shelf{display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:12px}
-  .item{border:2px solid var(--line); border-radius:14px; background:#fff; padding:12px; display:flex; flex-direction:column; gap:8px}
-  .item.bought{border-color:var(--good); background:#f3faf6}
-  .item-top{display:flex; justify-content:space-between; align-items:center; gap:8px}
-  .item-no{font-family:"Space Grotesk"; font-weight:700; font-size:.8rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em}
-  .price{font-family:"Space Grotesk"; font-weight:700; background:var(--amber); color:#fff; border-radius:999px; padding:2px 10px; font-size:.9rem}
-  .clue{margin:0; font-size:.95rem; line-height:1.4}
-  .len{font-size:.8rem; color:var(--ink-soft); margin:0}
-  .item input{font-family:"Atkinson Hyperlegible"; font-size:1.05rem; min-height:44px; padding:6px 10px; border:2px solid var(--line); border-radius:10px; width:100%; box-sizing:border-box}
-  .item input:focus-visible{outline:3px solid var(--teal); outline-offset:2px}
-  .item .btn{width:100%; justify-content:center}
-  .item-hint{font-size:.85rem; background:#fdf1de; border-left:4px solid var(--amber); border-radius:6px; padding:6px 8px; margin:0}
-  .item-word{font-family:"Space Grotesk"; font-weight:700; font-size:1.2rem; color:var(--good); margin:0}
-  .cart{border:2px solid var(--ink); border-radius:16px; background:#fff; padding:14px; align-self:start; position:sticky; top:84px}
-  .cart h3{margin-top:0}
-  .meter{height:18px; border-radius:999px; background:#eef0f4; overflow:hidden; border:1.5px solid var(--line)}
-  .meter span{display:block; height:100%; width:0; background:var(--teal); transition:width .3s}
-  .cart ul{list-style:none; margin:10px 0; padding:0; font-size:.95rem}
-  .cart li{display:flex; justify-content:space-between; border-bottom:1px dashed var(--line); padding:4px 0}
-  .receipt-slip{font-family:"Courier New", monospace; background:#fffdf7; border:1.5px dashed var(--ink-soft); border-radius:6px; padding:14px; margin-top:14px; font-size:.95rem}
-  .receipt-slip p{margin:2px 0}
-  .receipt-slip .rrow{display:flex; justify-content:space-between}
-  .receipt-slip .rc{text-align:center}
-  @media (max-width:819px){ .cart{position:static} }
-  @media (prefers-reduced-motion: reduce){ .meter span{transition:none} }
+  /* ---------- Timetable Builder (signature) ---------- */
+  .match-wrap{display:grid; grid-template-columns:1fr; gap:16px}
+  @media(min-width:860px){.match-wrap{grid-template-columns:190px 1fr}}
+  .bank{display:flex; flex-wrap:wrap; gap:9px; align-content:flex-start}
+  @media(min-width:860px){.bank{flex-direction:column; position:sticky; top:74px; align-self:start}}
+  .bank-label{font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); width:100%}
+  .wtile{font-family:"Space Grotesk"; font-weight:700; font-size:1rem; cursor:grab; background:var(--teal); color:#fff; border:none; border-radius:10px; padding:11px 14px; min-height:46px; min-width:44px; touch-action:none; user-select:none; -webkit-user-select:none; box-shadow:0 3px 0 #0a5b5a; text-align:left}
+  .wtile:active{cursor:grabbing}
+  .wtile.picked{outline:3px dashed var(--ink); outline-offset:3px}
+  .wtile.used{opacity:.35; box-shadow:none; cursor:default}
+  .planner{border:2px solid var(--ink); border-radius:16px; overflow:hidden; background:#fff}
+  .planner-top{background:var(--ink); color:#fff; font-family:"Space Grotesk"; font-weight:600; padding:10px 16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:.92rem}
+  .period{display:grid; grid-template-columns:92px 1fr; border-top:1.5px solid var(--line)}
+  .period:first-of-type{border-top:none}
+  .ptime{background:#f4f1e8; padding:12px 10px; font-family:"Space Grotesk"; font-weight:700; font-size:.88rem; color:var(--ink)}
+  .ptime small{display:block; font-weight:600; color:var(--ink-soft); font-size:.78rem; margin-top:2px}
+  .pbody{padding:10px 14px; font-size:.98rem; line-height:1.9}
+  .slot{display:inline-flex; vertical-align:middle; min-width:132px; min-height:44px; border:2.5px dashed #bcd9d8; border-radius:10px; background:#fff; align-items:center; justify-content:center; font-family:"Space Grotesk"; font-weight:700; color:var(--ink-soft); cursor:pointer; padding:0 10px; margin:2px 0; font-size:.92rem}
+  .slot.over{background:var(--teal-soft); border-color:var(--teal)}
+  .period.right{background:var(--good-soft)}
+  .period.right .slot{border-style:solid; border-color:var(--good); color:var(--good); cursor:default}
+  .period.nope .slot{border-color:#c0392b; color:var(--bad)}
+  .drag-ghost{position:fixed; z-index:999; pointer-events:none; font-family:"Space Grotesk"; font-weight:700; background:var(--teal); color:#fff; border-radius:10px; padding:11px 14px; box-shadow:0 8px 20px rgba(0,0,0,.2)}
+  @media(max-width:520px){ .period{grid-template-columns:1fr} .ptime{padding:8px 12px} }
 </style>
 </head>
 <body>
@@ -216,13 +212,13 @@
 <header class="band">
   <div class="band-inner">
     <a class="home-link" href="index.html">← Term 4 Casebook home</a>
-    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 4 · Lesson 3</p>
-    <h1>Budget Cart</h1>
-    <p class="hook">You have $40 to spend at the Word Mart — but the till only accepts perfect spelling. Fill your cart, then write an ad that tells the truth.</p>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 5 · Lesson 1</p>
+    <h1>Timetable Builder</h1>
+    <p class="hook">Next year is a big change. Learn the words for it, then plan a Year 7 day that’s ready for anything.</p>
     <div class="meta-row" aria-label="Lesson details">
-      <span>Case File 4: HASS</span>
-      <span>Focus: apply and assess</span>
-      <span>AC9E6LY09 · HASS AC9HS6K08</span>
+      <span>Case File 5: HPE</span>
+      <span>Focus: words for a big change</span>
+      <span>AC9E6LY09 · HPE AC9HP6P02</span>
       <span>20 minutes</span>
     </div>
   </div>
@@ -232,9 +228,9 @@
   <div class="pills-inner">
     <a class="pill pill-home" href="index.html" aria-label="Back to the Term 4 Casebook home page">← Home</a>
     <a class="pill" href="#briefing">The Briefing</a>
-    <a class="pill" href="#cart">Budget Cart</a>
-    <a class="pill" href="#honestad">Honest Ad</a>
-    <a class="pill" href="#dictation">Dictation</a>
+    <a class="pill" href="#casenotes">Case Notes</a>
+    <a class="pill" href="#timetable">Timetable Builder</a>
+    <a class="pill" href="#strategy">My Strategy</a>
     <a class="pill" href="#closed">Case Closed</a>
   </div>
 </nav>
@@ -243,7 +239,7 @@
 
   <!-- ===================== 1. WARM-UP ===================== -->
   <section id="briefing">
-    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Spot the correct spelling. Wrong answers show an orange <b>fix-up</b> with the trap to watch for.</p></div></div>
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Case File 4 check-in: how are last week’s consumer words going? Tap an answer. Wrong ones show an orange <b>fix-up</b>.</p></div></div>
     <div id="quiz"></div>
     <div class="scorebar" role="status" aria-live="polite">
       <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
@@ -252,27 +248,101 @@
     <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
   </section>
 
-  <!-- ===================== 2. BUDGET CART (signature) ===================== -->
-  <section id="cart">
-    <div class="sec-head"><span class="sec-no">02</span><div><h2>Budget Cart</h2><p class="lead">Each item on the shelf is a <b>word</b>. Read the clue, type the word, and press <b>Add to cart</b>. Only a perfect spelling gets through the till. After one try you’ll see how many letters it has; after two, a trap clue; after three, the first letters. Budget: <b>$40</b>.</p></div></div>
-    <div class="shop">
-      <div class="shelf" id="shelf" role="list" aria-label="Word Mart shelf"></div>
-      <aside class="cart" aria-labelledby="cartHead">
-        <h3 id="cartHead">🛒 My cart</h3>
-        <div class="meter" aria-hidden="true"><span id="meterBar"></span></div>
-        <p class="counter" id="cartStatus" role="status" aria-live="polite" style="margin-top:8px">Spent $0 of $40 · 0 of 8 items</p>
-        <ul id="cartList" aria-label="Items in my cart"></ul>
-        <div id="receiptOut" hidden></div>
-      </aside>
+  <!-- ===================== 2. TEACHING CARDS ===================== -->
+  <section id="casenotes">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Eight words for the move to Year 7, in three groups: what changes, how we manage it, and how it feels.</p></div></div>
+    <div class="teach-grid">
+
+      <div class="card teach">
+        <h3>1 · What changes: secondary, schedule, independent</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="A small primary school building with an arrow to a bigger secondary school building. A timetable grid is labelled schedule, and a student walking alone is labelled independent.">
+            <rect x="10" y="40" width="60" height="36" rx="3" fill="#fbe7c8" stroke="#e8930c" stroke-width="2"/>
+            <path d="M6 42 l34 -20 l34 20z" fill="#fbe7c8" stroke="#e8930c" stroke-width="2"/>
+            <text x="40" y="88" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="11" fill="#a8540b">primary</text>
+            <path d="M80 56 h26" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#t5a)"/>
+            <rect x="112" y="22" width="84" height="54" rx="3" fill="#e1efee" stroke="#0e7c7b" stroke-width="2"/>
+            <g fill="#fff" stroke="#0e7c7b" stroke-width="1.5"><rect x="120" y="30" width="14" height="12"/><rect x="147" y="30" width="14" height="12"/><rect x="174" y="30" width="14" height="12"/><rect x="120" y="50" width="14" height="12"/><rect x="174" y="50" width="14" height="12"/></g>
+            <rect x="147" y="52" width="14" height="24" fill="#0e7c7b"/>
+            <text x="154" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#0e7c7b">secondary</text>
+            <rect x="214" y="16" width="96" height="56" rx="6" fill="#fff" stroke="#1b2a4a" stroke-width="2"/>
+            <g stroke="#56607a" stroke-width="1.5"><line x1="214" y1="30" x2="310" y2="30"/><line x1="214" y1="44" x2="310" y2="44"/><line x1="214" y1="58" x2="310" y2="58"/><line x1="246" y1="16" x2="246" y2="72"/><line x1="278" y1="16" x2="278" y2="72"/></g>
+            <text x="262" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#1b2a4a">schedule</text>
+            <defs><marker id="t5a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
+        </div>
+        <p>In Queensland, Year 7 is the start of <b>secondary</b> school (high school). You follow a <b>schedule</b> — a timetable of classes, rooms and times — and you become more <b>independent</b>: doing things for yourself without being reminded.</p>
+        <div class="remember"><b>Remember:</b> Secondary school = a new schedule and more independent learning.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>2 · How we manage it: responsibility, opportunity, resilience</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="Three icons: a backpack labelled responsibility, an open door labelled opportunity, and a bouncing ball labelled resilience.">
+            <rect x="26" y="20" width="48" height="52" rx="12" fill="#fbe7c8" stroke="#e8930c" stroke-width="2.5"/>
+            <path d="M38 20 q12 -14 24 0" fill="none" stroke="#e8930c" stroke-width="2.5"/>
+            <rect x="36" y="44" width="28" height="14" rx="4" fill="#fff" stroke="#e8930c" stroke-width="2"/>
+            <text x="50" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="11" fill="#a8540b">responsibility</text>
+            <rect x="136" y="10" width="46" height="64" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <path d="M136 10 l26 8 v62 l-26 -6z" fill="#fff" stroke="#0e7c7b" stroke-width="2.5"/>
+            <circle cx="156" cy="46" r="2.5" fill="#0e7c7b"/>
+            <text x="160" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="11" fill="#0e7c7b">opportunity</text>
+            <path d="M232 70 q12 -54 24 0 q10 -32 20 0 q8 -16 16 0" fill="none" stroke="#1b2a4a" stroke-width="2" stroke-dasharray="4 4"/>
+            <circle cx="292" cy="62" r="8" fill="#1f7a4d"/>
+            <line x1="226" y1="72" x2="308" y2="72" stroke="#1b2a4a" stroke-width="2"/>
+            <text x="266" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="11" fill="#1f7a4d">resilience</text>
+          </svg>
+        </div>
+        <p>Your bag, planner and homework are your <b>responsibility</b> — your job to look after. New clubs and subjects are an <b>opportunity</b> — a chance to try something. <b>Resilience</b> is bouncing back when something goes wrong.</p>
+        <div class="remember"><b>Remember:</b> Take responsibility, grab each opportunity, and use resilience to bounce back.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>3 · How it feels: anxious and confidence</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 90" role="img" aria-label="A feelings line from anxious on the left, with a worried face, to confident on the right, with a smiling face. An arrow shows confidence grows with practice.">
+            <line x1="60" y1="40" x2="260" y2="40" stroke="#56607a" stroke-width="3" marker-end="url(#t5b)"/>
+            <circle cx="36" cy="40" r="20" fill="#fdf1de" stroke="#e8930c" stroke-width="2.5"/>
+            <circle cx="29" cy="36" r="2.5" fill="#1b2a4a"/><circle cx="43" cy="36" r="2.5" fill="#1b2a4a"/>
+            <path d="M28 50 q8 -6 16 0" fill="none" stroke="#1b2a4a" stroke-width="2"/>
+            <circle cx="284" cy="40" r="20" fill="#e3f3ea" stroke="#1f7a4d" stroke-width="2.5"/>
+            <circle cx="277" cy="36" r="2.5" fill="#1b2a4a"/><circle cx="291" cy="36" r="2.5" fill="#1b2a4a"/>
+            <path d="M276 46 q8 7 16 0" fill="none" stroke="#1b2a4a" stroke-width="2"/>
+            <text x="36" y="80" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#a8540b">anxious</text>
+            <text x="160" y="30" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">practice + small wins</text>
+            <text x="284" y="80" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#1f7a4d">confidence</text>
+            <defs><marker id="t5b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#56607a"/></marker></defs>
+          </svg>
+        </div>
+        <p>Feeling <b>anxious</b> (worried or nervous) about a big change is normal. Naming the feeling helps. <b>Confidence</b> — believing you can do it — grows each time you have a go and it works out.</p>
+        <div class="remember"><b>Remember:</b> Anxious is a feeling, not a stop sign. Confidence grows with practice.</div>
+      </div>
+
     </div>
-    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your printed receipt</b> when all eight items are in your cart. The page won’t remember it.</div></div>
   </section>
 
-  <!-- ===================== 3. HONEST AD (independent) ===================== -->
-  <section id="honestad">
-    <div class="sec-head"><span class="sec-no">03</span><div><h2>Honest Ad</h2><p class="lead">Invent a product (make up the brand name!) and write a short <b>honest</b> advertisement for it — facts only, no tricks. Use at least <b>four focus words</b>.</p></div></div>
+  <!-- ===================== 3. TIMETABLE BUILDER (signature) ===================== -->
+  <section id="timetable">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Timetable Builder</h2><p class="lead">Here’s a made-up Year 7 Monday. Each period has a tip with a gap. <b>Drag</b> a word into the gap — or <b>tap</b> a word, then tap a gap. Keyboard: <kbd>Enter</kbd> on a word, then <kbd>Enter</kbd> on a gap. A wrong word bounces back with a clue. Unlimited tries.</p></div></div>
     <div class="card">
-      <label for="writebox" class="sr-only">Write your honest advertisement</label>
+      <div class="match-wrap">
+        <div class="bank" id="ttBank" role="group" aria-label="Word tiles"><span class="bank-label">Word bank</span></div>
+        <div class="planner">
+          <div class="planner-top"><span>📅 Riverbend High · Year 7 · Monday</span><span id="ttCount">0 of 8 filled</span></div>
+          <div id="ttPlanner"></div>
+        </div>
+      </div>
+      <p class="msg" id="ttMsg" role="status" aria-live="polite"></p>
+      <div class="btn-row"><button class="btn ghost" id="ttHint" type="button">Need a hint?</button></div>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your finished timetable</b> once every period is green. The page won’t remember it.</div></div>
+  </section>
+
+  <!-- ===================== 4. MY STRATEGY (independent) ===================== -->
+  <section id="strategy">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>My Strategy</h2><p class="lead">Write about <b>one change</b> you expect in Year 7 and <b>one strategy</b> to manage it. Use at least <b>two focus words</b>.</p></div></div>
+    <div class="card">
+      <label for="writebox" class="sr-only">Write your change and strategy</label>
       <textarea id="writebox" placeholder="Start writing here…"></textarea>
       <div class="spy" id="spy"></div>
       <div class="btn-row">
@@ -281,58 +351,39 @@
       </div>
       <div class="help-box" id="helpBox">
         <h3 style="margin-top:0">Sentence starters</h3>
-        <p>• Introducing … — a … for every …<br>• Each … comes with a … so you can …<br>• We won’t tell you it’s a … — but it is …<br>• Before you … , compare the price and keep your …</p>
-        <p style="margin-bottom:4px"><b>Product ideas:</b> a drink bottle · a school bag · a bike helmet · a pencil case · a torch</p>
+        <p>• In Year 7, one big change will be …<br>• I might feel … about … , so my strategy is …<br>• To be more … , I will …</p>
+        <div class="wordbank-chips" aria-label="Word bank">
+          <button class="wb" type="button">independent</button><button class="wb" type="button">responsibility</button><button class="wb" type="button">opportunity</button><button class="wb" type="button">confidence</button><button class="wb" type="button">resilience</button><button class="wb" type="button">anxious</button><button class="wb" type="button">schedule</button><button class="wb" type="button">secondary</button>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:0">Tap a word to drop it into your writing box.</p>
       </div>
       <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
       <div class="reveal-box" id="exampleBox">
         <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
           <b style="color:var(--ink)">Worked example (one way to do it):</b>
-          <span style="display:block;margin-top:6px">Introducing the TrailTough drink bottle from Brightwater, a small Australian manufacturer. It holds 750 mL and keeps water cold for six hours. Every <u>purchase</u> comes with a two-year <u>guarantee</u>, so keep your <u>receipt</u>. We won’t pretend it’s a <u>necessity</u> — but if you already need a bottle, it’s a smart choice for any <u>consumer</u>.</span>
-          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Facts you can check ✓ · No hurry, no “everyone has one” ✓ · Five focus words ✓</span>
+          <span style="display:block;margin-top:6px">In <u>secondary</u> school, I will move to a different room for each class. I might feel <u>anxious</u> about getting lost, so my strategy is to take a photo of my <u>schedule</u> and check it at the start of every break.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">One change ✓ · One strategy ✓ · Three focus words ✓</span>
         </div>
       </div>
       <div class="card" style="background:#fbfaf6;box-shadow:none;margin-bottom:0">
         <h3>Detective challenge (extension)</h3>
-        <p>Add a line about how your product is <b>sustainable</b>, or who the <b>entrepreneur</b> or <b>manufacturer</b> is behind it.</p>
+        <p>Add a sentence using an extension word: <b>adolescence</b> (the years of growing from a child into an adult), <b>conscientious</b> (careful and hard-working) or <b>perseverance</b> (keeping going when it’s hard).</p>
       </div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your honest ad and the Spelling Spy now, and upload to OneNote.</div></div>
-    </div>
-  </section>
-
-  <!-- ===================== 4. DICTATION ===================== -->
-  <section id="dictation">
-    <div class="sec-head"><span class="sec-no">04</span><div><h2>Dictation</h2><p class="lead">Show what you know. Your teacher will read eight sentences.</p></div></div>
-    <div class="card">
-      <ol class="dict-steps">
-        <li>Number <b>1–8</b> down the page in your book.</li>
-        <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
-        <li>When you’ve written all eight, tick the box to unlock the answers. Then mark your own work honestly.</li>
-      </ol>
-      <label class="ready" for="dictReady"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
-      <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
-      <div id="dictAnswers" hidden>
-        <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
-        <ol class="dict-list" id="dictList"></ol>
-        <div class="scorebar" role="status" aria-live="polite" style="margin-top:12px"><span>My dictation score: <strong id="dictScore">0</strong> / <strong>8</strong></span></div>
-        <p class="counter" style="margin-top:8px">Missed one? Write it correctly three times next to your attempt, and check its trap in this week’s Lesson 2 cards.</p>
-      </div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Photograph your dictation page</b> after marking, and screenshot your score. Upload both to OneNote.</div></div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> When you’re happy with your writing, <b>screenshot it now</b> and upload to OneNote before you close the page.</div></div>
     </div>
   </section>
 
   <!-- ===================== 5. CASE CLOSED ===================== -->
   <section id="closed">
-    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Case File 4 is done. Tick off your evidence, rate your confidence, and make sure everything is captured.</p></div></div>
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Quick exit check. Tick off your evidence, rate your confidence, and make sure everything is captured.</p></div></div>
     <div class="card">
       <h3>Evidence to capture (screenshot each one)</h3>
       <ul class="check-list">
         <li><label for="exit1"><input type="checkbox" id="exit1"><span>My Briefing score and any fix-up notes I read</span></label></li>
-        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My printed Budget Cart receipt</span></label></li>
-        <li><label for="exit3"><input type="checkbox" id="exit3"><span>My Honest Ad and Spelling Spy</span></label></li>
-        <li><label for="exit4"><input type="checkbox" id="exit4"><span>A photo of my marked dictation page and my score</span></label></li>
+        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My finished Year 7 timetable, all green</span></label></li>
+        <li><label for="exit3"><input type="checkbox" id="exit3"><span>My change and strategy writing, with the Spelling Spy</span></label></li>
       </ul>
-      <h3 style="margin-top:18px">How confident am I with the Case File 4 words?</h3>
+      <h3 style="margin-top:18px">How confident am I with this week’s words?</h3>
       <div class="confi" id="confi" role="group" aria-label="Confidence rating">
         <button type="button" aria-pressed="false">Still cracking it</button>
         <button type="button" aria-pressed="false">Getting there</button>
@@ -345,7 +396,7 @@
 </main>
 
 <footer>
-  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 4 Lesson 3: Budget Cart · ACARA v9 AC9E6LY09, linked to HASS AC9HS6K08. Word Mart, TrailTough and Brightwater are made up. All content original. Works offline — no data is collected or stored.</p>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 5 Lesson 1: Timetable Builder · ACARA v9 AC9E6LY09, linked to HPE AC9HP6P02. Riverbend High is made up. All content original. Works offline — no data is collected or stored.</p>
 </footer>
 
 <div class="sr-only" id="liveRegion" aria-live="assertive"></div>
@@ -630,119 +681,150 @@ function setupDictation(DICTATION) {
 }
 
 
-/* =================== 1. WARM-UP (spelling choices) =================== */
+/* =================== 1. WARM-UP (Week 4 retrieval) =================== */
 buildQuiz([
-  { stem: "Which spelling is correct?", opts: ["reciept", "receipt", "receit"], correct: 1,
-    fix: "<b>receipt</b> — <b>ei</b> after c, and a silent <b>p</b> (think <i>reception</i>)." },
-  { stem: "Which spelling is correct?", opts: ["garantee", "guarentee", "guarantee"], correct: 2,
-    fix: "<b>guarantee</b> — a silent <b>u</b> after the g, <b>-antee</b>, and a double e." },
-  { stem: "Which spelling is correct?", opts: ["neccessity", "necessity", "nesessity"], correct: 1,
+  { stem: "Which spelling is correct?", opts: ["receipt", "reciept", "receit"], correct: 0,
+    fix: "<b>receipt</b> — <b>ei</b> after c, and a <b>p</b> before the t (think <i>reception</i>)." },
+  { stem: "“Everyone at school already has one!” is which ad trick?", opts: ["Hurry!", "Everyone’s doing it", "A fact"], correct: 1,
+    fix: "It makes you feel left out if you don’t buy it — that’s <b>Everyone’s doing it</b>." },
+  { stem: "Which spelling is correct?", opts: ["guarentee", "garantee", "guarantee"], correct: 2,
+    fix: "<b>guarantee</b> — a <b>u</b> after the g, then <b>-antee</b> with a double e." },
+  { stem: "Which spelling is correct?", opts: ["neccesity", "necessity", "necesity"], correct: 1,
     fix: "<b>necessity</b> — one collar, two sleeves: one <b>c</b>, two <b>s</b>." },
-  { stem: "Which spelling is correct?", opts: ["persuasive", "persuadive", "pursuasive"], correct: 0,
-    fix: "<b>persuasive</b> — persuade drops its <b>de</b> and gains an <b>s</b>. It starts with <b>per-</b>." },
-  { stem: "Which spelling is correct?", opts: ["influance", "influence", "influense"], correct: 1,
-    fix: "<b>influence</b> — the ending is spelt <b>-ence</b>." },
+  { stem: "Which spelling is correct?", opts: ["advertisement", "advertisment", "advertizement"], correct: 0,
+    fix: "<b>advertisement</b> — -ment starts with a consonant, so <b>keep the e</b> from advertise." },
 ]);
 
-/* =================== 2. BUDGET CART =================== */
-const BUDGET = 40;
-const ITEMS = [
-  { w: "consumer", p: 4, clue: "A person who buys and uses goods and services.", trap: "Build it from consume: the suffix -er starts with a vowel, so drop the e." },
-  { w: "advertisement", p: 6, clue: "A poster, video or post that tries to sell you something.", trap: "advertise + a consonant suffix — keep the e." },
-  { w: "persuasive", p: 5, clue: "Describes language chosen to convince you.", trap: "Start from the verb meaning ‘to convince’. Its de changes to s before -ive." },
-  { w: "influence", p: 4, clue: "To have an effect on someone’s choices.", trap: "The ending is -ence, not -ance." },
-  { w: "purchase", p: 3, clue: "To buy something.", trap: "It ends in -ase, like case and chase — not -ice or -iss." },
-  { w: "necessity", p: 5, clue: "Something you truly need, like food or shelter.", trap: "One collar, two sleeves." },
-  { w: "receipt", p: 3, clue: "The slip of paper that proves what you paid.", trap: "ei after c, and a silent letter before the t (think reception)." },
-  { w: "guarantee", p: 6, clue: "A promise that a product will work or be fixed.", trap: "A silent letter guards the hard g, and it ends in a double letter." },
+/* =================== 3. TIMETABLE BUILDER =================== */
+const TT = [
+  { time: "8:30", subj: "Homeroom", word: "schedule", before: "Look at my", after: "to find out which room Period 1 is in.",
+    def: "a timetable of classes, rooms and times", hint: "This gap needs the word for a timetable." },
+  { time: "8:50", subj: "Maths", word: "independent", before: "Nobody packs my bag for me now — being", after: "means I bring the right books myself.",
+    def: "doing things for yourself", hint: "This gap needs a word for doing things yourself, without reminders." },
+  { time: "9:50", subj: "Science", word: "responsibility", before: "Looking after my laptop and my charger is my", after: ".",
+    def: "a job that is yours to look after", hint: "This gap needs a word for something that is your job to look after." },
+  { time: "10:50", subj: "Recess", word: "anxious", before: "Feeling", after: "about finding my friends? Agree on a meeting spot before school.",
+    def: "worried or nervous", hint: "This gap needs a feeling word — worried or nervous." },
+  { time: "11:20", subj: "English", word: "confidence", before: "Speaking up in a new class, even when my voice wobbles, builds my", after: "that I can do it.",
+    def: "believing you can do it", hint: "This gap needs a word for believing you can do it." },
+  { time: "12:20", subj: "Lunch", word: "opportunity", before: "Chess club and band both meet today — a great", after: "to try something new!",
+    def: "a chance to do something", hint: "This gap needs a word for a chance." },
+  { time: "1:10", subj: "HPE", word: "resilience", before: "I didn’t make the netball team. Bouncing back is my", after: ", so I’ll try again next term.",
+    def: "bouncing back when things go wrong", hint: "This gap needs a word for bouncing back." },
+  { time: "3:00", subj: "Home time", word: "secondary", before: "Day one of", after: "school — done! Tomorrow will feel easier.",
+    def: "the school after primary (high school)", hint: "This gap needs a word for high school." },
 ];
-let spent = 0;
-const bought = [];
-ITEMS.forEach((it, i) => {
-  it.tries = 0;
-  const card = document.createElement("div");
-  card.className = "item"; card.id = "bcItem" + i; card.setAttribute("role", "listitem");
-  card.innerHTML =
-    '<div class="item-top"><span class="item-no">Item ' + (i + 1) + '</span><span class="price">$' + it.p + "</span></div>" +
-    '<p class="clue">' + escapeHTML(it.clue) + "</p>" +
-    '<p class="len" id="bcLen' + i + '" hidden>' + it.w.length + " letters</p>" +
-    '<label for="bcIn' + i + '" class="sr-only">Item ' + (i + 1) + ": type the word. Clue: " + escapeHTML(it.clue) + "</label>" +
-    '<input id="bcIn' + i + '" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word">' +
-    '<button class="btn teal" id="bcAdd' + i + '" type="button" disabled>Add to cart 🔒</button>' +
-    '<p class="item-hint" id="bcHint' + i + '" hidden></p>';
-  $("#shelf").appendChild(card);
-  const inp = $("#bcIn" + i), btn = $("#bcAdd" + i);
-  inp.addEventListener("input", () => {
-    const ok = inp.value.trim().length > 0;
-    btn.disabled = !ok; btn.textContent = ok ? "Add to cart" : "Add to cart 🔒";
-  });
-  inp.addEventListener("keydown", e => { if (e.key === "Enter" && !btn.disabled) btn.click(); });
-  btn.addEventListener("click", () => tryBuy(i));
+let ttDone = 0, picked = null, ghost = null;
+const ttMsg = $("#ttMsg");
+shuffle(TT.slice()).forEach(m => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "wtile"; b.textContent = m.word; b.dataset.word = m.word;
+  b.setAttribute("aria-pressed", "false");
+  $("#ttBank").appendChild(b);
 });
-function tryBuy(i) {
-  const it = ITEMS[i], inp = $("#bcIn" + i), hint = $("#bcHint" + i);
-  const guess = inp.value.trim().toLowerCase();
-  if (!guess) return;
-  if (guess === it.w) {
-    spent += it.p; bought.push(i);
-    const card = $("#bcItem" + i);
-    card.classList.add("bought");
-    inp.remove(); $("#bcAdd" + i).remove(); hint.hidden = true;
-    const done = document.createElement("p"); done.className = "item-word"; done.textContent = "✓ " + it.w;
-    card.appendChild(done);
-    renderCart();
-    announce("Added " + it.w + " for $" + it.p + ". Spent $" + spent + " of $" + BUDGET + ".");
-    const next = $$(".item input")[0]; if (next) next.focus();
-  } else {
-    it.tries++;
-    let t = "✗ The till won’t accept that spelling. Check it letter by letter and try again.";
-    $("#bcLen" + i).hidden = false;
-    if (it.tries >= 2) t = "✗ Trap clue: " + it.trap;
-    if (it.tries >= 3) t += " It starts with “" + it.w.slice(0, 3) + "”.";
-    hint.textContent = t; hint.hidden = false;
-    announce(t);
-    inp.focus(); inp.select();
+TT.forEach((m, i) => {
+  const row = document.createElement("div");
+  row.className = "period"; row.id = "tt" + i;
+  row.innerHTML = '<div class="ptime">' + m.time + "<small>" + m.subj + '</small></div><div class="pbody"></div>';
+  const body = row.querySelector(".pbody");
+  body.appendChild(document.createTextNode(m.before + " "));
+  const slot = document.createElement("button");
+  slot.type = "button"; slot.className = "slot"; slot.dataset.idx = i; slot.textContent = "drop a word";
+  slot.setAttribute("aria-label", m.subj + " gap: " + m.before + " blank" + (/^[.,]/.test(m.after) ? "" : " ") + m.after);
+  body.appendChild(slot);
+  body.appendChild(document.createTextNode((/^[.,]/.test(m.after) ? "" : " ") + m.after));
+  $("#ttPlanner").appendChild(row);
+});
+function setPicked(t) {
+  if (picked) { picked.classList.remove("picked"); picked.setAttribute("aria-pressed", "false"); }
+  picked = t;
+  if (t) {
+    t.classList.add("picked"); t.setAttribute("aria-pressed", "true");
+    announce("Picked up " + t.dataset.word + ". Now choose a gap.");
+    ttMsg.className = "msg"; ttMsg.textContent = "Holding “" + t.dataset.word + "” — now tap the gap it fits.";
   }
 }
-function renderCart() {
-  $("#meterBar").style.width = Math.min(100, spent / BUDGET * 100) + "%";
-  $("#cartStatus").textContent = "Spent $" + spent + " of $" + BUDGET + " · " + bought.length + " of " + ITEMS.length + " items";
-  $("#cartList").innerHTML = bought.map(i => "<li><span>" + ITEMS[i].w + "</span><span>$" + ITEMS[i].p + "</span></li>").join("");
-  if (bought.length === ITEMS.length) printReceipt();
+function place(tile, slot) {
+  const i = +slot.dataset.idx, row = $("#tt" + i), m = TT[i];
+  if (row.classList.contains("right") || tile.classList.contains("used")) return;
+  if (tile.dataset.word === m.word) {
+    row.classList.remove("nope"); row.classList.add("right");
+    slot.textContent = m.word; slot.setAttribute("aria-label", m.subj + ": " + m.word); slot.disabled = true;
+    tile.classList.add("used"); tile.disabled = true; tile.classList.remove("picked"); tile.setAttribute("aria-pressed", "false");
+    ttDone++;
+    $("#ttCount").textContent = ttDone + " of " + TT.length + " filled";
+    ttMsg.className = "msg good";
+    ttMsg.textContent = ttDone === TT.length
+      ? "🎉 Your Year 7 Monday is planned! Screenshot your timetable."
+      : "✓ " + m.word + " — " + m.def + ". (" + ttDone + " of " + TT.length + ")";
+    announce(ttMsg.textContent);
+    const next = $$(".wtile").find(t => !t.disabled);
+    if (next) next.focus();
+  } else {
+    const dropped = TT.find(x => x.word === tile.dataset.word);
+    row.classList.add("nope");
+    setTimeout(() => row.classList.remove("nope"), 600);
+    ttMsg.className = "msg warn";
+    ttMsg.innerHTML = "Not “" + dropped.word + "” — it means <i>" + dropped.def + "</i>. " + m.hint + " It went back to the bank.";
+    announce("Not a match. " + dropped.word + " means " + dropped.def + ". " + m.hint);
+    tile.focus();
+  }
 }
-function printReceipt() {
-  const out = $("#receiptOut");
-  out.innerHTML = '<div class="receipt-slip" role="group" aria-label="Your printed receipt">' +
-    '<p class="rc"><b>WORD MART</b></p><p class="rc">Year 6 Detective Branch</p><p class="rc">--------------------</p>' +
-    bought.map(i => '<p class="rrow"><span>' + ITEMS[i].w + "</span><span>$" + ITEMS[i].p + ".00</span></p>").join("") +
-    '<p class="rc">--------------------</p>' +
-    '<p class="rrow"><b>TOTAL</b><b>$' + spent + '.00</b></p>' +
-    '<p class="rrow"><span>Budget</span><span>$' + BUDGET + '.00</span></p>' +
-    '<p class="rrow"><span>Change</span><span>$' + (BUDGET - spent) + '.00</span></p>' +
-    '<p class="rc">--------------------</p><p class="rc">Keep this receipt — it’s your</p><p class="rc">guarantee of perfect spelling!</p></div>';
-  out.hidden = false;
-  const m = $("#cartStatus"); m.textContent = "🎉 Cart complete — under budget with $" + (BUDGET - spent) + " change! Screenshot your receipt.";
-  m.className = "msg good";
-}
+function zoneAt(x, y) { const el = document.elementFromPoint(x, y); return el ? el.closest(".slot:not(:disabled)") : null; }
+$$(".wtile").forEach(t => {
+  t.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (!t.disabled) setPicked(picked === t ? null : t); }
+  });
+  t.addEventListener("pointerdown", e => {
+    if (t.disabled || e.button > 0) return;
+    const sx = e.clientX, sy = e.clientY; let moved = false;
+    const move = ev => {
+      if (!moved && (Math.abs(ev.clientX - sx) > 6 || Math.abs(ev.clientY - sy) > 6)) {
+        moved = true;
+        ghost = document.createElement("div"); ghost.className = "drag-ghost"; ghost.textContent = t.dataset.word;
+        document.body.appendChild(ghost); t.style.opacity = ".4";
+      }
+      if (moved && ghost) {
+        ghost.style.left = (ev.clientX - ghost.offsetWidth / 2) + "px";
+        ghost.style.top = (ev.clientY - ghost.offsetHeight / 2) + "px";
+        $$(".slot").forEach(s => s.classList.remove("over"));
+        const z = zoneAt(ev.clientX, ev.clientY); if (z) z.classList.add("over");
+      }
+    };
+    const up = ev => {
+      document.removeEventListener("pointermove", move);
+      document.removeEventListener("pointerup", up);
+      t.style.opacity = "";
+      $$(".slot").forEach(s => s.classList.remove("over"));
+      if (ghost) { ghost.remove(); ghost = null; }
+      if (moved) { const z = zoneAt(ev.clientX, ev.clientY); if (z) place(t, z); }
+      else setPicked(picked === t ? null : t);
+    };
+    document.addEventListener("pointermove", move);
+    document.addEventListener("pointerup", up);
+  });
+});
+$$(".slot").forEach(s => {
+  s.addEventListener("click", () => {
+    if (!picked) { ttMsg.className = "msg"; ttMsg.textContent = "Pick a word from the word bank first, then tap this gap."; return; }
+    const t = picked; setPicked(null); place(t, s);
+  });
+});
+$("#ttHint").addEventListener("click", () => {
+  const i = TT.findIndex((m, k) => !$("#tt" + k).classList.contains("right"));
+  if (i < 0) { ttMsg.className = "msg good"; ttMsg.textContent = "All filled — no hints needed!"; return; }
+  const m = TT[i];
+  ttMsg.className = "msg warn";
+  ttMsg.textContent = "Hint for " + m.time + " " + m.subj + ": " + m.hint + " It means " + m.def + ".";
+  $("#tt" + i + " .slot").focus();
+});
 
-/* =================== 3. HONEST AD =================== */
+/* =================== 4. MY STRATEGY =================== */
 setupWriting({
   box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
   exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
-  spyEl: $("#spy"), words: ["consumer", "advertisement", "persuasive", "influence", "purchase", "necessity", "receipt", "guarantee"],
+  spyEl: $("#spy"), words: ["independent", "responsibility", "opportunity", "confidence", "resilience", "anxious", "schedule", "secondary"],
 });
-
-/* =================== 4. DICTATION (must match the unit plan exactly) =================== */
-setupDictation([
-  ["consumer", "A smart consumer compares prices before buying."],
-  ["advertisement", "The advertisement promised that the shoes would make you run faster."],
-  ["persuasive", "Advertisers use persuasive language to make us want things."],
-  ["influence", "Friends can influence the choices we make when we shop."],
-  ["purchase", "Think carefully before you purchase something expensive."],
-  ["necessity", "Food and shelter are a necessity, but a new game is a want."],
-  ["receipt", "Keep the receipt in case you need to return the item."],
-  ["guarantee", "The shop gave a one-year guarantee on the headphones."],
-]);
 
 /* =================== 5. CONFIDENCE =================== */
 setupConfidence();

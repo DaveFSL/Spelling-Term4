@@ -1,0 +1,47 @@
+const { load, check, click, type, staticChecks, sectionEndsWithEvidence, done } = require("./harness");
+const FILE = "Wk5_Lesson3_Letter_to_Year7_Me.html";
+console.log("== " + FILE);
+staticChecks(FILE);
+const { w, d, errors } = load(FILE);
+const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
+(async () => {
+  check($$(".q").length === 5, "5 warm-up questions");
+  click($$("#q0 .opt")[1]); check(d.activeElement === $("#fix0"), "wrong answer focuses the fix-up");
+  check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+  const ids = $$("[id]").map(e => e.id); check(new Set(ids).size === ids.length, "no duplicate ids");
+  check($("#proofBtn").disabled && $("#exampleBtn").disabled, "proofreader and example locked before writing");
+  type(w, $("#writebox"), "Dear Year 7 me, at secondary school you might feel anxous. Your resilance and confidence will help. Check your schedule. Being independently organised matters.");
+  check(!$("#proofBtn").disabled, "proofreader unlocks after writing");
+  check($("#goalText").textContent === "3 / 5", "goal meter counts correct focus words");
+  click($("#proofBtn"));
+  const rep = $("#proofOut").textContent;
+  check(!$("#proofOut").hidden && /anxous/.test(rep) && /resilance/.test(rep), "near-misses flagged");
+  check(!/\banxious\b/.test(rep) && !/\bresilience\b/.test(rep), "report never spells the correct word");
+  check(!/independently/.test(rep), "family words aren't flagged as slips");
+  check(d.activeElement === $("#proofOut"), "report takes focus");
+  type(w, $("#writebox"), $("#writebox").value.replace("resilance", "resilience"));
+  click($("#proofBtn"));
+  check(/self-corrected 1 slip: resilience/.test($("#proofOut").textContent) && /anxous/.test($("#proofOut").textContent), "fixing a slip is celebrated; remaining slip still listed");
+  type(w, $("#writebox"), $("#writebox").value.replace("anxous", "anxious"));
+  click($("#proofBtn"));
+  check(/self-corrected 1 slip: anxious/.test($("#proofOut").textContent) && /No slips found/.test($("#proofOut").textContent), "second fix counted once; clean report");
+  check($("#goalText").textContent === "5 / 5 ✓", "goal reached");
+  // review fixes: allow-list, known slips, traps that never assemble the answer
+  type(w, $("#writebox"), "Dear Year 7 me, my responsibilities grow. Act responsibly with a confidant. Be independant and use perseverence. Secondry school is a responsable step.");
+  click($("#proofBtn"));
+  const r2 = $("#proofOut").textContent;
+  check(!/responsibilities|responsibly|confidant/.test(r2.replace(/You self-corrected[^.]*\./, "")), "real family words not flagged (responsibilities, responsibly, confidant)");
+  check(/responsable/.test(r2) && /independant/.test(r2) && /perseverence/.test(r2) && /secondry/.test(r2), "common slips flagged, including responsable");
+  check(!/independence|persevere \+|second \+|\bsecondary\b|\bperseverance\b|\bresponsibility\b/.test(r2), "traps never print or assemble the correct spelling");
+  // dictation
+  check($("#dictReveal").disabled && $("#dictAnswers").hidden, "dictation answers locked");
+  $("#dictReady").checked = true; $("#dictReady").dispatchEvent(new w.Event("change"));
+  click($("#dictReveal"));
+  const plan = require("./dictation_w5.json");
+  const shown = $$("#dictList li").map(li => [li.querySelector(".dword").textContent, li.querySelector(".dsent").textContent]);
+  check(JSON.stringify(shown) === JSON.stringify(plan), "dictation matches unit plan byte-for-byte");
+  sectionEndsWithEvidence(d, ["briefing", "letter", "dictation", "closed"]);
+  await new Promise(r => setTimeout(r, 200));
+  check(errors.length === 0, "zero console/page errors " + (errors.length ? JSON.stringify(errors) : ""));
+  done();
+})();

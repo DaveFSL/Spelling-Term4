@@ -25,9 +25,9 @@ Year 6 spelling unit, Term 4 2026, St Joseph's Primary School, Corinda.
 | 10 | Wk4 HASS consumer | `Wk4_Lesson1_Ad_Inspector.html` | Highlight persuasive tricks in an original ad | Built |
 | 11 | Wk4 HASS consumer | `Wk4_Lesson2_Silent_Letter_Scanner.html` | Slide a scanner and stop on the silent letter | Built |
 | 12 | Wk4 HASS consumer | `Wk4_Lesson3_Budget_Cart.html` | Spell an item correctly to add it to the cart, within budget | Built |
-| 13 | Wk5 Transition | `Wk5_Lesson1_Timetable_Builder.html` | Drag words into a Year 7 day planner | Coming soon |
-| 14 | Wk5 Transition | `Wk5_Lesson2_Word_Family_Tree.html` | Grow -ent/-ence and -ant/-ance branches | Coming soon |
-| 15 | Wk5 Transition | `Wk5_Lesson3_Letter_to_Year7_Me.html` | Locked-until-attempted letter with a live word check | Coming soon |
+| 13 | Wk5 Transition | `Wk5_Lesson1_Timetable_Builder.html` | Drag words into a Year 7 day planner | Built |
+| 14 | Wk5 Transition | `Wk5_Lesson2_Word_Family_Tree.html` | Grow -ent/-ence and -ant/-ance branches | Built |
+| 15 | Wk5 Transition | `Wk5_Lesson3_Letter_to_Year7_Me.html` | Letter with a live word check and a proofreader that flags slips without giving answers | Built |
 | 16 | Review | `Review_Lesson16_Case_Closed.html` | Case Board: solve 5 case files to earn stamps | Coming soon |
 
 ## Tests
