@@ -8,7 +8,7 @@ check($$(".q").length === 5, "5 warm-up questions");
 click($$("#q1 .opt")[1]);
 check($("#fix1").classList.contains("show") && d.activeElement === $("#fix1"), "wrong answer shows fix-up and moves focus to it");
 check($$("#casenotes .card").length === 4 && $$("#casenotes .remember").length === 4, "4 teaching cards with Remember lines");
-check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
 check($$(".beaker h3, .beaker p").length === 0, "no headings/paragraphs nested inside beaker buttons");
 check($$(".ccard").length === 10, "10 evidence cards");
 check(["c1", "c2", "c3"].every(id => $( "#" + id).tagName === "INPUT"), "checklist ids belong to the checkboxes");

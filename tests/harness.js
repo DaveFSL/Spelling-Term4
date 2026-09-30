@@ -30,6 +30,7 @@ function staticChecks(file) {
   check(!/localStorage|sessionStorage|indexedDB|fetch\(|XMLHttpRequest/.test(html), "no storage / network APIs");
   check(!/<img\b/i.test(html), "no bitmap <img> tags");
   check(/\[hidden\]\{display:none !important\}/.test(html), "[hidden] elements are forced hidden (display rules can't override)");
+  if (file !== "index.html") check(/<a class="pill pill-home" href="index.html"/.test(html), "sticky nav has a Home button back to the hub");
   const svgs = [...html.matchAll(/<svg\b[^>]*>/g)].map(m => m[0]);
   check(svgs.every(s => /aria-label=|aria-hidden="true"/.test(s)), "every SVG has aria-label or aria-hidden");
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 3 Lesson 2 — Prefix Lab | Year 6 Spelling</title>
+<title>Week 4 Lesson 1 — Ad Inspector | Year 6 Spelling</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -181,31 +181,25 @@
   .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
   .ready input{width:24px; height:24px; accent-color:var(--teal)}
 
-  /* ---------- Prefix Lab (signature) ---------- */
-  .lab{border:2px solid var(--teal); border-radius:18px; background:#fff; overflow:hidden}
-  .lab-top{background:var(--teal); color:#fff; font-family:"Space Grotesk"; font-weight:600; padding:10px 16px; font-size:.9rem}
-  .lab-body{padding:16px}
-  .part-row{margin:10px 0}
-  .part-label{font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin:0 0 6px}
-  .parts{display:flex; flex-wrap:wrap; gap:8px}
-  .part{font-family:"Space Grotesk"; font-weight:700; font-size:1rem; min-height:44px; min-width:52px; padding:8px 13px; border-radius:10px; cursor:pointer; border:2px solid var(--line); background:#fcfbf7; color:var(--ink)}
-  .part:hover{border-color:var(--teal)}
-  .part[aria-pressed=true]{color:#fff}
-  .pre .part[aria-pressed=true]{background:var(--amber); border-color:var(--amber); color:#3a2400}
-  .root .part[aria-pressed=true]{background:var(--ink); border-color:var(--ink)}
-  .suf .part[aria-pressed=true]{background:var(--teal); border-color:var(--teal)}
-  .built-word{margin-top:14px; min-height:62px; display:flex; align-items:center; justify-content:center; gap:2px; flex-wrap:wrap; background:#fbfaf6; border:2px dashed var(--line); border-radius:14px; font-family:"Space Grotesk"; font-weight:700; font-size:2rem; padding:6px}
-  @media(max-width:560px){.built-word{font-size:1.5rem}}
-  .bw-pre{color:#c47a08}
-  .bw-root{color:var(--ink)}
-  .bw-suf{color:var(--teal)}
-  .bw-empty{color:var(--ink-soft); font-size:1rem; font-weight:600}
-  .targets{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:8px; margin-top:14px}
-  .target{border:1.5px solid var(--line); border-radius:10px; padding:9px 11px; background:#fcfbf7; font-size:.9rem}
-  .target .tw{display:block; font-family:"Space Grotesk"; font-weight:700; color:var(--ink-soft)}
-  .target.got{background:var(--good-soft); border-color:var(--good)}
-  .target.got .tw{color:var(--good)}
-  .bonus{margin-top:10px; font-size:.9rem; color:var(--ink-soft)}
+  /* ---------- Ad Inspector (signature) ---------- */
+  .pens{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
+  .pen{display:inline-flex; align-items:center; gap:8px; font-family:"Space Grotesk"; font-weight:700; font-size:.92rem; min-height:44px; padding:8px 13px; border-radius:10px; border:2px solid var(--line); background:#fff; color:var(--ink); cursor:pointer}
+  .pen .sw{width:18px; height:18px; border-radius:4px; flex:0 0 auto}
+  .pen[aria-pressed=true]{border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset}
+  .hl-band{background:#ffe08a} .hl-exag{background:#ffc2b8} .hl-rush{background:#b9e3ff} .hl-cool{background:#d9c8ff}
+  .pen[data-pen=erase] .sw{background:#fff; border:2px dashed var(--ink-soft)}
+  .advert{background:#fff; border:3px solid var(--ink); border-radius:14px; padding:18px; max-width:640px; margin:0 auto}
+  .ad-brand{font-family:"Space Grotesk"; font-weight:700; font-size:1.8rem; letter-spacing:-.01em; margin:0; text-align:center}
+  .ad-sub{text-align:center; color:var(--ink-soft); margin:0 0 10px; font-size:.9rem}
+  .phrase{display:block; width:100%; text-align:left; font-size:1.02rem; line-height:1.45; padding:9px 11px; margin:6px 0; min-height:44px; border-radius:8px; border:2px dashed transparent; background:#fcfbf7; color:var(--ink); cursor:pointer; font-family:"Atkinson Hyperlegible"}
+  .phrase:hover{border-color:var(--line)}
+  .phrase.ok{border:2px solid var(--good)}
+  .phrase.no{border:2px solid var(--amber)}
+  .phrase .ptag{display:inline-block; font-family:"Space Grotesk"; font-weight:700; font-size:.72rem; border-radius:999px; padding:1px 8px; margin-left:6px; background:rgba(27,42,74,.1)}
+  .phrase.hl-band{background:#ffe08a} .phrase.hl-exag{background:#ffc2b8} .phrase.hl-rush{background:#b9e3ff} .phrase.hl-cool{background:#d9c8ff}
+  .key{font-size:.85rem; color:var(--ink-soft); margin-top:10px}
+  .feedback-list{margin:10px 0 0; padding-left:1.1em; font-size:.92rem}
+  .feedback-list li{margin:4px 0}
 </style>
 </head>
 <body>
@@ -213,13 +207,13 @@
 <header class="band">
   <div class="band-inner">
     <a class="home-link" href="index.html">← Term 4 Casebook home</a>
-    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 3 · Lesson 2</p>
-    <h1>Prefix Lab</h1>
-    <p class="hook">Why does <i>irreversible</i> have two r’s and <i>dissolve</i> two s’s? Build science words from their parts and discover the rules that glue them together.</p>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 4 · Lesson 1</p>
+    <h1>Ad Inspector</h1>
+    <p class="hook">Ads are built to make you want things. Learn the words smart shoppers use — then grab your highlighters and expose the tricks.</p>
     <div class="meta-row" aria-label="Lesson details">
-      <span>Case File 3: Science</span>
-      <span>Focus: ir-, dis-, -ible, -ation, ch, ph</span>
-      <span>AC9E6LY08 · AC9E6LY09</span>
+      <span>Case File 4: HASS</span>
+      <span>Focus: words for consumer choices</span>
+      <span>AC9E6LY09 · HASS AC9HS6K08</span>
       <span>20 minutes</span>
     </div>
   </div>
@@ -230,8 +224,8 @@
     <a class="pill pill-home" href="index.html" aria-label="Back to the Term 4 Casebook home page">← Home</a>
     <a class="pill" href="#briefing">The Briefing</a>
     <a class="pill" href="#casenotes">Case Notes</a>
-    <a class="pill" href="#lab">Prefix Lab</a>
-    <a class="pill" href="#lcwc">Look · Cover · Write · Check</a>
+    <a class="pill" href="#inspector">Ad Inspector</a>
+    <a class="pill" href="#shopper">Smart Shopper</a>
     <a class="pill" href="#closed">Case Closed</a>
   </div>
 </nav>
@@ -240,7 +234,7 @@
 
   <!-- ===================== 1. WARM-UP ===================== -->
   <section id="briefing">
-    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Which science word fits? Tap an answer — wrong ones show an orange <b>fix-up</b> that points you back to the right idea.</p></div></div>
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Case File 3 check-in: how are last week’s science words going? Tap an answer. Wrong ones show an orange <b>fix-up</b>.</p></div></div>
     <div id="quiz"></div>
     <div class="scorebar" role="status" aria-live="polite">
       <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
@@ -251,158 +245,141 @@
 
   <!-- ===================== 2. TEACHING CARDS ===================== -->
   <section id="casenotes">
-    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Six rules for building this week’s science words from their parts.</p></div></div>
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">This week’s eight words come in four pairs. Every smart shopper knows them.</p></div></div>
     <div class="teach-grid">
 
       <div class="card teach">
-        <h3>1 · ir- means “not” (before r)</h3>
+        <h3>1 · Consumer and purchase</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="ir plus reversible makes irreversible, with a double r where the parts meet.">
-            <rect x="8" y="18" width="40" height="34" rx="8" fill="#fbe7c8" stroke="#e8930c"/>
-            <text x="28" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#a8540b">ir</text>
-            <text x="58" y="41" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+</text>
-            <text x="76" y="41" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">reversible</text>
-            <text x="172" y="41" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">→</text>
-            <text x="196" y="41" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1f7a4d">i<tspan fill="#e8930c">rr</tspan>eversible</text>
-            <text x="8" y="72" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">also: irregular, irresponsible</text>
+          <svg viewBox="0 0 320 90" role="img" aria-label="A person labelled consumer hands money across a counter to buy a bag, labelled purchase.">
+            <circle cx="46" cy="24" r="12" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <path d="M24 70 q22 -40 44 0 z" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <text x="46" y="86" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#0e7c7b">consumer</text>
+            <rect x="96" y="40" width="40" height="22" rx="4" fill="#fbe7c8" stroke="#e8930c" stroke-width="2"/>
+            <text x="116" y="56" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#a8540b">$</text>
+            <path d="M144 51 h56" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#a4)"/>
+            <path d="M226 36 h52 l-6 36 h-40 z" fill="#fbe7c8" stroke="#e8930c" stroke-width="2.5"/>
+            <path d="M238 36 q14 -18 28 0" fill="none" stroke="#e8930c" stroke-width="2.5"/>
+            <text x="252" y="86" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#a8540b">purchase</text>
+            <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
           </svg>
         </div>
-        <p>The prefix <b>ir-</b> means “not”. We use <b>ir-</b> in front of words that start with <b>r</b> (it’s the “r” version of <b>in-</b>, as in <i>invisible</i>). That’s why <b>irreversible</b> has a double r: ir + reversible.</p>
-        <div class="remember"><b>Remember:</b> ir + reversible = i<b>rr</b>eversible.</div>
+        <p>A <b>consumer</b> is a person who buys and uses goods and services — that’s you! To <b>purchase</b> something means to buy it. A purchase is also the thing you bought.</p>
+        <div class="remember"><b>Remember:</b> A consumer makes a purchase.</div>
       </div>
 
       <div class="card teach">
-        <h3>2 · dis- + solve = double s</h3>
+        <h3>2 · Advertisement and persuasive</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="dis plus solve makes dissolve, with a double s where the parts meet.">
-            <rect x="8" y="18" width="50" height="34" rx="8" fill="#fbe7c8" stroke="#e8930c"/>
-            <text x="33" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#a8540b">dis</text>
-            <text x="68" y="41" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+</text>
-            <text x="88" y="41" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">solve</text>
-            <text x="146" y="41" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">→</text>
-            <text x="170" y="41" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1f7a4d">di<tspan fill="#e8930c">ss</tspan>olve</text>
-            <text x="8" y="72" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">dis- = apart · the s of dis meets the s of solve</text>
+          <svg viewBox="0 0 320 90" role="img" aria-label="A billboard labelled advertisement with a speech bubble saying buy me, labelled persuasive.">
+            <rect x="14" y="10" width="130" height="56" rx="6" fill="#fbe7c8" stroke="#e8930c" stroke-width="2.5"/>
+            <line x1="50" y1="66" x2="50" y2="80" stroke="#1b2a4a" stroke-width="3"/><line x1="108" y1="66" x2="108" y2="80" stroke="#1b2a4a" stroke-width="3"/>
+            <text x="79" y="44" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="15" fill="#a8540b">SALE!</text>
+            <text x="79" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#a8540b">advertisement</text>
+            <path d="M184 14 h120 q8 0 8 8 v28 q0 8 -8 8 h-80 l-14 14 v-14 h-26 q-8 0 -8 -8 v-28 q0 -8 8 -8z" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <text x="244" y="41" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#0e7c7b">You NEED this!</text>
+            <text x="250" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#0e7c7b">persuasive</text>
           </svg>
         </div>
-        <p><b>Dis-</b> can mean “apart”. When sugar <b>dissolves</b>, it spreads out through the water. The s of <b>dis</b> meets the s of <b>solve</b>, so there are two.</p>
-        <div class="remember"><b>Remember:</b> dis + solve = di<b>ss</b>olve.</div>
+        <p>An <b>advertisement</b> (an ad) tries to sell you something. Ads use <b>persuasive</b> language — words chosen to convince you to think, feel or buy something.</p>
+        <div class="remember"><b>Remember:</b> An advertisement uses persuasive words to sell.</div>
       </div>
 
       <div class="card teach">
-        <h3>3 · -ible or -able?</h3>
+        <h3>3 · Influence and necessity</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 90" role="img" aria-label="able usually follows a whole word, like washable. ible usually follows a part that is not a word on its own, like visible. Reversible is a word to learn.">
-            <text x="10" y="28" font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">wash<tspan fill="#0e7c7b">able</tspan></text>
-            <text x="150" y="28" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">“wash” is a word → -able</text>
-            <text x="10" y="56" font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">vis<tspan fill="#e8930c">ible</tspan></text>
-            <text x="150" y="56" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">“vis” isn’t a word → -ible</text>
-            <text x="10" y="84" font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">revers<tspan fill="#e8930c">ible</tspan></text>
-            <text x="150" y="84" font-family="Atkinson Hyperlegible" font-size="12" fill="#a8540b">learn this one: -ible</text>
+          <svg viewBox="0 0 320 90" role="img" aria-label="A scale with needs like food and shelter on one side, labelled necessity, and wants like a new game on the other. Arrows from friends and ads show influence.">
+            <rect x="12" y="20" width="126" height="44" rx="10" fill="#e3f3ea" stroke="#1f7a4d" stroke-width="2.5"/>
+            <text x="75" y="40" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#1f7a4d">NEED: food, shelter</text>
+            <text x="75" y="57" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#1f7a4d">a necessity</text>
+            <rect x="182" y="20" width="126" height="44" rx="10" fill="#fbe7c8" stroke="#e8930c" stroke-width="2.5"/>
+            <text x="245" y="40" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#a8540b">WANT: new game</text>
+            <text x="245" y="57" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#a8540b">nice, not needed</text>
+            <text x="160" y="84" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#1b2a4a">friends + ads influence which we choose</text>
           </svg>
         </div>
-        <p><b>-able</b> usually follows a whole word (wash → washable). <b>-ible</b> usually follows a part that isn’t a word by itself (visible, possible). <b>Reversible</b> comes from Latin and takes <b>-ible</b> — learn it as a word to watch.</p>
-        <div class="remember"><b>Remember:</b> revers<b>ible</b> — with an i.</div>
+        <p>A <b>necessity</b> is something you truly need, like food or shelter. A want is nice to have. Friends, ads and trends can <b>influence</b> — have an effect on — what we choose to buy.</p>
+        <div class="remember"><b>Remember:</b> A necessity is a need. Influence is what pushes our choices.</div>
       </div>
 
       <div class="card teach">
-        <h3>4 · -ation names a process</h3>
+        <h3>4 · Receipt and guarantee</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="evapor plus ation makes evaporation. condense drops its e and adds ation to make condensation.">
-            <text x="10" y="32" font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">evapor + <tspan fill="#0e7c7b">ation</tspan> → <tspan fill="#1f7a4d">evaporation</tspan></text>
-            <text x="10" y="64" font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">condens<tspan fill="#c0392b" text-decoration="line-through">e</tspan> + <tspan fill="#0e7c7b">ation</tspan> → <tspan fill="#1f7a4d">condensation</tspan></text>
+          <svg viewBox="0 0 320 90" role="img" aria-label="A paper receipt showing items and a total, and a shield labelled guarantee promising the product works.">
+            <path d="M30 8 h80 v70 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6z" fill="#fff" stroke="#1b2a4a" stroke-width="2"/>
+            <g stroke="#56607a" stroke-width="2"><line x1="40" y1="22" x2="100" y2="22"/><line x1="40" y1="34" x2="92" y2="34"/><line x1="40" y1="46" x2="100" y2="46"/></g>
+            <text x="70" y="64" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#1b2a4a">TOTAL $12</text>
+            <text x="130" y="44" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#1b2a4a">receipt</text>
+            <path d="M244 8 l40 12 v22 q0 26 -40 40 q-40 -14 -40 -40 v-22z" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <path d="M228 44 l10 10 l20 -22" fill="none" stroke="#0e7c7b" stroke-width="4"/>
+            <text x="244" y="88" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#0e7c7b">guarantee</text>
           </svg>
         </div>
-        <p><b>-ation</b> turns an action into the name of a process. Evaporate → <b>evaporation</b>. Condense → <b>condensation</b> (drop the e, keep the s, add -ation).</p>
-        <div class="remember"><b>Remember:</b> -ation names the process: condens + ation.</div>
-      </div>
-
-      <div class="card teach">
-        <h3>5 · ch says /k/, ph says /f/</h3>
-        <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="In chemical, ch says k. In physical, ph says f. Both spellings come from Greek.">
-            <text x="10" y="32" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a"><tspan fill="#e8930c">ch</tspan>emical</text>
-            <text x="140" y="32" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">ch = /k/ (school, echo)</text>
-            <text x="10" y="64" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a"><tspan fill="#e8930c">ph</tspan>ysical</text>
-            <text x="140" y="64" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">ph = /f/ (photo, physics)</text>
-          </svg>
-        </div>
-        <p>Science words often come from <b>Greek</b>. In <b>chemical</b>, <b>ch</b> says /k/. In <b>physical</b>, <b>ph</b> says /f/ — from the Greek <i>physis</i>, meaning “nature”.</p>
-        <div class="remember"><b>Remember:</b> Hear /k/ in chemical? Write ch. Hear /f/ in physical? Write ph.</div>
-      </div>
-
-      <div class="card teach">
-        <h3>6 · -ture says “cher”</h3>
-        <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="The ending ture sounds like cher in mixture, picture and nature.">
-            <text x="10" y="36" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">mix<tspan fill="#e8930c">ture</tspan></text>
-            <text x="120" y="36" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">sounds like “mix-cher”</text>
-            <text x="10" y="66" font-family="Atkinson Hyperlegible" font-size="14" fill="#56607a">pic<tspan font-weight="700" fill="#a8540b">ture</tspan> · na<tspan font-weight="700" fill="#a8540b">ture</tspan> · fu<tspan font-weight="700" fill="#a8540b">ture</tspan></text>
-          </svg>
-        </div>
-        <p>At the end of a word, the sound “cher” is often spelt <b>-ture</b>: mix + ture = <b>mixture</b>, just like picture and nature.</p>
-        <div class="remember"><b>Remember:</b> mixture ends like picture: -ture.</div>
+        <p>A <b>receipt</b> is the slip that proves what you paid. A <b>guarantee</b> is a promise that a product will work — and that it will be fixed or replaced if it doesn’t.</p>
+        <div class="remember"><b>Remember:</b> Keep the receipt so you can use the guarantee.</div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===================== 3. PREFIX LAB (signature) ===================== -->
-  <section id="lab">
-    <div class="sec-head"><span class="sec-no">03</span><div><h2>Prefix Lab</h2><p class="lead">Choose <b>one part from each row</b> to build a word, then press <b>Test it</b>. Your job: build all eight words from the clues. Fake words get a rule-based clue. Real bonus words count too!</p></div></div>
+  <!-- ===================== 3. AD INSPECTOR (signature) ===================== -->
+  <section id="inspector">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Ad Inspector</h2><p class="lead">Pick a <b>highlighter</b>, then tap each line of the ad that uses that trick. Leave <b>facts</b> un-highlighted — they’re information, not tricks. When you’re ready, press <b>Check my highlights</b>. Fix anything amber and check again. Unlimited tries.</p></div></div>
     <div class="card">
-      <div class="lab">
-        <div class="lab-top">Word-building bench</div>
-        <div class="lab-body">
-          <div class="part-row pre"><p class="part-label" id="lPre">1 · Prefix (start)</p><div class="parts" role="group" aria-labelledby="lPre" id="rowPre"></div></div>
-          <div class="part-row root"><p class="part-label" id="lRoot">2 · Root (middle)</p><div class="parts" role="group" aria-labelledby="lRoot" id="rowRoot"></div></div>
-          <div class="part-row suf"><p class="part-label" id="lSuf">3 · Suffix (end)</p><div class="parts" role="group" aria-labelledby="lSuf" id="rowSuf"></div></div>
-          <div class="built-word" id="built" aria-live="polite"></div>
-          <div class="btn-row" style="justify-content:center">
-            <button class="btn teal" id="testBtn" type="button" disabled>Test it 🔒</button>
-            <button class="btn ghost" id="clearBtn" type="button">Clear</button>
-            <button class="btn ghost" id="labHint" type="button">Need a hint?</button>
-          </div>
-          <div class="fixup" id="labFix" tabindex="-1"></div>
-          <p class="msg" id="labMsg" role="status" aria-live="polite" style="text-align:center"></p>
-        </div>
+      <div class="pens" role="group" aria-label="Choose a highlighter">
+        <button class="pen" type="button" data-pen="band" aria-pressed="true"><span class="sw hl-band" aria-hidden="true"></span>Everyone’s doing it</button>
+        <button class="pen" type="button" data-pen="exag" aria-pressed="false"><span class="sw hl-exag" aria-hidden="true"></span>Too good to be true</button>
+        <button class="pen" type="button" data-pen="rush" aria-pressed="false"><span class="sw hl-rush" aria-hidden="true"></span>Hurry!</button>
+        <button class="pen" type="button" data-pen="cool" aria-pressed="false"><span class="sw hl-cool" aria-hidden="true"></span>You’ll feel amazing</button>
+        <button class="pen" type="button" data-pen="erase" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Eraser</button>
       </div>
-      <h3 style="margin-top:16px">Words to build <span class="counter" id="tCount">(0 of 8)</span></h3>
-      <div class="targets" id="targets"></div>
-      <p class="bonus" id="bonus">Bonus real words: none yet</p>
+      <div class="advert" role="group" aria-label="Advertisement for ZoomStride X9 sneakers — an ad made up for this lesson">
+        <p class="ad-brand">ZoomStride X9</p>
+        <p class="ad-sub">A made-up ad for this lesson</p>
+        <div id="phrases"></div>
+      </div>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn amber" id="adCheck" type="button" disabled>Check my highlights 🔒</button>
+        <button class="btn ghost" id="adHint" type="button">Need a hint?</button>
+      </div>
+      <div class="fixup" id="adFix" tabindex="-1"></div>
+      <p class="msg" id="adMsg" role="status" aria-live="polite" style="text-align:center"></p>
     </div>
-    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your word list</b> when all eight are built — include any bonus words.</div></div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your inspected ad</b> once every line is green. The page won’t remember it.</div></div>
   </section>
 
-  <!-- ===================== 4. LCWC (independent) ===================== -->
-  <section id="lcwc">
-    <div class="sec-head"><span class="sec-no">04</span><div><h2>Look · Cover · Write · Check</h2><p class="lead">Four tricky words, two rounds each. <b>Look</b> at the orange part, <b>cover</b> it, <b>write</b> it from memory, then <b>check</b>. Checking stays locked until you’ve typed your attempt.</p></div></div>
+  <!-- ===================== 4. SMART SHOPPER (independent) ===================== -->
+  <section id="shopper">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Smart Shopper</h2><p class="lead">Write <b>two sentences</b> of advice for a younger student who wants to buy something they saw in an ad. Use at least <b>two focus words</b>.</p></div></div>
     <div class="card">
-      <div class="steps" aria-hidden="true"><span class="stp" data-s="look">1 Look</span><span class="stp" data-s="cover">2 Cover</span><span class="stp" data-s="write">3 Write</span><span class="stp" data-s="check">4 Check</span></div>
-      <p class="counter" id="lcRound"></p>
-      <div class="lc-stage">
-        <span class="lc-word" id="lcWord"></span>
-        <div class="lc-cover" id="lcCover" aria-hidden="true">covered — write it from memory</div>
+      <label for="writebox" class="sr-only">Write your advice</label>
+      <textarea id="writebox" placeholder="Start writing here…"></textarea>
+      <div class="spy" id="spy"></div>
+      <div class="btn-row">
+        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
+        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
       </div>
-      <div class="btn-row"><button class="btn" id="coverBtn" type="button">Cover it</button></div>
-      <div id="writeArea" hidden>
-        <label for="lcIn" class="sr-only">Type the word from memory</label>
-        <input class="type-in" id="lcIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word from memory" style="margin-top:12px">
-        <div class="btn-row">
-          <button class="btn teal" id="lcCheck" type="button" disabled>Check 🔒</button>
-          <button class="btn ghost" id="lcHelpBtn" type="button" aria-expanded="false" aria-controls="lcHelpBox">I need help ▾</button>
+      <div class="help-box" id="helpBox">
+        <h3 style="margin-top:0">Sentence starters</h3>
+        <p>• Before you … , ask yourself if it is a … or a want.<br>• Don’t let a … advertisement …<br>• Always keep the … in case …</p>
+        <div class="wordbank-chips" aria-label="Word bank">
+          <button class="wb" type="button">consumer</button><button class="wb" type="button">advertisement</button><button class="wb" type="button">persuasive</button><button class="wb" type="button">influence</button><button class="wb" type="button">purchase</button><button class="wb" type="button">necessity</button><button class="wb" type="button">receipt</button><button class="wb" type="button">guarantee</button>
         </div>
-        <div class="help-box" id="lcHelpBox"></div>
+        <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:0">Tap a word to drop it into your writing box.</p>
       </div>
-      <div class="compare" id="compare" aria-hidden="true"></div>
-      <p class="msg" id="lcMsg"></p>
-      <p class="sr-only" id="lcSR" aria-live="polite"></p>
-      <div class="btn-row"><button class="btn ghost" id="lcNext" type="button" hidden>Next word ›</button></div>
-      <table class="results" aria-label="Look Cover Write Check results">
-        <thead><tr><th scope="col">Word</th><th scope="col">Round 1</th><th scope="col">Round 2</th></tr></thead>
-        <tbody id="resBody"></tbody>
-      </table>
-      <div class="btn-row"><button class="btn ghost" id="challengeBtn" type="button">Add challenge words (extension)</button></div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This page does not save.</b> Screenshot your results table before you close the page, and upload it to OneNote.</div></div>
+      <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
+      <div class="reveal-box" id="exampleBox">
+        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
+          <b style="color:var(--ink)">Worked example (one way to do it):</b>
+          <span style="display:block;margin-top:6px">Before you <u>purchase</u> those sneakers, ask yourself whether they are a <u>necessity</u> or just a want. Don’t let a <u>persuasive</u> <u>advertisement</u> <u>influence</u> you into spending all your money.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Clear advice, a question to ask, and five focus words.</span>
+        </div>
+      </div>
+      <div class="card" style="background:#fbfaf6;box-shadow:none;margin-bottom:0">
+        <h3>Detective challenge (extension)</h3>
+        <p>Add a sentence using an extension word: <b>manufacturer</b> (the company that makes a product), <b>entrepreneur</b> (someone who starts their own business) or <b>sustainable</b> (able to last without harming the environment).</p>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> When you’re happy with your advice, <b>screenshot it now</b> and upload to OneNote before you close the page.</div></div>
     </div>
   </section>
 
@@ -412,11 +389,11 @@
     <div class="card">
       <h3>Evidence to capture (screenshot each one)</h3>
       <ul class="check-list">
-        <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
-        <li><label for="c2"><input type="checkbox" id="c2"><span>My Prefix Lab word list (and bonus words)</span></label></li>
-        <li><label for="c3"><input type="checkbox" id="c3"><span>My Look · Cover · Write · Check results table</span></label></li>
+        <li><label for="exit1"><input type="checkbox" id="exit1"><span>My Briefing score and any fix-up notes I read</span></label></li>
+        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My inspected ad with every line green</span></label></li>
+        <li><label for="exit3"><input type="checkbox" id="exit3"><span>My Smart Shopper advice and Spelling Spy</span></label></li>
       </ul>
-      <h3 style="margin-top:18px">Can I explain why irreversible has two r’s?</h3>
+      <h3 style="margin-top:18px">How confident am I with this week’s words?</h3>
       <div class="confi" id="confi" role="group" aria-label="Confidence rating">
         <button type="button" aria-pressed="false">Still cracking it</button>
         <button type="button" aria-pressed="false">Getting there</button>
@@ -429,7 +406,7 @@
 </main>
 
 <footer>
-  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 3 Lesson 2: Prefix Lab · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 4 Lesson 1: Ad Inspector · ACARA v9 AC9E6LY09, linked to HASS AC9HS6K08. The ZoomStride brand is made up. All content original. Works offline — no data is collected or stored.</p>
 </footer>
 
 <div class="sr-only" id="liveRegion" aria-live="assertive"></div>
@@ -714,160 +691,96 @@ function setupDictation(DICTATION) {
 }
 
 
-/* =================== 1. WARM-UP =================== */
+/* =================== 1. WARM-UP (Week 3 retrieval) =================== */
 buildQuiz([
-  { stem: "Melting chocolate and letting it set again is a…", opts: ["reversible change", "irreversible change"], correct: 0,
-    fix: "It can go back to solid chocolate, so it’s <b>reversible</b>." },
-  { stem: "A change that makes a brand-new substance is a…", opts: ["physical change", "chemical change"], correct: 1,
+  { stem: "Which spelling is correct?", opts: ["irreversible", "ireversible", "irreversable"], correct: 0,
+    fix: "<b>irreversible</b> — ir + reversible: a <b>double r</b>, and it ends in <b>-ible</b>." },
+  { stem: "Burning toast is a…", opts: ["reversible change", "irreversible change"], correct: 1,
+    fix: "You can never turn burnt toast back into bread, so it’s <b>irreversible</b>." },
+  { stem: "Which spelling is correct?", opts: ["condensasion", "condensation", "condencation"], correct: 1,
+    fix: "<b>condensation</b> — keep the <b>s</b> from condense, then add <b>-ation</b>." },
+  { stem: "A change that makes a new substance is a…", opts: ["physical change", "chemical change"], correct: 1,
     fix: "New substance = <b>chemical</b> change. A physical change only alters shape or state." },
-  { stem: "Water droplets forming on the outside of a cold glass is…", opts: ["evaporation", "condensation", "a mixture"], correct: 1,
-    fix: "Gas turning back into liquid drops is <b>condensation</b>. Evaporation goes the other way." },
-  { stem: "Sand and water stirred together make a…", opts: ["mixture", "chemical change", "condensation"], correct: 0,
-    fix: "It’s a <b>mixture</b> — you can still separate the sand and water." },
-  { stem: "When sugar ___ in tea, it’s still there, even though you can’t see it.", opts: ["burns", "dissolves", "evaporates"], correct: 1,
-    fix: "The sugar <b>dissolves</b> — it spreads through the tea but is still there." },
+  { stem: "Which spelling is correct?", opts: ["disolve", "dissolve", "dissolv"], correct: 1,
+    fix: "<b>dissolve</b> — dis + solve: a <b>double s</b>, and it keeps the e." },
 ]);
 
-/* =================== 3. PREFIX LAB =================== */
-const PRE = ["", "ir", "in", "dis"];
-const ROOT = ["revers", "solv", "evapor", "condens", "mix", "chem", "phys", "vis"];
-const SUF = ["", "ible", "able", "e", "ation", "ture", "ical"];
-const TARGETS = [
-  { word: "reversible", clue: "a change that can go back" },
-  { word: "irreversible", clue: "a change that can never go back" },
-  { word: "dissolve", clue: "what salt does in water" },
-  { word: "evaporation", clue: "liquid turning into a gas" },
-  { word: "condensation", clue: "gas turning back into liquid drops" },
-  { word: "mixture", clue: "materials mixed that can be separated" },
-  { word: "chemical", clue: "a change that makes a new substance" },
-  { word: "physical", clue: "a change of shape or state only" },
+/* =================== 3. AD INSPECTOR =================== */
+const PEN_NAME = { band: "Everyone’s doing it", exag: "Too good to be true", rush: "Hurry!", cool: "You’ll feel amazing" };
+const PHRASES = [
+  { t: "Every kid at your school already owns a pair!", k: "band", why: "It tries to make you feel left out if you don’t buy it." },
+  { t: "The fastest sneakers ever made in the history of the world!", k: "exag", why: "“Fastest ever” is a huge claim no one could prove." },
+  { t: "Available in sizes 1 to 10.", k: "fact", why: "This is information you can check." },
+  { t: "Wear them and you’ll be the coolest person in the room.", k: "cool", why: "It promises a feeling, not a fact about the shoe." },
+  { t: "Hurry — this deal ends at midnight!", k: "rush", why: "It rushes you so you don’t stop to think." },
+  { t: "Price: $89.95", k: "fact", why: "A price is information you can check and compare." },
+  { t: "Join the millions of happy ZoomStride fans!", k: "band", why: "It says lots of people have them, so you should too." },
+  { t: "Guaranteed to make you jump twice as high!", k: "exag", why: "No shoe can double your jump — too good to be true." },
+  { t: "Only three pairs left in stock — don’t miss out!", k: "rush", why: "It makes you worry you’ll miss out, so you buy quickly." },
+  { t: "Rubber soles with a 12-month guarantee against faults.", k: "fact", why: "A real guarantee against faults is useful information." },
 ];
-const BONUS = ["reverse", "solve", "condense", "mix", "visible", "invisible", "mixable", "solvable"];
-const REAL = new Set(TARGETS.map(t => t.word).concat(BONUS));
-const sel = { pre: "", root: null, suf: "" };
-const gotT = new Set(), gotB = new Set();
-
-function makeRow(rowId, list, key) {
-  const row = $(rowId);
-  list.forEach(p => {
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "part"; b.dataset.val = p;
-    b.textContent = p === "" ? "(none)" : (key === "pre" ? p + "-" : key === "suf" ? "-" + p : p);
-    b.setAttribute("aria-pressed", key !== "root" && p === "" ? "true" : "false");
-    b.setAttribute("aria-label", (key === "pre" ? "Prefix " : key === "suf" ? "Suffix " : "Root ") + (p === "" ? "none" : p));
-    b.addEventListener("click", () => {
-      sel[key] = p;
-      $$(rowId + " .part").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
-      renderBuilt();
-    });
-    row.appendChild(b);
+let pen = "band";
+const paint = PHRASES.map(() => null);
+const box = $("#phrases");
+PHRASES.forEach((p, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "phrase"; b.id = "ph" + i;
+  b.innerHTML = '<span class="pt">' + escapeHTML(p.t) + "</span>";
+  b.setAttribute("aria-label", p.t + " — not highlighted");
+  b.addEventListener("click", () => {
+    paint[i] = pen === "erase" ? null : pen;
+    b.className = "phrase" + (paint[i] ? " hl-" + paint[i] : "");
+    const tag = paint[i] ? '<span class="ptag">' + PEN_NAME[paint[i]] + "</span>" : "";
+    b.innerHTML = '<span class="pt">' + escapeHTML(p.t) + "</span>" + tag;
+    b.setAttribute("aria-label", p.t + " — " + (paint[i] ? "highlighted as " + PEN_NAME[paint[i]] : "not highlighted"));
+    const any = paint.some(x => x);
+    $("#adCheck").disabled = !any;
+    $("#adCheck").textContent = any ? "Check my highlights" : "Check my highlights 🔒";
   });
-}
-makeRow("#rowPre", PRE, "pre"); makeRow("#rowRoot", ROOT, "root"); makeRow("#rowSuf", SUF, "suf");
-
-function built() { return sel.root === null ? "" : sel.pre + sel.root + sel.suf; }
-function renderBuilt() {
-  const el = $("#built");
-  if (sel.root === null) {
-    el.innerHTML = '<span class="bw-empty">Choose a root to start building</span>';
-  } else {
-    el.innerHTML = (sel.pre ? '<span class="bw-pre">' + sel.pre + "</span>" : "") +
-      '<span class="bw-root">' + sel.root + "</span>" +
-      (sel.suf ? '<span class="bw-suf">' + sel.suf + "</span>" : "");
-  }
-  $("#testBtn").disabled = sel.root === null;
-  $("#testBtn").textContent = sel.root === null ? "Test it 🔒" : "Test it";
-  $("#labFix").classList.remove("show");
-}
-function renderTargets() {
-  const box = $("#targets"); box.innerHTML = "";
-  TARGETS.forEach(t => {
-    const d = document.createElement("div");
-    const got = gotT.has(t.word);
-    d.className = "target" + (got ? " got" : "");
-    d.innerHTML = '<span class="tw">' + (got ? t.word + " ✓" : "? ? ?") + "</span>" + t.clue;
-    box.appendChild(d);
+  box.appendChild(b);
+});
+$$(".pen").forEach(b => b.addEventListener("click", () => {
+  pen = b.dataset.pen;
+  $$(".pen").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+  announce(pen === "erase" ? "Eraser selected." : "Highlighter: " + PEN_NAME[pen]);
+}));
+$("#adCheck").addEventListener("click", () => {
+  if ($("#adCheck").disabled) return;
+  const notes = [];
+  let right = 0;
+  PHRASES.forEach((p, i) => {
+    const b = $("#ph" + i), got = paint[i];
+    const correct = (p.k === "fact" && !got) || got === p.k;
+    b.classList.toggle("ok", correct); b.classList.toggle("no", !correct);
+    if (correct) { right++; return; }
+    if (p.k === "fact") notes.push("“" + p.t + "” — this is a fact, not a trick. " + p.why + " Use the eraser.");
+    else if (!got) notes.push("“" + p.t + "” — this line is a trick. " + p.why);
+    else notes.push("“" + p.t + "” — it is a trick, but not “" + PEN_NAME[got] + "”. " + p.why);
   });
-  $("#tCount").textContent = "(" + gotT.size + " of " + TARGETS.length + ")";
-  $("#bonus").textContent = "Bonus real words: " + (gotB.size ? [...gotB].join(", ") : "none yet");
-}
-function ruleClue() {
-  const { pre, root, suf } = sel;
-  if (pre === "in" && root[0] === "r") return "Before a root starting with <b>r</b>, the prefix in- changes to <b>ir-</b>.";
-  if (pre === "ir" && root[0] !== "r") return "<b>ir-</b> only goes in front of parts that start with r (like irregular).";
-  if ((root === "revers" || root === "vis") && suf === "able") return "Close! This root takes <b>-ible</b>, not -able.";
-  if (root === "solv" && pre === "dis" && suf === "") return "Almost — this word needs an <b>e</b> on the end.";
-  if (root === "solv" && pre === "" && suf === "") return "“solv” isn’t a word on its own. It needs an ending.";
-  if ((root === "chem" || root === "phys") && suf !== "ical") return "Try the ending that makes a describing word: <b>-ical</b>.";
-  if (root === "evapor" && suf === "e") return "Close! The action word is evaporATE — but this lab builds the process word. Try the -ation ending.";
-  if ((root === "evapor" || root === "condens") && suf !== "ation" && suf !== "e") return "This root names a process with <b>-ation</b>.";
-  if (root === "mix" && suf !== "" && suf !== "ture") return "The “cher” sound at the end of this word is spelt <b>-ture</b>.";
-  if (pre === "dis" && root !== "solv") return "In our lab, <b>dis-</b> only fits one root — the one that means to break apart in water.";
-  return "That combination isn’t a real word. Change one part at a time and test again.";
-}
-$("#testBtn").addEventListener("click", () => {
-  if (sel.root === null) return;
-  const w = built(), fix = $("#labFix"), msg = $("#labMsg");
-  if (REAL.has(w)) {
+  const fix = $("#adFix"), msg = $("#adMsg");
+  if (right === PHRASES.length) {
     fix.classList.remove("show");
-    const isTarget = TARGETS.some(t => t.word === w);
-    if (isTarget) {
-      const fresh = !gotT.has(w); gotT.add(w);
-      msg.className = "msg good";
-      msg.textContent = fresh ? "✓ " + w + " — that’s one of your eight!" : w + " is already on your list.";
-      if (gotT.size === TARGETS.length) msg.textContent = "🎉 All eight built! Screenshot your word list.";
-    } else {
-      gotB.add(w);
-      msg.className = "msg good"; msg.textContent = "✓ " + w + " is a real word — bonus! It’s not one of the eight, though.";
-    }
+    msg.className = "msg good";
+    msg.textContent = "🎉 Case cracked! Seven tricks exposed and three facts left clean. Screenshot your ad.";
     announce(msg.textContent);
-    renderTargets();
   } else {
-    fix.innerHTML = "<b>Not a real word:</b> " + ruleClue();
-    fix.classList.add("show");
-    msg.textContent = ""; msg.className = "msg";
-    announce("Not a real word. " + fix.textContent);
-    fix.focus();
+    fix.innerHTML = "<b>Fix-up:</b> " + right + " of " + PHRASES.length + " lines are right. Check the amber ones:<ul class=\"feedback-list\">" +
+      notes.map(n => "<li>" + escapeHTML(n) + "</li>").join("") + "</ul>";
+    fix.classList.add("show"); fix.focus();
+    msg.className = "msg"; msg.textContent = "";
   }
 });
-$("#clearBtn").addEventListener("click", () => {
-  sel.pre = ""; sel.root = null; sel.suf = "";
-  $$("#rowPre .part").forEach(x => x.setAttribute("aria-pressed", x.dataset.val === "" ? "true" : "false"));
-  $$("#rowRoot .part").forEach(x => x.setAttribute("aria-pressed", "false"));
-  $$("#rowSuf .part").forEach(x => x.setAttribute("aria-pressed", x.dataset.val === "" ? "true" : "false"));
-  renderBuilt(); $("#labMsg").textContent = "";
-});
-const HINTS = {
-  reversible: "Start with the root <b>revers</b>. Which ending — with an i — makes it “able to go back”?",
-  irreversible: "It’s the opposite of reversible. Which prefix means “not” before an r?",
-  dissolve: "Use the root <b>solv</b>. It needs a prefix that means “apart” — and an e at the end.",
-  evaporation: "Use the root <b>evapor</b> with the ending that names a process.",
-  condensation: "Use the root <b>condens</b> with the ending that names a process.",
-  mixture: "Use the root <b>mix</b> with the ending that sounds like “cher”.",
-  chemical: "The /k/ sound is spelt ch. Pick that root and the ending <b>-ical</b>.",
-  physical: "The /f/ sound is spelt ph. Pick that root and the ending <b>-ical</b>.",
-};
-$("#labHint").addEventListener("click", () => {
-  const t = TARGETS.find(x => !gotT.has(x.word));
-  const fix = $("#labFix");
-  if (!t) { $("#labMsg").className = "msg good"; $("#labMsg").textContent = "All eight built — no hints needed!"; return; }
-  fix.innerHTML = "<b>Hint</b> for “" + t.clue + "”: " + HINTS[t.word];
+$("#adHint").addEventListener("click", () => {
+  const fix = $("#adFix");
+  fix.innerHTML = "<b>Hint:</b> Ask two questions about each line. <i>Can I check it?</i> If yes, it’s probably a fact. <i>Is it trying to make me feel something — left out, rushed, or amazing?</i> If yes, it’s a trick. There are 7 tricks and 3 facts.";
   fix.classList.add("show"); fix.focus();
 });
-renderBuilt(); renderTargets();
 
-/* =================== 4. LOOK COVER WRITE CHECK =================== */
-setupLCWC({
-  core: [
-    { w: "irreversible", tp: [1, 2], tip: "<b>ir</b> + <b>reversible</b>: the r of ir- meets the r of reversible, so there are two." },
-    { w: "evaporation", tp: [4], tip: "Think of <b>evaporate</b>: e-vap-<b>o</b>-rate. Keep the o, then add -ation." },
-    { w: "condensation", tp: [6], tip: "Think of <b>condense</b>: keep the <b>s</b>, drop the e, add -ation." },
-    { w: "chemical", tp: [0, 1], tip: "The /k/ sound at the start is spelt <b>ch</b>, like chemist." },
-  ],
-  challenge: [
-    { w: "combustion", tp: [5, 6], tip: "Ends with <b>-stion</b>, like question: combu + stion." },
-    { w: "solubility", tp: [4, 5, 6], tip: "Think <b>soluble</b>: the -ble becomes <b>-bility</b>." },
-  ],
+/* =================== 4. SMART SHOPPER =================== */
+setupWriting({
+  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
+  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
+  spyEl: $("#spy"), words: ["consumer", "advertisement", "persuasive", "influence", "purchase", "necessity", "receipt", "guarantee"],
 });
 
 /* =================== 5. CONFIDENCE =================== */

@@ -22,9 +22,9 @@ Year 6 spelling unit, Term 4 2026, St Joseph's Primary School, Corinda.
 | 7 | Wk3 Science changes | `Wk3_Lesson1_Change_Sort.html` | Drag changes into reversible or irreversible beakers | Built |
 | 8 | Wk3 Science changes | `Wk3_Lesson2_Prefix_Lab.html` | Click-to-build prefix + root + suffix | Built |
 | 9 | Wk3 Science changes | `Wk3_Lesson3_Melt_and_Rebuild.html` | Word melts away, then rebuild it from memory | Built |
-| 10 | Wk4 HASS consumer | `Wk4_Lesson1_Ad_Inspector.html` | Highlight persuasive tricks in an original ad | Coming soon |
-| 11 | Wk4 HASS consumer | `Wk4_Lesson2_Silent_Letter_Scanner.html` | Slide a scanner and stop on the silent letter | Coming soon |
-| 12 | Wk4 HASS consumer | `Wk4_Lesson3_Budget_Cart.html` | Spell an item correctly to add it to the cart, within budget | Coming soon |
+| 10 | Wk4 HASS consumer | `Wk4_Lesson1_Ad_Inspector.html` | Highlight persuasive tricks in an original ad | Built |
+| 11 | Wk4 HASS consumer | `Wk4_Lesson2_Silent_Letter_Scanner.html` | Slide a scanner and stop on the silent letter | Built |
+| 12 | Wk4 HASS consumer | `Wk4_Lesson3_Budget_Cart.html` | Spell an item correctly to add it to the cart, within budget | Built |
 | 13 | Wk5 Transition | `Wk5_Lesson1_Timetable_Builder.html` | Drag words into a Year 7 day planner | Coming soon |
 | 14 | Wk5 Transition | `Wk5_Lesson2_Word_Family_Tree.html` | Grow -ent/-ence and -ant/-ance branches | Coming soon |
 | 15 | Wk5 Transition | `Wk5_Lesson3_Letter_to_Year7_Me.html` | Locked-until-attempted letter with a live word check | Coming soon |

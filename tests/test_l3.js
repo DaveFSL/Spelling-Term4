@@ -9,7 +9,7 @@ click($$("#q0 .opt")[1]); check($("#score").textContent === "1", "correct warm-u
 click($$("#q1 .opt")[0]); check($("#fix1").classList.contains("show"), "wrong warm-up answer shows fix-up");
 check($$("#casenotes .remember").length === 2, "2 teaching cards with Remember lines");
 // nav targets exist
-check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "every nav pill points at a real section");
+check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "every nav pill points at a real section");
 
 // Stanza repair
 const toks = $$(".tok");

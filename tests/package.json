@@ -2,7 +2,7 @@
   "name": "term4-casebook-tests",
   "private": true,
   "scripts": {
-    "test": "node test_hub.js && node test_l1.js && node test_l2.js && node test_l3.js && node test_w2l1.js && node test_w2l2.js && node test_w2l3.js && node test_w3l1.js && node test_w3l2.js && node test_w3l3.js"
+    "test": "node test_hub.js && node test_l1.js && node test_l2.js && node test_l3.js && node test_w2l1.js && node test_w2l2.js && node test_w2l3.js && node test_w3l1.js && node test_w3l2.js && node test_w3l3.js && node test_w4l1.js && node test_w4l2.js && node test_w4l3.js"
   },
   "devDependencies": {
     "jsdom": "^24.0.0"

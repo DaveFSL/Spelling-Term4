@@ -7,7 +7,7 @@ const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
 check($$(".q").length === 5, "5 warm-up questions");
 click($$("#q0 .opt")[0]); check($("#fix0").classList.contains("show"), "wrong warm-up → fix-up");
 check($$("#casenotes .remember").length === 2, "2 teaching cards with Remember lines");
-check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
 const gaps = $$(".pline input");
 check(gaps.length === 8 && gaps.every(g => g.getAttribute("aria-label")), "8 labelled poster gaps");
 check($("#g1").getAttribute("aria-label") === "Gap 2: Every dollar raised goes to ….", "gap 2 label has no space before the full stop");

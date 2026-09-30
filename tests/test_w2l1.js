@@ -7,7 +7,7 @@ const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
 check($$(".q").length === 5, "5 warm-up questions");
 click($$("#q0 .opt")[0]); check($("#fix0").classList.contains("show") && !$("#jumpFix").disabled, "wrong warm-up → fix-up + jump enabled");
 check($$("#casenotes .card").length === 4 && $$("#casenotes .remember").length === 4, "4 teaching cards with Remember lines");
-check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
 const tiles = () => $$(".wtile"), slots = () => $$(".slot");
 check(tiles().length === 8 && slots().length === 8, "8 tiles and 8 slots");
 click(slots()[0]);

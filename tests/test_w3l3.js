@@ -10,7 +10,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   check(!/\/[kf]\//.test(d.body.innerHTML) && !/cher sound|“cher”/.test(d.body.innerHTML), "lesson 3 uses letter patterns, not sound names");
   click($$("#q0 .opt")[0]); check(d.activeElement === $("#fix0"), "wrong answer focuses the fix-up");
   check($$("#casenotes .remember").length === 2, "2 teaching cards with Remember lines");
-  check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+  check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
   // melt & rebuild
   const word = () => $$("#ice span").map(s => s.textContent).join("");
   let wd = word();

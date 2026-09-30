@@ -60,6 +60,8 @@
   .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
   .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
   .pill:hover{border-color:var(--teal); color:var(--teal)}
+  .pill-home{background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700}
+  .pill-home:hover{background:#243a63; color:#fff; border-color:#243a63}
 
   /* ---------- layout ---------- */
   main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
@@ -224,6 +226,7 @@
 
 <nav class="pills" aria-label="Jump to a section">
   <div class="pills-inner">
+    <a class="pill pill-home" href="index.html" aria-label="Back to the Term 4 Casebook home page">← Home</a>
     <a class="pill" href="#briefing">The Briefing</a>
     <a class="pill" href="#casenotes">Case Notes</a>
     <a class="pill" href="#melt">Melt and Rebuild</a>
