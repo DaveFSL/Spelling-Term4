@@ -27,6 +27,7 @@
     --radius:16px;
   }
   *{box-sizing:border-box}
+  [hidden]{display:none !important}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
   body{
@@ -515,6 +516,7 @@ function buildQuiz(QUIZ) {
         fix.classList.add("show");
         if (firstFix === null) { firstFix = qi; $("#jumpFix").disabled = false; }
         announce("Not quite. Read the fix-up note.");
+        fix.focus();
       }
     }
   });
@@ -537,21 +539,31 @@ function setupWriting({ box, helpBtn, helpBox, exampleBtn, lockMsg, exampleBox, 
   const spy = () => {
     if (!spyEl) return;
     const text = box.value.toLowerCase();
-    $$(".chip", spyEl).forEach(chip => {
-      const w = chip.dataset.word;
+    let n = 0;
+    words.forEach(w => {
       const re = new RegExp("\\b" + w + "s?\\b");
-      chip.classList.toggle("on", re.test(text));
+      const hit = re.test(text);
+      let chip = spyEl.querySelector('.chip[data-word="' + w + '"]');
+      if (hit) {
+        n++;
+        if (!chip) {
+          chip = document.createElement("span");
+          chip.className = "chip on";
+          chip.dataset.word = w;
+          chip.textContent = w;
+          spyEl.appendChild(chip);
+        }
+      } else if (chip) {
+        chip.remove();
+      }
     });
+    const lab = spyEl.querySelector(".spy-label");
+    if (lab) lab.textContent = "Focus words spelt correctly: " + n;
   };
   if (spyEl) {
     const lab = document.createElement("span");
-    lab.className = "spy-label"; lab.textContent = "Spelling spy – focus words spelt correctly:";
+    lab.className = "spy-label"; lab.textContent = "Focus words spelt correctly: 0";
     spyEl.appendChild(lab);
-    words.forEach(w => {
-      const c = document.createElement("span");
-      c.className = "chip"; c.dataset.word = w; c.textContent = w;
-      spyEl.appendChild(c);
-    });
   }
   box.addEventListener("input", () => { unlock(); spy(); });
   exampleBtn.addEventListener("click", () => {
@@ -661,7 +673,7 @@ LINES.forEach((ln, i) => {
 });
 
 function openLine(i) {
-  if (solved.has(i)) { $("#toolMsg").textContent = "Line " + (i + 1) + " is already filed as a " + LINES[i].tool + ". Pick a line that isn’t green."; return; }
+  if (solved.has(i)) { $("#toolMsg").textContent = "Line " + (i + 1) + " is already filed. Pick a line that isn’t green."; return; }
   current = i; spellTries = 0;
   $$(".line-btn").forEach((b, j) => b.setAttribute("aria-pressed", j === i ? "true" : "false"));
   ins.hidden = false;
@@ -711,14 +723,15 @@ function fileIt() {
     b.classList.add("solved");
     b.setAttribute("aria-pressed", "false");
     b.querySelector(".ltxt").innerHTML = LINES[i].marked;
-    b.querySelector(".badge").textContent = target + " ✓";
-    b.setAttribute("aria-label", "Line " + (i + 1) + ", filed as " + target + ": " + LINES[i].text);
+    b.querySelector(".badge").textContent = "filed ✓";
+    b.setAttribute("aria-label", "Line " + (i + 1) + ", filed: " + LINES[i].text);
     ins.hidden = true; current = null;
     const n = solved.size;
     $("#toolCount").textContent = n + " of " + LINES.length + " lines filed";
     $("#toolBar").style.width = (n / LINES.length * 100) + "%";
     const msg = $("#toolMsg");
     if (n === LINES.length) {
+      LINES.forEach((ln, k) => { $("#line" + k + " .badge").textContent = ln.tool + " ✓"; });
       msg.className = "msg good";
       msg.textContent = "🎉 Case solved — every tool filed and spelt correctly! Screenshot your poem.";
     } else {

@@ -46,6 +46,7 @@ check($("#peek").textContent === "alliteration", "peek shows the word");
 type(w, $("#spellIn"), "Alliteration ");
 click($("#fileBtn"));
 check(lines[0].classList.contains("solved") && lines[0].querySelector("mark"), "correct spelling files the line and marks evidence");
+check(lines[0].querySelector(".badge").textContent === "filed ✓", "filed badge hides the tool name until the case is solved");
 check($("#toolCount").textContent.startsWith("1 of 6"), "progress counter updates");
 click(lines[0]);
 check($("#inspector").hidden && /already filed/.test($("#toolMsg").textContent), "solved line can't be reopened");
@@ -59,6 +60,7 @@ for (let i = 1; i < 6; i++) {
 }
 check($$(".line-btn.solved").length === 6, "all six lines can be filed");
 check(/Case solved/.test($("#toolMsg").textContent), "completion message shown");
+check(/alliteration ✓/.test(lines[0].querySelector(".badge").textContent), "tool names revealed once all six are filed");
 
 // Writing
 check($("#exampleBtn").disabled, "worked example locked at start");
@@ -70,8 +72,9 @@ click($$("#helpBox .wb")[0]);
 check(/simile/.test($("#writebox").value), "word bank chip inserts word");
 type(w, $("#writebox"), "A simile compares using like. A metaphor says it is.");
 check(!$("#exampleBtn").disabled, "example unlocks after an attempt");
+check($("#spy").textContent.indexOf("Focus words spelt correctly: 2") !== -1, "spelling spy counts words spelt correctly");
 check($('#spy .chip[data-word="simile"]').classList.contains("on") && $('#spy .chip[data-word="metaphor"]').classList.contains("on"), "spelling spy lights correctly spelt words");
-check(!$('#spy .chip[data-word="rhythm"]').classList.contains("on"), "spelling spy ignores words not used");
+check(!$('#spy .chip[data-word="rhythm"]'), "spelling spy ignores words not used");
 click($("#exampleBtn"));
 check($("#exampleBox").classList.contains("show"), "example reveals after unlock");
 

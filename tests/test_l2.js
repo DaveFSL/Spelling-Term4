@@ -42,8 +42,10 @@ check($("#drum").tagName === "BUTTON", "drum is a real button (keyboard operable
 // LCWC
 check($("#lcWord").textContent === "rhythm" && $$("#lcWord .tp").length === 3, "LCWC starts with rhythm and marks tricky part");
 check($("#writeArea").hidden, "write area hidden during Look");
+check(/Word 1/.test($("#resBody").textContent) && !/rhythm/.test($("#resBody").textContent), "results hide spellings until a word is checked");
 click($("#coverBtn"));
 check($("#lcCover").classList.contains("show") && !$("#writeArea").hidden, "cover hides word and opens writing");
+check($("#lcWord").getAttribute("aria-hidden") === "true", "covered word is hidden from screen readers");
 check($("#lcCheck").disabled, "check locked until attempt typed");
 click($("#helpBtn"));
 check($("#helpBox").classList.contains("show") && /Helps/.test($("#helpBox").textContent), "I need help reveals memory trick");
@@ -51,7 +53,7 @@ type(w, $("#lcIn"), "rythm");
 check(!$("#lcCheck").disabled, "check unlocks after typing");
 click($("#lcCheck"));
 check($$("#compare .cl.no").length > 0 && /Not yet/.test($("#lcMsg").textContent), "wrong attempt shows letter comparison");
-check(/✗/.test($("#resBody").textContent), "results table records the miss");
+check($("#lcWord").getAttribute("aria-hidden") !== "true" && /rhythm/.test($("#resBody").textContent) && /✗/.test($("#resBody").textContent), "results table records the miss");
 click($("#lcNext"));
 check($("#lcWord").textContent === "rhyme", "next word loads");
 click($("#coverBtn")); type(w, $("#lcIn"), "rhyme"); key(w, $("#lcIn"), "Enter");

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 1 Lesson 3 — Stanza Repair | Year 6 Spelling</title>
+<title>Week 2 Lesson 3 — Poster Press | Year 6 Spelling</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -149,23 +149,25 @@
   footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
   .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
 
-  /* ---------- Stanza Repair (signature) ---------- */
-  .verse{background:#fffdf7; border:1.5px solid var(--line); border-radius:14px; padding:16px 14px}
-  .vline{margin:4px 0; line-height:2.3; font-size:1.05rem; border-radius:8px; padding:0 4px; transition:background .3s}
-  .vline.flash{background:var(--amber-soft)}
-  .tok{display:inline-flex; align-items:center; justify-content:center; text-align:center; vertical-align:middle; font-family:"Atkinson Hyperlegible"; font-size:1.05rem; background:none; border:1.5px solid transparent; border-radius:7px; padding:3px 4px; min-width:40px; min-height:40px; cursor:pointer; color:var(--ink)}
-  .tok:hover{border-color:var(--line); background:#fff}
-  .tok[aria-pressed=true]{border-color:var(--ink); background:#fff}
-  .tok.fixed, .tok.fixed:disabled{background:var(--good-soft); border-color:var(--good); color:var(--good); font-weight:700; cursor:default; opacity:1; pointer-events:none}
-  .miss-cap{text-align:center; font-family:"Space Grotesk"; font-weight:700; font-size:.95rem; margin:.35em 0 0}
-  .miss-cap .no{color:var(--bad); text-decoration:line-through}
-  .miss-cap .yes{color:var(--good)}
-  .tok.okword{animation:shake .35s}
-  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
-  .repair{margin-top:14px; border:2px dashed var(--amber-edge); border-radius:14px; padding:16px; background:#fffaf0}
-  .repair-row{display:flex; gap:10px; flex-wrap:wrap}
-  .repair-row input{flex:1 1 220px}
-  .found{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+  /* ---------- Poster Press (signature) ---------- */
+  .poster{position:relative; max-width:640px; margin:0 auto; background:#fffdf7; border:3px solid var(--ink); border-radius:6px; padding:22px 22px 18px; box-shadow:6px 6px 0 var(--amber)}
+  @media(max-width:560px){.poster{padding:16px 12px}}
+  .poster-kicker{text-align:center; font-family:"Space Grotesk"; font-weight:700; letter-spacing:.2em; text-transform:uppercase; font-size:.78rem; color:var(--teal); margin:0}
+  .poster-title{text-align:center; font-family:"Space Grotesk"; font-weight:700; font-size:2.2rem; line-height:1.05; margin:4px 0 14px; color:var(--ink)}
+  @media(max-width:560px){.poster-title{font-size:1.7rem}}
+  .pline{margin:10px 0; font-size:1.05rem; line-height:2.1}
+  .pline input{font-family:"Space Grotesk"; font-weight:700; font-size:1rem; width:10.5em; max-width:100%; min-height:44px; border:none; border-bottom:3px dashed var(--amber-edge); background:#fff; padding:4px 8px; color:var(--ink); border-radius:6px 6px 0 0}
+  .pline input:focus{outline:none; border-bottom-color:var(--teal); background:var(--teal-soft)}
+  .pline input.ok{border-bottom:3px solid var(--good); background:var(--good-soft); color:var(--good)}
+  .pline input.no{border-bottom:3px solid var(--amber); background:var(--amber-soft)}
+  .ptip{display:none; font-size:.85rem; color:#a8540b; margin:2px 0 0; line-height:1.4}
+  .ptip.show{display:block}
+  .stamp{display:none; width:fit-content; margin:20px 8px 2px auto; transform:rotate(-8deg); transform-origin:right center; border:4px solid var(--good); color:var(--good); font-family:"Space Grotesk"; font-weight:700; font-size:1.3rem; letter-spacing:.12em; padding:4px 12px; border-radius:8px; background:rgba(255,255,255,.92)}
+  .poster.printed .stamp{display:block}
+  .poster.printed .pline input{border-bottom-style:solid}
+  .press-row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:16px}
+  .word-bank-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 14px}
+  .word-bank-box.show{display:block}
 
   /* ---------- Dictation ---------- */
   .dict-steps{margin:.3em 0 .6em; padding-left:1.2em}
@@ -176,7 +178,7 @@
   .dsent{display:block; font-size:.95rem; color:var(--ink-soft)}
   .dmark{margin-left:auto; flex:0 0 auto; border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:8px 12px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
   .dmark[aria-pressed=true]{background:var(--good); border-color:var(--good); color:#fff}
-  .ready{display:flex; gap:11px; align-items:center; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px}
+  .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
   .ready input{width:24px; height:24px; accent-color:var(--teal)}
 </style>
 </head>
@@ -185,11 +187,11 @@
 <header class="band">
   <div class="band-inner">
     <a class="home-link" href="index.html">← Term 4 Casebook home</a>
-    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 1 · Lesson 3</p>
-    <h1>Stanza Repair</h1>
-    <p class="hook">A swaggie’s bush ballad has been scribbled down in a hurry — and six words are spelt wrong. Find them, fix them, then write a verse of your own.</p>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 2 · Lesson 3</p>
+    <h1>Poster Press</h1>
+    <p class="hook">The Mission Day poster goes to the printer today — but the press only runs when every word is spelt right. Then write your leader’s message and take the dictation.</p>
     <div class="meta-row" aria-label="Lesson details">
-      <span>Case File 1: Poetry</span>
+      <span>Case File 2: Catholic Mission</span>
       <span>Focus: spelling in context + dictation</span>
       <span>AC9E6LY08 · AC9E6LY09</span>
       <span>20 minutes</span>
@@ -201,8 +203,8 @@
   <div class="pills-inner">
     <a class="pill" href="#briefing">The Briefing</a>
     <a class="pill" href="#casenotes">Case Notes</a>
-    <a class="pill" href="#repair">Stanza Repair</a>
-    <a class="pill" href="#verseWrite">My Verse</a>
+    <a class="pill" href="#press">Poster Press</a>
+    <a class="pill" href="#message">Leader’s Message</a>
     <a class="pill" href="#dictation">Dictation</a>
     <a class="pill" href="#closed">Case Closed</a>
   </div>
@@ -212,7 +214,7 @@
 
   <!-- ===================== 1. WARM-UP ===================== -->
   <section id="briefing">
-    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Which spelling is the real one? Tap your answer. Wrong ones show an orange <b>fix-up</b> with the trap to watch for.</p></div></div>
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Which spelling is the real one? Tap your answer. Wrong ones show an orange <b>fix-up</b> with the rule to remember.</p></div></div>
     <div id="quiz"></div>
     <div class="scorebar" role="status" aria-live="polite">
       <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
@@ -223,95 +225,97 @@
 
   <!-- ===================== 2. TEACHING CARDS ===================== -->
   <section id="casenotes">
-    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Two tools for proofreading like a detective.</p></div></div>
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Two tools for today’s writing.</p></div></div>
     <div class="teach-grid">
       <div class="card teach">
-        <h3>1 · Proofread slowly</h3>
+        <h3>1 · A leader’s message</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 90" role="img" aria-label="A magnifying glass over the mistake rythm, crossed out in red. The correct spelling is rhythm.">
-            <g stroke="#1b2a4a" stroke-width="3" stroke-linecap="round"><line x1="14" y1="30" x2="60" y2="30"/><line x1="72" y1="30" x2="120" y2="30"/><line x1="200" y1="30" x2="250" y2="30"/><line x1="262" y1="30" x2="306" y2="30"/></g>
-            <text x="136" y="36" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#a8261b" text-decoration="line-through">rythm</text>
-            <circle cx="160" cy="30" r="30" fill="none" stroke="#0e7c7b" stroke-width="4"/>
-            <line x1="182" y1="52" x2="204" y2="76" stroke="#0e7c7b" stroke-width="7" stroke-linecap="round"/>
+          <svg viewBox="0 0 320 96" role="img" aria-label="A megaphone with three parts of a leader's message: talk to us, say why, ask for action.">
+            <path d="M16 38 L60 22 L60 74 L16 58 Z" fill="#fbe7c8" stroke="#e8930c" stroke-width="2.5"/>
+            <rect x="6" y="38" width="12" height="20" rx="3" fill="#e8930c"/>
+            <g font-family="Space Grotesk" font-weight="700" font-size="14">
+              <rect x="86" y="6" width="226" height="24" rx="12" fill="#e1efee"/><text x="98" y="23" fill="#0e7c7b">1 Talk to us: “we”, “our”</text>
+              <rect x="86" y="36" width="226" height="24" rx="12" fill="#e1efee"/><text x="98" y="53" fill="#0e7c7b">2 Say why it matters</text>
+              <rect x="86" y="66" width="226" height="24" rx="12" fill="#e1efee"/><text x="98" y="83" fill="#0e7c7b">3 Ask for action</text>
+            </g>
           </svg>
-          <p class="miss-cap"><span class="no">✗ rythm</span> → <span class="yes">✓ rhythm</span></p>
         </div>
-        <p>Your brain reads what it <i>expects</i> to see. Slow down, point at <b>one word at a time</b>, and ask: does this look right?</p>
-        <div class="remember"><b>Remember:</b> Read every word, not the word you expect.</div>
+        <p>A good leader’s message speaks to the whole group, says <b>why</b> it matters, and asks people to <b>do</b> something.</p>
+        <div class="remember"><b>Remember:</b> Talk to us, say why, ask for action.</div>
       </div>
       <div class="card teach">
         <h3>2 · Know each word’s trap</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 120" role="img" aria-label="The eight focus words with their tricky parts highlighted: poetry, rhythm, rhyme, stanza, ballad, simile, metaphor, alliteration.">
+          <svg viewBox="0 0 320 120" role="img" aria-label="The eight focus words with their tricky parts highlighted.">
             <g font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">
-              <text x="10" y="26">p<tspan fill="#e8930c">oe</tspan>try</text>
-              <text x="10" y="54"><tspan fill="#e8930c">rhy</tspan>thm</text>
-              <text x="10" y="82"><tspan fill="#e8930c">rhy</tspan>me</text>
-              <text x="10" y="110">sta<tspan fill="#e8930c">nz</tspan><tspan fill="#e8930c">a</tspan></text>
-              <text x="170" y="26">ba<tspan fill="#e8930c">ll</tspan>ad</text>
-              <text x="170" y="54">simi<tspan fill="#e8930c">le</tspan></text>
-              <text x="170" y="82">meta<tspan fill="#e8930c">ph</tspan>or</text>
-              <text x="170" y="110">a<tspan fill="#e8930c">ll</tspan>iteration</text>
+              <text x="10" y="26">compa<tspan fill="#e8930c">ss</tspan>ion</text>
+              <text x="10" y="54">char<tspan fill="#e8930c">ity</tspan></text>
+              <text x="10" y="82">gener<tspan fill="#e8930c">os</tspan>ity</text>
+              <text x="10" y="110">just<tspan fill="#e8930c">ice</tspan></text>
+              <text x="170" y="26">dign<tspan fill="#e8930c">ity</tspan></text>
+              <text x="170" y="54">co<tspan fill="#e8930c">mm</tspan>unity</text>
+              <text x="170" y="82">volunt<tspan fill="#e8930c">eer</tspan></text>
+              <text x="170" y="110">solid<tspan fill="#e8930c">ar</tspan>ity</text>
             </g>
           </svg>
         </div>
-        <p>Each word has one spot where people slip. If you know the <b>trap</b>, you can check it on purpose.</p>
+        <p>Each word has one spot where people slip. Check the <b>trap</b> on purpose before you move on.</p>
         <div class="remember"><b>Remember:</b> Check the orange part of each word first.</div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== 3. STANZA REPAIR (signature) ===================== -->
-  <section id="repair">
-    <div class="sec-head"><span class="sec-no">03</span><div><h2>Stanza Repair</h2><p class="lead"><b>Tap any word</b> you think is misspelt, then type the correct spelling. There are <b>six</b> mistakes, all words from this week. Tapping a word that’s already right just tells you so — no penalty.</p></div></div>
+  <!-- ===================== 3. POSTER PRESS (signature) ===================== -->
+  <section id="press">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Poster Press</h2><p class="lead">Type the missing word in each gap. The <b>Print</b> button unlocks when every gap has an attempt. Any word that isn’t spelt right is marked with a clue — fix it and press Print again. Unlimited tries.</p></div></div>
     <div class="card">
-      <div class="verse" id="verse" aria-label="The Swaggie’s Song, an original bush ballad verse with six spelling mistakes"></div>
-      <p class="counter" id="repCount" role="status" aria-live="polite" style="margin-top:10px">0 of 6 mistakes fixed</p>
-      <div class="repair" id="repairBox" hidden>
-        <p style="margin:0 0 8px">You tapped <b id="repWord"></b>. Type the correct spelling:</p>
-        <div class="repair-row">
-          <label for="repIn" class="sr-only">Correct spelling</label>
-          <input class="type-in" id="repIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="correct spelling">
-          <button class="btn teal" id="repBtn" type="button">Fix it</button>
-          <button class="btn ghost" id="repCancel" type="button">Cancel</button>
-        </div>
-        <div class="fixup" id="repFix" tabindex="-1"></div>
+      <div class="poster" id="poster">
+        <p class="poster-kicker">Our Year 6 leaders present</p>
+        <p class="poster-title">Mission Day</p>
+        <div id="plines"></div>
+        <span class="stamp" aria-hidden="true">PRINTED ✓</span>
       </div>
-      <p class="msg" id="repMsg" role="status" aria-live="polite"></p>
-      <div class="btn-row"><button class="btn ghost" id="repHint" type="button">Hint: show me a line with a mistake</button></div>
+      <div class="press-row">
+        <button class="btn amber" id="printBtn" type="button" disabled>Print poster 🔒</button>
+        <button class="btn ghost" id="bankBtn" type="button" aria-expanded="false" aria-controls="bankBox">I need help ▾</button>
+      </div>
+      <div class="word-bank-box" id="bankBox">
+        <p style="margin:0 0 6px"><b>Word bank</b> (in alphabetical order — you still need to choose the right gap):</p>
+        <p style="margin:0; font-family:'Space Grotesk'; font-weight:700">charity · community · compassion · dignity · generosity · justice · solidarity · volunteer</p>
+      </div>
+      <p class="msg" id="printMsg" role="status" aria-live="polite" style="text-align:center"></p>
     </div>
-    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your repaired verse</b> once all six fixes are green.</div></div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your printed poster</b> — the one with the green PRINTED stamp.</div></div>
   </section>
 
-  <!-- ===================== 4. MY VERSE (independent) ===================== -->
-  <section id="verseWrite">
-    <div class="sec-head"><span class="sec-no">04</span><div><h2>My Verse</h2><p class="lead">Write a <b>two-line</b> verse of your own. Use <b>one poet’s tool</b> (a simile, metaphor or alliteration) and at least <b>two focus words</b>. The Spelling Spy lights up each focus word you spell correctly.</p></div></div>
+  <!-- ===================== 4. LEADER'S MESSAGE (independent) ===================== -->
+  <section id="message">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Leader’s Message</h2><p class="lead">Write a <b>three-sentence</b> Mission Day message for the whole school. Use at least <b>four focus words</b>. Talk to us, say why, ask for action.</p></div></div>
     <div class="card">
-      <label for="writebox" class="sr-only">Write your two-line verse</label>
-      <textarea id="writebox" placeholder="Line 1…&#10;Line 2…"></textarea>
+      <label for="writebox" class="sr-only">Write your leader’s message</label>
+      <textarea id="writebox" placeholder="Start writing here…"></textarea>
       <div class="spy" id="spy"></div>
       <div class="btn-row">
         <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
         <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
       </div>
       <div class="help-box" id="helpBox">
-        <h3 style="margin-top:0">Line starters</h3>
-        <p>• The creek ran <b>like</b> … (simile)<br>• The night <b>was</b> a … (metaphor)<br>• Six sleepy sheep … (alliteration)</p>
-        <p style="margin-bottom:4px"><b>Try a focus word:</b> “…with the <b>rhythm</b> of the rain”, “…the last <b>stanza</b> of the day”, “…a <b>ballad</b> for the bush”.</p>
+        <h3 style="margin-top:0">Sentence starters</h3>
+        <p>• <b>Talk to us:</b> This Friday, our school … will …<br>• <b>Say why:</b> Every person has … , and …<br>• <b>Ask for action:</b> Please show your … by …</p>
         <div class="wordbank-chips" aria-label="Word bank">
-          <button class="wb" type="button">rhythm</button><button class="wb" type="button">rhyme</button><button class="wb" type="button">ballad</button><button class="wb" type="button">stanza</button><button class="wb" type="button">poetry</button>
+          <button class="wb" type="button">compassion</button><button class="wb" type="button">charity</button><button class="wb" type="button">generosity</button><button class="wb" type="button">justice</button><button class="wb" type="button">dignity</button><button class="wb" type="button">community</button><button class="wb" type="button">volunteer</button><button class="wb" type="button">solidarity</button>
         </div>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:0">Tap a word to drop it into your writing box.</p>
       </div>
-      <div class="locked" id="lockMsg">🔒 Write at least one line of your own first — then the worked example unlocks.</div>
+      <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
       <div class="reveal-box" id="exampleBox">
         <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
           <b style="color:var(--ink)">Worked example (one way to do it):</b>
-          <span style="display:block;margin-top:6px;font-style:italic">The creek was a ribbon of silver light,<br>its <u>rhythm</u> the heartbeat of our <u>ballad</u> tonight.</span>
-          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Tool: a metaphor (the creek <i>was</i> a ribbon). Focus words: rhythm, ballad. The lines rhyme too (light / tonight).</span>
+          <span style="display:block;margin-top:6px">This Friday, our whole school <u>community</u> will come together for Mission Day. Every person has <u>dignity</u>, and many families need our help to live with it. Please show your <u>generosity</u> at the stalls, and <u>volunteer</u> if you can spare some time.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Talk to us ✓ · Say why ✓ · Ask for action ✓ · Four focus words ✓</span>
         </div>
       </div>
-      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your verse and the Spelling Spy now, and upload to OneNote.</div></div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your message and the Spelling Spy now, and upload to OneNote.</div></div>
     </div>
   </section>
 
@@ -324,7 +328,7 @@
         <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
         <li>When you’ve written all eight, tick the box to unlock the answers. Then mark your own work honestly.</li>
       </ol>
-      <label class="ready"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
+      <label class="ready" for="dictReady"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
       <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
       <div id="dictAnswers" hidden>
         <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
@@ -338,13 +342,13 @@
 
   <!-- ===================== 6. CASE CLOSED ===================== -->
   <section id="closed">
-    <div class="sec-head"><span class="sec-no">06</span><div><h2>Case Closed</h2><p class="lead">Case File 1 is nearly closed. Tick off your evidence and rate your confidence.</p></div></div>
+    <div class="sec-head"><span class="sec-no">06</span><div><h2>Case Closed</h2><p class="lead">Case File 2 is nearly closed. Tick off your evidence and rate your confidence.</p></div></div>
     <div class="card">
       <h3>Evidence to capture (screenshot or photograph each one)</h3>
       <ul class="check-list">
         <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
-        <li><label for="c2"><input type="checkbox" id="c2"><span>My repaired verse (six green fixes)</span></label></li>
-        <li><label for="c3"><input type="checkbox" id="c3"><span>My two-line verse and Spelling Spy</span></label></li>
+        <li><label for="c2"><input type="checkbox" id="c2"><span>My printed Mission Day poster</span></label></li>
+        <li><label for="c3"><input type="checkbox" id="c3"><span>My leader’s message and Spelling Spy</span></label></li>
         <li><label for="c4"><input type="checkbox" id="c4"><span>A photo of my dictation page and my score</span></label></li>
       </ul>
       <h3 style="margin-top:18px">How confident am I with this week’s eight words?</h3>
@@ -360,7 +364,7 @@
 </main>
 
 <footer>
-  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 1 Lesson 3: Stanza Repair · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 2 Lesson 3: Poster Press · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
 </footer>
 
 <div class="sr-only" id="liveRegion" aria-live="assertive"></div>
@@ -508,149 +512,106 @@ function setupConfidence() {
 
 /* =================== 1. WARM-UP =================== */
 buildQuiz([
-  { stem: "Which spelling is correct?", opts: ["rythm", "rhythm", "rhythym"], correct: 1,
-    fix: "<b>rhythm</b> — silent-h <b>rh</b>, then <b>y</b>, then <b>thm</b> with no vowel. Rhythm Helps Your Two Hips Move." },
-  { stem: "Which spelling is correct?", opts: ["aliteration", "alliteraton", "alliteration"], correct: 2,
-    fix: "<b>alliteration</b> — a <b>double l</b> at the start (from <i>ad</i> + <i>littera</i>), and it ends in <b>-ation</b>." },
-  { stem: "Which spelling is correct?", opts: ["simile", "simily", "similie"], correct: 0,
-    fix: "<b>simile</b> — the end sounds like “lee” but is spelt <b>le</b>: sim-i-le." },
-  { stem: "Which spelling is correct?", opts: ["poitry", "poetry", "poetrey"], correct: 1,
-    fix: "<b>poetry</b> — the o and e sit side by side, and it ends in plain <b>y</b>: po-e-try." },
-  { stem: "Which spelling is correct?", opts: ["stanzer", "stanza", "stansa"], correct: 1,
-    fix: "<b>stanza</b> — an Italian word ending in <b>a</b>, with a <b>z</b> in the middle. No “er” at the end." },
+  { stem: "Which spelling is correct?", opts: ["generousity", "generosity", "generocity"], correct: 1,
+    fix: "<b>generosity</b> — generous <b>drops its u</b> before -ity, and the middle is <b>os</b>, not oc." },
+  { stem: "Which spelling is correct?", opts: ["solidarity", "solidarety", "solidarrity"], correct: 0,
+    fix: "<b>solidarity</b> — <b>solid</b> + <b>arity</b>, with one r and ending in -ity." },
+  { stem: "Which spelling is correct?", opts: ["comunity", "communnity", "community"], correct: 2,
+    fix: "<b>community</b> — <b>double m</b>, because com- meets a root that starts with m, and a single n." },
+  { stem: "Which spelling is correct?", opts: ["dignaty", "dignity", "dignitty"], correct: 1,
+    fix: "<b>dignity</b> — it ends in <b>-ity</b>, with one t." },
+  { stem: "Which spelling is correct?", opts: ["justise", "justis", "justice"], correct: 2,
+    fix: "<b>justice</b> — just + <b>ice</b>, like notice and service." },
 ]);
 
-/* =================== 3. STANZA REPAIR =================== */
-const VERSE = [
-  "The swaggie sat beside his fire and sang a bush-made song,",
-  "The rythm rolled like river water, steady, slow and long.",
-  "He hunted for a ryme for ‘fire’ and found it — ‘wire’!",
-  "His poitry was rough and ready, crackling like his fire.",
-  "He wrote a simily: ‘as tough as fencing wire’,",
-  "A metafor: ‘the night’s a blanket on the land’,",
-  "Some aliteration — ‘billy boiling by the bend’ —",
-  "Then sang each stanza of his ballad right through to the end.",
+/* =================== 3. POSTER PRESS =================== */
+const LINES = [
+  { pre: "Join our whole school", post: "for a day of fun and giving!", word: "community", tip: "double m." },
+  { pre: "Every dollar raised goes to", post: ".", word: "charity", tip: "check the ending." },
+  { pre: "Thank you for your", post: "— every coin counts.", word: "generosity", tip: "no u in the middle." },
+  { pre: "", post: "means a fair go for every child.", word: "justice", tip: "the ending sounds like /is/ but isn’t spelt that way." },
+  { pre: "Treat every person with", post: "and respect.", word: "dignity", tip: "check the ending." },
+  { pre: "Show", post: "to anyone who is hurting.", word: "compassion", tip: "double s." },
+  { pre: "Year 6 leaders will", post: "at every stall.", word: "volunteer", tip: "ends like engineer." },
+  { pre: "Wear orange to stand in", post: "with people in need.", word: "solidarity", tip: "check the ending after “solid”." },
 ];
-const ERRORS = {
-  rythm:       { fix: "rhythm",       tip: "It starts with a silent-h <b>rh</b>: rh-y-thm." },
-  ryme:        { fix: "rhyme",        tip: "It starts like rhythm — <b>rhy</b> — then ends like time: rhy-me." },
-  poitry:      { fix: "poetry",       tip: "The o and e sit side by side: <b>po-e</b>-try." },
-  simily:      { fix: "simile",       tip: "The “lee” sound at the end is spelt <b>le</b>." },
-  metafor:     { fix: "metaphor",     tip: "The /f/ sound is spelt <b>ph</b>." },
-  aliteration: { fix: "alliteration", tip: "It needs a <b>double l</b>." },
-};
-const clean = t => t.toLowerCase().replace(/^[‘’'"(—–-]+|[‘’'",.!?:;)—–-]+$/g, "");
-const fixedSet = new Set();
-let active = null, repTries = 0;
-const verseEl = $("#verse");
-VERSE.forEach((line, li) => {
-  const p = document.createElement("p");
-  p.className = "vline"; p.id = "vl" + li;
-  line.split(" ").forEach((tok, ti) => {
-    if (ti) p.appendChild(document.createTextNode(" "));
-    if (!/[a-z]/i.test(tok)) { p.appendChild(document.createTextNode(tok)); return; }
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "tok"; b.textContent = tok;
-    b.dataset.word = clean(tok); b.dataset.line = li;
-    b.setAttribute("aria-pressed", "false");
-    b.addEventListener("click", () => tapWord(b));
-    p.appendChild(b);
+const tries = LINES.map(() => 0);
+const pl = $("#plines");
+LINES.forEach((l, i) => {
+  const d = document.createElement("div");
+  d.className = "pline";
+  const spokenPost = /^[.,!?]/.test(l.post) ? l.post : " " + l.post;
+  const lab = "Gap " + (i + 1) + ": " + (l.pre ? l.pre + " …" : "…") + spokenPost;
+  d.innerHTML = (l.pre ? escapeHTML(l.pre) + " " : "") +
+    '<input type="text" id="g' + i + '" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="' + escapeHTML(lab) + '" aria-describedby="t' + i + '">' + (/^[.,!?]/.test(l.post) ? "" : " ") +
+    escapeHTML(l.post) + '<span class="ptip" id="t' + i + '"></span>';
+  pl.appendChild(d);
+});
+const gaps = () => LINES.map((_, i) => $("#g" + i));
+function updatePrintLock() {
+  const all = gaps().every(g => g.value.trim().length > 0);
+  const printed = $("#poster").classList.contains("printed");
+  $("#printBtn").disabled = !all || printed;
+  if (!printed) $("#printBtn").textContent = all ? "Print poster" : "Print poster 🔒";
+}
+gaps().forEach((g, i) => {
+  g.addEventListener("input", () => { g.classList.remove("ok", "no"); updatePrintLock(); });
+  g.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); const nx = gaps()[i + 1]; if (nx) nx.focus(); else if (!$("#printBtn").disabled) $("#printBtn").click(); } });
+});
+$("#printBtn").addEventListener("click", () => {
+  if ($("#printBtn").disabled) return;
+  let wrong = 0, firstWrong = null;
+  LINES.forEach((l, i) => {
+    const g = $("#g" + i), tip = $("#t" + i);
+    const typed = g.value.trim().toLowerCase();
+    if (typed === l.word) {
+      g.classList.add("ok"); g.classList.remove("no"); g.readOnly = true;
+      tip.classList.remove("show"); g.removeAttribute("aria-invalid");
+    } else {
+      wrong++; tries[i]++;
+      g.classList.add("no"); g.setAttribute("aria-invalid", "true");
+      let t = "Not quite: " + l.tip;
+      if (tries[i] >= 2) t += " It starts with “" + l.word.slice(0, 3) + "”.";
+      tip.textContent = t; tip.classList.add("show");
+      if (firstWrong === null) firstWrong = g;
+    }
   });
-  verseEl.appendChild(p);
-});
-
-function tapWord(b) {
-  if (b.classList.contains("fixed")) return;
-  const w = b.dataset.word;
-  const msg = $("#repMsg");
-  if (!ERRORS[w]) {
-    b.classList.remove("okword"); void b.offsetWidth; b.classList.add("okword");
-    msg.className = "msg warn";
-    msg.textContent = "“" + b.textContent.replace(/[‘’,.!:;]/g, "") + "” is spelt correctly. Keep looking — slow down and check each word’s trap.";
-    announce("That word is spelt correctly. Keep looking.");
-    return;
-  }
-  active = b; repTries = 0;
-  $$(".tok").forEach(t => t.setAttribute("aria-pressed", t === b ? "true" : "false"));
-  $("#repWord").textContent = w;
-  $("#repairBox").hidden = false;
-  $("#repFix").classList.remove("show");
-  $("#repIn").value = "";
-  msg.className = "msg"; msg.textContent = "Good eye — that one’s wrong!";
-  $("#repIn").focus();
-}
-function doRepair() {
-  if (!active) return;
-  const w = active.dataset.word, want = ERRORS[w].fix;
-  const typed = $("#repIn").value.trim().toLowerCase();
-  const fix = $("#repFix");
-  if (!typed) { fix.innerHTML = "<b>Fix-up:</b> Type your correction first."; fix.classList.add("show"); return; }
-  if (typed === want) {
-    fixedSet.add(w);
-    const before = active.textContent;
-    active.textContent = before.replace(new RegExp(w, "i"), want);
-    active.classList.add("fixed");
-    active.disabled = true;
-    active.tabIndex = -1;
-    active.setAttribute("aria-pressed", "false");
-    active.setAttribute("aria-label", "fixed: " + want);
-    $("#repairBox").hidden = true;
-    const n = fixedSet.size;
-    $("#repCount").textContent = n + " of 6 mistakes fixed";
-    const msg = $("#repMsg");
-    msg.className = "msg good";
-    msg.textContent = n === 6 ? "🎉 Verse repaired — all six fixed! Screenshot it." : "Fixed! " + (6 - n) + " to go.";
-    announce(want + " fixed. " + n + " of 6.");
-    const next = $$(".tok").find(t => ERRORS[t.dataset.word] && !t.classList.contains("fixed"));
-    (next || $("#repHint")).focus();
-    active = null;
+  const msg = $("#printMsg");
+  if (wrong === 0) {
+    $("#poster").classList.add("printed");
+    $("#printBtn").disabled = true; $("#printBtn").textContent = "Printed ✓";
+    msg.className = "msg good"; msg.textContent = "🎉 The press is running — every word is spelt right! Screenshot your poster.";
+    announce("Poster printed. Every word is correct.");
   } else {
-    repTries++;
-    let html = "<b>Fix-up:</b> “" + escapeHTML(typed) + "” isn’t it yet. " + ERRORS[w].tip;
-    if (repTries >= 2) html += " It has <b>" + want.length + " letters</b> and starts with <b>" + want.slice(0, 2) + "</b>.";
-    fix.innerHTML = html; fix.classList.add("show");
-    announce("Not yet. Read the tip and try again.");
+    msg.className = "msg warn";
+    msg.textContent = "The press stopped: " + wrong + (wrong === 1 ? " word needs" : " words need") + " fixing. Read the clue under each amber gap.";
+    announce("The press stopped. " + wrong + " words need fixing.");
+    firstWrong.focus();
   }
-}
-$("#repBtn").addEventListener("click", doRepair);
-$("#repIn").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); doRepair(); } });
-$("#repCancel").addEventListener("click", () => {
-  $("#repairBox").hidden = true;
-  if (active) { active.setAttribute("aria-pressed", "false"); active.focus(); }
-  active = null;
 });
-$("#repHint").addEventListener("click", () => {
-  const left = $$(".tok").filter(t => ERRORS[t.dataset.word] && !t.classList.contains("fixed"));
-  const msg = $("#repMsg");
-  if (!left.length) { msg.className = "msg good"; msg.textContent = "No mistakes left — you’ve fixed them all!"; return; }
-  const li = +left[0].dataset.line;
-  const line = $("#vl" + li);
-  line.classList.add("flash");
-  setTimeout(() => line.classList.remove("flash"), 2500);
-  line.scrollIntoView({ block: "center" });
-  left[0].focus();
-  msg.className = "msg warn";
-  msg.textContent = "Look closely at line " + (li + 1) + " — there’s a mistake in it.";
-  announce("Check line " + (li + 1) + ".");
+$("#bankBtn").addEventListener("click", () => {
+  const open = $("#bankBox").classList.toggle("show");
+  $("#bankBtn").setAttribute("aria-expanded", open ? "true" : "false");
+  $("#bankBtn").textContent = open ? "Hide help ▴" : "I need help ▾";
 });
 
-/* =================== 4. MY VERSE =================== */
+/* =================== 4. LEADER'S MESSAGE =================== */
 setupWriting({
   box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
   exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
-  spyEl: $("#spy"), words: ["poetry", "rhythm", "rhyme", "stanza", "ballad", "simile", "metaphor", "alliteration"],
+  spyEl: $("#spy"), words: ["compassion", "charity", "generosity", "justice", "dignity", "community", "volunteer", "solidarity"],
 });
 
 /* =================== 5. DICTATION (must match the unit plan exactly) =================== */
 const DICTATION = [
-  ["poetry", "We read Australian poetry about drovers, swagmen and the bush."],
-  ["rhythm", "The rhythm of the ballad sounded like a galloping horse."],
-  ["rhyme", "Each line ended with a word that made a clever rhyme."],
-  ["stanza", "The second stanza tells us what happened to the rider."],
-  ["ballad", "A ballad tells a story in verses that are easy to remember."],
-  ["simile", "The poet used a simile to compare the bicycle to a runaway horse."],
-  ["metaphor", "Calling the river a silver ribbon is a metaphor."],
-  ["alliteration", "Bouncing, bumping and banging is an example of alliteration."],
+  ["compassion", "We show compassion when we notice someone is hurting and help."],
+  ["charity", "Our class raised money for a charity that supports families in need."],
+  ["generosity", "The generosity of our families filled every donation box."],
+  ["justice", "Working for justice means making sure everyone is treated fairly."],
+  ["dignity", "Every person has dignity because they are made in the image of God."],
+  ["community", "Mission Day brings our whole school community together."],
+  ["volunteer", "Each Year 6 leader will volunteer to run a stall on Mission Day."],
+  ["solidarity", "We stand in solidarity with people who are doing it tough."],
 ];
 $("#dictReady").addEventListener("change", () => {
   const ok = $("#dictReady").checked;
@@ -660,9 +621,9 @@ $("#dictReady").addEventListener("change", () => {
 $("#dictReveal").addEventListener("click", () => {
   if ($("#dictReveal").disabled) return;
   $("#dictAnswers").hidden = false;
-  $("#dictReveal").disabled = true;
-  $("#dictReveal").textContent = "Answers shown ✓";
+  $("#dictReveal").disabled = true; $("#dictReveal").textContent = "Answers shown ✓";
   $("#dictReady").disabled = true;
+  $("#dictList .dmark").focus();
 });
 let dictScore = 0;
 DICTATION.forEach(([word, sent], i) => {
@@ -670,16 +631,13 @@ DICTATION.forEach(([word, sent], i) => {
   li.innerHTML = '<span class="dnum">' + (i + 1) + '.</span><span><span class="dword">' + word + '</span><span class="dsent">' + escapeHTML(sent) + '</span></span>';
   const b = document.createElement("button");
   b.type = "button"; b.className = "dmark"; b.textContent = "I got it ✓";
-  b.setAttribute("aria-pressed", "false");
-  b.setAttribute("aria-label", "I spelt " + word + " correctly");
+  b.setAttribute("aria-pressed", "false"); b.setAttribute("aria-label", "I spelt " + word + " correctly");
   b.addEventListener("click", () => {
     const on = b.getAttribute("aria-pressed") !== "true";
     b.setAttribute("aria-pressed", on ? "true" : "false");
-    dictScore += on ? 1 : -1;
-    $("#dictScore").textContent = dictScore;
+    dictScore += on ? 1 : -1; $("#dictScore").textContent = dictScore;
   });
-  li.appendChild(b);
-  $("#dictList").appendChild(li);
+  li.appendChild(b); $("#dictList").appendChild(li);
 });
 
 /* =================== 6. CONFIDENCE =================== */

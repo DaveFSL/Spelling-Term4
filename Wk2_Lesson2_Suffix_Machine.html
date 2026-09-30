@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 1 Lesson 2 — Beat Tapper | Year 6 Spelling</title>
+<title>Week 2 Lesson 2 — Suffix Machine | Year 6 Spelling</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -149,34 +149,37 @@
   footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
   .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
 
-  /* ---------- Beat Tapper (signature) ---------- */
-  .word-picker{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:9px}
-  .wpick{font-family:"Space Grotesk"; font-weight:700; font-size:1.02rem; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; min-height:52px; cursor:pointer; color:var(--ink); display:flex; justify-content:space-between; align-items:center; gap:6px}
-  .wpick:hover{border-color:var(--teal)}
-  .wpick[aria-pressed=true]{border-color:var(--ink); box-shadow:0 0 0 2px var(--ink) inset}
-  .wpick.done{background:var(--good-soft); border-color:var(--good); color:var(--good)}
-  .wpick .tick{font-size:.85rem}
-  .stage{margin-top:16px; border:2px dashed var(--amber-edge); border-radius:16px; background:#fffaf0; padding:18px; text-align:center}
-  .stage-word{font-family:"Space Grotesk"; font-weight:700; font-size:2.4rem; letter-spacing:.01em; margin:4px 0 2px}
-  @media(max-width:560px){.stage-word{font-size:1.9rem}}
-  .drum{width:112px; height:112px; border-radius:50%; border:none; cursor:pointer; margin:14px auto 6px; display:block;
-    background:radial-gradient(circle at 50% 42%, #f3b04a 0 42%, var(--amber) 43% 62%, #c47a08 63% 100%); box-shadow:0 6px 0 #9a5f06, 0 10px 18px rgba(0,0,0,.18); font-family:"Space Grotesk"; font-weight:700; color:#3a2400; font-size:1.05rem}
-  .drum:active, .drum.hit{transform:translateY(4px); box-shadow:0 2px 0 #9a5f06, 0 4px 10px rgba(0,0,0,.18)}
-  .beats{display:flex; justify-content:center; gap:9px; min-height:26px; margin:8px 0}
-  .beat{width:22px; height:22px; border-radius:50%; background:var(--teal)}
-  .split{font-family:"Space Grotesk"; font-weight:700; font-size:1.6rem; color:var(--good); letter-spacing:.03em}
-  .origin{display:none; text-align:left; margin-top:14px; background:#fff; border:1.5px solid var(--good); border-radius:12px; padding:14px}
-  .origin.show{display:block}
-  .origin h3{color:var(--good)}
-  .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; margin-top:14px}
-  .gcard{border:1.5px solid var(--line); border-radius:12px; padding:12px; background:#fcfbf7; font-size:.9rem}
-  .gcard.open{background:#fff; border-color:var(--good)}
-  .gcard b{font-family:"Space Grotesk"; font-size:1rem}
-  .gcard .lockd{color:var(--ink-soft)}
+  /* ---------- Suffix Machine (signature) ---------- */
+  .machine{border:2px solid var(--ink); border-radius:18px; overflow:hidden; background:#fff}
+  .m-top{background:var(--ink); color:#fff; display:flex; justify-content:space-between; align-items:center; padding:10px 16px; font-family:"Space Grotesk"; font-weight:600; font-size:.9rem}
+  .m-lights{display:flex; gap:6px}
+  .m-lights span{width:12px; height:12px; border-radius:50%; background:#3d4f75}
+  .m-lights span.on{background:var(--amber)}
+  .m-body{padding:18px}
+  .feed{display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; font-family:"Space Grotesk"; font-weight:700; font-size:1.6rem}
+  .feed .base{background:var(--amber-soft); border:2px solid var(--amber-edge); border-radius:10px; padding:6px 14px}
+  .feed .suf{background:var(--teal-soft); border:2px solid #bfdedc; border-radius:10px; padding:6px 14px; color:var(--teal)}
+  .feed .op{color:var(--ink-soft)}
+  .predict{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+  .predict input{flex:1 1 220px}
+  .steps-out{margin-top:14px; display:grid; gap:8px}
+  .mstep{display:flex; gap:12px; align-items:center; border:1.5px solid var(--line); border-radius:10px; padding:10px 12px; background:#fcfbf7; opacity:0; transform:translateY(6px); transition:opacity .35s, transform .35s}
+  .mstep.show{opacity:1; transform:none}
+  .mstep .sn{font-family:"Space Grotesk"; font-weight:700; color:#fff; background:var(--teal); border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; flex:0 0 auto}
+  .mstep .sw{font-family:"Space Grotesk"; font-weight:700; font-size:1.15rem}
+  .mstep .sw s{color:var(--bad)}
+  .mstep .sw b{color:var(--good)}
+  .jam{margin-top:12px}
+  .track{display:flex; gap:6px; flex-wrap:wrap; margin-top:14px}
+  .tchip{font-family:"Space Grotesk"; font-weight:600; font-size:.8rem; border:1.5px solid var(--line); border-radius:999px; padding:4px 10px; color:var(--ink-soft); background:#fff}
+  .tchip.now{border-color:var(--ink); color:var(--ink)}
+  .tchip.ok{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .tchip.rev{background:var(--amber-soft); border-color:var(--amber-edge); color:#a8540b}
 
   /* ---------- LCWC ---------- */
   .lc-stage{border:1.5px solid var(--line); border-radius:14px; background:#fff; min-height:110px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden}
   .lc-word{font-family:"Space Grotesk"; font-weight:700; font-size:2.3rem}
+  @media(max-width:560px){.lc-word{font-size:1.8rem}}
   .lc-word .tp{color:var(--amber); text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:5px}
   .lc-cover{position:absolute; inset:0; background:repeating-linear-gradient(45deg,var(--ink),var(--ink) 12px,#243a63 12px,#243a63 24px); display:none; align-items:center; justify-content:center; color:#fff; font-family:"Space Grotesk"; font-weight:600; letter-spacing:.04em}
   .lc-cover.show{display:flex}
@@ -197,13 +200,13 @@
 <header class="band">
   <div class="band-inner">
     <a class="home-link" href="index.html">← Term 4 Casebook home</a>
-    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 1 · Lesson 2</p>
-    <h1>Beat Tapper</h1>
-    <p class="hook">Why does <i>rhythm</i> have an h nobody says? Why does <i>metaphor</i> use ph? Tap out the beats, then crack the word origins that explain every odd spelling.</p>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 2 · Lesson 2</p>
+    <h1>Suffix Machine</h1>
+    <p class="hook">Why does <i>generous</i> lose its u in <i>generosity</i>? Feed words into the machine, predict what comes out, and learn the rules that make mission words.</p>
     <div class="meta-row" aria-label="Lesson details">
-      <span>Case File 1: Poetry</span>
-      <span>Focus: syllables, rh, y, ph and word origins</span>
-      <span>AC9E6LY08</span>
+      <span>Case File 2: Catholic Mission</span>
+      <span>Focus: -ity, -ion, -ous → -osity</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
       <span>20 minutes</span>
     </div>
   </div>
@@ -213,7 +216,7 @@
   <div class="pills-inner">
     <a class="pill" href="#briefing">The Briefing</a>
     <a class="pill" href="#casenotes">Case Notes</a>
-    <a class="pill" href="#tapper">Beat Tapper</a>
+    <a class="pill" href="#machine">Suffix Machine</a>
     <a class="pill" href="#lcwc">Look · Cover · Write · Check</a>
     <a class="pill" href="#closed">Case Closed</a>
   </div>
@@ -223,7 +226,7 @@
 
   <!-- ===================== 1. WARM-UP ===================== -->
   <section id="briefing">
-    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Last lesson you met the poet’s tools. Can you still spot them? Tap an answer — wrong ones show an orange <b>fix-up</b> that names the mix-up.</p></div></div>
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">What do last lesson’s mission words mean? Tap an answer — wrong ones show an orange <b>fix-up</b> that points you back to the right idea.</p></div></div>
     <div id="quiz"></div>
     <div class="scorebar" role="status" aria-live="polite">
       <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
@@ -234,146 +237,134 @@
 
   <!-- ===================== 2. TEACHING CARDS ===================== -->
   <section id="casenotes">
-    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Six clues that explain the strange spellings in this week’s words. Each one comes from where the word was born.</p></div></div>
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Six rules for building mission words. Suffixes change a word’s job — and sometimes its spelling.</p></div></div>
     <div class="teach-grid">
 
       <div class="card teach">
-        <h3>1 · Syllables are beats</h3>
+        <h3>1 · -ity makes a naming word</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 90" role="img" aria-label="The word alliteration split into five syllables: al, lit, er, a, tion, with one beat dot under each.">
-            <g font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a" text-anchor="middle">
-              <text x="36" y="40">al</text><text x="96" y="40">lit</text><text x="156" y="40">er</text><text x="206" y="40">a</text><text x="266" y="40">tion</text>
-            </g>
-            <g stroke="#e6e1d6" stroke-width="2"><line x1="66" y1="20" x2="66" y2="48"/><line x1="126" y1="20" x2="126" y2="48"/><line x1="182" y1="20" x2="182" y2="48"/><line x1="230" y1="20" x2="230" y2="48"/></g>
-            <g fill="#e8930c"><circle cx="36" cy="68" r="8"/><circle cx="96" cy="68" r="8"/><circle cx="156" cy="68" r="8"/><circle cx="206" cy="68" r="8"/><circle cx="266" cy="68" r="8"/></g>
+          <svg viewBox="0 0 320 80" role="img" aria-label="equal, a describing word, plus -ity makes equality, a naming word.">
+            <rect x="8" y="18" width="84" height="36" rx="8" fill="#fbe7c8" stroke="#e8930c"/>
+            <text x="50" y="42" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">equal</text>
+            <text x="104" y="42" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+</text>
+            <rect x="122" y="18" width="54" height="36" rx="8" fill="#e1efee" stroke="#0e7c7b"/>
+            <text x="149" y="42" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#0e7c7b">ity</text>
+            <text x="186" y="42" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">→</text>
+            <text x="210" y="42" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1f7a4d">equality</text>
+            <text x="8" y="72" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">describing word</text>
+            <text x="210" y="72" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">naming word (noun)</text>
           </svg>
         </div>
-        <p>A <b>syllable</b> is one beat of a word. Every syllable has <b>one vowel sound</b>. Tapping the beats helps you spell a long word in chunks.</p>
-        <div class="remember"><b>Remember:</b> One beat = one vowel sound = one chunk to spell.</div>
+        <p>Adding <b>-ity</b> turns a describing word into a naming word: equal → equality. <b>Charity</b>, <b>dignity</b>, <b>community</b> and <b>solidarity</b> all end in <b>-ity</b>. They are naming words.</p>
+        <div class="remember"><b>Remember:</b> -ity makes a naming word: equal → equality.</div>
       </div>
 
       <div class="card teach">
-        <h3>2 · rh — a Greek spelling</h3>
+        <h3>2 · -ous → -osity: the u drops out</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="r plus a silent h makes an r sound. Rhythm, rhino and rhubarb got rh from Greek. Rhyme borrowed its rh from rhythm.">
-            <text x="14" y="44" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#1b2a4a">r</text>
-            <text x="34" y="44" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#c9c2b3">h</text>
-            <text x="70" y="44" font-family="Space Grotesk" font-size="24" fill="#0e7c7b">→ /r/</text>
-            <text x="160" y="36" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a"><tspan fill="#e8930c">rh</tspan>ythm</text>
-            <text x="160" y="62" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a"><tspan fill="#e8930c">rh</tspan>yme</text>
-            <text x="240" y="36" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">rhino</text>
-            <text x="240" y="62" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">rhubarb</text>
+          <svg viewBox="0 0 320 90" role="img" aria-label="generous: the u is crossed out, then ity is added to make generosity. The beat moves to the OS syllable.">
+            <text x="10" y="34" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a">genero<tspan fill="#c0392b" text-decoration="line-through">u</tspan>s</text>
+            <text x="120" y="34" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+ ity →</text>
+            <text x="196" y="34" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1f7a4d">generosity</text>
+            <text x="10" y="70" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">GEN-er-ous</text>
+            <text x="196" y="70" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">gen-er-<tspan font-weight="700" fill="#a8540b">OS</tspan>-i-ty</text>
           </svg>
         </div>
-        <p><b>rh</b> comes from <b>Greek</b> words like <b>rhythm</b>, <b>rhino</b> and <b>rhubarb</b>. The h is <b>silent</b> — you only hear /r/. <b>Rhyme</b> borrowed its <b>rh</b> from <b>rhythm</b> about 400 years ago.</p>
-        <div class="remember"><b>Remember:</b> Rhythm’s <b>rh</b> is Greek, and the h is silent. Rhyme borrowed that <b>rh</b>.</div>
+        <p>When an <b>-ous</b> word takes <b>-ity</b>, the <b>u drops out</b>: generous → generosity, curious → curiosity. Listen: the beat moves to <b>OS</b>, so you can clearly hear the o.</p>
+        <div class="remember"><b>Remember:</b> Generosity has no u. Say gen-er-<b>OS</b>-i-ty.</div>
       </div>
 
       <div class="card teach">
-        <h3>3 · y can be a vowel</h3>
+        <h3>3 · -ion names an action (drop the e)</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="In rhythm the Greek y makes a short i sound. Rhyme borrowed that y, and it says a long i like in time.">
-            <text x="12" y="34" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">rh<tspan fill="#e8930c">y</tspan>thm</text>
-            <text x="120" y="34" font-family="Atkinson Hyperlegible" font-size="14" fill="#56607a">y says short /i/ (like <tspan font-weight="700">sit</tspan>)</text>
-            <text x="12" y="66" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">rh<tspan fill="#e8930c">y</tspan>me</text>
-            <text x="120" y="66" font-family="Atkinson Hyperlegible" font-size="14" fill="#56607a">y says long /ī/ (like <tspan font-weight="700">time</tspan>)</text>
+          <svg viewBox="0 0 320 80" role="img" aria-label="donate: the final e is crossed out, then ion is added to make donation.">
+            <text x="10" y="44" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1b2a4a">donat<tspan fill="#c0392b" text-decoration="line-through">e</tspan></text>
+            <text x="92" y="44" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+ ion →</text>
+            <text x="170" y="44" font-family="Space Grotesk" font-weight="700" font-size="19" fill="#1f7a4d">donation</text>
+            <text x="10" y="70" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">an action (verb)</text>
+            <text x="170" y="70" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">the name of the action</text>
           </svg>
         </div>
-        <p>In Greek words, <b>y</b> often does the job of a vowel. In <b>rhythm</b> it says short /i/. <b>Rhyme</b> borrowed its <b>y</b> from rhythm about 400 years ago — there it says long /ī/, like <i>time</i>.</p>
-        <div class="remember"><b>Remember:</b> Rhythm’s <b>y</b> is the Greek vowel. Rhyme copied that <b>y</b>.</div>
+        <p><b>-ion</b> turns an action into a naming word. If the action ends in <b>e</b>, drop it first: donate → donation, celebrate → celebration.</p>
+        <div class="remember"><b>Remember:</b> -ion names the action. Drop a final e first.</div>
       </div>
 
       <div class="card teach">
-        <h3>4 · ph says /f/</h3>
+        <h3>4 · com- means “with” or “together”</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 80" role="img" aria-label="p plus h together say f, as in metaphor, phone and alphabet.">
-            <text x="14" y="44" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#e8930c">ph</text>
-            <text x="64" y="44" font-family="Space Grotesk" font-size="24" fill="#0e7c7b">→ /f/</text>
-            <text x="150" y="36" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#1b2a4a">meta<tspan fill="#e8930c">ph</tspan>or</text>
-            <text x="150" y="62" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a"><tspan font-weight="700">ph</tspan>one · <tspan font-weight="700">ph</tspan>oto · al<tspan font-weight="700">ph</tspan>abet</text>
+          <svg viewBox="0 0 320 80" role="img" aria-label="com means with. Compassion is suffering with someone. Community has a double m because com- meets a root that starts with m.">
+            <text x="10" y="34" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#1b2a4a"><tspan fill="#e8930c">com</tspan>passion</text>
+            <text x="160" y="34" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">“suffering with”</text>
+            <text x="10" y="66" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#1b2a4a"><tspan fill="#e8930c">com</tspan><tspan fill="#0e7c7b">m</tspan>unity</text>
+            <text x="160" y="66" font-family="Atkinson Hyperlegible" font-size="13" fill="#56607a">double m</text>
           </svg>
         </div>
-        <p>In words from Greek, <b>p</b> and <b>h</b> team up to say /f/. <b>Metaphor</b> comes from Greek <i>meta</i> (across) + <i>pherein</i> (to carry) — a metaphor carries meaning across.</p>
-        <div class="remember"><b>Remember:</b> Hear /f/ in metaphor? Write <b>ph</b>.</div>
+        <p>The Latin <b>com-</b> means “with”. <b>Compassion</b> literally means “suffering with” someone. <b>com-</b> meets a root that starts with m, so <b>community</b> has a double m.</p>
+        <div class="remember"><b>Remember:</b> com- = with. com- meets a root that starts with m, so community has a double m.</div>
       </div>
 
       <div class="card teach">
-        <h3>5 · The double l in alliteration</h3>
+        <h3>5 · -eer means “a person who”</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 90" role="img" aria-label="Latin ad plus littera. The d changes to l, making all plus literation, so alliteration has a double l.">
-            <rect x="8" y="12" width="60" height="34" rx="8" fill="#fbe7c8" stroke="#e8930c"/>
-            <text x="38" y="35" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#a8540b">ad</text>
-            <text x="80" y="35" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">+</text>
-            <rect x="98" y="12" width="92" height="34" rx="8" fill="#e1efee" stroke="#0e7c7b"/>
-            <text x="144" y="35" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#0e7c7b">littera</text>
-            <text x="202" y="35" font-family="Space Grotesk" font-size="20" fill="#0e7c7b">→</text>
-            <text x="12" y="76" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">a<tspan fill="#e8930c">ll</tspan>iteration</text>
-            <text x="170" y="76" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">(d changed to l)</text>
+          <svg viewBox="0 0 320 80" role="img" aria-label="Words ending in eer name a person: volunteer, engineer, pioneer.">
+            <text x="10" y="34" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">volunt<tspan fill="#e8930c">eer</tspan></text>
+            <text x="10" y="66" font-family="Atkinson Hyperlegible" font-size="14" fill="#56607a">engin<tspan font-weight="700" fill="#a8540b">eer</tspan> · pion<tspan font-weight="700" fill="#a8540b">eer</tspan> · auction<tspan font-weight="700" fill="#a8540b">eer</tspan></text>
           </svg>
         </div>
-        <p>From Latin <i>ad</i> (to) + <i>littera</i> (letter). The <b>d</b> changed into an <b>l</b> to match, so we write <b>all</b>. <i>Littera</i> also gives us <i>literacy</i> and <i>letter</i>.</p>
-        <div class="remember"><b>Remember:</b> Alliteration = the same starting sound, close together. (Its name comes from the Latin for “letter”.)</div>
+        <p>The ending <b>-eer</b> names a person who does something. A <b>volunteer</b> is a person who offers to help. The “ear” sound at the end is spelt <b>eer</b>.</p>
+        <div class="remember"><b>Remember:</b> volunteer ends in <b>-eer</b>, like engineer.</div>
       </div>
 
       <div class="card teach">
-        <h3>6 · Words from around the world</h3>
+        <h3>6 · The -ice ending in justice</h3>
         <div class="svg-wrap">
-          <svg viewBox="0 0 320 100" role="img" aria-label="Poetry from Greek, simile from Latin, stanza from Italian, ballad from French.">
-            <g font-family="Space Grotesk" font-weight="700" font-size="15">
-              <rect x="6" y="8" width="148" height="38" rx="8" fill="#fff" stroke="#e6e1d6"/><text x="16" y="32" fill="#1b2a4a">poetry</text><text x="92" y="32" fill="#0e7c7b" font-size="12">Greek</text>
-              <rect x="166" y="8" width="148" height="38" rx="8" fill="#fff" stroke="#e6e1d6"/><text x="176" y="32" fill="#1b2a4a">simile</text><text x="252" y="32" fill="#0e7c7b" font-size="12">Latin</text>
-              <rect x="6" y="54" width="148" height="38" rx="8" fill="#fff" stroke="#e6e1d6"/><text x="16" y="78" fill="#1b2a4a">stanza</text><text x="92" y="78" fill="#0e7c7b" font-size="12">Italian</text>
-              <rect x="166" y="54" width="148" height="38" rx="8" fill="#fff" stroke="#e6e1d6"/><text x="176" y="78" fill="#1b2a4a">ballad</text><text x="252" y="78" fill="#0e7c7b" font-size="12">French</text>
-            </g>
+          <svg viewBox="0 0 320 80" role="img" aria-label="Justice ends in ice, the same as notice and practice.">
+            <text x="10" y="34" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#1b2a4a">just<tspan fill="#e8930c">ice</tspan></text>
+            <text x="10" y="66" font-family="Atkinson Hyperlegible" font-size="14" fill="#56607a">not<tspan font-weight="700" fill="#a8540b">ice</tspan> · pract<tspan font-weight="700" fill="#a8540b">ice</tspan> · serv<tspan font-weight="700" fill="#a8540b">ice</tspan></text>
           </svg>
         </div>
-        <p>English borrows words, and they often keep their old spelling. <b>Stanza</b> is Italian for “a room”. <b>Ballad</b>’s double <b>l</b> comes from French <i>ballade</i> and Latin <i>ballare</i> (“to dance”), like <i>ballet</i>.</p>
-        <div class="remember"><b>Remember:</b> An odd spelling is often a clue to where the word came from.</div>
+        <p>At the end of <b>justice</b>, the /is/ sound is spelt <b>-ice</b> — the same as notice and service. It is <i>not</i> “justis” or “justise”.</p>
+        <div class="remember"><b>Remember:</b> justice is just + ice.</div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===================== 3. BEAT TAPPER (signature) ===================== -->
-  <section id="tapper">
-    <div class="sec-head"><span class="sec-no">03</span><div><h2>Beat Tapper</h2><p class="lead">Pick a word. Say it slowly and <b>tap the drum once for each syllable</b> (or press <kbd>Space</kbd> on the drum). Then check. Get the beats right to unlock that word’s <b>origin card</b>. Unlimited tries.</p></div></div>
-
+  <!-- ===================== 3. SUFFIX MACHINE (signature) ===================== -->
+  <section id="machine">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Suffix Machine</h2><p class="lead">A base word and a suffix go into the machine. <b>Predict</b> the new word first — the Run button stays locked until you do. Right? Watch the machine show each step. Wrong? It jams and gives you a clue. After two jams it shows you the steps.</p></div></div>
     <div class="card">
-      <div class="word-picker" id="picker" role="group" aria-label="Choose a word to tap"></div>
-      <div class="stage" id="stage" hidden>
-        <p class="counter" style="margin:0">Say it slowly and tap the beats:</p>
-        <p class="stage-word" id="stageWord"></p>
-        <button class="drum" id="drum" type="button" aria-label="Tap drum once per syllable">TAP</button>
-        <div class="beats" id="beats" aria-hidden="true"></div>
-        <p class="counter" id="tapCount" role="status" aria-live="polite">0 taps</p>
-        <div class="btn-row" style="justify-content:center">
-          <button class="btn teal" id="checkBeats" type="button">Check my beats</button>
-          <button class="btn ghost" id="resetBeats" type="button">Start again</button>
+      <div class="machine">
+        <div class="m-top"><span id="mCount">Word 1 of 8</span><span class="m-lights" aria-hidden="true"><span></span><span></span><span></span></span></div>
+        <div class="m-body">
+          <div class="feed" aria-live="polite"><span class="base" id="mBase"></span><span class="op">+</span><span class="suf" id="mSuf"></span><span class="op">→ ?</span></div>
+          <div class="predict">
+            <label for="mIn" class="sr-only">Predict the new word</label>
+            <input class="type-in" id="mIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="predict the new word">
+            <button class="btn teal" id="mRun" type="button" disabled>Run machine 🔒</button>
+          </div>
+          <div class="fixup jam" id="mJam" tabindex="-1"></div>
+          <div class="steps-out" id="mSteps"></div>
+          <div class="btn-row"><button class="btn" id="mNext" type="button" hidden>Next word ›</button></div>
         </div>
-        <div class="fixup" id="beatFix" style="text-align:left" tabindex="-1"></div>
-        <div class="origin" id="origin" tabindex="-1"></div>
       </div>
-      <p class="msg" id="tapMsg" role="status" aria-live="polite"></p>
-      <h3 style="margin-top:18px">Origin card collection <span class="counter" id="galleryCount">(0 of 8)</span></h3>
-      <div class="gallery" id="gallery"></div>
+      <div class="track" id="mTrack" aria-label="Progress"></div>
+      <p class="msg" id="mMsg" role="status" aria-live="polite"></p>
     </div>
-
-    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your origin card collection</b> when all eight are unlocked. The page won’t remember them.</div></div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot the progress chips</b> when the machine is finished. Green = predicted correctly. Amber = the machine showed you.</div></div>
   </section>
 
   <!-- ===================== 4. LCWC (independent) ===================== -->
   <section id="lcwc">
-    <div class="sec-head"><span class="sec-no">04</span><div><h2>Look · Cover · Write · Check</h2><p class="lead">The four trickiest words, two rounds each. <b>Look</b> at the tricky part, <b>cover</b> it, <b>write</b> it from memory, then <b>check</b>. Checking stays locked until you’ve typed your attempt.</p></div></div>
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Look · Cover · Write · Check</h2><p class="lead">Four tricky words, two rounds each. <b>Look</b> at the orange part, <b>cover</b> it, <b>write</b> it from memory, then <b>check</b>. Checking stays locked until you’ve typed your attempt.</p></div></div>
     <div class="card">
       <div class="steps" aria-hidden="true"><span class="stp" data-s="look">1 Look</span><span class="stp" data-s="cover">2 Cover</span><span class="stp" data-s="write">3 Write</span><span class="stp" data-s="check">4 Check</span></div>
-      <p class="counter" id="lcRound">Word 1 of 8 · Round 1</p>
+      <p class="counter" id="lcRound"></p>
       <div class="lc-stage">
         <span class="lc-word" id="lcWord" aria-live="polite"></span>
         <div class="lc-cover" id="lcCover">covered — write it from memory</div>
       </div>
-      <div class="btn-row">
-        <button class="btn" id="coverBtn" type="button">Cover it</button>
-      </div>
+      <div class="btn-row"><button class="btn" id="coverBtn" type="button">Cover it</button></div>
       <div id="writeArea" hidden>
         <label for="lcIn" class="sr-only">Type the word from memory</label>
         <input class="type-in" id="lcIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word from memory" style="margin-top:12px">
@@ -403,10 +394,10 @@
       <h3>Evidence to capture (screenshot each one)</h3>
       <ul class="check-list">
         <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
-        <li><label for="c2"><input type="checkbox" id="c2"><span>My origin card collection (all eight unlocked)</span></label></li>
+        <li><label for="c2"><input type="checkbox" id="c2"><span>My Suffix Machine progress chips</span></label></li>
         <li><label for="c3"><input type="checkbox" id="c3"><span>My Look · Cover · Write · Check results table</span></label></li>
       </ul>
-      <h3 style="margin-top:18px">Can I explain why rhythm has rh, y and no vowel letter in “thm”?</h3>
+      <h3 style="margin-top:18px">Can I explain why generosity has no u?</h3>
       <div class="confi" id="confi" role="group" aria-label="Confidence rating">
         <button type="button" aria-pressed="false">Still cracking it</button>
         <button type="button" aria-pressed="false">Getting there</button>
@@ -419,7 +410,7 @@
 </main>
 
 <footer>
-  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 1 Lesson 2: Beat Tapper · ACARA v9 AC9E6LY08. All content original. Works offline — no data is collected or stored.</p>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 2 Lesson 2: Suffix Machine · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
 </footer>
 
 <div class="sr-only" id="liveRegion" aria-live="assertive"></div>
@@ -567,136 +558,213 @@ function setupConfidence() {
 
 /* =================== 1. WARM-UP =================== */
 buildQuiz([
-  { stem: "“The wind howled like a hungry dog.” This line uses a…",
-    opts: ["simile", "metaphor", "stanza"], correct: 0,
-    fix: "It compares using <b>like</b>, so it’s a <b>simile</b>. A metaphor would say the wind <i>was</i> a hungry dog." },
-  { stem: "“My brother is a couch potato.” This line uses a…",
-    opts: ["simile", "metaphor", "alliteration"], correct: 1,
-    fix: "It says he <b>is</b> a couch potato, with no like or as — that’s a <b>metaphor</b>." },
-  { stem: "“Six sizzling sausages sat on the stove.” This line uses…",
-    opts: ["a simile", "rhyme", "alliteration"], correct: 2,
-    fix: "Lots of words close together start with the same <b>s</b> sound — that’s <b>alliteration</b>. Rhyme is about matching <i>end</i> sounds." },
-  { stem: "A story poem with a strong beat, often sung aloud, is a…",
-    opts: ["stanza", "ballad", "rhyme"], correct: 1,
-    fix: "A <b>stanza</b> is just a group of lines. A <b>ballad</b> is a story poem with a strong beat." },
-  { stem: "Which is spelt correctly?",
-    opts: ["metafor", "metaphor", "metaphore"], correct: 1,
-    fix: "<b>metaphor</b> — the /f/ sound is spelt <b>ph</b>, and there’s no e on the end: met-a-phor." },
+  { stem: "Which word means <i>feeling for someone who is hurting and wanting to help</i>?", opts: ["compassion", "community", "justice"], correct: 0,
+    fix: "That’s <b>compassion</b> — the feeling. Community is a group of people; justice is fairness." },
+  { stem: "A person who chooses to help without being paid is a…", opts: ["charity", "volunteer", "leader"], correct: 1,
+    fix: "A <b>volunteer</b> gives their time. A charity is the giving — or an organisation that gives." },
+  { stem: "“Everyone deserves a fair go.” This is about…", opts: ["generosity", "solidarity", "justice"], correct: 2,
+    fix: "Fairness for everyone is <b>justice</b>. Generosity is giving more than you have to." },
+  { stem: "Standing together with people who are doing it tough is…", opts: ["solidarity", "dignity", "charity"], correct: 0,
+    fix: "Standing together is <b>solidarity</b>. Dignity is the worth every person has." },
+  { stem: "The worth and respect every person has is their…", opts: ["community", "dignity", "generosity"], correct: 1,
+    fix: "Every person has <b>dignity</b>. That’s why leaders treat every visitor with respect." },
 ]);
 
-/* =================== 3. BEAT TAPPER =================== */
-const WORDS = [
-  { w: "poetry", n: 3, split: "po · e · try", hint: "It starts with “po”, then a separate “e”.",
-    origin: "From Greek <i>poiēsis</i>, “making”. A poet, <i>poiētēs</i>, is “a maker”. The o and e sit side by side in <b>po-e-try</b>." },
-  { w: "rhythm", n: 2, split: "rhy · thm", hint: "Listen for “ri” then “thum”.",
-    origin: "From Greek <i>rhythmos</i>, “a steady flow”. Greek gives it the silent-h <b>rh</b> and the <b>y</b> vowel. The last beat, “thm”, has no vowel letter at all!" },
-  { w: "rhyme", n: 1, split: "rhyme", hint: "Say it once — it’s a single beat, like “time”.",
-    origin: "From Old French <i>rime</i>. About 400 years ago, writers copied the <b>rh</b> and <b>y</b> from <i>rhythm</i>, so rhyme borrowed its spelling from its partner." },
-  { w: "stanza", n: 2, split: "stan · za", hint: "Two parts: “stan” and “za”.",
-    origin: "From Italian <i>stanza</i>, “a room” or “a stopping place”. Each stanza is like a room in the house of a poem." },
-  { w: "ballad", n: 2, split: "bal · lad", hint: "Two parts, split between the two l’s.",
-    origin: "From French <i>ballade</i>, from Latin <i>ballare</i>, “to dance”. The double <b>l</b> comes from that spelling, like <i>ballet</i>. Ballads began as dancing songs." },
-  { w: "simile", n: 3, split: "sim · i · le", hint: "It ends with a “lee” beat that’s spelt “le”.",
-    origin: "From Latin <i>similis</i>, “like”. Same root as <i>similar</i> — a simile shows how two things are similar. The final e is said, not silent: sim-i-<b>le</b>." },
-  { w: "metaphor", n: 3, split: "met · a · phor", hint: "“met”, a tiny “a”, then “for”.",
-    origin: "From Greek <i>meta</i>, “across”, + <i>pherein</i>, “to carry”. A metaphor carries meaning across from one thing to another. Greek gives us <b>ph</b> for /f/." },
-  { w: "alliteration", n: 5, split: "al · lit · er · a · tion", hint: "Tap slowly: “al – lit – er – a – shun”.",
-    origin: "From Latin <i>ad</i>, “to”, + <i>littera</i>, “letter”. The d changed to l, giving the <b>double l</b>. It’s about letters and sounds — the same root as <i>literacy</i>." },
+/* =================== 3. SUFFIX MACHINE =================== */
+// rule: "add" = just add; "e" = drop final e; "u" = -ous drops u
+const ITEMS = [
+  { base: "donate", suf: "ion", out: "donation", rule: "e" },
+  { base: "generous", suf: "ity", out: "generosity", rule: "u" },
+  { base: "equal", suf: "ity", out: "equality", rule: "add" },
+  { base: "celebrate", suf: "ion", out: "celebration", rule: "e" },
+  { base: "curious", suf: "ity", out: "curiosity", rule: "u" },
+  { base: "collect", suf: "ion", out: "collection", rule: "add" },
+  { base: "pure", suf: "ity", out: "purity", rule: "e" },
+  { base: "act", suf: "ion", out: "action", rule: "add" },
 ];
-const unlocked = new Set();
-let cur = null, taps = 0, tries = 0;
-const picker = $("#picker"), gallery = $("#gallery");
-
-WORDS.forEach((o, i) => {
-  const b = document.createElement("button");
-  b.type = "button"; b.className = "wpick"; b.id = "pick" + i;
-  b.setAttribute("aria-pressed", "false");
-  b.innerHTML = "<span>" + o.w + "</span><span class=\"tick\" aria-hidden=\"true\"></span>";
-  b.addEventListener("click", () => choose(i));
-  picker.appendChild(b);
-  const g = document.createElement("div");
-  g.className = "gcard"; g.id = "g" + i;
-  g.innerHTML = "<b>" + o.w + "</b><div class=\"lockd\">🔒 Tap its beats to unlock</div>";
-  gallery.appendChild(g);
+const RULE_TEXT = {
+  add: "No change needed — just add the suffix.",
+  e: "The base ends in <b>e</b>, and the suffix starts with a vowel — <b>drop the e</b> first.",
+  u: "It’s an <b>-ous</b> word taking <b>-ity</b> — <b>drop the u</b>, so -ous becomes -os.",
+};
+let mi = 0, jams = 0;
+const results = [];
+function middle(it) {
+  if (it.rule === "e") return it.base.slice(0, -1);
+  if (it.rule === "u") return it.base.replace(/ous$/, "os");
+  return it.base;
+}
+function renderTrack() {
+  const tr = $("#mTrack"); tr.innerHTML = "";
+  ITEMS.forEach((it, k) => {
+    const c = document.createElement("span");
+    c.className = "tchip" + (results[k] === "ok" ? " ok" : results[k] === "rev" ? " rev" : k === mi ? " now" : "");
+    c.textContent = (results[k] ? it.out : it.base + " + " + it.suf) + (results[k] === "ok" ? " ✓" : "");
+    tr.appendChild(c);
+  });
+}
+function lights(n) { $$(".m-lights span").forEach((s, k) => s.classList.toggle("on", k < n)); }
+function loadItem() {
+  const it = ITEMS[mi]; jams = 0;
+  $("#mCount").textContent = "Word " + (mi + 1) + " of " + ITEMS.length;
+  $("#mBase").textContent = it.base; $("#mSuf").textContent = it.suf;
+  $("#mIn").value = ""; $("#mIn").disabled = false;
+  $("#mRun").disabled = true; $("#mRun").textContent = "Run machine 🔒";
+  $("#mJam").classList.remove("show");
+  $("#mSteps").innerHTML = "";
+  $("#mNext").hidden = true;
+  lights(0); renderTrack();
+}
+function showSteps(it) {
+  const box = $("#mSteps"); box.innerHTML = "";
+  const mid = middle(it);
+  const cut = it.rule === "add" ? escapeHTML(it.base)
+    : it.rule === "e" ? escapeHTML(mid) + "<s>e</s>"
+    : escapeHTML(it.base.slice(0, -3)) + "o<s>u</s>s";
+  const rows = [
+    [cut, RULE_TEXT[it.rule].replace(/<\/?b>/g, "")],
+    [escapeHTML(mid) + " + " + it.suf, "Add the suffix."],
+    ["<b>" + it.out + "</b>", "The new word."],
+  ];
+  rows.forEach((r, k) => {
+    const d = document.createElement("div");
+    d.className = "mstep";
+    d.innerHTML = '<span class="sn">' + (k + 1) + '</span><span><span class="sw">' + r[0] + '</span><br><span class="counter">' + r[1] + "</span></span>";
+    box.appendChild(d);
+    setTimeout(() => { d.classList.add("show"); lights(k + 1); }, 250 * (k + 1));
+  });
+}
+function jamMessage(it, typed) {
+  const naive = it.base + it.suf;
+  if (it.rule === "u" && typed.includes("ous")) return "You kept the <b>u</b>. " + RULE_TEXT.u;
+  if (typed === naive && it.rule !== "add") return "You stuck them straight together. " + RULE_TEXT[it.rule];
+  if (it.rule === "e" && typed.startsWith(it.base)) return "You kept the <b>e</b>. " + RULE_TEXT.e;
+  if (it.rule === "add" && typed !== naive) return "This one is easier than it looks. " + RULE_TEXT.add;
+  return "Check your letters carefully. " + RULE_TEXT[it.rule];
+}
+$("#mIn").addEventListener("input", () => {
+  const ok = $("#mIn").value.trim().length > 0;
+  $("#mRun").disabled = !ok; $("#mRun").textContent = ok ? "Run machine" : "Run machine 🔒";
 });
-
-function renderBeats() {
-  $("#beats").innerHTML = "";
-  for (let k = 0; k < taps; k++) { const s = document.createElement("span"); s.className = "beat"; $("#beats").appendChild(s); }
-  $("#tapCount").textContent = taps + (taps === 1 ? " tap" : " taps");
+$("#mIn").addEventListener("keydown", e => { if (e.key === "Enter" && !$("#mRun").disabled) { e.preventDefault(); run(); } });
+function finishItem(status) {
+  results[mi] = status;
+  $("#mIn").disabled = true; $("#mRun").disabled = true;
+  $("#mNext").hidden = false;
+  $("#mNext").textContent = mi < ITEMS.length - 1 ? "Next word ›" : "Finish";
+  renderTrack();
+  $("#mNext").focus();
 }
-function choose(i) {
-  cur = i; taps = 0; tries = 0;
-  $$(".wpick").forEach((b, j) => b.setAttribute("aria-pressed", j === i ? "true" : "false"));
-  $("#stage").hidden = false;
-  $("#stageWord").textContent = WORDS[i].w;
-  $("#beatFix").classList.remove("show");
-  const org = $("#origin");
-  if (unlocked.has(i)) { showOrigin(i); } else { org.classList.remove("show"); org.innerHTML = ""; }
-  renderBeats();
-  $("#tapMsg").textContent = "";
-  $("#drum").focus();
-}
-$("#drum").addEventListener("click", () => {
-  if (cur === null) return;
-  if (taps < 9) taps++;
-  const dr = $("#drum");
-  dr.classList.add("hit"); setTimeout(() => dr.classList.remove("hit"), 120);
-  renderBeats();
-});
-$("#resetBeats").addEventListener("click", () => { taps = 0; renderBeats(); $("#beatFix").classList.remove("show"); $("#drum").focus(); });
-function showOrigin(i) {
-  const o = WORDS[i], org = $("#origin");
-  org.innerHTML = "<h3>Origin card unlocked: " + o.w + "</h3><p class=\"split\">" + o.split + "</p><p>" + o.origin + "</p>";
-  org.classList.add("show");
-}
-$("#checkBeats").addEventListener("click", () => {
-  if (cur === null) return;
-  const o = WORDS[cur], fix = $("#beatFix");
-  if (taps === 0) { fix.innerHTML = "<b>Fix-up:</b> Tap the drum first — once for each beat you hear."; fix.classList.add("show"); $("#drum").focus(); return; }
-  if (taps === o.n) {
-    fix.classList.remove("show");
-    unlocked.add(cur);
-    showOrigin(cur);
-    $("#pick" + cur).classList.add("done");
-    $("#pick" + cur + " .tick").textContent = "✓";
-    const g = $("#g" + cur);
-    g.classList.add("open");
-    g.innerHTML = "<b>" + o.w + "</b> <span class=\"counter\">(" + o.split + ")</span><div>" + o.origin + "</div>";
-    $("#galleryCount").textContent = "(" + unlocked.size + " of " + WORDS.length + ")";
-    const msg = $("#tapMsg");
-    msg.className = "msg good";
-    msg.textContent = unlocked.size === WORDS.length
-      ? "🎉 All eight origin cards unlocked! Screenshot your collection."
-      : "Correct — " + o.n + (o.n === 1 ? " beat" : " beats") + ". Origin card unlocked. Pick another word.";
-    announce("Correct. " + o.w + " has " + o.n + (o.n === 1 ? " syllable." : " syllables.") + " Origin card unlocked.");
-    $("#drum").focus();
+function run() {
+  const it = ITEMS[mi];
+  const typed = $("#mIn").value.trim().toLowerCase();
+  if (!typed) return;
+  const jam = $("#mJam"), msg = $("#mMsg");
+  if (typed === it.out) {
+    jam.classList.remove("show");
+    showSteps(it);
+    msg.className = "msg good"; msg.textContent = "✓ Correct prediction: " + it.out + ". Watch how the machine built it.";
+    announce("Correct. " + it.out + ". " + RULE_TEXT[it.rule].replace(/<\/?b>/g, ""));
+    finishItem("ok");
   } else {
-    tries++;
-    let html = "<b>Fix-up:</b> You tapped " + taps + ", but that’s " + (taps > o.n ? "too many" : "too few") +
-      ". Each beat has <b>one vowel sound</b> — say “" + o.w + "” slowly and count them.";
-    if (tries >= 2) html += " <b>Hint:</b> " + o.hint;
-    fix.innerHTML = html;
-    fix.classList.add("show");
-    taps = 0; renderBeats();
-    announce("Not quite. Read the fix-up and tap again.");
-    $("#drum").focus();
+    jams++;
+    if (jams >= 2) {
+      jam.innerHTML = "<b>Fix-up:</b> The machine jammed twice, so here are the steps. Study them — this word will come up again in your writing.";
+      jam.classList.add("show");
+      showSteps(it);
+      msg.className = "msg warn"; msg.textContent = "The new word is " + it.out + ".";
+      announce("Here are the steps. The new word is " + it.out + ".");
+      finishItem("rev");
+    } else {
+      jam.innerHTML = "<b>Jammed!</b> “" + escapeHTML(typed) + "” isn’t it. " + jamMessage(it, typed) + " Try again.";
+      jam.classList.add("show");
+      msg.className = "msg"; msg.textContent = "";
+      announce("Jammed. " + jamMessage(it, typed).replace(/<\/?b>/g, ""));
+      $("#mIn").select(); $("#mIn").focus();
+    }
+  }
+}
+$("#mRun").addEventListener("click", run);
+$("#mNext").addEventListener("click", () => {
+  if (mi < ITEMS.length - 1) { mi++; loadItem(); $("#mIn").focus(); }
+  else {
+    const ok = results.filter(r => r === "ok").length;
+    const msg = $("#mMsg"); msg.className = "msg good";
+    msg.textContent = "🎉 Machine finished: " + ok + " of " + ITEMS.length + " predicted correctly. Screenshot your progress chips.";
+    $("#mNext").hidden = true;
+    announce("Machine finished. " + ok + " of " + ITEMS.length + " correct.");
   }
 });
+loadItem();
 
 /* =================== 4. LOOK COVER WRITE CHECK =================== */
 const CORE = [
-  { w: "rhythm", tp: [0, 1, 2], tip: "<b>R</b>hythm <b>H</b>elps <b>Y</b>our <b>T</b>wo <b>H</b>ips <b>M</b>ove — the first letters spell r-h-y-t-h-m." },
-  { w: "rhyme", tp: [0, 1, 2], tip: "Start like rhythm (<b>rhy</b>), then finish like time (<b>me</b>): rhy + me." },
-  { w: "metaphor", tp: [4, 5], tip: "Chunk it: <b>met</b> + <b>a</b> + <b>phor</b>. The /f/ is <b>ph</b>, and there’s no e at the end." },
-  { w: "alliteration", tp: [1, 2], tip: "Chunk it: <b>al</b> + <b>lit</b> + <b>er</b> + <b>a</b> + <b>tion</b>. Double l, then one t." },
+  { w: "generosity", tp: [5, 6], tip: "Think <b>generous</b>, then drop the u: gener-<b>os</b>-ity." },
+  { w: "solidarity", tp: [5, 6, 7], tip: "It starts with <b>solid</b>, then <b>arity</b>: solid + arity." },
+  { w: "compassion", tp: [5, 6], tip: "<b>com</b> + <b>passion</b>: passion has a double s, so compassion does too." },
+  { w: "dignity", tp: [3, 4], tip: "<b>dign</b> + <b>ity</b>. The g and n sit together, like in dignified." },
 ];
 const CHALLENGE = [
-  { w: "onomatopoeia", tp: [7, 8, 9, 10, 11], tip: "Chunk it: <b>on</b> + <b>o</b> + <b>mat</b> + <b>o</b> + <b>poe</b> + <b>ia</b>. The tricky end is <b>-poeia</b>." },
-  { w: "personification", tp: [6, 7, 8], tip: "Chunk it: <b>person</b> + <b>ifi</b> + <b>cation</b>. It has “person” inside it." },
+  { w: "humanitarian", tp: [7, 8, 9], tip: "<b>human</b> + <b>itarian</b>. It has “human” inside it." },
+  { w: "reconciliation", tp: [5, 6, 7], tip: "<b>re</b> + <b>concil</b> + <b>iation</b>. The middle is “cil”, not “sil”." },
 ];
-let queue = [], qi = 0, stage = "look", coverTimer = null;
-const results = {};
+let queue = [], qi = 0, nWords = 0;
+const lcResults = {};
+function addToQueue(list) {
+  const start = queue.length;
+  [1, 2].forEach(r => list.forEach(o => queue.push({ ...o, round: r })));
+  list.forEach(o => { if (!lcResults[o.w]) lcResults[o.w] = ["–", "–"]; });
+  nWords += list.length;
+  return start;
+}
+function renderResults() {
+  const tb = $("#resBody"); tb.innerHTML = "";
+  Object.keys(lcResults).forEach((w, i) => {
+    const seen = lcResults[w].some(cell => cell !== "–");
+    const label = seen ? w : "Word " + (i + 1);
+    const tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + label + "</td><td>" + lcResults[w][0] + "</td><td>" + lcResults[w][1] + "</td>";
+    tb.appendChild(tr);
+  });
+}
+function setStage(s) { $$(".stp").forEach(x => x.classList.toggle("now", x.dataset.s === s)); }
+function showWord() {
+  const item = queue[qi];
+  const wIdx = Object.keys(lcResults).indexOf(item.w) + 1;
+  $("#lcRound").textContent = "Word " + wIdx + " of " + nWords + " · Round " + item.round;
+  $("#lcWord").innerHTML = item.w.split("").map((ch, k) => item.tp.includes(k) ? '<span class="tp">' + ch + "</span>" : ch).join("");
+  $("#lcWord").removeAttribute("aria-hidden");
+  $("#lcCover").classList.remove("show");
+  $("#writeArea").hidden = true; $("#coverBtn").hidden = false; $("#lcNext").hidden = true;
+  $("#compare").innerHTML = "";
+  $("#lcCompareSr").textContent = "";
+  $("#lcMsg").textContent = ""; $("#lcMsg").className = "msg";
+  $("#lcIn").value = "";
+  $("#lcCheck").disabled = true; $("#lcCheck").textContent = "Check 🔒";
+  $("#helpBox").innerHTML = "<b>Memory trick:</b> " + item.tip;
+  $("#helpBox").classList.remove("show");
+  $("#helpBtn").setAttribute("aria-expanded", "false"); $("#helpBtn").textContent = "I need help ▾";
+  setStage("look");
+}
+$("#coverBtn").addEventListener("click", () => {
+  $("#lcCover").classList.add("show");
+  $("#lcWord").setAttribute("aria-hidden", "true");
+  $("#coverBtn").hidden = true;
+  setStage("cover");
+  setTimeout(() => { setStage("write"); }, 500);
+  $("#writeArea").hidden = false;
+  $("#lcIn").focus();
+});
+$("#lcIn").addEventListener("input", () => {
+  const ok = $("#lcIn").value.trim().length > 0;
+  $("#lcCheck").disabled = !ok; $("#lcCheck").textContent = ok ? "Check" : "Check 🔒";
+});
+$("#lcIn").addEventListener("keydown", e => { if (e.key === "Enter" && !$("#lcCheck").disabled) { e.preventDefault(); doCheck(); } });
+$("#helpBtn").addEventListener("click", () => {
+  const open = $("#helpBox").classList.toggle("show");
+  $("#helpBtn").setAttribute("aria-expanded", open ? "true" : "false");
+  $("#helpBtn").textContent = open ? "Hide help ▴" : "I need help ▾";
+});
 function letterDiffSummary(typed, target) {
   const len = Math.max(typed.length, target.length);
   const bad = [];
@@ -714,68 +782,6 @@ function letterDiffSummary(typed, target) {
   const verb = bad.length === 1 ? " differs" : " differ";
   return "You wrote " + typed + ". " + word + list + verb + " from " + target + ".";
 }
-function buildQueue(list) {
-  queue = [];
-  [1, 2].forEach(r => list.forEach(o => queue.push({ ...o, round: r })));
-  list.forEach(o => { if (!results[o.w]) results[o.w] = ["–", "–"]; });
-}
-function renderResults() {
-  const tb = $("#resBody"); tb.innerHTML = "";
-  Object.keys(results).forEach((w, i) => {
-    const seen = results[w].some(cell => cell !== "–");
-    const label = seen ? w : "Word " + (i + 1);
-    const tr = document.createElement("tr");
-    tr.innerHTML = "<td>" + label + "</td><td>" + results[w][0] + "</td><td>" + results[w][1] + "</td>";
-    tb.appendChild(tr);
-  });
-}
-function setStage(s) {
-  stage = s;
-  $$(".stp").forEach(x => x.classList.toggle("now", x.dataset.s === s));
-}
-function showWord() {
-  const item = queue[qi];
-  const group = queue.filter(x => x.round === item.round && !!x.challenge === !!item.challenge);
-  const indexInRound = group.indexOf(item) + 1;
-  const label = item.challenge ? "Challenge word " : "Word ";
-  $("#lcRound").textContent = label + indexInRound + " of " + group.length + " · Round " + item.round;
-  $("#lcWord").innerHTML = item.w.split("").map((ch, k) => item.tp.includes(k) ? '<span class="tp">' + ch + "</span>" : ch).join("");
-  $("#lcWord").removeAttribute("aria-hidden");
-  $("#lcCover").classList.remove("show");
-  $("#writeArea").hidden = true;
-  $("#coverBtn").hidden = false;
-  $("#lcNext").hidden = true;
-  $("#compare").innerHTML = "";
-  $("#lcCompareSr").textContent = "";
-  $("#lcMsg").textContent = ""; $("#lcMsg").className = "msg";
-  $("#lcIn").value = "";
-  $("#lcCheck").disabled = true; $("#lcCheck").textContent = "Check 🔒";
-  $("#helpBox").innerHTML = "<b>Memory trick:</b> " + item.tip;
-  $("#helpBox").classList.remove("show");
-  $("#helpBtn").setAttribute("aria-expanded", "false"); $("#helpBtn").textContent = "I need help ▾";
-  setStage("look");
-}
-$("#coverBtn").addEventListener("click", () => {
-  $("#lcCover").classList.add("show");
-  $("#lcWord").setAttribute("aria-hidden", "true");
-  $("#coverBtn").hidden = true;
-  $("#writeArea").hidden = false;
-  setStage("cover");
-  if (coverTimer) clearTimeout(coverTimer);
-  coverTimer = setTimeout(() => { if (stage === "cover") setStage("write"); }, 700);
-  $("#lcIn").focus();
-});
-$("#lcIn").addEventListener("input", () => {
-  const ok = $("#lcIn").value.trim().length > 0;
-  $("#lcCheck").disabled = !ok;
-  $("#lcCheck").textContent = ok ? "Check" : "Check 🔒";
-});
-$("#lcIn").addEventListener("keydown", e => { if (e.key === "Enter" && !$("#lcCheck").disabled) { e.preventDefault(); doCheck(); } });
-$("#helpBtn").addEventListener("click", () => {
-  const open = $("#helpBox").classList.toggle("show");
-  $("#helpBtn").setAttribute("aria-expanded", open ? "true" : "false");
-  $("#helpBtn").textContent = open ? "Hide help ▴" : "I need help ▾";
-});
 function doCheck() {
   const item = queue[qi];
   const typed = $("#lcIn").value.trim().toLowerCase();
@@ -784,27 +790,24 @@ function doCheck() {
   $("#lcCover").classList.remove("show");
   $("#lcWord").removeAttribute("aria-hidden");
   const cmp = $("#compare"); cmp.innerHTML = "";
-  const len = Math.max(typed.length, item.w.length);
-  for (let k = 0; k < len; k++) {
+  for (let k = 0; k < Math.max(typed.length, item.w.length); k++) {
     const s = document.createElement("span");
-    const ch = typed[k] || "·";
     s.className = "cl " + (typed[k] === item.w[k] ? "ok" : "no");
-    s.textContent = ch;
+    s.textContent = typed[k] || "·";
     cmp.appendChild(s);
   }
   const right = typed === item.w;
   const summary = letterDiffSummary(typed, item.w);
   $("#lcCompareSr").textContent = summary;
-  results[item.w][item.round - 1] = right ? "✓" : "✗ (" + escapeHTML(typed) + ")";
+  lcResults[item.w][item.round - 1] = right ? "✓" : "✗ (" + escapeHTML(typed) + ")";
   renderResults();
   const msg = $("#lcMsg");
   if (right) {
-    msg.className = "msg good";
-    msg.textContent = "✓ Spot on! Compare your letters with the word above.";
+    msg.className = "msg good"; msg.textContent = "✓ Spot on! Compare your letters with the word above.";
     announce(summary);
   } else {
     msg.className = "msg warn";
-    msg.innerHTML = "Not yet — the amber letters don’t match. Look closely at the tricky part, then try it again in the next round.";
+    msg.textContent = "Not yet — the amber letters don’t match. Look closely at the orange part, then try again next round.";
     announce(summary);
   }
   $("#writeArea").hidden = true;
@@ -813,22 +816,18 @@ function doCheck() {
   $("#lcNext").focus();
 }
 $("#lcCheck").addEventListener("click", doCheck);
-$("#lcNext").addEventListener("click", () => {
-  qi = qi < queue.length - 1 ? qi + 1 : 0;
-  showWord();
-});
+$("#lcNext").addEventListener("click", () => { qi = qi < queue.length - 1 ? qi + 1 : 0; showWord(); });
 $("#challengeBtn").addEventListener("click", () => {
-  CHALLENGE.forEach(o => { if (!results[o.w]) results[o.w] = ["–", "–"]; });
-  const extra = [];
-  [1, 2].forEach(r => CHALLENGE.forEach(o => extra.push({ ...o, round: r, challenge: true })));
-  queue = queue.concat(extra);
+  const onLastCheck = !$("#lcNext").hidden && qi === queue.length - 1;
+  const start = addToQueue(CHALLENGE);
   renderResults();
-  if (!$("#lcNext").hidden) $("#lcNext").textContent = qi < queue.length - 1 ? "Next word ›" : "Start the rounds again ↺";
+  if (onLastCheck) { qi = start; showWord(); }
+  else $("#lcRound").textContent = $("#lcRound").textContent.replace(/of \d+/, "of " + nWords);
   $("#challengeBtn").disabled = true;
   $("#challengeBtn").textContent = "Challenge words added ✓";
-  announce("Challenge words added. They come next, after the words you are already practising.");
+  announce("Challenge words added to the end of your list.");
 });
-buildQueue(CORE); renderResults(); showWord();
+addToQueue(CORE); renderResults(); showWord();
 
 /* =================== 5. CONFIDENCE =================== */
 setupConfidence();

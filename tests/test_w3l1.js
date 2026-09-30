@@ -1,0 +1,38 @@
+const { load, check, click, type, key, staticChecks, sectionEndsWithEvidence, done } = require("./harness");
+const FILE = "Wk3_Lesson1_Change_Sort.html";
+console.log("== " + FILE);
+staticChecks(FILE);
+const { w, d, errors } = load(FILE);
+const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
+check($$(".q").length === 5, "5 warm-up questions");
+click($$("#q1 .opt")[1]);
+check($("#fix1").classList.contains("show") && d.activeElement === $("#fix1"), "wrong answer shows fix-up and moves focus to it");
+check($$("#casenotes .card").length === 4 && $$("#casenotes .remember").length === 4, "4 teaching cards with Remember lines");
+check($$("nav.pills a").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+check($$(".beaker h3, .beaker p").length === 0, "no headings/paragraphs nested inside beaker buttons");
+check($$(".ccard").length === 10, "10 evidence cards");
+check(["c1", "c2", "c3"].every(id => $( "#" + id).tagName === "INPUT"), "checklist ids belong to the checkboxes");
+check(!$("#sortedR").closest("button") && !$("#sortedI").closest("button"), "sorted lists sit outside the beaker buttons");
+click($("#bR"));
+check(/Pick an evidence card first/.test($("#sortMsg").textContent), "tapping a beaker first gives guidance");
+key(w, $("#card5"), "Enter"); // burnt toast
+check($("#card5").getAttribute("aria-pressed") === "true", "Enter picks a card");
+click($("#bR"));
+check(/Not reversible/.test($("#sortMsg").textContent) && /new substance/.test($("#sortMsg").textContent) && $("#card5"), "wrong sort explains and card stays");
+click($("#sortHint"));
+check(/imagine trying to undo it/.test($("#sortMsg").textContent), "hint prompts the key question");
+const R = ["card0","card1","card2","card3","card4"], I = ["card5","card6","card7","card8","card9"];
+R.forEach(id => { key(w, $("#" + id), "Enter"); click($("#bR")); });
+I.forEach(id => { key(w, $("#" + id), "Enter"); click($("#bI")); });
+check($$(".ccard").length === 0 && $$("#sortedR .done-card").length === 5 && $$("#sortedI .done-card").length === 5, "all ten sort into the right beakers");
+check(/All ten sorted/.test($("#sortMsg").textContent) && /In this sort, every reversible change was a physical change/.test($("#sortMsg").textContent), "completion message");
+check($("#bR").getAttribute("aria-label") === "Reversible beaker, 5 cards" && $("#bI").getAttribute("aria-label") === "Irreversible beaker, 5 cards", "beaker names include the card count");
+check($$("#sortedI .tag").every(t => t.textContent === "chemical") && $$("#sortedR .tag").every(t => t.textContent === "physical"), "sorted cards show physical/chemical tags");
+// writing + spy (reveal-on-correct)
+check($$("#spy .chip").length === 0 && $("#spy .spy-count").textContent === "0", "Spelling Spy shows no words before writing");
+type(w, $("#writebox"), "Rusting is irreversible and a chemical change, not reversable.");
+check($("#spy .spy-count").textContent === "2" && $$("#spy .chip").map(c => c.textContent).join() === "irreversible,chemical", "Spy lists only correctly spelt focus words");
+check(!$("#exampleBtn").disabled, "attempt unlocks the worked example");
+check($$(".check-list label").length === 3, "full-row checklist labels");
+sectionEndsWithEvidence(d, ["briefing", "sort", "explain", "closed"]);
+setTimeout(() => { check(errors.length === 0, "zero console/page errors " + (errors.length ? JSON.stringify(errors) : "")); done(); }, 300);

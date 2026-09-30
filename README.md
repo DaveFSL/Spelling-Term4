@@ -16,12 +16,12 @@ Year 6 spelling unit, Term 4 2026, St Joseph's Primary School, Corinda.
 | 1 | Wk1 Poetry | `Wk1_Lesson1_Poets_Toolbox.html` | Tap a poem line to reveal and name its device | Built |
 | 2 | Wk1 Poetry | `Wk1_Lesson2_Beat_Tapper.html` | Tap syllable beats, then unlock the origin card | Built |
 | 3 | Wk1 Poetry | `Wk1_Lesson3_Stanza_Repair.html` | Find and fix 6 misspelt words in an original verse | Built |
-| 4 | Wk2 Catholic Mission | `Wk2_Lesson1_Mission_Match.html` | Drag words onto Mission Day scenarios | Coming soon |
-| 5 | Wk2 Catholic Mission | `Wk2_Lesson2_Suffix_Machine.html` | Predict the output of base word + suffix | Coming soon |
-| 6 | Wk2 Catholic Mission | `Wk2_Lesson3_Poster_Press.html` | Poster slots that only "print" when spelt correctly | Coming soon |
-| 7 | Wk3 Science changes | `Wk3_Lesson1_Change_Sort.html` | Drag changes into reversible or irreversible beakers | Coming soon |
-| 8 | Wk3 Science changes | `Wk3_Lesson2_Prefix_Lab.html` | Click-to-build prefix + root + suffix | Coming soon |
-| 9 | Wk3 Science changes | `Wk3_Lesson3_Melt_and_Rebuild.html` | Word melts away, then rebuild it from memory | Coming soon |
+| 4 | Wk2 Catholic Mission | `Wk2_Lesson1_Mission_Match.html` | Drag words onto Mission Day scenarios | Built |
+| 5 | Wk2 Catholic Mission | `Wk2_Lesson2_Suffix_Machine.html` | Predict the output of base word + suffix | Built |
+| 6 | Wk2 Catholic Mission | `Wk2_Lesson3_Poster_Press.html` | Poster slots that only "print" when spelt correctly | Built |
+| 7 | Wk3 Science changes | `Wk3_Lesson1_Change_Sort.html` | Drag changes into reversible or irreversible beakers | Built |
+| 8 | Wk3 Science changes | `Wk3_Lesson2_Prefix_Lab.html` | Click-to-build prefix + root + suffix | Built |
+| 9 | Wk3 Science changes | `Wk3_Lesson3_Melt_and_Rebuild.html` | Word melts away, then rebuild it from memory | Built |
 | 10 | Wk4 HASS consumer | `Wk4_Lesson1_Ad_Inspector.html` | Highlight persuasive tricks in an original ad | Coming soon |
 | 11 | Wk4 HASS consumer | `Wk4_Lesson2_Silent_Letter_Scanner.html` | Slide a scanner and stop on the silent letter | Coming soon |
 | 12 | Wk4 HASS consumer | `Wk4_Lesson3_Budget_Cart.html` | Spell an item correctly to add it to the cart, within budget | Coming soon |

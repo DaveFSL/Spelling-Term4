@@ -1,0 +1,52 @@
+const { load, check, click, type, key, staticChecks, sectionEndsWithEvidence, done } = require("./harness");
+const FILE = "Wk3_Lesson2_Prefix_Lab.html";
+console.log("== " + FILE);
+staticChecks(FILE);
+const { w, d, errors } = load(FILE);
+const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
+check($$(".q").length === 5, "5 warm-up questions");
+click($$("#q0 .opt")[1]); check(d.activeElement === $("#fix0"), "wrong answer focuses the fix-up");
+check($$("#casenotes .card").length === 6 && $$("#casenotes .remember").length === 6, "6 teaching cards with Remember lines");
+// lab
+const part = (row, v) => $$(row + " .part").find(b => b.dataset.val === v);
+check($("#testBtn").disabled, "Test locked until a root is chosen");
+check($$("#targets .tw").every(t => t.textContent === "? ? ?"), "target words hidden (clues only) before building");
+function build(pre, root, suf) { click(part("#rowPre", pre)); click(part("#rowRoot", root)); click(part("#rowSuf", suf)); click($("#testBtn")); }
+build("in", "revers", "ible");
+check(/changes to <b>ir-<\/b>/.test($("#labFix").innerHTML) && d.activeElement === $("#labFix"), "in- + r root → ir- rule clue and focus");
+build("", "revers", "able");
+check(/-ible/.test($("#labFix").textContent), "-able on revers → -ible clue");
+build("dis", "solv", "");
+check(/needs an e/.test($("#labFix").textContent), "dis+solv → needs e clue");
+build("", "chem", "ation");
+check(/-ical/.test($("#labFix").textContent), "chem + wrong ending → -ical clue");
+build("", "evapor", "e");
+check(/evaporATE/.test($("#labFix").textContent) && /-ation ending/.test($("#labFix").textContent) && d.activeElement === $("#labFix"), "evapor + e points to evaporATE and -ation");
+build("in", "vis", "ible");
+check(/bonus/.test($("#labMsg").textContent) && /invisible/.test($("#bonus").textContent), "real non-target word counts as bonus");
+build("", "mix", "able");
+check(/mixable/.test($("#bonus").textContent), "mixable counts as a bonus word");
+build("", "solv", "able");
+check(/solvable/.test($("#bonus").textContent), "solvable counts as a bonus word");
+const T = [["","revers","ible"],["ir","revers","ible"],["dis","solv","e"],["","evapor","ation"],["","condens","ation"],["","mix","ture"],["","chem","ical"],["","phys","ical"]];
+T.forEach(t => build(...t));
+check($$("#targets .target.got").length === 8 && /All eight built/.test($("#labMsg").textContent), "all eight targets can be built");
+check(/\(8 of 8\)/.test($("#tCount").textContent), "counter shows 8 of 8");
+click($("#labHint")); check(/no hints needed/.test($("#labMsg").textContent), "hint knows when done");
+click($("#clearBtn")); check($("#testBtn").disabled, "clear resets the bench");
+// LCWC (shared module with review fixes)
+check(/Word 1 of 4 · Round 1/.test($("#lcRound").textContent), "LCWC counter");
+check($$("#resBody td").filter((t,i)=>i%3===0).every(t => /^Word \d$/.test(t.textContent)), "results table hides spellings before checking");
+click($("#coverBtn"));
+check($("#lcWord").getAttribute("aria-hidden") === "true", "covered word is aria-hidden");
+check($("#lcCheck").disabled, "check locked until typed");
+type(w, $("#lcIn"), "ireversible"); click($("#lcCheck"));
+check(!/irreversible/.test($("#lcMsg").textContent), "visible feedback doesn't name the target word");
+check(/starting at letter 3/.test($("#lcSR").textContent), "screen-reader text describes the difference");
+check($$("#resBody td")[0].textContent === "irreversible" && $$("#resBody td")[3].textContent === "Word 2", "only checked words are revealed in the table");
+check(!$("#lcWord").hasAttribute("aria-hidden"), "word readable again after Check");
+for (let i = 1; i < 8; i++) { click($("#lcNext")); const wd = $("#lcWord").textContent; click($("#coverBtn")); type(w, $("#lcIn"), wd); key(w, $("#lcIn"), "Enter"); }
+click($("#challengeBtn"));
+check($("#lcWord").textContent === "combustion" && /Word 5 of 6/.test($("#lcRound").textContent), "challenge words continue at the end");
+sectionEndsWithEvidence(d, ["briefing", "lab", "lcwc", "closed"]);
+setTimeout(() => { check(errors.length === 0, "zero console/page errors " + (errors.length ? JSON.stringify(errors) : "")); done(); }, 900);

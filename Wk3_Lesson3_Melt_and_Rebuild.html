@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3 Lesson 3 — Melt and Rebuild | Year 6 Spelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f4;
+    --ink:#1b2a4a;
+    --amber:#e8930c;
+    --teal:#0e7c7b;
+    --card:#ffffff;
+    --line:#e6e1d6;
+    --amber-soft:#fdf0d9;
+    --amber-edge:#f2c785;
+    --teal-soft:#e1efee;
+    --ink-soft:#56607a;
+    --good:#1f7a4d;
+    --good-soft:#e3f3ea;
+    --bad:#a8261b;
+    --bad-soft:#fdeceb;
+    --shadow:0 2px 5px rgba(27,42,74,.06), 0 10px 28px rgba(27,42,74,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif;
+    font-size:18px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3,.eyebrow,.pill,.opt,.btn,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  h2{font-size:1.5rem; margin:0 0 .2em; letter-spacing:-.01em}
+  h3{font-size:1.12rem; margin:0 0 .35em}
+  p{margin:.4em 0}
+  a{color:var(--teal)}
+  kbd{font-family:"Space Grotesk"; background:#fff; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; font-size:.85em}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:6px}
+
+  /* ---------- header ---------- */
+  header.band{background:var(--ink); color:#fff; padding:22px 22px 26px}
+  .band-inner{max-width:1000px; margin:0 auto}
+  .home-link{display:inline-flex; align-items:center; gap:6px; color:#c9d2e6; font-size:.85rem; text-decoration:none; min-height:40px; margin-bottom:6px}
+  .home-link:hover{color:#fff}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:600; color:var(--amber); margin:0 0 8px}
+  .band h1{font-weight:700; font-size:2.4rem; line-height:1.05; margin:0 0 10px; letter-spacing:-.02em}
+  @media(max-width:560px){.band h1{font-size:1.9rem}}
+  .hook{color:#c9d2e6; font-size:1.05rem; margin:0; max-width:62ch}
+  .meta-row{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
+  .meta-row span{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:5px 11px; border-radius:999px; font-size:.78rem; color:#dde3f1}
+
+  /* ---------- sticky nav ---------- */
+  nav.pills{position:sticky; top:0; z-index:40; background:rgba(251,249,244,.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:9px 12px}
+  .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
+  .pill:hover{border-color:var(--teal); color:var(--teal)}
+
+  /* ---------- layout ---------- */
+  main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
+  section{scroll-margin-top:64px; padding:30px 0 6px; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px}
+  .sec-no{font-family:"Space Grotesk"; font-weight:700; color:var(--amber); font-size:.95rem; border:2px solid var(--amber-edge); border-radius:8px; padding:2px 9px; flex:0 0 auto}
+  .lead{color:var(--ink-soft); max-width:68ch}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin:14px 0}
+  @media(max-width:560px){.card{padding:16px}}
+
+  /* ---------- buttons ---------- */
+  button{font-family:inherit}
+  .btn{background:var(--ink); color:#fff; border:none; border-radius:10px; padding:11px 18px; font-size:.95rem; font-weight:700; cursor:pointer; min-height:44px}
+  .btn:hover{background:#243a63}
+  .btn.ghost{background:#fff; color:var(--ink); border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--teal); color:var(--teal)}
+  .btn.amber{background:var(--amber); color:#3a2400}
+  .btn.amber:hover{background:#d98509}
+  .btn.teal{background:var(--teal); color:#fff}
+  .btn.teal:hover{background:#0b6968}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+  /* ---------- warm-up quiz ---------- */
+  .q{border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0; background:#fff}
+  .q .stem{font-weight:700; margin:0 0 10px}
+  .opts{display:grid; gap:8px}
+  .opt{text-align:left; background:#fcfbf7; border:1.5px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:10px; cursor:pointer; min-height:44px; font-size:.95rem}
+  .opt:hover{border-color:var(--teal)}
+  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .opt.wrong{background:var(--bad-soft); border-color:#c0392b; color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .fixup{margin-top:10px; background:var(--amber-soft); border-left:5px solid var(--amber); border-radius:0 10px 10px 0; padding:11px 14px; font-size:.92rem; display:none}
+  .fixup.show{display:block}
+  .fixup b:first-child{color:#a8540b}
+  .scorebar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:6px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 16px}
+  .scorebar strong{font-family:"Space Grotesk"; font-size:1.15rem}
+
+  /* ---------- teaching cards ---------- */
+  .teach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:680px){.teach-grid{grid-template-columns:1fr}}
+  .teach-grid .card{margin:0}
+  .teach .svg-wrap{background:#fbfaf6; border:1px solid var(--line); border-radius:12px; padding:12px; margin:.4em 0 .7em}
+  .teach .svg-wrap svg{display:block; width:100%; height:auto}
+  .remember{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:10px; padding:10px 13px; font-size:.92rem; margin-top:8px}
+  .remember b:first-child{color:var(--teal); font-family:"Space Grotesk"}
+  .excerpt{border-left:4px solid var(--amber-edge); padding:4px 0 4px 12px; margin:.6em 0; font-style:italic; color:var(--ink)}
+  .excerpt cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:3px}
+
+  /* ---------- writing / locked / help ---------- */
+  textarea, input.type-in{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:13px; font-family:"Atkinson Hyperlegible"; font-size:1rem; background:#fff; color:var(--ink)}
+  textarea{min-height:120px; resize:vertical}
+  input.type-in{min-height:48px; font-size:1.1rem}
+  input.type-in:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(14,124,123,.18)}
+  .wordbank-chips{display:flex; flex-wrap:wrap; gap:7px; margin:.5em 0}
+  .wb{font-size:.85rem; background:#fff; border:1.5px solid var(--line); border-radius:999px; padding:6px 12px; min-height:40px; min-width:40px; text-align:center; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .wb:hover{border-color:var(--teal); color:var(--teal)}
+  .locked{border:1.5px dashed var(--amber-edge); background:var(--amber-soft); border-radius:12px; padding:14px; margin-top:12px; text-align:center; color:#7a4a06}
+  .reveal-box{display:none; margin-top:12px}
+  .reveal-box.show{display:block}
+  .help-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:14px}
+  .help-box.show{display:block}
+  .spy{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; align-items:center}
+  .spy-label{font-size:.8rem; color:var(--ink-soft); margin-right:4px}
+  .chip{font-size:.8rem; font-weight:600; border:1.5px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--ink-soft); background:#fff}
+  .chip.on{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+
+  /* ---------- evidence callout ---------- */
+  .evidence{display:flex; gap:12px; align-items:flex-start; background:#fff7e9; border:1.5px solid var(--amber-edge); border-radius:12px; padding:13px 15px; margin:14px 0; font-size:.92rem}
+  .evidence svg{flex:0 0 auto; margin-top:2px}
+  .evidence b{color:#a8540b}
+
+  /* ---------- checklist ---------- */
+  .check-list{list-style:none; padding:0; margin:.4em 0}
+  .check-list li{padding:0; margin:0; border-bottom:1px dashed var(--line)}
+  .check-list label{display:flex; align-items:center; gap:11px; min-height:44px; padding:4px 0; cursor:pointer; width:100%}
+  .check-list input{width:24px; height:24px; margin:0; accent-color:var(--teal); flex:0 0 auto}
+  .confi{display:flex; gap:9px; flex-wrap:wrap; margin-top:10px}
+  .confi button{border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:10px 14px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .confi button[aria-pressed=true]{background:var(--teal); color:#fff; border-color:var(--teal)}
+
+  .counter{font-size:.9rem; color:var(--ink-soft)}
+  .msg{min-height:1.5em; margin-top:10px; font-size:.95rem}
+  .msg.good{color:var(--good)}
+  .msg.warn{color:#a8540b}
+  footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+  /* ---------- Look · Cover · Write · Check (shared) ---------- */
+  .lc-stage{border:1.5px solid var(--line); border-radius:14px; background:#fff; min-height:110px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden}
+  .lc-word{font-family:"Space Grotesk"; font-weight:700; font-size:2.3rem}
+  @media(max-width:560px){.lc-word{font-size:1.7rem}}
+  .lc-word .tp{color:var(--amber); text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:5px}
+  .lc-cover{position:absolute; inset:0; background:repeating-linear-gradient(45deg,var(--ink),var(--ink) 12px,#243a63 12px,#243a63 24px); display:none; align-items:center; justify-content:center; color:#fff; font-family:"Space Grotesk"; font-weight:600; letter-spacing:.04em}
+  .lc-cover.show{display:flex}
+  .steps{display:flex; gap:6px; flex-wrap:wrap; margin:10px 0}
+  .stp{font-family:"Space Grotesk"; font-weight:600; font-size:.8rem; border-radius:999px; padding:4px 11px; background:#fff; border:1.5px solid var(--line); color:var(--ink-soft)}
+  .stp.now{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .compare{display:flex; flex-wrap:wrap; gap:4px; margin-top:10px}
+  .cl{font-family:"Space Grotesk"; font-weight:700; font-size:1.2rem; width:34px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:8px; border:1.5px solid var(--line)}
+  .cl.ok{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .cl.no{background:var(--amber-soft); border-color:var(--amber); color:#a8540b}
+  table.results{width:100%; border-collapse:collapse; margin-top:14px; font-size:.95rem}
+  table.results th, table.results td{border-bottom:1px solid var(--line); padding:8px 6px; text-align:left}
+  table.results th{font-family:"Space Grotesk"; font-size:.85rem; color:var(--ink-soft)}
+
+  /* ---------- Dictation (shared, Session 3 lessons) ---------- */
+  .dict-steps{margin:.3em 0 .6em; padding-left:1.2em}
+  .dict-list{list-style:none; padding:0; margin:12px 0 0}
+  .dict-list li{display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dnum{font-family:"Space Grotesk"; font-weight:700; color:var(--ink); flex:0 0 26px}
+  .dword{font-family:"Space Grotesk"; font-weight:700; color:var(--teal); font-size:1.1rem}
+  .dsent{display:block; font-size:.95rem; color:var(--ink-soft)}
+  .dmark{margin-left:auto; flex:0 0 auto; border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:8px 12px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .dmark[aria-pressed=true]{background:var(--good); border-color:var(--good); color:#fff}
+  .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
+  .ready input{width:24px; height:24px; accent-color:var(--teal)}
+
+  /* ---------- Melt and Rebuild (signature) ---------- */
+  .ice-stage{position:relative; min-height:170px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:12px 0 6px}
+  .ice{display:flex; gap:2px; padding:22px 26px; border-radius:16px; background:linear-gradient(160deg,#eef8fb 0%,#cfe9ef 55%,#b7dde6 100%); border:2px solid #9fcfd9; box-shadow:inset 0 3px 0 rgba(255,255,255,.8), 0 6px 14px rgba(14,124,123,.15); transition:transform 1.1s ease-in, opacity 1.1s ease-in; transform-origin:bottom center}
+  .ice span{font-family:"Space Grotesk"; font-weight:700; font-size:2.3rem; color:var(--ink); display:inline-block; transition:transform .9s ease-in, opacity .9s ease-in}
+  @media(max-width:560px){.ice span{font-size:1.6rem} .ice{padding:16px 14px}}
+  .ice.melting{transform:scaleY(.15); opacity:.2}
+  .ice.melting span{transform:translateY(40px); opacity:0}
+  .puddle{width:0; height:14px; border-radius:50%; background:#b7dde6; margin-top:4px; transition:width 1.1s ease-in}
+  .puddle.show{width:min(360px,80%)}
+  .phase{font-family:"Space Grotesk"; font-weight:700; color:var(--teal); text-align:center; margin:0}
+  .slots{display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin:14px 0 6px}
+  .lslot{width:42px; height:50px; border-radius:9px; border:2px dashed #9fcfd9; background:#fff; font-family:"Space Grotesk"; font-weight:700; font-size:1.4rem; color:var(--ink); cursor:pointer}
+  .lslot.filled{border-style:solid; border-color:var(--teal)}
+  .lslot.bad{border-color:var(--amber); background:var(--amber-soft)}
+  .lslot.good{border-color:var(--good); background:var(--good-soft); color:var(--good)}
+  @media(max-width:560px){.lslot{width:40px; height:46px; font-size:1.2rem}}
+  .tray{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0}
+  .ltile{width:46px; height:50px; border-radius:10px; border:none; background:var(--ink); color:#fff; font-family:"Space Grotesk"; font-weight:700; font-size:1.35rem; cursor:pointer; box-shadow:0 3px 0 #0e1830}
+  .ltile:disabled{opacity:.25; cursor:default; box-shadow:none}
+  .mtrack{display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; justify-content:center}
+  .mchip{font-family:"Space Grotesk"; font-weight:600; font-size:.8rem; border:1.5px solid var(--line); border-radius:999px; padding:4px 10px; color:var(--ink-soft); background:#fff}
+  .mchip.now{border-color:var(--ink); color:var(--ink)}
+  .mchip.first{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .mchip.again{background:var(--teal-soft); border-color:#bfdedc; color:var(--teal)}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-inner">
+    <a class="home-link" href="index.html">← Term 4 Casebook home</a>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Week 3 · Lesson 3</p>
+    <h1>Melt and Rebuild</h1>
+    <p class="hook">Study a word frozen in ice. Watch it melt away. Then rebuild it, letter by letter, from memory — and prove it with the dictation.</p>
+    <div class="meta-row" aria-label="Lesson details">
+      <span>Case File 3: Science</span>
+      <span>Focus: spelling from memory + dictation</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
+      <span>20 minutes</span>
+    </div>
+  </div>
+</header>
+
+<nav class="pills" aria-label="Jump to a section">
+  <div class="pills-inner">
+    <a class="pill" href="#briefing">The Briefing</a>
+    <a class="pill" href="#casenotes">Case Notes</a>
+    <a class="pill" href="#melt">Melt and Rebuild</a>
+    <a class="pill" href="#homesci">Home Science</a>
+    <a class="pill" href="#dictation">Dictation</a>
+    <a class="pill" href="#closed">Case Closed</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===================== 1. WARM-UP ===================== -->
+  <section id="briefing">
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">Which spelling is the real one? Tap your answer. Wrong ones show an orange <b>fix-up</b> with the rule to remember.</p></div></div>
+    <div id="quiz"></div>
+    <div class="scorebar" role="status" aria-live="polite">
+      <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
+      <button class="btn ghost" id="jumpFix" type="button" disabled>Jump to my first fix-up ↧</button>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
+  </section>
+
+  <!-- ===================== 2. TEACHING CARDS ===================== -->
+  <section id="casenotes">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Notes</h2><p class="lead">Two tools for today’s spelling and science writing.</p></div></div>
+    <div class="teach-grid">
+      <div class="card teach">
+        <h3>1 · Write like a scientist</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 96" role="img" aria-label="A science explanation has three parts: what changed, can it go back, and why.">
+            <g font-family="Space Grotesk" font-weight="700" font-size="14">
+              <rect x="8" y="6" width="304" height="24" rx="12" fill="#e1efee"/><text x="20" y="23" fill="#0e7c7b">1 What changed? (the ice melted…)</text>
+              <rect x="8" y="36" width="304" height="24" rx="12" fill="#e1efee"/><text x="20" y="53" fill="#0e7c7b">2 Can it go back? (reversible / irreversible)</text>
+              <rect x="8" y="66" width="304" height="24" rx="12" fill="#e1efee"/><text x="20" y="83" fill="#0e7c7b">3 Why? (same substance / new substance)</text>
+            </g>
+          </svg>
+        </div>
+        <p>A good science explanation says <b>what</b> changed, <b>whether</b> it can go back, and <b>why</b> — using the precise science words.</p>
+        <div class="remember"><b>Remember:</b> What changed? Can it go back? Why?</div>
+      </div>
+      <div class="card teach">
+        <h3>2 · Know each word’s trap</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 120" role="img" aria-label="The eight focus words with their tricky parts highlighted.">
+            <g font-family="Space Grotesk" font-weight="700" font-size="16" fill="#1b2a4a">
+              <text x="10" y="26">revers<tspan fill="#e8930c">ible</tspan></text>
+              <text x="10" y="54">i<tspan fill="#e8930c">rr</tspan>eversible</text>
+              <text x="10" y="82">di<tspan fill="#e8930c">ss</tspan>olve</text>
+              <text x="10" y="110">evap<tspan fill="#e8930c">o</tspan>ration</text>
+              <text x="170" y="26">conden<tspan fill="#e8930c">s</tspan>ation</text>
+              <text x="170" y="54">mix<tspan fill="#e8930c">ture</tspan></text>
+              <text x="170" y="82"><tspan fill="#e8930c">ch</tspan>emical</text>
+              <text x="170" y="110"><tspan fill="#e8930c">ph</tspan>ysical</text>
+            </g>
+          </svg>
+        </div>
+        <p>Each word has one spot where people slip. Check the <b>trap</b> on purpose before you move on.</p>
+        <div class="remember"><b>Remember:</b> Check the orange part of each word first.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. MELT AND REBUILD (signature) ===================== -->
+  <section id="melt">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Melt and Rebuild</h2><p class="lead"><b>Study</b> the frozen word for as long as you need. Press <b>Melt it</b> — the word disappears. Then <b>rebuild</b> it by tapping the letter tiles in order. Watch out: there are two extra tiles that don’t belong. Tap a filled box to send a letter back.</p></div></div>
+    <div class="card">
+      <p class="counter" id="mCount" style="text-align:center"></p>
+      <div class="ice-stage" id="stage">
+        <div class="ice" id="ice" aria-live="polite"></div>
+        <div class="puddle" id="puddle" aria-hidden="true"></div>
+      </div>
+      <p class="phase" id="phase"></p>
+      <div class="btn-row" style="justify-content:center"><button class="btn teal" id="meltBtn" type="button">I’ve studied it — melt it!</button></div>
+      <div id="rebuild" hidden>
+        <div class="slots" id="slots" role="group" aria-label="Your rebuilt word"></div>
+        <div class="tray" id="tray" role="group" aria-label="Letter tiles"></div>
+        <div class="btn-row" style="justify-content:center">
+          <button class="btn teal" id="checkBtn" type="button" disabled>Check 🔒</button>
+          <button class="btn ghost" id="refreezeBtn" type="button">Freeze it again (study again)</button>
+        </div>
+        <div class="fixup" id="meltFix" tabindex="-1"></div>
+      </div>
+      <p class="msg" id="meltMsg" role="status" aria-live="polite" style="text-align:center"></p>
+      <p class="sr-only" id="meltSR" aria-live="polite"></p>
+      <div class="btn-row" style="justify-content:center"><button class="btn" id="nextBtn" type="button" hidden>Next word ›</button></div>
+      <div class="mtrack" id="mtrack" aria-label="Progress"></div>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your progress chips</b> when all eight words are rebuilt. Green = first go. Teal = rebuilt after studying again.</div></div>
+  </section>
+
+  <!-- ===================== 4. HOME SCIENCE (independent) ===================== -->
+  <section id="homesci">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Home Science</h2><p class="lead">Think of changes you’ve seen at home. Explain <b>one reversible</b> and <b>one irreversible</b> change, using at least <b>four focus words</b>. What changed? Can it go back? Why?</p></div></div>
+    <div class="card">
+      <label for="writebox" class="sr-only">Write your home science explanation</label>
+      <textarea id="writebox" placeholder="Start writing here…"></textarea>
+      <div class="spy" id="spy"></div>
+      <div class="btn-row">
+        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
+        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
+      </div>
+      <div class="help-box" id="helpBox">
+        <h3 style="margin-top:0">Sentence starters</h3>
+        <p>• At home, I saw … . This is a <b>reversible</b> change because …<br>• When … , it is an <b>irreversible</b> change, because a new substance …<br>• This is a <b>physical</b> / <b>chemical</b> change because …</p>
+        <p style="margin-bottom:4px"><b>Ideas:</b> ice cubes in a drink · a steamy bathroom mirror · cooking pancakes · a rusty bike chain · sugar in a cup of tea</p>
+      </div>
+      <div class="locked" id="lockMsg">🔒 Write at least one sentence of your own first — then the worked example unlocks.</div>
+      <div class="reveal-box" id="exampleBox">
+        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
+          <b style="color:var(--ink)">Worked example (one way to do it):</b>
+          <span style="display:block;margin-top:6px">After a hot shower, <u>condensation</u> forms on the cold bathroom mirror. This is a <u>reversible</u>, <u>physical</u> change because the droplets can turn back into water vapour by <u>evaporation</u>. When I cook pancakes, the batter goes through an <u>irreversible</u> <u>chemical</u> change — you can never turn a cooked pancake back into runny batter.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">What changed ✓ · Can it go back ✓ · Why ✓ · Six focus words ✓</span>
+        </div>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your explanation and the Spelling Spy now, and upload to OneNote.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. DICTATION ===================== -->
+  <section id="dictation">
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Weekly Dictation</h2><p class="lead">Time to prove it — eight words, written in your book.</p></div></div>
+    <div class="card">
+      <ol class="dict-steps">
+        <li>Number <b>1–8</b> down the page in your book.</li>
+        <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
+        <li>When you’ve written all eight, tick the box to unlock the answers. Then mark your own work honestly.</li>
+      </ol>
+      <label class="ready" for="dictReady"><input type="checkbox" id="dictReady"> I’ve written all eight words in my book</label>
+      <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
+      <div id="dictAnswers" hidden>
+        <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
+        <ol class="dict-list" id="dictList"></ol>
+        <div class="scorebar" role="status" aria-live="polite" style="margin-top:12px"><span>My dictation score: <strong id="dictScore">0</strong> / <strong>8</strong></span></div>
+        <p class="counter" style="margin-top:8px">Missed one? Write it correctly three times next to your attempt, and check its trap in Case Notes.</p>
+      </div>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Photograph your book page</b> and screenshot your score. Upload both to OneNote — this page won’t keep them.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. CASE CLOSED ===================== -->
+  <section id="closed">
+    <div class="sec-head"><span class="sec-no">06</span><div><h2>Case Closed</h2><p class="lead">Case File 3 is nearly closed. Tick off your evidence and rate your confidence.</p></div></div>
+    <div class="card">
+      <h3>Evidence to capture (screenshot or photograph each one)</h3>
+      <ul class="check-list">
+        <li><label for="c1"><input type="checkbox" id="c1"><span>My Briefing score and any fix-up notes I read</span></label></li>
+        <li><label for="c2"><input type="checkbox" id="c2"><span>My Melt and Rebuild progress chips</span></label></li>
+        <li><label for="c3"><input type="checkbox" id="c3"><span>My Home Science explanation and Spelling Spy</span></label></li>
+        <li><label for="c4"><input type="checkbox" id="c4"><span>A photo of my dictation page and my score</span></label></li>
+      </ul>
+      <h3 style="margin-top:18px">How confident am I with this week’s eight words?</h3>
+      <div class="confi" id="confi" role="group" aria-label="Confidence rating">
+        <button type="button" aria-pressed="false">Still cracking it</button>
+        <button type="button" aria-pressed="false">Getting there</button>
+        <button type="button" aria-pressed="false">Case closed ✓</button>
+      </div>
+      <div class="evidence" style="margin-top:18px;margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Nothing on this page is saved.</b> Take your final screenshots now, then upload everything to OneNote. Closing the tab clears it all.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Week 3 Lesson 3: Melt and Rebuild · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
+</footer>
+
+<div class="sr-only" id="liveRegion" aria-live="assertive"></div>
+
+<script>
+"use strict";
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+function announce(msg) {
+  const r = $("#liveRegion");
+  if (!r) return;
+  r.textContent = "";
+  setTimeout(() => { r.textContent = msg; }, 30);
+}
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---------- Warm-up quiz: stem, opts, correct index, fix-up note ---------- */
+function buildQuiz(QUIZ) {
+  let score = 0, firstFix = null;
+  const quizEl = $("#quiz");
+  $("#total").textContent = QUIZ.length;
+  QUIZ.forEach((q, qi) => {
+    const card = document.createElement("div");
+    card.className = "q"; card.id = "q" + qi;
+    const stem = document.createElement("p");
+    stem.className = "stem"; stem.innerHTML = (qi + 1) + ". " + q.stem;
+    const opts = document.createElement("div");
+    opts.className = "opts"; opts.setAttribute("role", "group"); opts.setAttribute("aria-label", "Question " + (qi + 1));
+    q.opts.forEach((text, oi) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.innerHTML = text;
+      b.addEventListener("click", () => answer(oi, b));
+      opts.appendChild(b);
+    });
+    const fix = document.createElement("div");
+    fix.className = "fixup"; fix.id = "fix" + qi; fix.tabIndex = -1;
+    fix.innerHTML = "<b>Fix-up:</b> " + q.fix;
+    card.append(stem, opts, fix);
+    quizEl.appendChild(card);
+    function answer(oi, btn) {
+      if (card.dataset.done) return;
+      card.dataset.done = "1";
+      $$(".opt", opts).forEach(b => { b.disabled = true; });
+      opts.children[q.correct].classList.add("correct");
+      if (oi === q.correct) {
+        score++;
+        $("#score").textContent = score;
+        announce("Correct. Score " + score + " of " + QUIZ.length);
+      } else {
+        btn.classList.add("wrong");
+        fix.classList.add("show");
+        if (firstFix === null) { firstFix = qi; $("#jumpFix").disabled = false; }
+        fix.focus();
+        announce("Not quite. Read the fix-up note.");
+      }
+    }
+  });
+  $("#jumpFix").addEventListener("click", () => {
+    if (firstFix === null) return;
+    const f = $("#fix" + firstFix);
+    f.scrollIntoView({ block: "center" });
+    f.focus();
+  });
+}
+
+/* ---------- Writing task: help toggle, word bank chips, locked example, spelling spy ---------- */
+function setupWriting({ box, helpBtn, helpBox, exampleBtn, lockMsg, exampleBox, minChars = 20, spyEl, words = [] }) {
+  const unlock = () => {
+    const ok = box.value.trim().length >= minChars;
+    exampleBtn.disabled = !ok;
+    exampleBtn.textContent = ok ? "Show a worked example" : "Show a worked example \u{1F512}";
+    if (!exampleBox.classList.contains("show")) lockMsg.style.display = ok ? "none" : "block";
+  };
+  const spy = () => {
+    if (!spyEl) return;
+    const text = box.value.toLowerCase();
+    const found = words.filter(w => new RegExp("\\b" + w + "s?\\b").test(text));
+    spyEl.querySelector(".spy-count").textContent = found.length;
+    const list = spyEl.querySelector(".spy-list");
+    list.innerHTML = "";
+    found.forEach(w => {
+      const c = document.createElement("span");
+      c.className = "chip on"; c.dataset.word = w; c.textContent = w;
+      list.appendChild(c);
+    });
+  };
+  if (spyEl) {
+    spyEl.innerHTML = '<span class="spy-label">Spelling spy – focus words spelt correctly: <b class="spy-count">0</b></span><span class="spy-list"></span>';
+    spyEl.setAttribute("aria-live", "polite");
+  }
+  box.addEventListener("input", () => { unlock(); spy(); });
+  exampleBtn.addEventListener("click", () => {
+    if (exampleBtn.disabled) return;
+    exampleBox.classList.add("show");
+    lockMsg.style.display = "none";
+  });
+  helpBtn.addEventListener("click", () => {
+    const open = helpBox.classList.toggle("show");
+    helpBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    helpBtn.textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  $$(".wb", helpBox).forEach(chip => {
+    chip.addEventListener("click", () => {
+      const needsSpace = box.value.length > 0 && !/\s$/.test(box.value);
+      box.value += (needsSpace ? " " : "") + chip.textContent + " ";
+      box.focus();
+      box.dispatchEvent(new Event("input"));
+    });
+  });
+  unlock();
+}
+
+/* ---------- Confidence buttons ---------- */
+function setupConfidence() {
+  $$("#confi button").forEach(b => {
+    b.addEventListener("click", () => {
+      $$("#confi button").forEach(x => x.setAttribute("aria-pressed", "false"));
+      b.setAttribute("aria-pressed", "true");
+    });
+  });
+}
+
+/* ---------- Look · Cover · Write · Check (shared, Session 2 lessons) ----------
+   Needs the standard LCWC markup (ids: lcRound, lcWord, lcCover, coverBtn, writeArea, lcIn,
+   lcCheck, lcHelpBtn, lcHelpBox, compare, lcMsg, lcSR, lcNext, resBody, challengeBtn).
+   - The results table hides a word's spelling until that word has been checked once.
+   - The word is aria-hidden while covered.
+   - Visible feedback never names the target word; the full comparison goes to screen readers only.
+   - Challenge words are appended to the end of the queue. */
+function setupLCWC({ core, challenge = [] }) {
+  let queue = [], qi = 0;
+  const order = [], results = {}, seen = new Set();
+  function add(list) {
+    const start = queue.length;
+    [1, 2].forEach(r => list.forEach(o => queue.push({ ...o, round: r })));
+    list.forEach(o => { if (!results[o.w]) { results[o.w] = ["–", "–"]; order.push(o.w); } });
+    return start;
+  }
+  function renderResults() {
+    const tb = $("#resBody"); tb.innerHTML = "";
+    order.forEach((w, k) => {
+      const tr = document.createElement("tr");
+      const name = seen.has(w) ? w : "Word " + (k + 1);
+      tr.innerHTML = "<td>" + name + "</td><td>" + results[w][0] + "</td><td>" + results[w][1] + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+  function setStage(s) { $$(".stp").forEach(x => x.classList.toggle("now", x.dataset.s === s)); }
+  function counter() {
+    const item = queue[qi];
+    $("#lcRound").textContent = "Word " + (order.indexOf(item.w) + 1) + " of " + order.length + " · Round " + item.round;
+  }
+  function showWord() {
+    const item = queue[qi];
+    counter();
+    const wEl = $("#lcWord");
+    wEl.innerHTML = item.w.split("").map((ch, k) => item.tp.includes(k) ? '<span class="tp">' + ch + "</span>" : ch).join("");
+    wEl.removeAttribute("aria-hidden");
+    $("#lcCover").classList.remove("show");
+    $("#writeArea").hidden = true; $("#coverBtn").hidden = false; $("#lcNext").hidden = true;
+    $("#compare").innerHTML = "";
+    $("#lcMsg").textContent = ""; $("#lcMsg").className = "msg"; $("#lcSR").textContent = "";
+    $("#lcIn").value = "";
+    $("#lcCheck").disabled = true; $("#lcCheck").textContent = "Check 🔒";
+    $("#lcHelpBox").innerHTML = "<b>Memory trick:</b> " + item.tip;
+    $("#lcHelpBox").classList.remove("show");
+    $("#lcHelpBtn").setAttribute("aria-expanded", "false"); $("#lcHelpBtn").textContent = "I need help ▾";
+    setStage("look");
+  }
+  $("#coverBtn").addEventListener("click", () => {
+    $("#lcCover").classList.add("show");
+    $("#lcWord").setAttribute("aria-hidden", "true");
+    $("#coverBtn").hidden = true;
+    setStage("cover");
+    setTimeout(() => setStage("write"), 500);
+    $("#writeArea").hidden = false;
+    $("#lcIn").focus();
+  });
+  $("#lcIn").addEventListener("input", () => {
+    const ok = $("#lcIn").value.trim().length > 0;
+    $("#lcCheck").disabled = !ok; $("#lcCheck").textContent = ok ? "Check" : "Check 🔒";
+  });
+  $("#lcIn").addEventListener("keydown", e => { if (e.key === "Enter" && !$("#lcCheck").disabled) { e.preventDefault(); check(); } });
+  $("#lcHelpBtn").addEventListener("click", () => {
+    const open = $("#lcHelpBox").classList.toggle("show");
+    $("#lcHelpBtn").setAttribute("aria-expanded", open ? "true" : "false");
+    $("#lcHelpBtn").textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  function diffText(typed, want) {
+    const bad = [];
+    for (let k = 0; k < Math.max(typed.length, want.length); k++) if (typed[k] !== want[k]) bad.push(k + 1);
+    if (!bad.length) return "";
+    const f = bad[0], l = bad[bad.length - 1];
+    return "You wrote " + typed.split("").join(" ") + ". The correct spelling is " + want.split("").join(" ") +
+      ". Your letters differ starting at letter " + f + (l !== f ? " up to letter " + l : "") + ".";
+  }
+  function check() {
+    const item = queue[qi];
+    const typed = $("#lcIn").value.trim().toLowerCase();
+    if (!typed) return;
+    setStage("check");
+    $("#lcCover").classList.remove("show");
+    $("#lcWord").removeAttribute("aria-hidden");
+    seen.add(item.w);
+    const cmp = $("#compare"); cmp.innerHTML = "";
+    for (let k = 0; k < Math.max(typed.length, item.w.length); k++) {
+      const s = document.createElement("span");
+      s.className = "cl " + (typed[k] === item.w[k] ? "ok" : "no");
+      s.textContent = typed[k] || "·";
+      cmp.appendChild(s);
+    }
+    const right = typed === item.w;
+    results[item.w][item.round - 1] = right ? "✓" : "✗ (" + escapeHTML(typed) + ")";
+    renderResults();
+    const msg = $("#lcMsg");
+    if (right) {
+      msg.className = "msg good"; msg.textContent = "✓ Spot on! Compare your letters with the word above.";
+      $("#lcSR").textContent = "Correct.";
+    } else {
+      msg.className = "msg warn";
+      msg.textContent = "Not yet — the amber letters don’t match. Look closely at the orange part of the word, then try it again next round.";
+      $("#lcSR").textContent = diffText(typed, item.w);
+    }
+    $("#writeArea").hidden = true;
+    $("#lcNext").hidden = false;
+    $("#lcNext").textContent = qi < queue.length - 1 ? "Next word ›" : "Start the rounds again ↺";
+    $("#lcNext").focus();
+  }
+  $("#lcCheck").addEventListener("click", check);
+  $("#lcNext").addEventListener("click", () => { qi = qi < queue.length - 1 ? qi + 1 : 0; showWord(); });
+  if (!challenge.length) $("#challengeBtn").hidden = true;
+  $("#challengeBtn").addEventListener("click", () => {
+    const atEnd = !$("#lcNext").hidden && qi === queue.length - 1;
+    const start = add(challenge);
+    renderResults();
+    if (atEnd) { qi = start; showWord(); } else counter();
+    $("#challengeBtn").disabled = true;
+    $("#challengeBtn").textContent = "Challenge words added ✓";
+    announce("Challenge words added to the end of your list.");
+  });
+  add(core); renderResults(); showWord();
+}
+
+/* ---------- Dictation self-mark (shared, Session 3 lessons) ---------- */
+function setupDictation(DICTATION) {
+  $("#dictReady").addEventListener("change", () => {
+    const ok = $("#dictReady").checked;
+    $("#dictReveal").disabled = !ok;
+    $("#dictReveal").textContent = ok ? "Show the answers" : "Show the answers 🔒";
+  });
+  $("#dictReveal").addEventListener("click", () => {
+    if ($("#dictReveal").disabled) return;
+    $("#dictAnswers").hidden = false;
+    $("#dictReveal").disabled = true; $("#dictReveal").textContent = "Answers shown ✓";
+    $("#dictReady").disabled = true;
+    const first = $("#dictList .dmark"); if (first) first.focus();
+  });
+  let score = 0;
+  DICTATION.forEach(([word, sent], i) => {
+    const li = document.createElement("li");
+    li.innerHTML = '<span class="dnum">' + (i + 1) + '.</span><span><span class="dword">' + word + '</span><span class="dsent">' + escapeHTML(sent) + "</span></span>";
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "dmark"; b.textContent = "I got it ✓";
+    b.setAttribute("aria-pressed", "false"); b.setAttribute("aria-label", "I spelt " + word + " correctly");
+    b.addEventListener("click", () => {
+      const on = b.getAttribute("aria-pressed") !== "true";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      score += on ? 1 : -1; $("#dictScore").textContent = score;
+    });
+    li.appendChild(b); $("#dictList").appendChild(li);
+  });
+}
+
+
+/* =================== 1. WARM-UP =================== */
+buildQuiz([
+  { stem: "Which spelling is correct?", opts: ["reversable", "reversible", "reverseble"], correct: 1,
+    fix: "<b>reversible</b> — it takes <b>-ible</b>, with an i. Learn it as a word to watch." },
+  { stem: "Which spelling is correct?", opts: ["ireversible", "irreversable", "irreversible"], correct: 2,
+    fix: "<b>irreversible</b> — ir + reversible: a <b>double r</b>, and it still ends in <b>-ible</b>." },
+  { stem: "Which spelling is correct?", opts: ["dissolve", "disolve", "dissolv"], correct: 0,
+    fix: "<b>dissolve</b> — dis + solve: a <b>double s</b>, and the e stays on the end." },
+  { stem: "Which spelling is correct?", opts: ["kemical", "chemicle", "chemical"], correct: 2,
+    fix: "<b>chemical</b> — it starts with <b>ch</b> and ends in <b>-ical</b>." },
+  { stem: "Which spelling is correct?", opts: ["mixcher", "mixture", "mixtur"], correct: 1,
+    fix: "<b>mixture</b> — it ends in <b>-ture</b>, like picture." },
+]);
+
+/* =================== 3. MELT AND REBUILD =================== */
+const WORDS = [
+  { w: "reversible", decoys: ["a", "y"], trap: "It ends in <b>-ible</b>, with an i." },
+  { w: "irreversible", decoys: ["a", "y"], trap: "ir + reversible — look for the <b>double r</b>." },
+  { w: "dissolve", decoys: ["z", "c"], trap: "dis + solve — a <b>double s</b>, and an e on the end." },
+  { w: "evaporation", decoys: ["e", "s"], trap: "The middle is <b>-por-</b>, like evaporate." },
+  { w: "condensation", decoys: ["c", "t"], trap: "Keep the <b>s</b> from condense, then add -ation." },
+  { w: "mixture", decoys: ["c", "h"], trap: "It ends in <b>-ture</b>, like picture." },
+  { w: "chemical", decoys: ["k", "l"], trap: "It starts with <b>ch</b> and ends in <b>-ical</b>." },
+  { w: "physical", decoys: ["f", "z"], trap: "It starts with <b>ph</b>." },
+];
+const order = shuffle(WORDS.map((_, i) => i));
+let pos = 0, restudied = false, filled = [];
+const status = {};
+const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function cur() { return WORDS[order[pos]]; }
+function renderTrack() {
+  const t = $("#mtrack"); t.innerHTML = "";
+  order.forEach((wi, k) => {
+    const c = document.createElement("span");
+    const st = status[wi];
+    c.className = "mchip" + (st === "first" ? " first" : st === "again" ? " again" : k === pos ? " now" : "");
+    c.textContent = st ? WORDS[wi].w + (st === "first" ? " ✓" : " ↺✓") : "Word " + (k + 1);
+    t.appendChild(c);
+  });
+}
+function freeze() {
+  const it = cur();
+  $("#mCount").textContent = "Word " + (pos + 1) + " of " + WORDS.length;
+  const ice = $("#ice");
+  ice.classList.remove("melting");
+  ice.innerHTML = it.w.split("").map(ch => "<span>" + ch + "</span>").join("");
+  ice.setAttribute("aria-label", "Frozen word: " + it.w.split("").join(" "));
+  ice.removeAttribute("aria-hidden");
+  $("#puddle").classList.remove("show");
+  $("#phase").textContent = "Study it — look closely at the tricky part.";
+  $("#meltBtn").hidden = false;
+  $("#rebuild").hidden = true;
+  $("#meltFix").classList.remove("show");
+  $("#nextBtn").hidden = true;
+  $("#meltMsg").textContent = ""; $("#meltMsg").className = "msg"; $("#meltSR").textContent = "";
+  renderTrack();
+}
+function buildTray() {
+  const it = cur();
+  filled = Array(it.w.length).fill(null);
+  const slots = $("#slots"); slots.innerHTML = "";
+  it.w.split("").forEach((_, k) => {
+    const s = document.createElement("button");
+    s.type = "button"; s.className = "lslot"; s.dataset.k = k;
+    s.setAttribute("aria-label", "Box " + (k + 1) + ", empty");
+    s.addEventListener("click", () => unfill(k));
+    slots.appendChild(s);
+  });
+  const letters = shuffle(it.w.split("").concat(it.decoys));
+  const tray = $("#tray"); tray.innerHTML = "";
+  letters.forEach((ch, k) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "ltile"; b.textContent = ch; b.dataset.t = k;
+    b.setAttribute("aria-label", "Letter " + ch);
+    b.addEventListener("click", () => place(b));
+    tray.appendChild(b);
+  });
+  updateCheck();
+}
+function place(tile) {
+  const k = filled.indexOf(null);
+  if (k < 0) return;
+  filled[k] = tile.dataset.t;
+  const s = $$("#slots .lslot")[k];
+  s.textContent = tile.textContent; s.classList.add("filled"); s.classList.remove("bad", "good");
+  s.setAttribute("aria-label", "Box " + (k + 1) + ", " + tile.textContent + ". Activate to remove.");
+  tile.disabled = true;
+  updateCheck();
+  const next = $$("#tray .ltile").find(t => !t.disabled);
+  if (filled.indexOf(null) < 0) $("#checkBtn").focus(); else if (next) next.focus();
+}
+function unfill(k) {
+  if (filled[k] === null) return;
+  const tile = $$("#tray .ltile").find(t => t.dataset.t === filled[k]);
+  if (tile) tile.disabled = false;
+  filled[k] = null;
+  const s = $$("#slots .lslot")[k];
+  s.textContent = ""; s.classList.remove("filled", "bad", "good");
+  s.setAttribute("aria-label", "Box " + (k + 1) + ", empty");
+  updateCheck();
+}
+function updateCheck() {
+  const full = filled.every(x => x !== null);
+  $("#checkBtn").disabled = !full;
+  $("#checkBtn").textContent = full ? "Check" : "Check 🔒";
+}
+$("#meltBtn").addEventListener("click", () => {
+  const ice = $("#ice");
+  $("#meltBtn").hidden = true;
+  $("#phase").textContent = "Melting…";
+  ice.setAttribute("aria-hidden", "true");
+  ice.removeAttribute("aria-label");
+  ice.querySelectorAll("span").forEach((sp, k) => { sp.style.transitionDelay = (k * 0.05) + "s"; });
+  ice.classList.add("melting");
+  $("#puddle").classList.add("show");
+  setTimeout(() => {
+    ice.innerHTML = "";
+    $("#phase").textContent = "Gone! Rebuild it from memory.";
+    $("#rebuild").hidden = false;
+    buildTray();
+    announce("The word has melted. Rebuild it with the letter tiles. There are " + cur().w.length + " boxes and two extra tiles.");
+    const first = $("#tray .ltile"); if (first) first.focus();
+  }, reduce ? 50 : 1300);
+});
+$("#checkBtn").addEventListener("click", () => {
+  const it = cur();
+  const tiles = $$("#tray .ltile");
+  const typed = filled.map(t => tiles.find(x => x.dataset.t === t).textContent).join("");
+  const slots = $$("#slots .lslot");
+  if (typed === it.w) {
+    slots.forEach(s => { s.classList.add("good"); s.disabled = true; });
+    $$("#tray .ltile").forEach(t => { t.disabled = true; });
+    status[order[pos]] = restudied ? "again" : "first";
+    const msg = $("#meltMsg"); msg.className = "msg good";
+    const done = Object.keys(status).length === WORDS.length;
+    msg.textContent = done ? "🎉 All eight rebuilt! Screenshot your progress chips." : "✓ Frozen solid — " + it.w + " rebuilt correctly!";
+    $("#meltFix").classList.remove("show");
+    $("#checkBtn").disabled = true; $("#refreezeBtn").disabled = true;
+    announce(msg.textContent);
+    renderTrack();
+    if (!done) { $("#nextBtn").hidden = false; $("#nextBtn").focus(); }
+  } else {
+    let wrongCount = 0;
+    slots.forEach((s, k) => { const ok = typed[k] === it.w[k]; s.classList.toggle("bad", !ok); if (!ok) wrongCount++; });
+    const fix = $("#meltFix");
+    fix.innerHTML = "<b>Not quite:</b> " + wrongCount + (wrongCount === 1 ? " box is" : " boxes are") +
+      " in the wrong spot (shown in amber). Tap a box to send its letter back. Trap to check: " + it.trap +
+      " Stuck? Freeze it again to study — no penalty — your chip will show teal to say you studied it again.";
+    fix.classList.add("show"); fix.focus();
+    $("#meltSR").textContent = "Amber boxes: " + slots.map((s, k) => s.classList.contains("bad") ? (k + 1) : null).filter(Boolean).join(", ") + ".";
+  }
+});
+$("#refreezeBtn").addEventListener("click", () => { restudied = true; freeze(); $("#meltBtn").focus(); });
+$("#nextBtn").addEventListener("click", () => { pos++; restudied = false; freeze(); $("#meltBtn").focus(); });
+freeze();
+
+/* =================== 4. HOME SCIENCE =================== */
+setupWriting({
+  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
+  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
+  spyEl: $("#spy"), words: ["reversible", "irreversible", "dissolve", "evaporation", "condensation", "mixture", "chemical", "physical"],
+});
+
+/* =================== 5. DICTATION (must match the unit plan exactly) =================== */
+setupDictation([
+  ["reversible", "Melting chocolate is a reversible change because it can set again."],
+  ["irreversible", "Burning toast is an irreversible change that makes a new substance."],
+  ["dissolve", "Stir the water to help the sugar dissolve more quickly."],
+  ["evaporation", "Evaporation left salt crystals behind in the dish."],
+  ["condensation", "Condensation formed droplets on the outside of the cold glass."],
+  ["mixture", "Sand and water make a mixture that can be separated."],
+  ["chemical", "Rusting is a chemical change that happens slowly over time."],
+  ["physical", "Freezing water into ice is a physical change."],
+]);
+
+/* =================== 6. CONFIDENCE =================== */
+setupConfidence();
+</script>
+</body>
+</html>
