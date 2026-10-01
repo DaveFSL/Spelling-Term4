@@ -28,7 +28,7 @@ Year 6 spelling unit, Term 4 2026, St Joseph's Primary School, Corinda.
 | 13 | Wk5 Transition | `Wk5_Lesson1_Timetable_Builder.html` | Drag words into a Year 7 day planner | Built |
 | 14 | Wk5 Transition | `Wk5_Lesson2_Word_Family_Tree.html` | Grow -ent/-ence and -ant/-ance branches | Built |
 | 15 | Wk5 Transition | `Wk5_Lesson3_Letter_to_Year7_Me.html` | Letter with a live word check and a proofreader that flags slips without giving answers | Built |
-| 16 | Review | `Review_Lesson16_Case_Closed.html` | Case Board: solve 5 case files to earn stamps | Coming soon |
+| 16 | Review | `Review_Lesson16_Case_Closed.html` | Case Board: solve 5 case files to earn stamps | Built |
 
 ## Tests
 

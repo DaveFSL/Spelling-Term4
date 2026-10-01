@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16 — Case Closed | Year 6 Spelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f4;
+    --ink:#1b2a4a;
+    --amber:#e8930c;
+    --teal:#0e7c7b;
+    --card:#ffffff;
+    --line:#e6e1d6;
+    --amber-soft:#fdf0d9;
+    --amber-edge:#f2c785;
+    --teal-soft:#e1efee;
+    --ink-soft:#56607a;
+    --good:#1f7a4d;
+    --good-soft:#e3f3ea;
+    --bad:#a8261b;
+    --bad-soft:#fdeceb;
+    --shadow:0 2px 5px rgba(27,42,74,.06), 0 10px 28px rgba(27,42,74,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif;
+    font-size:18px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3,.eyebrow,.pill,.opt,.btn,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  h2{font-size:1.5rem; margin:0 0 .2em; letter-spacing:-.01em}
+  h3{font-size:1.12rem; margin:0 0 .35em}
+  p{margin:.4em 0}
+  a{color:var(--teal)}
+  kbd{font-family:"Space Grotesk"; background:#fff; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; font-size:.85em}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:6px}
+
+  /* ---------- header ---------- */
+  header.band{background:var(--ink); color:#fff; padding:22px 22px 26px}
+  .band-inner{max-width:1000px; margin:0 auto}
+  .home-link{display:inline-flex; align-items:center; gap:6px; color:#c9d2e6; font-size:.85rem; text-decoration:none; min-height:40px; margin-bottom:6px}
+  .home-link:hover{color:#fff}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:600; color:var(--amber); margin:0 0 8px}
+  .band h1{font-weight:700; font-size:2.4rem; line-height:1.05; margin:0 0 10px; letter-spacing:-.02em}
+  @media(max-width:560px){.band h1{font-size:1.9rem}}
+  .hook{color:#c9d2e6; font-size:1.05rem; margin:0; max-width:62ch}
+  .meta-row{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
+  .meta-row span{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:5px 11px; border-radius:999px; font-size:.78rem; color:#dde3f1}
+
+  /* ---------- sticky nav ---------- */
+  nav.pills{position:sticky; top:0; z-index:40; background:rgba(251,249,244,.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:9px 12px}
+  .pills-inner{max-width:1000px; margin:0 auto; display:flex; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .pill{flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 13px; border-radius:999px; font-size:.82rem; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center}
+  .pill:hover{border-color:var(--teal); color:var(--teal)}
+  .pill-home{background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700}
+  .pill-home:hover{background:#243a63; color:#fff; border-color:#243a63}
+
+  /* ---------- layout ---------- */
+  main{max-width:1000px; margin:0 auto; padding:8px 18px 60px}
+  section{scroll-margin-top:64px; padding:30px 0 6px; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px}
+  .sec-no{font-family:"Space Grotesk"; font-weight:700; color:var(--amber); font-size:.95rem; border:2px solid var(--amber-edge); border-radius:8px; padding:2px 9px; flex:0 0 auto}
+  .lead{color:var(--ink-soft); max-width:68ch}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin:14px 0}
+  @media(max-width:560px){.card{padding:16px}}
+
+  /* ---------- buttons ---------- */
+  button{font-family:inherit}
+  .btn{background:var(--ink); color:#fff; border:none; border-radius:10px; padding:11px 18px; font-size:.95rem; font-weight:700; cursor:pointer; min-height:44px}
+  .btn:hover{background:#243a63}
+  .btn.ghost{background:#fff; color:var(--ink); border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--teal); color:var(--teal)}
+  .btn.amber{background:var(--amber); color:#3a2400}
+  .btn.amber:hover{background:#d98509}
+  .btn.teal{background:var(--teal); color:#fff}
+  .btn.teal:hover{background:#0b6968}
+  .btn:disabled{opacity:.45; cursor:not-allowed}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+  /* ---------- warm-up quiz ---------- */
+  .q{border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0; background:#fff}
+  .q .stem{font-weight:700; margin:0 0 10px}
+  .opts{display:grid; gap:8px}
+  .opt{text-align:left; background:#fcfbf7; border:1.5px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:10px; cursor:pointer; min-height:44px; font-size:.95rem}
+  .opt:hover{border-color:var(--teal)}
+  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .opt.wrong{background:var(--bad-soft); border-color:#c0392b; color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .fixup{margin-top:10px; background:var(--amber-soft); border-left:5px solid var(--amber); border-radius:0 10px 10px 0; padding:11px 14px; font-size:.92rem; display:none}
+  .fixup.show{display:block}
+  .fixup b:first-child{color:#a8540b}
+  .scorebar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:6px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:12px 16px}
+  .scorebar strong{font-family:"Space Grotesk"; font-size:1.15rem}
+
+  /* ---------- teaching cards ---------- */
+  .teach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:680px){.teach-grid{grid-template-columns:1fr}}
+  .teach-grid .card{margin:0}
+  .teach .svg-wrap{background:#fbfaf6; border:1px solid var(--line); border-radius:12px; padding:12px; margin:.4em 0 .7em}
+  .teach .svg-wrap svg{display:block; width:100%; height:auto}
+  .remember{background:var(--teal-soft); border:1px solid #bfdedc; border-radius:10px; padding:10px 13px; font-size:.92rem; margin-top:8px}
+  .remember b:first-child{color:var(--teal); font-family:"Space Grotesk"}
+  .excerpt{border-left:4px solid var(--amber-edge); padding:4px 0 4px 12px; margin:.6em 0; font-style:italic; color:var(--ink)}
+  .excerpt cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:3px}
+
+  /* ---------- writing / locked / help ---------- */
+  textarea, input.type-in{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:13px; font-family:"Atkinson Hyperlegible"; font-size:1rem; background:#fff; color:var(--ink)}
+  textarea{min-height:120px; resize:vertical}
+  input.type-in{min-height:48px; font-size:1.1rem}
+  input.type-in:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(14,124,123,.18)}
+  .wordbank-chips{display:flex; flex-wrap:wrap; gap:7px; margin:.5em 0}
+  .wb{font-size:.85rem; background:#fff; border:1.5px solid var(--line); border-radius:999px; padding:6px 12px; min-height:40px; min-width:40px; text-align:center; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .wb:hover{border-color:var(--teal); color:var(--teal)}
+  .locked{border:1.5px dashed var(--amber-edge); background:var(--amber-soft); border-radius:12px; padding:14px; margin-top:12px; text-align:center; color:#7a4a06}
+  .reveal-box{display:none; margin-top:12px}
+  .reveal-box.show{display:block}
+  .help-box{display:none; margin-top:12px; background:var(--teal-soft); border:1px solid #bfdedc; border-radius:12px; padding:14px}
+  .help-box.show{display:block}
+  .spy{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; align-items:center}
+  .spy-label{font-size:.8rem; color:var(--ink-soft); margin-right:4px}
+  .chip{font-size:.8rem; font-weight:600; border:1.5px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--ink-soft); background:#fff}
+  .chip.on{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+
+  /* ---------- evidence callout ---------- */
+  .evidence{display:flex; gap:12px; align-items:flex-start; background:#fff7e9; border:1.5px solid var(--amber-edge); border-radius:12px; padding:13px 15px; margin:14px 0; font-size:.92rem}
+  .evidence svg{flex:0 0 auto; margin-top:2px}
+  .evidence b{color:#a8540b}
+
+  /* ---------- checklist ---------- */
+  .check-list{list-style:none; padding:0; margin:.4em 0}
+  .check-list li{padding:0; margin:0; border-bottom:1px dashed var(--line)}
+  .check-list label{display:flex; align-items:center; gap:11px; min-height:44px; padding:4px 0; cursor:pointer; width:100%}
+  .check-list input{width:24px; height:24px; margin:0; accent-color:var(--teal); flex:0 0 auto}
+  .confi{display:flex; gap:9px; flex-wrap:wrap; margin-top:10px}
+  .confi button{border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:10px 14px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .confi button[aria-pressed=true]{background:var(--teal); color:#fff; border-color:var(--teal)}
+
+  .counter{font-size:.9rem; color:var(--ink-soft)}
+  .msg{min-height:1.5em; margin-top:10px; font-size:.95rem}
+  .msg.good{color:var(--good)}
+  .msg.warn{color:#a8540b}
+  footer{max-width:1000px; margin:0 auto; padding:24px 18px 50px; color:var(--ink-soft); font-size:.85rem}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+  /* ---------- Look · Cover · Write · Check (shared) ---------- */
+  .lc-stage{border:1.5px solid var(--line); border-radius:14px; background:#fff; min-height:110px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden}
+  .lc-word{font-family:"Space Grotesk"; font-weight:700; font-size:2.3rem}
+  @media(max-width:560px){.lc-word{font-size:1.7rem}}
+  .lc-word .tp{color:var(--amber); text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:5px}
+  .lc-cover{position:absolute; inset:0; background:repeating-linear-gradient(45deg,var(--ink),var(--ink) 12px,#243a63 12px,#243a63 24px); display:none; align-items:center; justify-content:center; color:#fff; font-family:"Space Grotesk"; font-weight:600; letter-spacing:.04em}
+  .lc-cover.show{display:flex}
+  .steps{display:flex; gap:6px; flex-wrap:wrap; margin:10px 0}
+  .stp{font-family:"Space Grotesk"; font-weight:600; font-size:.8rem; border-radius:999px; padding:4px 11px; background:#fff; border:1.5px solid var(--line); color:var(--ink-soft)}
+  .stp.now{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .compare{display:flex; flex-wrap:wrap; gap:4px; margin-top:10px}
+  .cl{font-family:"Space Grotesk"; font-weight:700; font-size:1.2rem; width:34px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:8px; border:1.5px solid var(--line)}
+  .cl.ok{background:var(--good-soft); border-color:var(--good); color:var(--good)}
+  .cl.no{background:var(--amber-soft); border-color:var(--amber); color:#a8540b}
+  table.results{width:100%; border-collapse:collapse; margin-top:14px; font-size:.95rem}
+  table.results th, table.results td{border-bottom:1px solid var(--line); padding:8px 6px; text-align:left}
+  table.results th{font-family:"Space Grotesk"; font-size:.85rem; color:var(--ink-soft)}
+
+  /* ---------- Dictation (shared, Session 3 lessons) ---------- */
+  .dict-steps{margin:.3em 0 .6em; padding-left:1.2em}
+  .dict-list{list-style:none; padding:0; margin:12px 0 0}
+  .dict-list li{display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dnum{font-family:"Space Grotesk"; font-weight:700; color:var(--ink); flex:0 0 26px}
+  .dword{font-family:"Space Grotesk"; font-weight:700; color:var(--teal); font-size:1.1rem}
+  .dsent{display:block; font-size:.95rem; color:var(--ink-soft)}
+  .dmark{margin-left:auto; flex:0 0 auto; border:1.5px solid var(--line); background:#fff; border-radius:10px; padding:8px 12px; min-height:44px; cursor:pointer; font-family:"Space Grotesk"; font-weight:600; color:var(--ink)}
+  .dmark[aria-pressed=true]{background:var(--good); border-color:var(--good); color:#fff}
+  .ready{display:flex; gap:11px; align-items:center; min-height:44px; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; background:#fff; margin-top:10px; cursor:pointer}
+  .ready input{width:24px; height:24px; accent-color:var(--teal)}
+
+  /* ---------- Case Board (signature) ---------- */
+  .board{background:#f1e6cf; border:2px solid #c9b48a; border-radius:18px; padding:16px; background-image:radial-gradient(#e3d3b0 1px, transparent 1.5px); background-size:14px 14px}
+  .board-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px}
+  .board-top h3{margin:0}
+  .stamps{font-family:"Space Grotesk"; font-weight:700; color:var(--ink)}
+  .folders{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px}
+  .folder{position:relative; text-align:left; min-height:110px; padding:22px 12px 12px; border-radius:4px 12px 12px 12px; border:2px solid #b8913f; background:#f7d98b; color:var(--ink); cursor:pointer; font-family:"Space Grotesk"; box-shadow:0 3px 0 #b8913f}
+  .folder::before{content:""; position:absolute; top:-12px; left:-2px; width:62px; height:14px; background:#f7d98b; border:2px solid #b8913f; border-bottom:none; border-radius:8px 8px 0 0}
+  .folder[aria-expanded=true]{outline:3px solid var(--ink); outline-offset:3px}
+  .folder .fno{display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#7a5a17; font-weight:700}
+  .folder .ftitle{display:block; font-weight:700; font-size:1.02rem; margin-top:4px}
+  .folder .fstrat{display:block; font-family:"Atkinson Hyperlegible"; font-size:.82rem; color:#5b4a26; margin-top:4px}
+  .stamp{position:absolute; right:8px; bottom:8px; transform:rotate(-12deg); border:3px solid var(--bad); color:var(--bad); font-family:"Space Grotesk"; font-weight:700; font-size:.8rem; letter-spacing:.1em; padding:2px 7px; border-radius:6px; background:rgba(255,255,255,.6)}
+  .casefile{margin-top:16px; background:#fff; border:2px solid var(--ink); border-radius:14px; padding:16px}
+  .casefile h3{margin-top:0}
+  .citem{border:1.5px solid var(--line); border-radius:12px; padding:12px; margin:10px 0; background:#fcfbf7}
+  .citem.solved{border-color:var(--good); background:var(--good-soft)}
+  .citem .clue{margin:0 0 8px}
+  .crow{display:flex; gap:8px; flex-wrap:wrap}
+  .crow input{flex:1 1 200px; font-family:"Atkinson Hyperlegible"; font-size:1.05rem; min-height:44px; padding:6px 10px; border:2px solid var(--line); border-radius:10px}
+  .crow input:focus-visible{outline:3px solid var(--teal); outline-offset:2px}
+  .chint{font-size:.88rem; background:#fdf1de; border-left:4px solid var(--amber); border-radius:6px; padding:6px 9px; margin:8px 0 0}
+  .cword{font-family:"Space Grotesk"; font-weight:700; color:var(--good); font-size:1.15rem; margin:0}
+  .growth{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:12px}
+  .growth input{width:90px; min-height:44px; font-size:1.05rem; padding:6px 10px; border:2px solid var(--line); border-radius:10px; font-family:"Atkinson Hyperlegible"}
+  .sortgrid{display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:10px; margin-top:10px}
+  .sortgrid div{background:#fbfaf6; border:1.5px solid var(--line); border-radius:10px; padding:8px 10px; font-size:.9rem}
+  .sortgrid b{display:block; font-family:"Space Grotesk"; margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-inner">
+    <a class="home-link" href="index.html">← Term 4 Casebook home</a>
+    <p class="eyebrow">Year 6 Spelling · Word Detectives · Lesson 16 · Review</p>
+    <h1>Case Closed</h1>
+    <p class="hook">Five case files. Five strategies. One last investigation — then show how far you’ve come since the start of term.</p>
+    <div class="meta-row" aria-label="Lesson details">
+      <span>All five case files</span>
+      <span>Focus: choose the right strategy</span>
+      <span>AC9E6LY08 · AC9E6LY09</span>
+      <span>20 minutes</span>
+    </div>
+  </div>
+</header>
+
+<nav class="pills" aria-label="Jump to a section">
+  <div class="pills-inner">
+    <a class="pill pill-home" href="index.html" aria-label="Back to the Term 4 Casebook home page">← Home</a>
+    <a class="pill" href="#briefing">The Briefing</a>
+    <a class="pill" href="#summary">Case Summary</a>
+    <a class="pill" href="#board">Case Board</a>
+    <a class="pill" href="#dictation">Dictation</a>
+    <a class="pill" href="#closed">Case Closed</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===================== 1. WARM-UP ===================== -->
+  <section id="briefing">
+    <div class="sec-head"><span class="sec-no">01</span><div><h2>The Briefing</h2><p class="lead">One question from each case file. Tap an answer — wrong ones show an orange <b>fix-up</b> naming the strategy.</p></div></div>
+    <div id="quiz"></div>
+    <div class="scorebar" role="status" aria-live="polite">
+      <span>Score: <strong id="score">0</strong> / <strong id="total">5</strong></span>
+      <button class="btn ghost" id="jumpFix" type="button" disabled>Jump to my first fix-up ↧</button>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot before you move on.</b> This page never saves your work. Capture your score and any fix-ups, then upload to OneNote.</div></div>
+  </section>
+
+  <!-- ===================== 2. CASE SUMMARY CARDS ===================== -->
+  <section id="summary">
+    <div class="sec-head"><span class="sec-no">02</span><div><h2>Case Summary</h2><p class="lead">One card per case file. Each one is a strategy you can use on words you’ve never seen before.</p></div></div>
+    <div class="teach-grid">
+
+      <div class="card teach">
+        <h3>Case File 1 · Poetry: word origins</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="A globe with labels: Greek gives rh, ph and y; Latin prefixes can double a letter; Italian and French words keep their own endings.">
+            <circle cx="44" cy="40" r="30" fill="#e1efee" stroke="#0e7c7b" stroke-width="2.5"/>
+            <path d="M14 40 h60 M44 10 q-18 30 0 60 M44 10 q18 30 0 60" fill="none" stroke="#0e7c7b" stroke-width="1.5"/>
+            <text x="94" y="26" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">Greek → <tspan fill="#e8930c">rh, ph, y</tspan></text>
+            <text x="94" y="48" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">Latin → <tspan fill="#e8930c">doubled letters</tspan></text>
+            <text x="94" y="70" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">Italian/French → <tspan fill="#e8930c">own endings</tspan></text>
+          </svg>
+        </div>
+        <p>Odd spelling? Ask where the word came from. Greek words like <b>rhyme</b> and <b>physical</b> use rh, ph and y. Borrowed words keep their home-country spelling.</p>
+        <div class="remember"><b>Remember:</b> Weird letters often mean a word from another language.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>Case File 2 · Catholic Mission: noun suffixes</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="curious becomes curiosity: the u drops out of ous. The suffixes ity and ion make nouns.">
+            <text x="12" y="32" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">curi<tspan fill="#e8930c">ous</tspan></text>
+            <path d="M110 27 h26" stroke="#1b2a4a" stroke-width="2.5" marker-end="url(#l16a)"/>
+            <text x="144" y="32" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a">curi<tspan fill="#0e7c7b">osity</tspan></text>
+            <text x="160" y="66" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">-ous → -osity (the u drops out) · -ity and -ion make nouns</text>
+            <defs><marker id="l16a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b2a4a"/></marker></defs>
+          </svg>
+        </div>
+        <p>The suffixes <b>-ity</b> and <b>-ion</b> turn words into nouns: equal → equality, act → action. Watch the -ous change, as in <b>curious → curiosity</b>: the u drops out.</p>
+        <div class="remember"><b>Remember:</b> -ous → -osity. -ity and -ion make naming words.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>Case File 3 · Science: prefixes and suffixes</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="ir plus regular makes irregular with a double r. mis plus spell makes misspell with a double s. Prefixes keep every letter.">
+            <text x="12" y="30" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a"><tspan fill="#e8930c">ir</tspan> + <tspan fill="#0e7c7b">r</tspan>egular → i<tspan fill="#e8930c">r</tspan><tspan fill="#0e7c7b">r</tspan>egular</text>
+            <text x="12" y="62" font-family="Space Grotesk" font-weight="700" font-size="17" fill="#1b2a4a"><tspan fill="#e8930c">mis</tspan> + <tspan fill="#0e7c7b">s</tspan>pell → mi<tspan fill="#e8930c">s</tspan><tspan fill="#0e7c7b">s</tspan>pell</text>
+          </svg>
+        </div>
+        <p>A prefix sits in front and keeps <b>every letter</b> — so two letters can meet: ir + regular, mis + spell. Suffixes like <b>-ation</b> build nouns: inform → information.</p>
+        <div class="remember"><b>Remember:</b> Prefix + word = keep all the letters, even when they double.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>Case File 4 · HASS: hidden letters</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="design has a hidden g, shown in the family word designate. debt has a hidden b, shown in the family word debit.">
+            <text x="80" y="32" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="22" fill="#1b2a4a">desi<tspan fill="#e8930c">g</tspan>n</text>
+            <text x="80" y="62" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">family: desi<tspan font-weight="700">g</tspan>nate</text>
+            <text x="236" y="32" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="22" fill="#1b2a4a">de<tspan fill="#e8930c">b</tspan>t</text>
+            <text x="236" y="62" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="12" fill="#56607a">family: de<tspan font-weight="700">b</tspan>it</text>
+          </svg>
+        </div>
+        <p>Some letters are written but hidden. A <b>family word</b> often shows them: design → designate, debt → debit. Word changes matter too: decide → <b>decisive</b> (de becomes s).</p>
+        <div class="remember"><b>Remember:</b> Look for a family word that shows the hidden letter.</div>
+      </div>
+
+      <div class="card teach">
+        <h3>Case File 5 · HPE: word families</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 320 80" role="img" aria-label="A small tree: the trunk is confident, the branch is confidence. ent goes with ence, ant goes with ance, ible goes with ibility.">
+            <rect x="40" y="44" width="70" height="30" rx="4" fill="#8a5a2b"/>
+            <text x="75" y="64" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="12" fill="#fff">confident</text>
+            <ellipse cx="75" cy="24" rx="62" ry="18" fill="#e3f3ea" stroke="#1f7a4d" stroke-width="2"/>
+            <text x="75" y="29" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="#1f7a4d">confidence</text>
+            <text x="160" y="26" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">-ent ↔ -ence</text>
+            <text x="160" y="46" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">-ant ↔ -ance</text>
+            <text x="160" y="66" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#1b2a4a">-ible → -ibility</text>
+          </svg>
+        </div>
+        <p>Not sure whether the ending is -ence or -ance? Think of a family member you already know: confident → <b>confidence</b>, possible → <b>possibility</b>. Families keep their letters.</p>
+        <div class="remember"><b>Remember:</b> Not sure of an ending? Ask the word’s family.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== 3. CASE BOARD (signature) ===================== -->
+  <section id="board">
+    <div class="sec-head"><span class="sec-no">03</span><div><h2>Case Board</h2><p class="lead">Open the case files in <b>any order</b>. Each has three words to spell from a clue. Solve all three to earn a <b>SOLVED</b> stamp. Miss one? You get the letter count, then a strategy clue, then the first letters. Unlimited tries.</p></div></div>
+    <div class="board">
+      <div class="board-top"><h3>🗂️ Term 4 Case Board</h3><span class="stamps" id="cbCount" role="status" aria-live="polite">0 of 5 solved</span></div>
+      <div class="folders" id="cbFolders"></div>
+      <div id="cbFiles"></div>
+      <p class="msg" id="cbMsg" role="status" aria-live="polite"></p>
+    </div>
+    <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Screenshot your Case Board</b> when all five folders are stamped SOLVED. The page won’t remember it.</div></div>
+  </section>
+
+  <!-- ===================== 4. DICTATION ===================== -->
+  <section id="dictation">
+    <div class="sec-head"><span class="sec-no">04</span><div><h2>Cumulative Dictation</h2><p class="lead">Ten words, two from each case file — the same ten as your start-of-term check. Time to see your growth.</p></div></div>
+    <div class="card">
+      <ol class="dict-steps">
+        <li>Number <b>1–10</b> down the page in your book.</li>
+        <li>Your teacher reads each sentence <b>twice</b>. Write <b>only the target word</b>.</li>
+        <li>When you’ve written all ten, tick the box to unlock the answers. Then mark your own work honestly.</li>
+      </ol>
+      <label class="ready" for="dictReady"><input type="checkbox" id="dictReady"> I’ve written all ten words in my book</label>
+      <div class="btn-row"><button class="btn amber" id="dictReveal" type="button" disabled>Show the answers 🔒</button></div>
+      <div id="dictAnswers" hidden>
+        <p class="counter" style="margin-top:12px">Tap <b>“I got it ✓”</b> for each word you spelt exactly right.</p>
+        <ol class="dict-list" id="dictList"></ol>
+        <div class="scorebar" role="status" aria-live="polite" style="margin-top:12px"><span>My dictation score: <strong id="dictScore">0</strong> / <strong>10</strong></span></div>
+        <p class="counter" style="margin-top:8px">Missed one? Write it correctly three times next to your attempt, and check its strategy in the Case Summary cards.</p>
+      </div>
+      <div class="growth">
+        <label for="diagScore"><b>My start-of-term score:</b></label>
+        <input id="diagScore" type="number" min="0" max="10" inputmode="numeric" aria-describedby="growthMsg">
+        <span>/ 10</span>
+      </div>
+      <p class="msg" id="growthMsg" aria-live="polite">Type your start-of-term score (your teacher has it) after marking, to see your growth.</p>
+      <div class="evidence" style="margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Photograph your dictation page</b> after marking, and screenshot your score and growth. Upload both to OneNote.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. CASE CLOSED ===================== -->
+  <section id="closed">
+    <div class="sec-head"><span class="sec-no">05</span><div><h2>Case Closed</h2><p class="lead">Last task, detective: explain the strategy you used for <b>two tricky words</b>. Then tick off your evidence.</p></div></div>
+    <div class="card">
+      <label for="writebox"><b>My strategy explanation</b></label>
+      <textarea id="writebox" placeholder="For the word … , I used the … strategy because …"></textarea>
+      <div class="spy" id="spy"></div>
+      <div class="btn-row">
+        <button class="btn ghost" id="helpBtn" type="button" aria-expanded="false" aria-controls="helpBox">I need help ▾</button>
+        <button class="btn amber" id="exampleBtn" type="button" disabled>Show a worked example 🔒</button>
+      </div>
+      <div class="help-box" id="helpBox">
+        <h3 style="margin-top:0">Strategy prompts</h3>
+        <p>• <b>Word origins:</b> For … , I remembered it comes from … , so it uses …<br>• <b>Suffixes:</b> I knew … ends in … , so the noun is …<br>• <b>Prefixes:</b> I added … to … and kept all the letters.<br>• <b>Hidden letters:</b> I thought of the family word … to remember the …<br>• <b>Word families:</b> Because … ends in -ent, the noun ends in …</p>
+      </div>
+      <div class="locked" id="lockMsg">🔒 Write your own explanation first — then the worked example unlocks.</div>
+      <div class="reveal-box" id="exampleBox">
+        <div class="remember" style="background:#fff;border:1.5px solid var(--line)">
+          <b style="color:var(--ink)">Worked example (one way to do it):</b>
+          <span style="display:block;margin-top:6px">For <u>irreversible</u>, I used the prefix strategy: ir + reversible, so I kept both r’s. For <u>resilience</u>, I used word families — resilient ends in -ent, so the noun ends in -ence.</span>
+          <span style="display:block;margin-top:8px;font-size:.85rem;color:var(--ink-soft)">Two words ✓ · Strategy named ✓ · Reason given ✓</span>
+        </div>
+      </div>
+      <div class="evidence"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>This box does not save.</b> Screenshot your explanation now and upload it to OneNote.</div></div>
+
+      <h3>Evidence to capture (screenshot each one)</h3>
+      <ul class="check-list">
+        <li><label for="exit1"><input type="checkbox" id="exit1"><span>My Briefing score and any fix-up notes I read</span></label></li>
+        <li><label for="exit2"><input type="checkbox" id="exit2"><span>My Case Board with all five folders stamped SOLVED</span></label></li>
+        <li><label for="exit3"><input type="checkbox" id="exit3"><span>A photo of my marked dictation, my score and my growth</span></label></li>
+        <li><label for="exit4"><input type="checkbox" id="exit4"><span>My strategy explanation for two tricky words</span></label></li>
+      </ul>
+      <h3 style="margin-top:18px">Which strategy will I use most in Year 7?</h3>
+      <div class="confi" id="confi" role="group" aria-label="Confidence rating">
+        <button type="button" aria-pressed="false">Still cracking it</button>
+        <button type="button" aria-pressed="false">Getting there</button>
+        <button type="button" aria-pressed="false">Case closed ✓</button>
+      </div>
+
+      <div class="card" style="background:#fbfaf6;box-shadow:none;margin:18px 0 0">
+        <h3>Detective challenge (extension): sort the term’s 40 words</h3>
+        <p>In your book, sort all 40 words by the strategy that helps most. Some fit more than one — be ready to explain your choice. Then teach a classmate one strategy using a word from the list.</p>
+        <button class="btn ghost" id="sortBtn" type="button" aria-expanded="false" aria-controls="sortBox">Show the 40 words ▾</button>
+        <div id="sortBox" hidden>
+          <div class="sortgrid">
+            <div><b>Case File 1</b>poetry · rhythm · rhyme · stanza · ballad · simile · metaphor · alliteration</div>
+            <div><b>Case File 2</b>compassion · charity · generosity · justice · dignity · community · volunteer · solidarity</div>
+            <div><b>Case File 3</b>reversible · irreversible · dissolve · evaporation · condensation · mixture · chemical · physical</div>
+            <div><b>Case File 4</b>consumer · advertisement · persuasive · influence · purchase · necessity · receipt · guarantee</div>
+            <div><b>Case File 5</b>independent · responsibility · opportunity · confidence · resilience · anxious · schedule · secondary</div>
+          </div>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top:18px;margin-bottom:0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8930c" d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg><div><b>Nothing on this page is saved.</b> Take your final screenshots now, then upload everything to OneNote. Closing the tab clears it all.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Year 6 Spelling · Word Detectives: Term 4 Casebook · Lesson 16: Case Closed (review) · ACARA v9 AC9E6LY08 &amp; AC9E6LY09. All content original. Works offline — no data is collected or stored.</p>
+</footer>
+
+<div class="sr-only" id="liveRegion" aria-live="assertive"></div>
+
+<script>
+"use strict";
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+function announce(msg) {
+  const r = $("#liveRegion");
+  if (!r) return;
+  r.textContent = "";
+  setTimeout(() => { r.textContent = msg; }, 30);
+}
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---------- Warm-up quiz: stem, opts, correct index, fix-up note ---------- */
+function buildQuiz(QUIZ) {
+  let score = 0, firstFix = null;
+  const quizEl = $("#quiz");
+  $("#total").textContent = QUIZ.length;
+  QUIZ.forEach((q, qi) => {
+    const card = document.createElement("div");
+    card.className = "q"; card.id = "q" + qi;
+    const stem = document.createElement("p");
+    stem.className = "stem"; stem.innerHTML = (qi + 1) + ". " + q.stem;
+    const opts = document.createElement("div");
+    opts.className = "opts"; opts.setAttribute("role", "group"); opts.setAttribute("aria-label", "Question " + (qi + 1));
+    q.opts.forEach((text, oi) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.innerHTML = text;
+      b.addEventListener("click", () => answer(oi, b));
+      opts.appendChild(b);
+    });
+    const fix = document.createElement("div");
+    fix.className = "fixup"; fix.id = "fix" + qi; fix.tabIndex = -1;
+    fix.innerHTML = "<b>Fix-up:</b> " + q.fix;
+    card.append(stem, opts, fix);
+    quizEl.appendChild(card);
+    function answer(oi, btn) {
+      if (card.dataset.done) return;
+      card.dataset.done = "1";
+      $$(".opt", opts).forEach(b => { b.disabled = true; });
+      opts.children[q.correct].classList.add("correct");
+      if (oi === q.correct) {
+        score++;
+        $("#score").textContent = score;
+        announce("Correct. Score " + score + " of " + QUIZ.length);
+      } else {
+        btn.classList.add("wrong");
+        fix.classList.add("show");
+        if (firstFix === null) { firstFix = qi; $("#jumpFix").disabled = false; }
+        fix.focus();
+        announce("Not quite. Read the fix-up note.");
+      }
+    }
+  });
+  $("#jumpFix").addEventListener("click", () => {
+    if (firstFix === null) return;
+    const f = $("#fix" + firstFix);
+    f.scrollIntoView({ block: "center" });
+    f.focus();
+  });
+}
+
+/* ---------- Writing task: help toggle, word bank chips, locked example, spelling spy ---------- */
+function setupWriting({ box, helpBtn, helpBox, exampleBtn, lockMsg, exampleBox, minChars = 20, spyEl, words = [] }) {
+  const unlock = () => {
+    const ok = box.value.trim().length >= minChars;
+    exampleBtn.disabled = !ok;
+    exampleBtn.textContent = ok ? "Show a worked example" : "Show a worked example \u{1F512}";
+    if (!exampleBox.classList.contains("show")) lockMsg.style.display = ok ? "none" : "block";
+  };
+  const spy = () => {
+    if (!spyEl) return;
+    const text = box.value.toLowerCase();
+    const found = words.filter(w => new RegExp("\\b" + w + "s?\\b").test(text));
+    spyEl.querySelector(".spy-count").textContent = found.length;
+    const list = spyEl.querySelector(".spy-list");
+    list.innerHTML = "";
+    found.forEach(w => {
+      const c = document.createElement("span");
+      c.className = "chip on"; c.dataset.word = w; c.textContent = w;
+      list.appendChild(c);
+    });
+  };
+  if (spyEl) {
+    spyEl.innerHTML = '<span class="spy-label">Spelling spy – focus words spelt correctly: <b class="spy-count">0</b></span><span class="spy-list"></span>';
+    spyEl.setAttribute("aria-live", "polite");
+  }
+  box.addEventListener("input", () => { unlock(); spy(); });
+  exampleBtn.addEventListener("click", () => {
+    if (exampleBtn.disabled) return;
+    exampleBox.classList.add("show");
+    lockMsg.style.display = "none";
+  });
+  helpBtn.addEventListener("click", () => {
+    const open = helpBox.classList.toggle("show");
+    helpBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    helpBtn.textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  $$(".wb", helpBox).forEach(chip => {
+    chip.addEventListener("click", () => {
+      const needsSpace = box.value.length > 0 && !/\s$/.test(box.value);
+      box.value += (needsSpace ? " " : "") + chip.textContent + " ";
+      box.focus();
+      box.dispatchEvent(new Event("input"));
+    });
+  });
+  unlock();
+}
+
+/* ---------- Confidence buttons ---------- */
+function setupConfidence() {
+  $$("#confi button").forEach(b => {
+    b.addEventListener("click", () => {
+      $$("#confi button").forEach(x => x.setAttribute("aria-pressed", "false"));
+      b.setAttribute("aria-pressed", "true");
+    });
+  });
+}
+
+/* ---------- Look · Cover · Write · Check (shared, Session 2 lessons) ----------
+   Needs the standard LCWC markup (ids: lcRound, lcWord, lcCover, coverBtn, writeArea, lcIn,
+   lcCheck, lcHelpBtn, lcHelpBox, compare, lcMsg, lcSR, lcNext, resBody, challengeBtn).
+   - The results table hides a word's spelling until that word has been checked once.
+   - The word is aria-hidden while covered.
+   - Visible feedback never names the target word; the full comparison goes to screen readers only.
+   - Challenge words are appended to the end of the queue. */
+function setupLCWC({ core, challenge = [] }) {
+  let queue = [], qi = 0;
+  const order = [], results = {}, seen = new Set();
+  function add(list) {
+    const start = queue.length;
+    [1, 2].forEach(r => list.forEach(o => queue.push({ ...o, round: r })));
+    list.forEach(o => { if (!results[o.w]) { results[o.w] = ["–", "–"]; order.push(o.w); } });
+    return start;
+  }
+  function renderResults() {
+    const tb = $("#resBody"); tb.innerHTML = "";
+    order.forEach((w, k) => {
+      const tr = document.createElement("tr");
+      const name = seen.has(w) ? w : "Word " + (k + 1);
+      tr.innerHTML = "<td>" + name + "</td><td>" + results[w][0] + "</td><td>" + results[w][1] + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+  function setStage(s) { $$(".stp").forEach(x => x.classList.toggle("now", x.dataset.s === s)); }
+  function counter() {
+    const item = queue[qi];
+    $("#lcRound").textContent = "Word " + (order.indexOf(item.w) + 1) + " of " + order.length + " · Round " + item.round;
+  }
+  function showWord() {
+    const item = queue[qi];
+    counter();
+    const wEl = $("#lcWord");
+    wEl.innerHTML = item.w.split("").map((ch, k) => item.tp.includes(k) ? '<span class="tp">' + ch + "</span>" : ch).join("");
+    wEl.removeAttribute("aria-hidden");
+    $("#lcCover").classList.remove("show");
+    $("#writeArea").hidden = true; $("#coverBtn").hidden = false; $("#lcNext").hidden = true;
+    $("#compare").innerHTML = "";
+    $("#lcMsg").textContent = ""; $("#lcMsg").className = "msg"; $("#lcSR").textContent = "";
+    $("#lcIn").value = "";
+    $("#lcCheck").disabled = true; $("#lcCheck").textContent = "Check 🔒";
+    $("#lcHelpBox").innerHTML = "<b>Memory trick:</b> " + item.tip;
+    $("#lcHelpBox").classList.remove("show");
+    $("#lcHelpBtn").setAttribute("aria-expanded", "false"); $("#lcHelpBtn").textContent = "I need help ▾";
+    setStage("look");
+  }
+  $("#coverBtn").addEventListener("click", () => {
+    $("#lcCover").classList.add("show");
+    $("#lcWord").setAttribute("aria-hidden", "true");
+    $("#coverBtn").hidden = true;
+    setStage("cover");
+    setTimeout(() => setStage("write"), 500);
+    $("#writeArea").hidden = false;
+    $("#lcIn").focus();
+  });
+  $("#lcIn").addEventListener("input", () => {
+    const ok = $("#lcIn").value.trim().length > 0;
+    $("#lcCheck").disabled = !ok; $("#lcCheck").textContent = ok ? "Check" : "Check 🔒";
+  });
+  $("#lcIn").addEventListener("keydown", e => { if (e.key === "Enter" && !$("#lcCheck").disabled) { e.preventDefault(); check(); } });
+  $("#lcHelpBtn").addEventListener("click", () => {
+    const open = $("#lcHelpBox").classList.toggle("show");
+    $("#lcHelpBtn").setAttribute("aria-expanded", open ? "true" : "false");
+    $("#lcHelpBtn").textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+  function diffText(typed, want) {
+    const bad = [];
+    for (let k = 0; k < Math.max(typed.length, want.length); k++) if (typed[k] !== want[k]) bad.push(k + 1);
+    if (!bad.length) return "";
+    const f = bad[0], l = bad[bad.length - 1];
+    return "You wrote " + typed.split("").join(" ") + ". The correct spelling is " + want.split("").join(" ") +
+      ". Your letters differ starting at letter " + f + (l !== f ? " up to letter " + l : "") + ".";
+  }
+  function check() {
+    const item = queue[qi];
+    const typed = $("#lcIn").value.trim().toLowerCase();
+    if (!typed) return;
+    setStage("check");
+    $("#lcCover").classList.remove("show");
+    $("#lcWord").removeAttribute("aria-hidden");
+    seen.add(item.w);
+    const cmp = $("#compare"); cmp.innerHTML = "";
+    for (let k = 0; k < Math.max(typed.length, item.w.length); k++) {
+      const s = document.createElement("span");
+      s.className = "cl " + (typed[k] === item.w[k] ? "ok" : "no");
+      s.textContent = typed[k] || "·";
+      cmp.appendChild(s);
+    }
+    const right = typed === item.w;
+    results[item.w][item.round - 1] = right ? "✓" : "✗ (" + escapeHTML(typed) + ")";
+    renderResults();
+    const msg = $("#lcMsg");
+    if (right) {
+      msg.className = "msg good"; msg.textContent = "✓ Spot on! Compare your letters with the word above.";
+      $("#lcSR").textContent = "Correct.";
+    } else {
+      msg.className = "msg warn";
+      msg.textContent = "Not yet — the amber letters don’t match. Look closely at the orange part of the word, then try it again next round.";
+      $("#lcSR").textContent = diffText(typed, item.w);
+    }
+    $("#writeArea").hidden = true;
+    $("#lcNext").hidden = false;
+    $("#lcNext").textContent = qi < queue.length - 1 ? "Next word ›" : "Start the rounds again ↺";
+    $("#lcNext").focus();
+  }
+  $("#lcCheck").addEventListener("click", check);
+  $("#lcNext").addEventListener("click", () => { qi = qi < queue.length - 1 ? qi + 1 : 0; showWord(); });
+  if (!challenge.length) $("#challengeBtn").hidden = true;
+  $("#challengeBtn").addEventListener("click", () => {
+    const atEnd = !$("#lcNext").hidden && qi === queue.length - 1;
+    const start = add(challenge);
+    renderResults();
+    if (atEnd) { qi = start; showWord(); } else counter();
+    $("#challengeBtn").disabled = true;
+    $("#challengeBtn").textContent = "Challenge words added ✓";
+    announce("Challenge words added to the end of your list.");
+  });
+  add(core); renderResults(); showWord();
+}
+
+/* ---------- Dictation self-mark (shared, Session 3 lessons) ---------- */
+function setupDictation(DICTATION) {
+  $("#dictReady").addEventListener("change", () => {
+    const ok = $("#dictReady").checked;
+    $("#dictReveal").disabled = !ok;
+    $("#dictReveal").textContent = ok ? "Show the answers" : "Show the answers 🔒";
+  });
+  $("#dictReveal").addEventListener("click", () => {
+    if ($("#dictReveal").disabled) return;
+    $("#dictAnswers").hidden = false;
+    $("#dictReveal").disabled = true; $("#dictReveal").textContent = "Answers shown ✓";
+    $("#dictReady").disabled = true;
+    const first = $("#dictList .dmark"); if (first) first.focus();
+  });
+  let score = 0;
+  DICTATION.forEach(([word, sent], i) => {
+    const li = document.createElement("li");
+    li.innerHTML = '<span class="dnum">' + (i + 1) + '.</span><span><span class="dword">' + word + '</span><span class="dsent">' + escapeHTML(sent) + "</span></span>";
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "dmark"; b.textContent = "I got it ✓";
+    b.setAttribute("aria-pressed", "false"); b.setAttribute("aria-label", "I spelt " + word + " correctly");
+    b.addEventListener("click", () => {
+      const on = b.getAttribute("aria-pressed") !== "true";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      score += on ? 1 : -1; $("#dictScore").textContent = score;
+    });
+    li.appendChild(b); $("#dictList").appendChild(li);
+  });
+}
+
+
+/* =================== 1. WARM-UP (one per case file; avoids the 10 dictation words) =================== */
+buildQuiz([
+  { stem: "Case File 1 · Which spelling is correct?", opts: ["ryhme", "rhyme", "rime"], correct: 1,
+    fix: "<b>rhyme</b> — Greek <b>rh</b> at the start and <b>y</b> in the middle. Strategy: <b>word origins</b>." },
+  { stem: "Case File 2 · Which spelling is correct?", opts: ["comunity", "communaty", "community"], correct: 2,
+    fix: "<b>community</b> — double <b>m</b>, then the noun suffix <b>-ity</b>. Strategy: <b>noun suffixes</b>." },
+  { stem: "Case File 3 · Which spelling is correct?", opts: ["fisical", "physical", "physicle"], correct: 1,
+    fix: "<b>physical</b> — Greek <b>ph</b> and <b>y</b>, ending <b>-ical</b>. Strategies: <b>word origins</b> and suffixes." },
+  { stem: "Case File 4 · Which spelling is correct?", opts: ["necessity", "neccessity", "nesessity"], correct: 0,
+    fix: "<b>necessity</b> — one collar, two sleeves: one <b>c</b>, two <b>s</b>." },
+  { stem: "Case File 5 · Which spelling is correct?", opts: ["confidance", "confidence", "confidense"], correct: 1,
+    fix: "<b>confidence</b> — confident ends in -ent, so the noun ends in <b>-ence</b>. Strategy: <b>word families</b>." },
+]);
+
+/* =================== 3. CASE BOARD (avoids the 10 dictation words) =================== */
+const CASES = [
+  { title: "Poetry", strat: "Word origins",
+    help: "Ask where the word came from. Greek words use rh, ph and y. Latin words often double a letter after a prefix. Italian and French words keep their own endings.",
+    items: [
+      { w: "alliteration", clue: "Words close together that start with the same letter, like “busy bees buzzed”.", trap: "From Latin for ‘letter’: a double l near the start, then a single t, ending -ation." },
+      { w: "ballad", clue: "A poem that tells a story, often sung (from French).", trap: "A double letter in the middle, and it ends -ad." },
+      { w: "stanza", clue: "A group of lines in a poem, like a verse (Italian for ‘room’).", trap: "It ends in a, like other Italian words such as pizza." },
+    ] },
+  { title: "Catholic Mission", strat: "Noun suffixes",
+    help: "These are naming words for qualities. Look for the noun suffix: -ity or -ion.",
+    items: [
+      { w: "compassion", clue: "Feeling for someone who is suffering, and wanting to help.", trap: "A double letter in the middle, then the noun suffix -ion." },
+      { w: "dignity", clue: "The worth and respect every person deserves.", trap: "There’s a g before the n, and it ends with the noun suffix -ity." },
+      { w: "charity", clue: "Giving help or money to people in need.", trap: "Starts with ch, has one r, and ends with -ity." },
+    ] },
+  { title: "Science", strat: "Prefixes and suffixes",
+    help: "Find the parts. A prefix keeps all its letters. -ation turns an action into a noun. Greek ch can start a science word.",
+    items: [
+      { w: "dissolve", clue: "What sugar does when you stir it into water.", trap: "The prefix dis- meets a word starting with s, so there’s a double letter. It keeps the e at the end." },
+      { w: "evaporation", clue: "The noun for water turning into vapour.", trap: "Keep the o in the middle from the verb, drop its final e, then add -ation." },
+      { w: "chemical", clue: "A change that makes a new substance is a ______ change.", trap: "Starts with ch, like chemist, and ends -ical." },
+    ] },
+  { title: "HASS", strat: "Hidden letters and word changes",
+    help: "Some letters are written but hidden. Think of a family word, or a word with the same letter team.",
+    items: [
+      { w: "guarantee", clue: "A promise that a product will work or be fixed.", trap: "A u after the g (like guard), then -antee with a double letter at the end." },
+      { w: "advertisement", clue: "A poster, video or post that tries to sell you something.", trap: "-ment starts with a consonant, so the verb keeps its e." },
+      { w: "influence", clue: "To have an effect on someone’s choices.", trap: "It ends -ence, not -ance." },
+    ] },
+  { title: "HPE", strat: "Word families",
+    help: "Look for letter patterns and families. One word has a double letter near the start and ends -ity. One has xi in the middle (its family word is anxiety) and ends -ous. One starts with the same three letters as school and ends -ule.",
+    items: [
+      { w: "opportunity", clue: "A chance to do something new.", trap: "A double letter near the start, then -ity." },
+      { w: "anxious", clue: "Feeling worried or nervous.", trap: "xi in the middle (think anxiety), ending -ous." },
+      { w: "schedule", clue: "A timetable of classes and times.", trap: "It starts like school and ends -ule." },
+    ] },
+];
+const solvedCase = [];
+let openCase = -1;
+CASES.forEach((c, ci) => {
+  const f = document.createElement("button");
+  f.type = "button"; f.className = "folder"; f.id = "cbF" + ci;
+  f.setAttribute("aria-expanded", "false"); f.setAttribute("aria-controls", "cbFile" + ci);
+  f.innerHTML = '<span class="fno">Case File ' + (ci + 1) + '</span><span class="ftitle">' + c.title + '</span><span class="fstrat">' + c.strat + "</span>";
+  f.addEventListener("click", () => openFile(ci));
+  $("#cbFolders").appendChild(f);
+
+  const file = document.createElement("div");
+  file.className = "casefile"; file.id = "cbFile" + ci; file.hidden = true;
+  file.setAttribute("role", "region"); file.setAttribute("aria-label", "Case File " + (ci + 1) + ": " + c.title);
+  let html = "<h3>Case File " + (ci + 1) + " · " + c.title + " — " + c.strat + "</h3>";
+  c.items.forEach((it, ii) => {
+    const id = "cb" + ci + "_" + ii;
+    html += '<div class="citem" id="' + id + '"><p class="clue"><b>Clue ' + (ii + 1) + ":</b> " + escapeHTML(it.clue) + "</p>" +
+      '<div class="crow"><label for="' + id + 'In" class="sr-only">Case File ' + (ci + 1) + " clue " + (ii + 1) + ": type the word</label>" +
+      '<input id="' + id + 'In" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type the word">' +
+      '<button class="btn teal" id="' + id + 'Btn" type="button" disabled>Check 🔒</button></div>' +
+      '<p class="chint" id="' + id + 'Hint" hidden></p></div>';
+  });
+  html += '<div class="btn-row"><button class="btn ghost" id="cbHelp' + ci + '" type="button" aria-expanded="false" aria-controls="cbHelpBox' + ci + '">I need help ▾</button></div>' +
+    '<div class="help-box" id="cbHelpBox' + ci + '"><b>Strategy prompt:</b> ' + escapeHTML(c.help) + "</div>";
+  file.innerHTML = html;
+  $("#cbFiles").appendChild(file);
+
+  c.items.forEach((it, ii) => {
+    it.tries = 0;
+    const id = "cb" + ci + "_" + ii, inp = $("#" + id + "In"), btn = $("#" + id + "Btn");
+    inp.addEventListener("input", () => {
+      const ok = inp.value.trim().length > 0;
+      btn.disabled = !ok; btn.textContent = ok ? "Check" : "Check 🔒";
+    });
+    inp.addEventListener("keydown", e => { if (e.key === "Enter" && !btn.disabled) btn.click(); });
+    btn.addEventListener("click", () => checkItem(ci, ii));
+  });
+  const hb = $("#cbHelp" + ci);
+  hb.addEventListener("click", () => {
+    const open = $("#cbHelpBox" + ci).classList.toggle("show");
+    hb.setAttribute("aria-expanded", open ? "true" : "false");
+    hb.textContent = open ? "Hide help ▴" : "I need help ▾";
+  });
+});
+function openFile(ci) {
+  openCase = ci;
+  CASES.forEach((_, k) => {
+    $("#cbFile" + k).hidden = k !== ci;
+    $("#cbF" + k).setAttribute("aria-expanded", k === ci ? "true" : "false");
+  });
+  const first = $$("#cbFile" + ci + " input")[0];
+  if (first) first.focus();
+}
+function checkItem(ci, ii) {
+  const it = CASES[ci].items[ii], id = "cb" + ci + "_" + ii;
+  const inp = $("#" + id + "In"), hint = $("#" + id + "Hint");
+  const guess = inp.value.trim().toLowerCase();
+  if (!guess) return;
+  if (guess === it.w) {
+    const box = $("#" + id);
+    box.classList.add("solved");
+    box.querySelector(".crow").remove(); hint.hidden = true;
+    const p = document.createElement("p"); p.className = "cword"; p.textContent = "✓ " + it.w;
+    box.appendChild(p);
+    announce("Correct: " + it.w + ".");
+    if ($$("#cbFile" + ci + " .citem.solved").length === CASES[ci].items.length) solveCase(ci);
+    else { const next = $$("#cbFile" + ci + " input")[0]; if (next) next.focus(); }
+  } else {
+    it.tries++;
+    let t = "✗ Not yet. It has " + it.w.length + " letters — check it letter by letter.";
+    if (it.tries >= 2) t = "✗ Strategy clue: " + it.trap;
+    if (it.tries >= 3) t += " It starts with “" + it.w.slice(0, 3) + "”.";
+    hint.textContent = t; hint.hidden = false;
+    announce(t);
+    inp.focus(); inp.select();
+  }
+}
+function solveCase(ci) {
+  solvedCase[ci] = true;
+  const f = $("#cbF" + ci);
+  const s = document.createElement("span"); s.className = "stamp"; s.textContent = "SOLVED"; s.setAttribute("aria-hidden", "true");
+  f.appendChild(s);
+  f.setAttribute("aria-label", "Case File " + (ci + 1) + ": " + CASES[ci].title + " — solved");
+  const n = solvedCase.filter(Boolean).length;
+  $("#cbCount").textContent = n + " of 5 solved";
+  const msg = $("#cbMsg");
+  msg.className = "msg good";
+  msg.textContent = n === CASES.length
+    ? "🎉 All five case files solved — Term 4 Casebook complete! Screenshot your board."
+    : "🔖 Case File " + (ci + 1) + " solved! Pick another folder.";
+  announce(msg.textContent);
+  const next = CASES.findIndex((_, k) => !solvedCase[k]);
+  if (next >= 0) $("#cbF" + next).focus();
+}
+
+/* =================== 4. CUMULATIVE DICTATION (must match the unit plan exactly) =================== */
+setupDictation([
+  ["rhythm", "Clap along to feel the rhythm of the poem."],
+  ["metaphor", "The poet used a metaphor to describe the river as a snake."],
+  ["generosity", "Thank you for your generosity on Mission Day."],
+  ["solidarity", "Wearing the same colour showed our solidarity."],
+  ["irreversible", "Cooking an egg is an irreversible change."],
+  ["condensation", "Condensation fogged up the bathroom mirror."],
+  ["receipt", "The receipt showed exactly what we had spent."],
+  ["persuasive", "The persuasive poster made everyone want to join the club."],
+  ["resilience", "Resilience means trying again after a setback."],
+  ["responsibility", "Looking after your locker key is your responsibility."],
+]);
+function showGrowth() {
+  const raw = $("#diagScore").value.trim(), msg = $("#growthMsg");
+  const before = Number(raw), now = Number($("#dictScore").textContent);
+  if (raw === "" || !Number.isInteger(before) || before < 0 || before > 10) {
+    msg.className = "msg"; msg.textContent = raw === "" ? "Type your start-of-term score (your teacher has it) after marking, to see your growth." : "Type a whole number from 0 to 10.";
+    return;
+  }
+  const g = now - before;
+  msg.className = g > 0 ? "msg good" : "msg";
+  msg.textContent = g > 0 ? "📈 Growth: +" + g + " words since the start of term (" + before + " → " + now + "). Case closed!"
+    : g === 0 ? "Same score as the start of term (" + now + "). Look at which words changed — and which strategy would help next time."
+    : "Today: " + now + ", start of term: " + before + ". Check the Case Summary cards for the words you missed — every detective has off days.";
+}
+$("#diagScore").addEventListener("input", showGrowth);
+$("#dictList").addEventListener("click", e => { if (e.target.closest(".dmark")) showGrowth(); });
+
+/* =================== 5. STRATEGY EXPLANATION =================== */
+setupWriting({
+  box: $("#writebox"), helpBtn: $("#helpBtn"), helpBox: $("#helpBox"),
+  exampleBtn: $("#exampleBtn"), lockMsg: $("#lockMsg"), exampleBox: $("#exampleBox"),
+  spyEl: $("#spy"), words: ["poetry","rhythm","rhyme","stanza","ballad","simile","metaphor","alliteration","compassion","charity","generosity","justice","dignity","community","volunteer","solidarity","reversible","irreversible","dissolve","evaporation","condensation","mixture","chemical","physical","consumer","advertisement","persuasive","influence","purchase","necessity","receipt","guarantee","independent","responsibility","opportunity","confidence","resilience","anxious","schedule","secondary"],
+});
+$("#sortBtn").addEventListener("click", () => {
+  const box = $("#sortBox"), open = box.hidden;
+  box.hidden = !open;
+  $("#sortBtn").setAttribute("aria-expanded", open ? "true" : "false");
+  $("#sortBtn").textContent = open ? "Hide the 40 words ▴" : "Show the 40 words ▾";
+});
+setupConfidence();
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+const { load, check, click, type, key, staticChecks, sectionEndsWithEvidence, done } = require("./harness");
+const fs = require("fs"), path = require("path");
+const FILE = "Review_Lesson16_Case_Closed.html";
+console.log("== " + FILE);
+staticChecks(FILE);
+const { w, d, errors } = load(FILE);
+const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
+const plan = require("./dictation_l16.json");
+const DWORDS = plan.map(p => p[0]);
+(async () => {
+  check($$(".q").length === 5, "5 warm-up questions, one per case file");
+  click($$("#q0 .opt")[0]); check(d.activeElement === $("#fix0") && /word origins/.test($("#fix0").textContent), "wrong answer focuses a fix-up naming the strategy");
+  check($$("#summary .remember").length === 5, "5 case summary cards with Remember lines");
+  check($$("nav.pills a[href^='#']").every(a => d.getElementById(a.getAttribute("href").slice(1))), "nav pills point at real sections");
+  const ids = $$("[id]").map(e => e.id); check(new Set(ids).size === ids.length, "no duplicate ids");
+  // fair re-test: no dictation word visible anywhere before the dictation section
+  const before = ["briefing", "summary", "board"].map(id => d.getElementById(id).textContent + " " + [...d.getElementById(id).querySelectorAll("[aria-label]")].map(e => e.getAttribute("aria-label")).join(" ")).join(" ").toLowerCase();
+  check(DWORDS.every(wd => !new RegExp("\\b" + wd + "\\b").test(before)), "none of the 10 dictation words appear before the dictation");
+  const ANSW = ["alliteration","ballad","stanza","compassion","dignity","charity","dissolve","evaporation","chemical","guarantee","advertisement","influence","opportunity","anxious","schedule"];
+  const teachText = ["briefing", "summary"].map(id => d.getElementById(id).textContent + " " + [...d.getElementById(id).querySelectorAll("[aria-label]")].map(e => e.getAttribute("aria-label")).join(" ")).join(" ").toLowerCase() + " " + $("#quiz").innerHTML.toLowerCase();
+  check(ANSW.every(wd => !new RegExp("\\b" + wd + "\\b").test(teachText)), "no Case Board answer appears in the warm-up or summary cards");
+  // Case board
+  check($$(".folder").length === 5 && $$(".casefile").every(f => f.hidden), "5 folders, all files closed");
+  click($("#cbF3"));
+  check(!$("#cbFile3").hidden && $("#cbF3").getAttribute("aria-expanded") === "true" && $$(".casefile").filter(f => !f.hidden).length === 1, "folders open in any order, one at a time");
+  const boardText = $("#cbFiles").textContent.toLowerCase();
+  const ANS = [["alliteration","ballad","stanza"],["compassion","dignity","charity"],["dissolve","evaporation","chemical"],["guarantee","advertisement","influence"],["opportunity","anxious","schedule"]];
+  check(ANS.flat().every(wd => !new RegExp("\\b" + wd + "\\b").test(boardText)), "clues never show the answer words");
+  check($("#cb3_0Btn").disabled, "Check locked until typed");
+  type(w, $("#cb3_0In"), "garantee"); click($("#cb3_0Btn"));
+  check(/9 letters/.test($("#cb3_0Hint").textContent), "miss 1: letter count");
+  click($("#cb3_0Btn"));
+  check(/Strategy clue/.test($("#cb3_0Hint").textContent) && !/guarantee/.test($("#cb3_0Hint").textContent), "miss 2: strategy clue without the answer");
+  click($("#cb3_0Btn"));
+  check(/starts with “gua”/.test($("#cb3_0Hint").textContent), "miss 3: first three letters");
+  click($("#cbHelp3")); check($("#cbHelpBox3").classList.contains("show"), "I need help reveals a strategy prompt");
+  ANS.forEach((ws, ci) => { click($("#cbF" + ci)); ws.forEach((wd, ii) => { const inp = $("#cb" + ci + "_" + ii + "In"); if (!inp) return; type(w, inp, wd.toUpperCase() + " "); key(w, inp, "Enter"); }); });
+  check($$(".folder .stamp").length === 5 && $("#cbCount").textContent === "5 of 5 solved", "all five stamped SOLVED");
+  check(/All five case files solved/.test($("#cbMsg").textContent), "board completion message");
+  // dictation (10 words) + growth
+  check(/1–10/.test($("#dictation").textContent) && /\/ 10/.test($("#dictation").textContent) && !/\/ 8\b|all eight/.test($("#dictation").textContent), "dictation is set up for 10 words");
+  check($("#dictReveal").disabled && $("#dictAnswers").hidden, "self-check locked until attempted");
+  $("#dictReady").checked = true; $("#dictReady").dispatchEvent(new w.Event("change"));
+  click($("#dictReveal"));
+  const shown = $$("#dictList li").map(li => [li.querySelector(".dword").textContent, li.querySelector(".dsent").textContent]);
+  check(JSON.stringify(shown) === JSON.stringify(plan), "cumulative dictation matches unit plan byte-for-byte");
+  $$(".dmark").slice(0, 8).forEach(b => click(b));
+  type(w, $("#diagScore"), "5");
+  check(/Growth: \+3/.test($("#growthMsg").textContent), "growth shown against start-of-term score");
+  type(w, $("#diagScore"), "12"); check(/0 to 10/.test($("#growthMsg").textContent), "invalid start score handled");
+  // explanation + extension
+  type(w, $("#writebox"), "For irreversible I kept both r's because ir + reversible. Resilience ends -ence.");
+  check($("#spy .spy-count").textContent === "3", "Spy counts term words");
+  check($("#sortBox").hidden, "40-word list hidden until asked"); click($("#sortBtn")); check(!$("#sortBox").hidden && (($("#sortBox").textContent.match(/·/g) || []).length === 35), "extension reveals all 40 words");
+  check(!/can.t tell|hear/i.test($("#summary").textContent), "summary cards stay on letters (no hearing test)");
+  check(/xi in the middle/.test($("#cbHelpBox4").textContent) && !/-ence|-ibility/.test($("#cbHelpBox4").textContent), "HPE help prompt matches its three words' patterns");
+  sectionEndsWithEvidence(d, ["briefing", "board", "dictation", "closed"]);
+  await new Promise(r => setTimeout(r, 200));
+  check(errors.length === 0, "zero console/page errors " + (errors.length ? JSON.stringify(errors) : ""));
+  done();
+})();
